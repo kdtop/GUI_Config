@@ -1,0 +1,174 @@
+Notice: This is the format of the replies for each element, when the user
+        clicks a box, to turn an option into an actual action (setting a
+   	health factor, order something etc.)
+
+===============================================================================
+Note: This document discusses two types of lines.  Those starting with '3'
+      and those starting with '6'.  See separate sections.
+===============================================================================
+Example:
+
+ORQQPXRM DIALOG PROMPTS
+Called at: 5:05:31 PM
+
+Params ------------------------------------------------------------------
+literal	541
+literal	0
+literal
+
+Results -----------------------------------------------------------------
+3 ^541 ^^Q                                    ^^198 ^^Stat Chest 2 views ^^^Q
+6 ^541 ^^Here is alternative placeholder text
+
+Elapsed Time: 0 ms
+
+===============================================================================
+
+Disection of above example:
+Pieces:
+--------
+1  2    3 4                                     5 6    7 8                   9 10 11
+-------------------------------------------------------------------------------------
+3 ^541 ^ ^Q                                    ^ ^198 ^ ^Stat Chest 2 views ^ ^  ^Q
+6 ^541 ^ ^Here is alternative placeholder text
+
+===============================================================================
+
+Piece# (for '3' type string)
+------
+1 -- '3'
+2 -- FID  (IEN) -- dialog item ien[#801.41]
+3 -- FTaxID = ''
+4 -- r3Type -- Type: (e.g. Q for dtOrder)
+                  { dtDiagnosis        } ('POV',
+                  { dtProcedure        }  'CPT',
+                  { dtPatientEducation }  'PED',
+                  { dtExam             }  'XAM',
+                  { dtHealthFactor     }  'HF',
+                  { dtImmunization     }  'IMM',
+                  { dtSkinTest         }  'SK',
+                  { dtVitals           }  'VIT',
+                  { dtOrder            }  'Q',
+                  { dtMentalHealthTest }  'MH',
+                  { dtWHPapResult      }  'WHR',
+                  { dtWHNotPurp        }  'WH');
+
+5
+6 -- if type is dtVitals, add 'V' to this value
+     for code A, D, Q, M, O orders, this is IEN of order.
+7 -- r3code -- Can hold a date range, with ':' delimiter
+8 -- r3Nar --
+9 -- r3Cat
+10
+11 -- can start with 'D', 'Q', 'M', 'O', 'A'
+
+
+OrderList.Text from line above
+'J^198^Q^Stat Chest 2 views'
+--> calls ReadyforNewOrders(obj)
+
+===============================================================================
+
+Piece# (for '6' type string)
+1 -- '6'
+2 -- FID  (IEN)  -- dialog item ien[#801.41]
+3 -- (not used)
+4 -- Holds PNText
+
+
+===============================================================================
+===============================================================================
+Below is the documentation for the output of the RPC call ORQQPXRM DIALOG PROMPTS
+
+Record# 714, in FILE: 8994
+   .01-NAME : ORQQPXRM DIALOG PROMPTS
+   .02-TAG : PROMPT
+   .03-ROUTINE : ORQQPXRM
+   .04-RETURN VALUE TYPE : ARRAY
+   .05-AVAILABILITY : SUBSCRIPTION
+   .08-WORD WRAP ON : TRUE
+     1-DESCRIPTION :
+  Additional prompts for a given dialog element
+
+     2-INPUT PARAMETER :
+       Multiple Entry #1
+       .01-INPUT PARAMETER : DIALOG ELEMENT IEN
+       .02-PARAMETER TYPE : LITERAL
+       .03-MAXIMUM DATA LENGTH : 16
+       .04-REQUIRED : YES
+       .05-SEQUENCE NUMBER : 1
+         1-DESCRIPTION :
+      Reminder dialog element identifier (ien) from REMINDER DIALOG file
+      [#801.41]
+
+       Multiple Entry #2
+       .01-INPUT PARAMETER : CURRENT/HISTORICAL
+       .02-PARAMETER TYPE : LITERAL
+       .03-MAXIMUM DATA LENGTH : 16
+       .05-SEQUENCE NUMBER : 2
+         1-DESCRIPTION :
+      Used only for taxonomy dialogs.
+
+        0 - Current Diagnosis/Procedure
+        1 - Historical Diagnosis/Procedure
+
+       Multiple Entry #3
+       .01-INPUT PARAMETER : DIALOG LINE CPT/POV
+       .02-PARAMETER TYPE : LITERAL
+       .03-MAXIMUM DATA LENGTH : 3
+       .05-SEQUENCE NUMBER : 3
+         1-DESCRIPTION :
+      For taxonomy dialog the type of finding (POV/CPT) for this dialog line
+
+     3-RETURN PARAMETER DESCRIPTION :
+  For a selected dialog element
+
+    3) Resolutions
+       ------------
+    3^dialog item ien[#801.41]^line id^resolution type code^ien[#various]
+
+    4) Additional prompts
+       -------------------
+    4^dialog item ien[#801.41]^line id^prompt text
+
+    5) Listbox items (cpt/pov)
+       ------------------------
+    5^dialog item ien[#801.41]^line id^cpt/pov ien^code/desc
+
+
+===============================================================================
+===============================================================================
+
+Other examples:
+ORQQPXRM DIALOG PROMPTS
+Called at: 4:52:05 PM
+ 
+Params ------------------------------------------------------------------
+literal	565
+literal	0
+literal	
+ 
+Results -----------------------------------------------------------------
+3^565^^HF^^106^^REFUSED DEPRESSION SCREENING^^
+4^565^5^COM^^^P^Comment:^^^^
+6^565^^The patient declines to answer any of the questions for depression
+6^565^^screening.
+
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+
+
+ORQQPXRM DIALOG PROMPTS
+Called at: 4:54:16 PM
+ 
+Params ------------------------------------------------------------------
+literal	837
+literal	0
+literal	
+ 
+Results -----------------------------------------------------------------
+3^837^^HF^^612323^^REFUSED AIM EVALUATION^^
+6^837^^The patient refuses to allow evaluation for abnormal involuntary
+6^837^^movements.
+

@@ -1,0 +1,6 @@
+[Skin]
+Default Skin=SkinStuff\Skins\Mac ICQ.ipz
+Load At Startup=1
+[Settings]
+UCaseOnly=1
+

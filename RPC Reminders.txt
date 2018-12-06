@@ -1,0 +1,78 @@
+ORWCV START
+Called at: 6:40:06 PM
+ 
+Params ------------------------------------------------------------------
+literal	33794
+literal	192.168.3.161
+literal	00020224
+literal	0
+literal	
+literal	1
+ 
+Results -----------------------------------------------------------------
+10;20;30;40;70;80;
+ 
+Elapsed Time: 15 ms
+
+
+
+
+
+ORWCV POLL
+Called at: 6:40:09 PM
+ 
+Params ------------------------------------------------------------------
+literal	33794
+literal	192.168.3.161
+literal	00020224
+ 
+Results -----------------------------------------------------------------
+~DONE=1
+~RMND
+i44^CAD: Patient Registration^^^^2^1^^^^0
+i51^CAD-1:  Antiplatelet Therapy^^^^2^1^^^^0
+i53^CAD-2: Lipid-Lowering Therapy^^^^2^1^^^^0
+i54^CAD-3: Beta-Blocker Therapy^^^^2^1^^^^0
+i55^CAD-4:  Blood Pressure^^^^2^1^^^^0
+i56^CAD-5:  Lipid Profile^^^^2^1^^^^0
+i57^CAD-6:  LDL Cholesterol Level^^^^2^1^^^^0
+i58^CAD-7:  ACE Inhibitor Therapy^^^^2^1^^^^0
+i45^DM: Patient Registration^^^^2^1^^^^0
+i126^DM-1:  HbA1c Management^^^^2^1^^^^0
+i59^DM-2:  HbA1c Management Control^^^^2^1^^^^0
+i60^DM-3:  Blood Pressure Management^^^^2^1^^^^0
+i61^DM-4:  Lipid Measurement^^^^2^1^^^^0
+i62^DM-5:  LDL Cholesterol Level^^^^2^1^^^^0
+i63^DM-6:  Urine Protein Testing^^^^2^1^^^^0
+i64^DM-7:  Eye Exam^^^^2^1^^^^0
+i65^DM-8:  Foot Exam^^^^2^1^^^^0
+i47^HF: Patient Registration^^^^2^1^^^^0
+i66^HF-1:  LVF Assessment^^^^2^1^^^^0
+i67^HF-2: LVF Testing^^^^2^1^^^^0
+i68^HF-3:  Weight Measurement^^^^2^1^^^^0
+i71^HF-4:  Blood Pressure Screening ^^^^2^1^^^^0
+i72^HF-5:  Patient Education^^^^2^1^^^^0
+i74^HF-6: Beta-Blocker Therapy^^^^2^1^^^^0
+i75^HF-7: ACE Inhibitor Therapy^^^^2^1^^^^0
+i76^HF-8: Warfarin Therapy^^^^2^1^^^^0
+i46^HTN: Patient Registration^^^^2^1^^^^0
+i50^HTN-1:  Blood Pressure Screening ^^^^2^1^^^^0
+i77^HTN-2:  Blood Pressure Control ^^^^2^1^^^^0
+i78^HTN-3:  Plan of Care ^^^^2^1^^^^0
+i48^PC: Patient Registration^^^^2^1^^^^0
+i79^PC-1:  Blood Pressure Measurement ^^^^2^1^^^^0
+i80^PC-5:  Breast Cancer Screening ^^^^2^1^^^^0
+i82^PC-6:  Colorectal Cancer Screening^^^^2^1^^^^0
+i83^PC-7:  Influenza Vaccination ^^^^2^1^^^^0
+i84^PC-8:  Pneumonia Vaccination^^^^2^1^^^^0
+i85^PC-9:  Lipid Measurement^^^^2^1^^^^0
+i86^PC-10:  LDL Cholesterol Level^^^^2^1^^^^0
+i87^PC-11:  Tobacco Use^^^^2^1^^^^0
+i88^PC-12:  Tobacco Cessation^^^^2^1^^^^0
+i133^IPV (Series 4 of 4) Immunization^^^^2^1^^^^0
+i131^DTaP (Series 5 of 5) Immunization^^^^2^1^^^^0
+i132^MMR (Series 2 of 2) Immunization^^^^2^1^^^^0
+~LABS
+i^No orders found.^^^^^^^^^^ORWOR RESULT
+ 
+Elapsed Time: 0 ms

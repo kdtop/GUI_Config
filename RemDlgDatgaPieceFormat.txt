@@ -1,0 +1,385 @@
+Example
+
+PXRM REMINDER DIALOG (TIU)
+Called at: 2:09:36 PM
+ 
+Params ------------------------------------------------------------------
+literal	405
+literal	74618
+ 
+Results -----------------------------------------------------------------
+0 ^0    <--- if piece #2=1, then RemWipe=true
+
+piece#
+------
+1  2     3      4                                                                      5    8        15     18 19  21
+---------------------------------------------------------------------------------------------------------------------   
+1 ^843  ^9     ^S                                                                     ^0 ^^^0 ^^^^^^^1 ^  ^^0 ^1 ^^1 
+2 ^843  ^9     ^HISTORY OF PRESENT ILLNESS (HPI):                                     
+1 ^829  ^9.1   ^S                                                                     ^  ^^^0 ^^^
+2 ^829  ^9.1   ^1)                                                                    
+1 ^830  ^9.2   ^S                                                                     ^  ^^^0 ^^^
+2 ^830  ^9.2   ^2)                                                                    
+1 ^831  ^9.3   ^S                                                                     ^  ^^^0 ^^^
+2 ^831  ^9.3   ^3)                                                                    
+1 ^833  ^9.4   ^S                                                                     ^  ^^^0 ^^^
+2 ^833  ^9.4   ^4)                                                                    
+1 ^834  ^9.5   ^S                                                                     ^  ^^^0 ^^^
+2 ^834  ^9.5   ^5)                                                                    
+1 ^436  ^4     ^S                                                                     ^  ^^^0 ^^^^^^^1 ^  ^^0 ^1 ^^1 
+2 ^436  ^4     ^SOCIAL HISTORY:                                                       
+1 ^433  ^4.1   ^S                                                                     ^  ^^^0 ^^^
+2 ^433  ^4.1   ^<br>  {FLD:VA*PC HXINFO4}                                             
+2 ^433  ^4.1   ^<br>  Alcohol? {FLD:VA*PC NOETOH} {FLD:VA*PC ETOH} {FLD:VA*PC EXETOH} 
+2 ^433  ^4.1   ^<br>  Tobacco? {FLD:VA*PC TOBUSE} {FLD:VA*PC T-40}                    
+2 ^433  ^4.1   ^<br>  Illicit Drugs? {FLD:VA*PC USE}                                  
+2 ^433  ^4.1   ^<br>{FLD:VA*COMINFO}                                                  
+2 ^433  ^4.1   ^{FLD:VA*WP-INDENT6}                                                   
+1 ^434  ^4.2   ^S                                                                     ^  ^^^0 ^^^
+2 ^434  ^4.2   ^<br>  Marital/Domestic Status:                                        
+2 ^434  ^4.2   ^<br>    Living arrangements: {FLD:VA*PC HOME}                         
+2 ^434  ^4.2   ^<br>    {FLD:VA*PC MSTATUS}{FLD:VA*PC OTHER}                          
+2 ^434  ^4.2   ^<br>{FLD:VA*WP-INDENT4}                                               
+1 ^435  ^4.3   ^S                                                                     ^  ^^^0 ^^^
+2 ^435  ^4.3   ^<br>   Type of safe sex used: {FLD:VOE SAFE SEX}                      
+1 ^611  ^8     ^S                                                                     ^  ^^^0 ^^^^^^^1 ^  ^^0 ^1 ^^0 
+2 ^611  ^8     ^PERSONAL MEDICAL HISTORY:                                             
+1 ^577  ^8.1   ^S                                                                     ^  ^^^0 ^^^
+2 ^577  ^8.1   ^Adult Illness:                                                        
+1 ^613  ^8.2   ^S                                                                     ^  ^^^0 ^^^
+2 ^613  ^8.2   ^Childhood Illness:                                                    
+1 ^616  ^8.3   ^S                                                                     ^  ^^^0 ^^^
+2 ^616  ^8.3   ^Prior Hospitalization:                                                
+1 ^629  ^8.4   ^S                                                                     ^  ^^^0 ^^^
+2 ^629  ^8.4   ^Surgeries:                                                            
+1 ^1085 ^8.5   ^S                                                                     ^  ^^^0 ^^^^^^^1 ^2 ^^2 ^1 ^^1 
+2 ^1085 ^8.5   ^Reproductive History:                                                 
+1 ^1077 ^8.5.1 ^S                                                                     ^  ^^^0 ^^^
+2 ^1077 ^8.5.1 ^Gravidity:                                                            
+1 ^1079 ^8.5.2 ^S                                                                     ^  ^^^0 ^^^
+2 ^1079 ^8.5.2 ^Parity:                                                               
+1 ^1080 ^8.5.3 ^S                                                                     ^  ^^^0 ^^^
+2 ^1080 ^8.5.3 ^Living Children:                                                      
+1 ^1081 ^8.5.4 ^S                                                                     ^  ^^^0 ^^^
+2 ^1081 ^8.5.4 ^Spontaneous Abortions:                                                
+1 ^1082 ^8.5.5 ^S                                                                     ^  ^^^0 ^^^
+2 ^1082 ^8.5.5 ^Therapeutic Abortions:                                                
+1 ^1083 ^8.5.6 ^S                                                                     ^  ^^^0 ^^^
+2 ^1083 ^8.5.6 ^Last Menstrual Period:                                                
+1 ^1084 ^8.5.7 ^S                                                                     ^  ^^^0 ^^^
+2 ^1084 ^8.5.7 ^Estimated Due Date:                                                   
+1 ^449  ^5     ^S                                                                     ^  ^^^0 ^^^^^^^1 ^  ^^0 ^1 ^^1 
+2 ^449  ^5     ^LEISURE ACTIVITIES:                                                   
+1 ^437  ^5.1   ^S                                                                     ^  ^^^0 ^^^
+2 ^437  ^5.1   ^Brisk physical activity that lasts at least 20 minutes:               
+2 ^437  ^5.1   ^{FLD:VOE PHYSICAL ACT}                                                
+2 ^437  ^5.1   ^<br>                                                                  
+2 ^437  ^5.1   ^<br>  Type of activity: {FLD:VOE ACTY TYPE}{FLD:GEN TEXT BOX MEDIUM}  
+1 ^438  ^5.2   ^S                                                                     ^  ^^^0 ^^^
+2 ^438  ^5.2   ^Traveled or lived outside the United States in the last five years?   
+2 ^438  ^5.2   ^{FLD:GEN YES/NO BUTTON}                                               
+1 ^571  ^6     ^S                                                                     ^  ^^^0 ^^^^^^^1 ^  ^^0 ^1 ^^1 
+2 ^571  ^6     ^FAMILY HISTORY:                                                       
+1 ^334  ^6.1   ^S                                                                     ^  ^^^0 ^^^
+2 ^334  ^6.1   ^Family History of Alcoholism.                                         
+1 ^548  ^6.2   ^S                                                                     ^  ^^^0 ^^^
+2 ^548  ^6.2   ^Family History of Asthma.                                             
+1 ^570  ^6.3   ^S                                                                     ^1 ^^^0 ^^^^^^^1 ^  ^^0 ^1 ^^0 
+2 ^570  ^6.3   ^Family History of Cancer.                                             
+1 ^561  ^6.3.1 ^S                                                                     ^  ^^^  ^^^^^^^  ^2 ^^2 
+2 ^561  ^6.3.1 ^Family history of cancer list.                                        
+1 ^569  ^6.3.2 ^S                                                                     ^  ^^^0 ^^^
+2 ^569  ^6.3.2 ^Family History of Cancer:                                             
+1 ^549  ^6.3.3 ^S                                                                     ^  ^^^0 ^^^
+2 ^549  ^6.3.3 ^Family History of Luekemia.                                           
+1 ^552  ^6.4   ^S                                                                     ^  ^^^0 ^^^
+2 ^552  ^6.4   ^Family History of Diabetes Mellitus.                                  
+1 ^558  ^6.5   ^S                                                                     ^  ^^^0 ^^^
+2 ^558  ^6.5   ^Family History of Endocrine/Metabolic Disease.                        
+1 ^553  ^6.6   ^S                                                                     ^  ^^^0 ^^^
+2 ^553  ^6.6   ^Family History of Genetic Disease.                                    
+1 ^554  ^6.7   ^S                                                                     ^  ^^^0 ^^^
+2 ^554  ^6.7   ^Family History of Heart Disease.                                      
+1 ^557  ^6.8   ^S                                                                     ^  ^^^0 ^^^
+2 ^557  ^6.8   ^Family History of Kidney Disease.                                     
+1 ^550  ^6.9   ^S                                                                     ^  ^^^0 ^^^
+2 ^550  ^6.9   ^Family History of Psychiatric Disease.                                
+1 ^559  ^6.10  ^S                                                                     ^  ^^^0 ^^^
+2 ^559  ^6.10  ^Family History of Respiratory Disease.                                
+1 ^555  ^6.11  ^S                                                                     ^  ^^^0 ^^^
+2 ^555  ^6.11  ^Family History of Stroke.                                             
+1 ^560  ^6.12  ^S                                                                     ^  ^^^0 ^^^
+2 ^560  ^6.12  ^Family History of:                                                    
+1 ^576  ^7     ^S                                                                     ^  ^^^0 ^^^^^^^1 ^  ^^0 ^1 ^^1 
+2 ^576  ^7     ^OCCUPATIONAL HISTORY:                                                 
+1 ^573  ^7.1   ^S                                                                     ^  ^^^0 ^^^
+2 ^573  ^7.1   ^Current job: {FLD:GEN TEXT BOX MEDIUM}                                
+2 ^573  ^7.1   ^<br>  Length of time in current job:  {FLD:GEN TEXT BOX 20 ON}        
+1 ^574  ^7.3   ^S                                                                     ^  ^^^0 ^^^
+2 ^574  ^7.3   ^Work related injury: {FLD:NONE2} {FLD:GEN TEXT BOX LONG}              
+1 ^575  ^7.2   ^S                                                                     ^  ^^^0 ^^^
+2 ^575  ^7.2   ^Occupational Exposures:  {FLD:VOE OCC EXP}{FLD:GEN TEXT BOX LONG}     
+ 
+Elapsed Time: 78 ms
+
+
+Source Global Dump
+===================
+  1) ^PXRMD(801.41,405,0) = TIU PERSONAL HX^142^^R
+  2) ^PXRMD(801.41,405,10,0) = ^801.412IA^9^6
+  3) ^PXRMD(801.41,405,10,4,0) = 15^436
+  4) ^PXRMD(801.41,405,10,5,0) = 25^449
+  5) ^PXRMD(801.41,405,10,6,0) = 40^571
+  6) ^PXRMD(801.41,405,10,7,0) = 45^576
+  7) ^PXRMD(801.41,405,10,8,0) = 20^611
+  8) ^PXRMD(801.41,405,10,9,0) = 5^843
+  9) ^PXRMD(801.41,405,10,"B",5,9) =
+ 10) ^PXRMD(801.41,405,10,"B",15,4) =
+ 11) ^PXRMD(801.41,405,10,"B",20,8) =
+ 12) ^PXRMD(801.41,405,10,"B",25,5) =
+ 13) ^PXRMD(801.41,405,10,"B",40,6) =
+ 14) ^PXRMD(801.41,405,10,"B",45,7) =
+ 15) ^PXRMD(801.41,405,10,"D",436,4) =
+ 16) ^PXRMD(801.41,405,10,"D",449,5) =
+ 17) ^PXRMD(801.41,405,10,"D",571,6) =
+ 18) ^PXRMD(801.41,405,10,"D",576,7) =
+ 19) ^PXRMD(801.41,405,10,"D",611,8) =
+ 20) ^PXRMD(801.41,405,10,"D",843,9) =
+ 21) ^PXRMD(801.41,405,100) = L
+ 22) ^PXRMD(801.41,405,110,0) = ^801.44D^1^1
+ 23) ^PXRMD(801.41,405,110,1,0) = 3080101.194604^1
+ 24) ^PXRMD(801.41,405,110,1,1,0) = ^^1^1^3080101
+ 25) ^PXRMD(801.41,405,110,1,1,1,0) = Exchange Install
+ 26) ^PXRMD(801.41,405,110,"B",3080101.194604,1) =
+ <> <> <>
+
+
+Record dump
+===========
+#: 405,
+#: 405,
+Display empty fields? No//   (No)
+Enter Output Device: HOME//   TELNET
+
+Record# 405, in FILE: 801.41
+   .01-NAME : TIU PERSONAL HX
+     2-SOURCE REMINDER : EXCHANGE BLANK REMINDER
+     4-TYPE : reminder dialog
+    10-COMPONENTS :
+       Multiple Entry #4
+       .01-SEQUENCE : 15
+         2-ITEM : DG PH SOCIAL
+
+       Multiple Entry #5
+       .01-SEQUENCE : 25
+         2-ITEM : DG PH LEISURE
+
+       Multiple Entry #6
+       .01-SEQUENCE : 40
+         2-ITEM : DG FAMILY HX
+
+       Multiple Entry #7
+       .01-SEQUENCE : 45
+         2-ITEM : DG PH OCCUPATION
+
+       Multiple Entry #8
+       .01-SEQUENCE : 20
+         2-ITEM : DG PERSONAL MEDICAL HX
+
+       Multiple Entry #9
+       .01-SEQUENCE : 5
+         2-ITEM : DG HISTORY
+
+
+   100-CLASS : LOCAL
+   110-EDIT HISTORY :
+       Multiple Entry #1
+       .01-EDIT DATE : JAN 1,2008@19:46:04
+         1-EDIT BY : WVEHR,PATCH INSTALLER
+         2-EDIT COMMENTS :
+      Exchange Install
+
+
+REMOTE PROCEDURE documentation
+==============================
+     3-RETURN PARAMETER DESCRIPTION :
+  For each dialog element/group in the reminder dialog:
+
+    1) Initial states
+
+    1^dialog item ien[#801.41]^dialog ien [#801.412]^^^^
+
+    2) Question text
+
+    2^dialog item ien[#801.41]^dialog ien [#801.412]^text
+
+
+Expansion
+==========
+
+One specific example:
+Piece#
+1 2    3   4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21
+1^1085^8.5^S^ ^ ^ ^0^ ^  ^  ^  ^  ^  ^1 ^2 ^  ^2 ^1 ^  ^1 
+
+
+Description of pieces
+---------------------
+1 -- 1 if beginning of element data; 2 if continuation
+2 DITEM = IEN 801.41
+3 DSUB = IEN 801.412 (in parent)[.ChildSeq#]
+4 DDIS = 'S' (show checkbox), or 'D' if checkbox to be disabled, or 'T' for Taxonomy
+5 DEXC = 1 if exclude from progress note, 0 if no exclusion
+6 -- Indent (number)
+7 -- FindingType string (or '')
+8 DHIS = 1 if Done Elsewhere (historical) else 0
+9 DMHEX = 1 if EXCLUDE MH TEST FROM PN TEXT(#34) is true
+10 DSREL = "" if no result group, or IEN801.41~IEN801.41~IEN801.41~... if entries in RESULT GROUP LIST (#121) defined for element
+11 DCOUNT - (Can't find use in .pas source)
+12 -- (Can't find use in .pas source)
+13 -- (Can't find use in .pas source)
+14 -- (Can't find use in .pas source)
+15 -- DHIDE = Fld#50 (HIDE/SHOW GROUP) 1=HIDE (until checked) 0 = SHOW
+16 -- DIND = FLD#7 (NUMBER OF INDENTS) {ChildrenIndent}
+17 -- DSHARE = FLD#8 (SHARE COMMON PROMPTS) 1=yes(default), 0=no
+18 -- DENTRY = FLD#9 (GROUP ENTRY).  For allowed answers: 1=1 only; 2=1+; 3=0-1; 4=all req; 0=none req
+19 -- DBOX = FLD#6 (BOX). 'Y'=Draw Box, ''=don't draw  [note: may be 1 / 0 needed]
+20 -- DCAP = FLD#5 (CAPTION). Caption for component (3-30 chars)
+21 -- DINDPN = FLD#52 (INDENT PROGRESS NOTE TEXT). 1=indent, 0=don't
+
+
+Possible element types:
+======================
+ P - prompt
+ E - dialog element
+ R - reminder dialog
+ F - forced value
+ G - dialog group
+ S - result group
+ T - result element
+
+Possible element result types
+=============================
+ PED -- 999999.09 / EDUCATION TOPICS
+ XAM -- 999999.15 / EXAM
+ HF -- 999999.64 / HEALTH FACTORS
+ IMM -- 999999.14 / IMMUNIZATION
+ SK -- 999999.28 / SKIN TEST
+ VIT -- 120.51 / GRV VITAL TYPE
+ Q -- 101.41 / ORDER DIALOG 
+ MH -- 601.71 / MH TESTS AND SURVERYS
+ POV  -- 80 / ICD DIAGNOSIS
+ CPT  -- 81 / CPT
+ T  -- 811.2 / reminder taxonomy
+ WHR -- 79-.1 / WV PROCEDURE
+
+
+If element is of type: T
+--------------------------
+Piece#
+1     2   3  4  5   6 7 8 9 10 11 12 13 14 15 16 17 18             
+1^DITEM^DSUB^S^DEXC^ ^ ^ ^ ^  ^  ^  ^  ^  ^  ^2 ^  ^2 ^
+
+Description of pieces
+#16 -- always = 2
+#18 -- always = 2
+
+2^DITEM^DSUB^TEXT
+2^DITEM^DSUB.#^T^DEXC^^ATYP^AHIS    <--- Two lines for each resolved taxonomy
+   #4 -- always = T
+   #7 -- ATYP = 'CPT' or 'POV'
+   #8 -- AHIS = Historical/current flag
+2^DITEM^DSUB.#^Prompt Text          <--- Two lines for each resolved taxonomy
+
+
+If element is of type: MH
+-------------------------
+??
+
+If element is of type: G
+------------------------
+Piece#
+1     2   3  4    5   6 7 8 9 10 11 12 13 14 15     16   17     18      19   20   21       
+1^DITEM^DSUB^DDIS^DEXC^ ^ ^ ^ ^  ^  ^  ^  ^  ^DHIDE^DIND^DSHARE^DENTERY^DBOX^DCAP^DINDPN
+
+Description of pieces
+1 -- 1 if beginning of element data; 2 if continuation
+2 DITEM = IEN 801.41
+3 DSUB = IEN 801.412 (in parent)[.ChildSeq#]
+4 DDIS = 'S' (show checkbox), or 'D' if checkbox to be disabled
+5 DEXC = 1 if exclude from progress note, 0 if no exclusion
+6
+7
+8 DHIS = 1 if Done Elsewhere (historical) else 0
+9
+10
+11
+12
+13
+14
+15 -- DHIDE = Fld#50 (HIDE/SHOW GROUP) 1=HIDE (until checked) 0 = SHOW
+16 -- DIND = FLD#7 (NUMBER OF INDENTS)
+17 -- DSHARE = FLD#8 (SHARE COMMON PROMPTS) 1=yes(default), 0=no
+18 -- DENTRY = FLD#9 (GROUP ENTRY).  For allowed answers: 1=1 only; 2=1+; 3=0-1; 4=all req; 0=none req
+19 -- DBOX = FLD#6 (BOX). 'Y'=Draw Box, ''=don't draw  
+20 -- DCAP = FLD#5 (CAPTION). Caption for component (3-30 chars)
+21 -- DINDPN = FLD#52 (INDENT PROGRESS NOTE TEXT). 1=indent, 0=don't
+
+Piece#
+1     2   3  4   
+2^DITEM^DSUB^TEXT
+
+Next come sub-items
+
+Piece#
+1     2   3    4    5    6 7 8    9     10    11 
+1^DITEM^DSUB.#^DDIS^DEXC^ ^ ^DHIS^DMHEX^DSREL^DCOUNT 
+
+8 DHIS = 1 if Done Elsewhere (historical) else 0
+9 DMHEX = 1 if EXCLUDE MH TEST FROM PN TEXT(#34) is true
+10 DSREL = "" if no result group, or IEN801.41~IEN801.41~IEN801.41~... if entries in RESULT GROUP LIST (#121) defined for element
+11 DCOUNT = ?
+
+Piece#
+1     2   3  4   
+2^DITEM^DSUB.#^TEXT
+
+
+If element is of type: <All others>
+------------------------
+Piece#
+1   2    3    4   5    6 7  8     9    10
+1^DITEM^DSUB^DDIS^DEXC^ ^ ^DHIS^DMHEX^DRESL
+
+
+Description of pieces
+1 -- 1 if beginning of element data; 2 if continueation
+2 DITEM = IEN 801.41
+3 DSUB = IEN 801.412 (in parent)[.ChildSeq#]
+4 DDIS = 'S' (show checkbox), or 'D' if checkbox to be disabled
+5 DEXC = 1 if exclude from progress note, 0 if no exclusion
+6
+7
+8 DHIS = 1 if element.RESOLUTION TYPE (#13) = 'DONE ELSEWHERE'  e.g. Done Elsewhere (historical)
+         1 if child element's associated GUI PROCESS = VST_DATE
+         else 0
+9 DMHEX = 1 if EXCLUDE MH TEST FROM PN TEXT(#34) is true, else 0
+10 DSREL = "" if no result group, or IEN801.41~IEN801.41~IEN801.41~... if entries in RESULT GROUP LIST (#121) defined for element
+
+Piece#
+1     2   3  4   
+2^DITEM^DSUB.#^TEXT
+
+
+Simple example:
+0^0
+1^543^3^S^^^^0^^^^^^^1^^^^1^^0
+2^543^3^Here is something!
+1^541^3.1^S^^^^0^^^
+2^541^3.1^Place a specific order?
+1^361^3.2^S^^^^0^^^
+2^361^3.2^Order for Lipid Profile placed for today.
+1^663000646^4^S^^^^0^^
+2^663000646^4^Test (ignore this) 
+
+

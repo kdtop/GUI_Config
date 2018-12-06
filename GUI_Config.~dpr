@@ -1,0 +1,90 @@
+program GUI_Config;
+   (*
+   WorldVistA Configuration Utility
+   (c) 8/2008 Kevin Toppenberg
+   Programmed by Kevin Toppenberg, Eddie Hagood
+
+   Family Physicians of Greeneville, PC
+   1410 Tusculum Blvd, Suite 2600
+   Greeneville, TN 37745
+   kdtop@yahoo.com
+
+   This library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   This library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with this library; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+  *)
+
+uses
+  Forms,
+  MainU in 'MainU.pas' {MainForm},
+  frmSplash in 'frmSplash.pas' {SplashForm},
+  LookupU in 'LookupU.pas' {FieldLookupForm},
+  SubfilesU in 'SubfilesU.pas' {SubfileForm},
+  SetSelU in 'SetSelU.pas' {SetSelForm},
+  SelDateTimeU in 'SelDateTimeU.pas' {SelDateTimeForm},
+  PostU in 'PostU.pas' {PostForm},
+  FMErrorU in 'FMErrorU.pas' {FMErrorForm},
+  AboutU in 'AboutU.pas' {AboutForm},
+  PleaseWaitU in 'PleaseWaitU.pas' {WaitForm},
+  EditTextU in 'EditTextU.pas' {EditTextForm},
+  CreateTemplateU in 'CreateTemplateU.pas' {CreateTemplateForm},
+  SkinFormU in 'SkinFormU.pas' {SkinForm},
+  BatchAddU in 'BatchAddU.pas' {BatchAddForm},
+  DebugU in 'DebugU.pas' {DebugForm},
+  SortStringGrid in 'TMG_Extra\SortStringGrid.pas',
+  AddOneFileEntryU in 'AddOneFileEntryU.pas' {AddOneFileEntry},
+  uTemplates in 'Dialog-Templates\uTemplates.pas',
+  dShared in 'Dialog-Templates\dShared.pas' {dmodShared: TDataModule},
+  uTIU in 'Dialog-Templates\uTIU.pas',
+  VAUtils in 'Dialog-Templates\VAUtils.pas',
+  VA508AccessibilityManager in 'Dialog-Templates\VA508AccessibilityManager.pas',
+  fPage in 'Dialog-Templates\fPage.pas',
+  fHSplit in 'Dialog-Templates\fHSplit.pas',
+  fNotes in 'Dialog-Templates\fNotes.pas' {frmNotes},
+  uCore in 'Dialog-Templates\uCore.pas',
+  fReminderDialog in 'Dialog-Templates\fReminderDialog.pas' {frmRemDlg},
+  EditFreeText in 'EditFreeText.pas' {EditFreeTextForm},
+  fxBroker in 'fxBroker.pas' {frmBroker},
+  fMemoEdit in 'fMemoEdit.pas' {frmMemoEdit},
+  RemDlgCreator in 'Dialog-Templates\RemDlgCreator.pas',
+  XML2Dlg in 'Dialog-Templates\XML2Dlg.pas',
+  XML_Main in 'XML-Athena Parsing\XML_Main.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.Title := 'Astronaut Configuration Utility';
+  Application.CreateForm(TMainForm, MainForm);
+  Application.CreateForm(TSkinForm, SkinForm);
+  Application.CreateForm(TSplashForm, SplashForm);
+  Application.CreateForm(TFieldLookupForm, FieldLookupForm);
+  Application.CreateForm(TSetSelForm, SetSelForm);
+  Application.CreateForm(TSelDateTimeForm, SelDateTimeForm);
+  Application.CreateForm(TPostForm, PostForm);
+  Application.CreateForm(TFMErrorForm, FMErrorForm);
+  Application.CreateForm(TAboutForm, AboutForm);
+  Application.CreateForm(TWaitForm, WaitForm);
+  Application.CreateForm(TEditTextForm, EditTextForm);
+  Application.CreateForm(TCreateTemplateForm, CreateTemplateForm);
+  Application.CreateForm(TBatchAddForm, BatchAddForm);
+  Application.CreateForm(TDebugForm, DebugForm);
+  Application.CreateForm(TAddOneFileEntry, AddOneFileEntry);
+  Application.CreateForm(TdmodShared, dmodShared);
+  Application.CreateForm(TEditFreeTextForm, EditFreeTextForm);
+  Application.CreateForm(TfrmBroker, frmBroker);
+  Application.CreateForm(TfrmMemoEdit, frmMemoEdit);
+  MainForm.Initialize;
+  Application.Run;
+end.
+

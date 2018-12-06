@@ -1,0 +1,316 @@
+object frmPickAdd60: TfrmPickAdd60
+  Left = 0
+  Top = 0
+  Caption = 'Select or Add Laboratory Test'
+  ClientHeight = 544
+  ClientWidth = 833
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poOwnerFormCenter
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  DesignSize = (
+    833
+    544)
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 8
+    Width = 294
+    Height = 13
+    Caption = 'Select a VistA laboratory test to use for storing HL7 lab result'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Top = 28
+    Width = 63
+    Height = 16
+    Caption = 'HL7 Name:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblLabName: TLabel
+    Left = 77
+    Top = 27
+    Width = 218
+    Height = 18
+    Caption = '<laboratory test name here>'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 8
+    Top = 50
+    Width = 58
+    Height = 16
+    Caption = 'HL7 Type:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblLabType: TLabel
+    Left = 77
+    Top = 51
+    Width = 51
+    Height = 13
+    Caption = 'lblLabType'
+  end
+  object rgSelectMode: TRadioGroup
+    Left = 1
+    Top = 72
+    Width = 209
+    Height = 57
+    Caption = 'Reuse Existing or Make New?'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Items.Strings = (
+      'Select an existing lab test'
+      'Add a new lab test')
+    ParentFont = False
+    TabOrder = 0
+    OnClick = rgSelectModeClick
+  end
+  object pnlMain: TPanel
+    Left = 0
+    Top = 136
+    Width = 833
+    Height = 367
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    BevelOuter = bvLowered
+    TabOrder = 1
+    object pnlPick: TPanel
+      Left = 8
+      Top = 16
+      Width = 185
+      Height = 233
+      TabOrder = 0
+      object edtLabSrch: TEdit
+        Left = 1
+        Top = 1
+        Width = 183
+        Height = 21
+        Align = alTop
+        TabOrder = 0
+      end
+      object lbLabSrch: TListBox
+        Left = 1
+        Top = 22
+        Width = 183
+        Height = 210
+        Align = alClient
+        ItemHeight = 13
+        TabOrder = 1
+      end
+    end
+    object pnlAdd: TPanel
+      Left = 48
+      Top = 0
+      Width = 673
+      Height = 353
+      TabOrder = 1
+      object pnlPickDN: TPanel
+        Left = 13
+        Top = 16
+        Width = 644
+        Height = 201
+        BevelOuter = bvLowered
+        TabOrder = 0
+        DesignSize = (
+          644
+          201)
+        object Label3: TLabel
+          Left = 1
+          Top = 3
+          Width = 298
+          Height = 13
+          Caption = 
+            'Pick existing storage location for storage of HL7 lab test resul' +
+            't'
+        end
+        object edtDNSrch: TEdit
+          Left = 0
+          Top = 22
+          Width = 644
+          Height = 21
+          Anchors = [akLeft, akTop, akRight]
+          TabOrder = 0
+        end
+        object lbDNSrch: TListBox
+          Left = 0
+          Top = 43
+          Width = 642
+          Height = 157
+          Anchors = [akLeft, akTop, akRight, akBottom]
+          Color = clMoneyGreen
+          ItemHeight = 13
+          TabOrder = 1
+        end
+      end
+      object pnlNewTest: TPanel
+        Left = 13
+        Top = 239
+        Width = 609
+        Height = 100
+        BevelOuter = bvLowered
+        TabOrder = 1
+        object Label4: TLabel
+          Left = 10
+          Top = 51
+          Width = 297
+          Height = 13
+          Caption = 'Enter shortened / abbreviated lab name (7 characters or less)'
+        end
+        object Label7: TLabel
+          Left = 10
+          Top = 5
+          Width = 274
+          Height = 13
+          Caption = 'Enter name for new lab test name (30 characters or less)'
+        end
+        object edtAbrvDNName: TEdit
+          Left = 10
+          Top = 70
+          Width = 55
+          Height = 21
+          MaxLength = 7
+          TabOrder = 0
+          OnChange = edtAbrvDNNameChange
+        end
+        object edtNewLabTestName: TEdit
+          Left = 10
+          Top = 24
+          Width = 207
+          Height = 21
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          MaxLength = 30
+          ParentFont = False
+          TabOrder = 1
+          OnChange = edtNewLabTestNameChange
+        end
+      end
+      object pnlAddDN: TPanel
+        Left = 101
+        Top = 174
+        Width = 530
+        Height = 59
+        BevelOuter = bvLowered
+        TabOrder = 2
+        DesignSize = (
+          530
+          59)
+        object Label5: TLabel
+          Left = 10
+          Top = 5
+          Width = 315
+          Height = 13
+          Caption = 'Enter name for new storage location name (30 characters or less)'
+        end
+        object edtNewDNName: TEdit
+          Left = 10
+          Top = 24
+          Width = 207
+          Height = 21
+          Anchors = [akLeft, akTop, akRight]
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          MaxLength = 30
+          ParentFont = False
+          TabOrder = 0
+          OnChange = edtNewDNNameChange
+        end
+      end
+    end
+  end
+  object pnlBottom: TPanel
+    Left = 0
+    Top = 503
+    Width = 833
+    Height = 41
+    Align = alBottom
+    BevelOuter = bvLowered
+    TabOrder = 2
+    DesignSize = (
+      833
+      41)
+    object btnCancel: TButton
+      Left = 669
+      Top = 8
+      Width = 75
+      Height = 25
+      Anchors = [akTop, akRight]
+      Caption = '&Cancel'
+      ModalResult = 2
+      TabOrder = 0
+    end
+    object btnOK: TButton
+      Left = 750
+      Top = 6
+      Width = 75
+      Height = 25
+      Anchors = [akTop, akRight]
+      Caption = '&OK'
+      Enabled = False
+      TabOrder = 1
+      OnClick = btnOKClick
+    end
+  end
+  object rgIsPanel: TRadioGroup
+    Left = 216
+    Top = 72
+    Width = 209
+    Height = 58
+    Caption = 'Is Lab a Panel?  (e.g. '#39'CBC'#39' is a panel)'
+    ItemIndex = 1
+    Items.Strings = (
+      'Lab is  a PANEL'
+      'Lab is NOT a panel')
+    TabOrder = 3
+    OnClick = rgIsPanelClick
+  end
+  object rgDataName: TRadioGroup
+    Left = 431
+    Top = 72
+    Width = 274
+    Height = 58
+    Caption = 'Option for Storage Location  (a.k.a. '#39'Data Name'#39')'
+    ItemIndex = 0
+    Items.Strings = (
+      'Select an existing storage location'
+      'Add a new storage location')
+    TabOrder = 4
+    OnClick = rgDataNameClick
+  end
+end

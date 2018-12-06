@@ -1,0 +1,343 @@
+P:\vista\GUI-config\MainU.dfm
+69073/1198671663
+0
+2
+P:\vista\GUI-config\frmSplash.dfm
+65029/1077190760
+2
+2
+P:\vista\GUI-config\LookupU.dfm
+12436/1127236377
+4
+2
+P:\vista\GUI-config\SubfilesU.dfm
+14278/1080187148
+6
+2
+P:\vista\GUI-config\SetSelU.dfm
+7352/1118597153
+8
+2
+P:\vista\GUI-config\SelDateTimeU.dfm
+2866/1080187148
+10
+2
+P:\vista\GUI-config\PostU.dfm
+3387/1161716344
+12
+2
+P:\vista\GUI-config\FMErrorU.dfm
+1005/1115066227
+14
+2
+P:\vista\GUI-config\AboutU.dfm
+75062/1113960568
+16
+2
+P:\vista\GUI-config\PleaseWaitU.dfm
+684/956277997
+18
+2
+P:\vista\GUI-config\EditTextU.dfm
+9795/1161716267
+20
+2
+P:\vista\GUI-config\CreateTemplateU.dfm
+19324/1118987548
+22
+2
+P:\vista\GUI-config\SkinFormU.dfm
+1442/957649270
+24
+2
+P:\vista\GUI-config\BatchAddU.dfm
+18999/1078949378
+26
+2
+P:\vista\GUI-config\DebugU.dfm
+1603/963662459
+28
+2
+P:\vista\GUI-config\AddOneFileEntryU.dfm
+1902/1161716241
+30
+2
+P:\vista\GUI-config\Dialog-Templates\dShared.dfm
+353058/1077314620
+32
+2
+P:\vista\GUI-config\Dialog-Templates\fPage.dfm
+561/1078561997
+34
+2
+P:\vista\GUI-config\Dialog-Templates\fHSplit.dfm
+724/1078627951
+36
+2
+P:\vista\GUI-config\Dialog-Templates\fNotes.dfm
+25964/1078565977
+38
+2
+P:\vista\GUI-config\Dialog-Templates\fReminderDialog.dfm
+5504/1085107719
+40
+2
+P:\vista\GUI-config\EditFreeText.dfm
+7313/1118596977
+42
+2
+P:\vista\GUI-config\fxBroker.dfm
+8564/1080255941
+44
+2
+P:\vista\GUI-config\fMemoEdit.dfm
+5761/1161716306
+46
+2
+P:\vista\GUI-config\VinDiagram\VinUnit.dfm
+3074/1090429180
+48
+2
+P:\vista\GUI-config\VinDiagram\LogUnit.dfm
+796/1090227236
+50
+2
+P:\vista\GUI-config\fMultiRecEditU.dfm
+28881/1118987666
+52
+2
+P:\vista\GUI-config\EditDateTimeU.dfm
+7673/1118596971
+54
+2
+P:\vista\GUI-config\VennDiagram\frmVennU.dfm
+8394/1161716354
+56
+2
+P:\vista\GUI-config\VennDiagram\LogUnit.dfm
+7533/1161716339
+58
+2
+P:\vista\GUI-config\EditNumberU.dfm
+7493/1118597128
+60
+2
+P:\vista\GUI-config\fOneRecEditU.dfm
+19035/1161716923
+62
+2
+P:\vista\GUI-config\AgeFreqU.dfm
+5214/1128626278
+64
+2
+P:\vista\GUI-config\VennDiagram\fFindingDetail.dfm
+9140/1161716273
+66
+2
+P:\vista\GUI-config\fTaxonomyDisplay.dfm
+5085/1161716333
+68
+2
+P:\vista\GUI-config\DragTreeNodeU.dfm
+62256/1112365740
+70
+2
+P:\vista\GUI-config\fAddRemFinding.dfm
+74223/1119186387
+72
+2
+P:\vista\GUI-config\fTestReminder.dfm
+10074/1161716336
+74
+2
+P:\vista\GUI-config\fAddRemDlgItem.dfm
+73647/1118985442
+76
+2
+P:\vista\GUI-config\fReminderDefFilter.dfm
+8320/1197046054
+78
+2
+P:\vista\GUI-config\fCopyRemDlgItem.dfm
+12617/1114803384
+80
+2
+P:\vista\GUI-config\Dialog-Templates\fPtSel.dfm
+2697/1126458268
+82
+2
+P:\vista\GUI-config\fMumpsCodeU.dfm
+6582/1161716312
+84
+2
+P:\vista\GUI-config\fAddRemDef.dfm
+53919/1197045447
+86
+2
+P:\vista\GUI-config\fRemFnFindingEdit.dfm
+15261/1118739155
+88
+2
+P:\vista\GUI-config\fLabEntry.dfm
+34829/1127235874
+90
+2
+P:\vista\GUI-config\fLabEntryDetails.dfm
+11425/1127235756
+92
+2
+P:\vista\GUI-config\flabComments.dfm
+8212/1161716293
+94
+2
+P:\vista\GUI-config\fLabDateEdit.dfm
+4977/1127187907
+96
+2
+P:\vista\GUI-config\fLabSpecimenEdit.dfm
+5507/1127177005
+98
+2
+P:\vista\GUI-config\LabReg\fLabHL7.dfm
+2644/1201106969
+100
+2
+P:\vista\GUI-config\LabReg\fShortenName.dfm
+1992/1193034202
+102
+2
+P:\vista\GUI-config\LabReg\fPickAddTo60.dfm
+35604/1197016044
+104
+2
+P:\vista\GUI-config\LabReg\fPickAddWorkLoad.dfm
+41780/1198675211
+106
+2
+P:\vista\GUI-config\LabReg\fPickSpecimen.dfm
+41661/1197187340
+108
+2
+P:\vista\GUI-config\LabReg\fPickSpec2.dfm
+40959/1197187365
+110
+2
+P:\vista\GUI-config\LabReg\fPickAddDataName.dfm
+78357/1197118921
+112
+2
+|EOINDEX|
+1
+ÿ
+923
+object SplashForm: TSplashForm
+268
+object FieldLookupForm: TFieldLookupForm
+312
+object SubfileForm: TSubfileForm
+140
+object SetSelForm: TSetSelForm
+78
+object SelDateTimeForm: TSelDateTimeForm
+97
+object PostForm: TPostForm
+46
+object FMErrorForm: TFMErrorForm
+1090
+object AboutForm: TAboutForm
+30
+object WaitForm: TWaitForm
+197
+object EditWPTextForm: TEditWPTextForm
+381
+object CreateTemplateForm: TCreateTemplateForm
+1
+ÿ
+378
+object BatchAddForm: TBatchAddForm
+79
+object DebugForm: TDebugForm
+77
+object AddOneFileEntry: TAddOneFileEntry
+4946
+object dmodShared: TdmodShared
+27
+object frmPage: TfrmPage
+39
+inherited frmHSplit: TfrmHSplit
+937
+inherited frmNotes: TfrmNotes
+225
+object frmRemDlg: TfrmRemDlg
+139
+object EditFreeTextForm: TEditFreeTextForm
+253
+object frmBroker: TfrmBroker
+121
+object frmMemoEdit: TfrmMemoEdit
+148
+object VinForm: TVinForm
+41
+object LogForm: TLogForm
+553
+object frmMultiRecEdit: TfrmMultiRecEdit
+152
+object EditDateTimeForm: TEditDateTimeForm
+190
+object VennForm: TVennForm
+148
+object LogForm: TLogForm
+147
+object EditNumber: TEditNumber
+370
+object frmOneRecEdit: TfrmOneRecEdit
+112
+object frmAgeFreq: TfrmAgeFreq
+187
+object FindingDetailForm: TFindingDetailForm
+107
+object frmTaxonomyDisplay: TfrmTaxonomyDisplay
+1
+ÿ
+1232
+object frmAddRemFinding: TfrmAddRemFinding
+236
+object frmTestReminder: TfrmTestReminder
+1284
+object frmAddRemDlgItem: TfrmAddRemDlgItem
+199
+object frmRemDefFilters: TfrmRemDefFilters
+339
+object frmCopyRemDlgItem: TfrmCopyRemDlgItem
+115
+object frmPtSel: TfrmPtSel
+154
+object frmMumpsCode: TfrmMumpsCode
+945
+object frmAddRemDef: TfrmAddRemDef
+304
+object frmFnFindingEdit: TfrmFnFindingEdit
+682
+object frmLabEntry: TfrmLabEntry
+304
+object frmLabEntryDetails: TfrmLabEntryDetails
+159
+object frmLabComments: TfrmLabComments
+113
+object frmLabDateEdit: TfrmLabDateEdit
+136
+object frmSpecimenEdit: TfrmSpecimenEdit
+115
+object frmHandleHL7FilingErrors: TfrmHandleHL7FilingErrors
+93
+object frmShortenName: TfrmShortenName
+716
+object frmPickAdd60: TfrmPickAdd60
+726
+object frmPickAddWorkLoad: TfrmPickAddWorkLoad
+725
+object frmPickSpecimen: TfrmPickSpecimen
+693
+object frmPickSpec2: TfrmPickSpec2
+1223
+object frmPickAddDataName: TfrmPickAddDataName

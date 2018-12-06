@@ -1,0 +1,220 @@
+unit EditTextU;
+   (* 
+   WorldVistA Configuration Utility
+   (c) 8/2008 Kevin Toppenberg
+   Programmed by Kevin Toppenberg, Eddie Hagood  
+   
+   Family Physicians of Greeneville, PC
+   1410 Tusculum Blvd, Suite 2600
+   Greeneville, TN 37745
+   kdtop@yahoo.com
+                                                 
+   This library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   This library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with this library; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+  *)   
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Buttons, ExtCtrls, StrUtils;
+
+type
+  TEditTextForm = class(TForm)
+    Panel1: TPanel;
+    Memo: TMemo;
+    RevertBtn: TBitBtn;
+    ApplyBtn: TBitBtn;
+    DoneBtn: TBitBtn;
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure RevertBtnClick(Sender: TObject);
+    procedure ApplyBtnClick(Sender: TObject);
+    procedure DoneBtnClick(Sender: TObject);
+    procedure MemoChange(Sender: TObject);
+    procedure FormHide(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+    FCachedText : TStringList;
+    FFileNum,FFieldNum,FIENS : String;
+    FPosted : boolean;
+    function GetWPField(FileNum,FieldNum,IENS : string) : TStringList;
+    procedure PostWPField(Lines: TStrings; FileNum,FieldNum,IENS : string);
+  public
+    { Public declarations }
+    procedure PrepForm(FileNum,FieldNum,IENS : string);
+    function GetPreviewText : string;
+    property Posted : boolean read FPosted;
+  end;
+
+var
+  EditTextForm: TEditTextForm;
+
+implementation
+
+uses FMErrorU, ORNet, ORFn, MainU,
+     Trpcb ;  //needed for .ptype types
+
+{$R *.dfm}
+
+  procedure TEditTextForm.PrepForm(FileNum,FieldNum,IENS : string);
+  begin
+    FFileNum := FileNum;
+    FFieldNum := FieldNum;
+    FIENS := IENS;
+    Memo.Lines.Clear;
+    Memo.Lines.Assign(GetWPField(FileNum,FieldNum,IENS));
+    ApplyBtn.Enabled := false;
+    RevertBtn.Enabled := false;
+  end;
+
+  procedure TEditTextForm.FormCreate(Sender: TObject);
+  begin
+    FCachedText := TStringList.Create;
+
+  end;
+
+  procedure TEditTextForm.FormDestroy(Sender: TObject);
+  begin
+    FCachedText.Free;
+  end;
+
+  function TEditTextForm.GetPreviewText : string;
+  begin
+    EditTextForm.PrepForm(FFileNum,FFieldNum,FIENS);
+    Result := Memo.Lines.Text;
+    Result := Trim(Result);
+    Result := AnsiReplaceStr(Result, #10, '');
+    Result := AnsiReplaceStr(Result, #13, '');
+    if Result <> '' then begin
+      Result := CLICK_TO_EDIT_TEXT + ':  ' + LeftStr(Result,20) + '...'
+    end else begin
+      Result := CLICK_TO_ADD_TEXT;
+    end;
+  end;
+
+
+
+  function TEditTextForm.GetWPField(FileNum,FieldNum,IENS : string) : TStringList;
+  var   RPCResult: string;
+        cmd : string;
+        lastLine : string;
+  begin
+    FCachedText.clear;
+    RPCBrokerV.Results.Clear;
+    RPCBrokerV.remoteprocedure := 'TMG CHANNEL';
+    RPCBrokerV.param[0].ptype := list;
+    cmd := 'GET ONE WP FIELD^' + FileNum + '^' + FieldNum + '^' + IENS;
+    RPCBrokerV.Param[0].Mult['"REQUEST"'] := cmd;
+    CallBroker; //RPCBrokerV.Call;
+    RPCResult := RPCBrokerV.Results[0];    //returns:  error: -1;  success=1
+    if piece(RPCResult,'^',1)='-1' then begin
+      FMErrorForm.Memo.Lines.Assign(RPCBrokerV.Results);
+      FMErrorForm.PrepMessage;
+      FMErrorForm.ShowModal;
+    end else begin
+      FCachedText.Assign(RPCBrokerV.Results);
+      FCachedText.Delete(0);
+      if FCachedText.Count > 0 then begin
+        lastLine := FCachedText.Strings[FCachedText.Count-1];
+        //I can't figure out where these are coming from...
+        if (lastLine='WORD-PROCESSING') or (lastLine = 'POINTER')
+        or (lastLine='FREE TEXT') then begin
+          FCachedText.Delete(FCachedText.Count-1);
+        end;
+      end;
+    end;
+    result := FCachedText;
+  end;
+
+
+  procedure TEditTextForm.PostWPField(Lines: TStrings; FileNum,FieldNum,IENS : string);
+  var   RPCResult: string;
+        cmd : string;
+        //lastLine : string;
+        i : integer;
+  begin
+    RPCBrokerV.Results.Clear;
+    RPCBrokerV.remoteprocedure := 'TMG CHANNEL';
+    RPCBrokerV.param[0].ptype := list;
+    cmd := 'POST WP FIELD^' + FileNum + '^' + FieldNum + '^' + IENS;
+    RPCBrokerV.Param[0].Mult['"REQUEST"'] := cmd;
+    if Lines.Count > 0 then begin
+      for i := 0 to Lines.Count-1 do begin
+        RPCBrokerV.Param[0].Mult['"' + IntToStr(i+1) + '"'] := Lines.Strings[i];
+      end;
+    end else begin
+      RPCBrokerV.Param[0].Mult['"1"'] := '';
+    end;
+    CallBroker; //RPCBrokerV.Call;
+    RPCResult := RPCBrokerV.Results[0];    //returns:  error: -1;  success=1
+    if piece(RPCResult,'^',1)='-1' then begin
+      FMErrorForm.Memo.Lines.Assign(RPCBrokerV.Results);
+      FMErrorForm.PrepMessage;
+      FMErrorForm.ShowModal;
+    end else begin
+      FCachedText.Assign(Lines);
+      FPosted := true;
+    end;
+  end;
+
+  
+  procedure TEditTextForm.RevertBtnClick(Sender: TObject);
+  begin
+    if MessageDlg('Abort editing changes and revert to original?',mtWarning,mbOKCancel,0) = mrOK then begin
+      Memo.Lines.Assign(FCachedText);
+    end;
+  end;
+
+  procedure TEditTextForm.ApplyBtnClick(Sender: TObject);
+  begin
+    if FCachedText.Text <> Memo.Lines.Text then begin
+      //MessageDlg('Here I will post changes',mtInformation,[mbOK],0);
+      PostWPField(Memo.Lines,FFileNum,FFieldNum,FIENS);
+    end;
+    ApplyBtn.Enabled := false;
+    RevertBtn.Enabled := false;
+  end;
+
+  procedure TEditTextForm.DoneBtnClick(Sender: TObject);
+  begin
+    ApplyBtnClick(self);
+    ModalResult := mrOK;
+  end;
+
+  procedure TEditTextForm.MemoChange(Sender: TObject);
+  begin
+    ApplyBtn.Enabled := true;
+    RevertBtn.Enabled := true;
+  end;
+
+  procedure TEditTextForm.FormHide(Sender: TObject);
+  begin
+    ApplyBtnClick(self);
+  end;
+
+  procedure TEditTextForm.FormClose(Sender: TObject; var Action: TCloseAction);
+  begin
+    ApplyBtnClick(self);
+  end;
+
+  procedure TEditTextForm.FormShow(Sender: TObject);
+  begin
+    FPosted := false;
+  end;
+
+end.
+

@@ -1,0 +1,127 @@
+unit AddOneFileEntryU;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Orfn, Ornet,
+  Trpcb, Dialogs, StdCtrls, Buttons, Grids, SortStringGrid, ExtCtrls;
+
+type
+  TAddOneFileEntry = class(TForm)
+    Panel1: TPanel;
+    AddFileEntry: TSortStringGrid;
+    btnCancel: TBitBtn;
+    btnOk: TBitBtn;
+    procedure AddFileEntrySelectCell(Sender: TObject; ACol, ARow: Integer;
+      var CanSelect: Boolean);
+    procedure FormShow(Sender: TObject);
+    procedure btnOkClick(Sender: TObject);
+    procedure AddFileEntryClick(Sender: TObject);
+    procedure AddFileEntrySetEditText(Sender: TObject; ACol, ARow: Integer;
+      const Value: String);
+    procedure btnCancelClick(Sender: TObject);
+  private
+    { Private declarations }
+    FFileNum : string;
+    PreviousGrid : TSortStringGrid;
+    function GetNameField : string;
+  public
+    { Public declarations }
+    NewRecordName : string;
+    procedure PrepForm(FileNum: string);
+  end;
+
+var
+  AddOneFileEntry: TAddOneFileEntry;
+
+implementation
+
+uses FMErrorU,MainU;
+
+{$R *.dfm}
+
+procedure TAddOneFileEntry.PrepForm(FileNum: string);
+var
+      IENS  : string;
+      BlankFileInfo : TStringList;
+       {
+      BlankFileInfo : TStringList; }
+      GridInfo : TGridInfo;
+  begin
+    NewRecordName := '';
+    FFileNum := FileNum;
+    Self.Caption := 'Add Entry to File # ' + FileNum;
+    BlankFileInfo := Tstringlist.Create;
+    GridInfo := MainForm.GetInfoForGrid(AddOneFileEntry.AddFileEntry);
+    IENS := '+1,';
+    MainForm.GetOneRecord(FileNum, IENS, GridInfo.Data, BlankFileInfo);
+    GridInfo.IENS := IENS;
+    GridInfo.FileNum := FileNum;
+    MainForm.LoadAnyGrid(GridInfo);  //load Basic or Advanced Grid
+    GridInfo.IENS := IENS;
+    BlankFileInfo.Free;
+end;
+
+
+procedure TAddOneFileEntry.AddFileEntrySelectCell(Sender: TObject; ACol,
+  ARow: Integer; var CanSelect: Boolean);
+begin
+  MainForm.SelectExternalGridCell(Sender,ACol,ARow,CanSelect);
+end;
+
+procedure TAddOneFileEntry.FormShow(Sender: TObject);
+begin
+  btnOk.Enabled := False;
+  PreviousGrid := MainForm.GetVisibleGrid;
+  MainForm.SetVisibleGridIdx(AddFileEntry);
+end;
+
+procedure TAddOneFileEntry.btnOkClick(Sender: TObject);
+var
+   ModalResult : TModalResult;
+begin
+   ModalResult := MainForm.PostVisibleGrid;
+   if ModalResult = mrOk then begin
+     MainForm.SetVisibleGridIdx(PreviousGrid);
+     Self.ModalResult := mrOk;
+     NewRecordName := GetNameField;
+   end;
+end;
+
+function TAddOneFileEntry.GetNameField : string;
+var i :integer;
+begin
+  for i := 0 to AddFileEntry.RowCount do begin
+    if AddFileEntry.Cells[0,i] = '.01' then begin
+      Result := AddFileEntry.Cells[2,i];
+      break;
+    end;
+  end;
+end;
+
+procedure TAddOneFileEntry.AddFileEntryClick(Sender: TObject);
+begin
+  btnOk.Enabled := True;
+end;
+
+procedure TAddOneFileEntry.AddFileEntrySetEditText(Sender: TObject; ACol,
+  ARow: Integer; const Value: String);
+begin
+  btnOk.Enabled := true;
+end;
+
+procedure TAddOneFileEntry.btnCancelClick(Sender: TObject);
+var
+  ModalResult : TModalResult;
+begin
+  if btnOk.enabled = True then begin
+    ModalResult := MainForm.PostVisibleGrid;
+    if ModalResult = mrOK then begin
+      MainForm.SetVisibleGridIdx(PreviousGrid);
+      NewRecordName := GetNameField;
+    end;
+  end;  
+  exit;
+end;
+
+end.

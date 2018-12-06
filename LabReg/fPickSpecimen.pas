@@ -1,0 +1,204 @@
+unit fPickSpecimen;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, uSrchHelper;
+
+type
+  //NOTE: the enum below must match order of items in rgSpecimen
+  TSpec1 = (tNone=-1, tSerum=0, tBlood=1, tUrine=2, tCSF=3, tSkin=4, tOther=5, tSearch=6);
+
+  TfrmPickSpecimen = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    lblLabName: TLabel;
+    rgSpecimen: TRadioGroup;
+    pnlBottom: TPanel;
+    btnCancel: TButton;
+    btnOK: TButton;
+    pnlMain: TPanel;
+    lblInstructions: TLabel;
+    pnlPick: TPanel;
+    edt61Srch: TEdit;
+    lb61Srch: TListBox;
+    pnlPick2: TPanel;
+    edt62Srch: TEdit;
+    lb62Srch: TListBox;
+    lblInstructions62: TLabel;
+    Image1: TImage;
+    procedure btnOKClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure rgSpecimenClick(Sender: TObject);
+  private
+    { Private declarations }
+    Spec61SrchHelper : TSrchHelper;
+    Spec62SrchHelper : TSrchHelper;
+    AlertHandle : string;
+    TestName : string;
+    SelectedSpec : TSpec1;
+    SelectedSpecName : string;
+    NeedManual61Selection : boolean;
+    NeedManual62Selection : boolean;
+    procedure Handle61SrchSelected(Sender : TObject);
+    procedure Handle62SrchSelected(Sender : TObject);
+    procedure AdjustLayout;
+    procedure SetOKButtonEnable;
+    function  ReadyForOKButton : boolean;
+  public
+    { Public declarations }
+    ResultIEN61 : string;
+    Result61Name : string;
+    ResultIEN62 : string;
+    procedure Initialize(AlertHandle, TestName : string);
+  end;
+
+const
+  //Note: if this is changed, match changes in fPickSpec2.  They corelate and match up by index.
+  SPEC1_NAME : array[tNone..tSearch] of string[24] = (
+    'NONE',
+    'SERUM',
+    'BLOOD',
+    'URINE',
+    'CEREBROSPINAL FLUID',
+    'SKIN',
+    'OTHER',
+    'SEARCH'
+  );
+
+//var
+//  frmPickSpecimen: TfrmPickSpecimen;  //not auto-created
+
+implementation
+
+{$R *.dfm}
+  uses
+    rHL7RPCsU;
+
+
+  procedure TfrmPickSpecimen.FormCreate(Sender: TObject);
+  begin
+    Spec61SrchHelper := TSrchHelper.Create(Self);
+    Spec61SrchHelper.Initialize(edt61Srch, lb61Srch, '61');  //this will set up TComboBox to work like a search box.
+    Spec61SrchHelper.OnSelectedChange := Handle61SrchSelected;
+
+    Spec62SrchHelper := TSrchHelper.Create(Self);
+    Spec62SrchHelper.Initialize(edt62Srch, lb62Srch, '62');  //this will set up TComboBox to work like a search box.
+    Spec62SrchHelper.OnSelectedChange := Handle62SrchSelected;
+    SelectedSpec := tNone;
+    SelectedSpecName := '';
+    rgSpecimenClick(nil);
+
+  end;
+
+  procedure TfrmPickSpecimen.FormDestroy(Sender: TObject);
+  begin
+    Spec61SrchHelper.Free;
+    Spec62SrchHelper.Free;
+
+  end;
+
+  procedure TfrmPickSpecimen.Initialize(AlertHandle, TestName : string);
+  begin
+    ResultIEN61 := '';
+    ResultIEN62 := '';
+    Result61Name := '';
+    NeedManual61Selection := false;
+    NeedManual62Selection := false;
+    Self.AlertHandle := AlertHandle;
+    Self.TestName := TestName;
+    lblLabName.Caption := TestName;
+  end;
+
+  procedure TfrmPickSpecimen.rgSpecimenClick(Sender: TObject);
+  begin
+    SelectedSpec := TSpec1(rgSpecimen.ItemIndex);
+    SelectedSpecName := SPEC1_NAME[SelectedSpec];
+    if SelectedSpec = tSearch then begin
+      NeedManual61Selection := true;
+      Spec61SrchHelper.InitEditBox;
+    end else begin
+      NeedManual61Selection := false;
+      Spec61SrchHelper.OnSelectedChange := nil;  //temp turn off change handler
+      edt61Srch.Text := SelectedSpecName;
+      Spec61SrchHelper.RefreshSearch;  //force search now.
+      Sleep(50); Application.ProcessMessages;
+      Spec61SrchHelper.OnSelectedChange := Handle61SrchSelected;  //restore change handler
+      if Spec61SrchHelper.SelectedIEN = '' then begin
+        if not Spec61SrchHelper.SelectIfExactMatch(SelectedSpecName) then begin
+          Handle61SrchSelected(nil);
+        end;
+      end else begin
+        Handle61SrchSelected(nil);
+      end;
+    end;
+    AdjustLayout;
+  end;
+
+  procedure TfrmPickSpecimen.AdjustLayout;
+  var MidX : integer;
+  begin
+    //Adjust layout depending on visibility status....
+    if NeedManual61Selection then begin
+      pnlMain.Visible := true;
+      Self.Height := rgSpecimen.Top + rgSpecimen.Height + 45 + pnlMain.Height + pnlBottom.Height;
+      if NeedManual62Selection then begin
+        Self.Width := 750;
+        MidX := Self.Width div 2;
+        lblInstructions62.Visible := true;
+        lblInstructions62.Left := MidX + 5;
+        pnlPick2.Visible := true;
+        pnlPick2.Left := MidX;
+        pnlPick2.Width := Self.Width - MidX;
+        pnlPick.Width := MidX - 1;
+      end else begin
+        Self.Width := 375;
+        pnlPick2.Visible := false;
+        lblInstructions62.Visible := false;
+      end;
+    end else begin
+      pnlMain.Visible := false;
+      Self.Width := 350;
+      Self.Height := rgSpecimen.Top + rgSpecimen.Height + 45 + pnlBottom.Height;
+    end;
+    SetOKButtonEnable;
+  end;
+
+
+  procedure TfrmPickSpecimen.Handle61SrchSelected(Sender : TObject);
+  begin
+    ResultIEN62 := '';
+    ResultIEN61 := Spec61SrchHelper.SelectedIEN;
+    Result61Name := Spec61SrchHelper.SelectedName;
+    if ResultIEN61 <> '' then ResultIEN62 := GetIEN62FromIEN61(ResultIEN61);
+    NeedManual61Selection := ((ResultIEN61='') and (lb61Srch.Items.Count > 0)) or (SelectedSpec = tSearch);
+    NeedManual62Selection := (ResultIEN61<>'') and (ResultIEN62='');
+    AdjustLayout;
+  end;
+
+  procedure TfrmPickSpecimen.Handle62SrchSelected(Sender : TObject);
+  begin
+    ResultIEN62 := Spec62SrchHelper.SelectedIEN;
+    SetOKButtonEnable;
+  end;
+
+  procedure TfrmPickSpecimen.SetOKButtonEnable;
+  begin
+    btnOK.Enabled := ReadyForOKButton;
+  end;
+
+  function TfrmPickSpecimen.ReadyForOKButton : boolean;
+  begin
+    Result := (ResultIEN61 <> '') and (ResultIEN62 <> '');
+  end;
+
+  procedure TfrmPickSpecimen.btnOKClick(Sender: TObject);
+  begin
+    Self.ModalResult := mrOK;
+  end;
+
+
+end.
+

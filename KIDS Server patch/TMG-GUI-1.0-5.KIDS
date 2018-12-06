@@ -1,0 +1,3818 @@
+KIDS Distribution saved on Jun 26, 2011@19:57:34
+TMG-GUI-CONFIG*1.0*5
+**KIDS**:TMG-GUI-CONFIG*1.0*5^
+
+**INSTALL NAME**
+TMG-GUI-CONFIG*1.0*5
+"BLD",7659,0)
+TMG-GUI-CONFIG*1.0*5^^0^3110626^n
+"BLD",7659,1,0)
+^^2^2^3110626^^
+"BLD",7659,1,1,0)
+Adds functionality for reminder dialogs.
+"BLD",7659,1,2,0)
+This is preliminary, and more functionality to follow later.
+"BLD",7659,4,0)
+^9.64PA^^
+"BLD",7659,6.3)
+2
+"BLD",7659,"KRN",0)
+^9.67PA^8989.52^19
+"BLD",7659,"KRN",.4,0)
+.4
+"BLD",7659,"KRN",.401,0)
+.401
+"BLD",7659,"KRN",.402,0)
+.402
+"BLD",7659,"KRN",.403,0)
+.403
+"BLD",7659,"KRN",.5,0)
+.5
+"BLD",7659,"KRN",.84,0)
+.84
+"BLD",7659,"KRN",3.6,0)
+3.6
+"BLD",7659,"KRN",3.8,0)
+3.8
+"BLD",7659,"KRN",9.2,0)
+9.2
+"BLD",7659,"KRN",9.8,0)
+9.8
+"BLD",7659,"KRN",9.8,"NM",0)
+^9.68A^8^8
+"BLD",7659,"KRN",9.8,"NM",1,0)
+TMGRPC3^^0^B150369283
+"BLD",7659,"KRN",9.8,"NM",2,0)
+TMGRPC3E^^0^B74240131
+"BLD",7659,"KRN",9.8,"NM",3,0)
+TMGRPC3B^^0^B280709375
+"BLD",7659,"KRN",9.8,"NM",4,0)
+TMGRPC3C^^0^B60526227
+"BLD",7659,"KRN",9.8,"NM",5,0)
+TMGRPC3D^^0^B84612813
+"BLD",7659,"KRN",9.8,"NM",6,0)
+TMGRPC3F^^0^B148831387
+"BLD",7659,"KRN",9.8,"NM",7,0)
+TMGRPC3G^^0^B12787583
+"BLD",7659,"KRN",9.8,"NM",8,0)
+TMGRPC3H^^0^B41416424
+"BLD",7659,"KRN",9.8,"NM","B","TMGRPC3",1)
+
+"BLD",7659,"KRN",9.8,"NM","B","TMGRPC3B",3)
+
+"BLD",7659,"KRN",9.8,"NM","B","TMGRPC3C",4)
+
+"BLD",7659,"KRN",9.8,"NM","B","TMGRPC3D",5)
+
+"BLD",7659,"KRN",9.8,"NM","B","TMGRPC3E",2)
+
+"BLD",7659,"KRN",9.8,"NM","B","TMGRPC3F",6)
+
+"BLD",7659,"KRN",9.8,"NM","B","TMGRPC3G",7)
+
+"BLD",7659,"KRN",9.8,"NM","B","TMGRPC3H",8)
+
+"BLD",7659,"KRN",19,0)
+19
+"BLD",7659,"KRN",19.1,0)
+19.1
+"BLD",7659,"KRN",101,0)
+101
+"BLD",7659,"KRN",409.61,0)
+409.61
+"BLD",7659,"KRN",771,0)
+771
+"BLD",7659,"KRN",870,0)
+870
+"BLD",7659,"KRN",8989.51,0)
+8989.51
+"BLD",7659,"KRN",8989.52,0)
+8989.52
+"BLD",7659,"KRN",8994,0)
+8994
+"BLD",7659,"KRN",8994,"NM",0)
+^9.68A^1^1
+"BLD",7659,"KRN",8994,"NM",1,0)
+TMG CHANNEL^^0
+"BLD",7659,"KRN",8994,"NM","B","TMG CHANNEL",1)
+
+"BLD",7659,"KRN","B",.4,.4)
+
+"BLD",7659,"KRN","B",.401,.401)
+
+"BLD",7659,"KRN","B",.402,.402)
+
+"BLD",7659,"KRN","B",.403,.403)
+
+"BLD",7659,"KRN","B",.5,.5)
+
+"BLD",7659,"KRN","B",.84,.84)
+
+"BLD",7659,"KRN","B",3.6,3.6)
+
+"BLD",7659,"KRN","B",3.8,3.8)
+
+"BLD",7659,"KRN","B",9.2,9.2)
+
+"BLD",7659,"KRN","B",9.8,9.8)
+
+"BLD",7659,"KRN","B",19,19)
+
+"BLD",7659,"KRN","B",19.1,19.1)
+
+"BLD",7659,"KRN","B",101,101)
+
+"BLD",7659,"KRN","B",409.61,409.61)
+
+"BLD",7659,"KRN","B",771,771)
+
+"BLD",7659,"KRN","B",870,870)
+
+"BLD",7659,"KRN","B",8989.51,8989.51)
+
+"BLD",7659,"KRN","B",8989.52,8989.52)
+
+"BLD",7659,"KRN","B",8994,8994)
+
+"BLD",7659,"QDEF")
+^^^^NO^^^^NO^^NO
+"BLD",7659,"QUES",0)
+^9.62^^
+"KRN",8994,2379,-1)
+0^1
+"KRN",8994,2379,0)
+TMG CHANNEL^CHANNEL^TMGRPC3^2^^^^1^1
+"KRN",8994,2379,1,0)
+^8994.01^2^2^3080805^^^
+"KRN",8994,2379,1,1,0)
+This RPC will be used to pass multiple requests back 
+"KRN",8994,2379,1,2,0)
+and forth from client to server
+"KRN",8994,2379,2,0)
+^8994.02A^1^1
+"KRN",8994,2379,2,1,0)
+INPUT^3^^1^1
+"KRN",8994,2379,2,1,1,0)
+^8994.021^2^2^3080805^^^
+"KRN",8994,2379,2,1,1,1,0)
+This is the data array sent from client.
+"KRN",8994,2379,2,1,1,2,0)
+Format still to be decided.
+"KRN",8994,2379,2,"B","INPUT",1)
+
+"KRN",8994,2379,2,"PARAMSEQ",1,1)
+
+"KRN",8994,2379,3,0)
+^8994.03^3^3^3080805^^^
+"KRN",8994,2379,3,1,0)
+This is the result array passed from server back to client.
+"KRN",8994,2379,3,2,0)
+Format still to be decided.
+"KRN",8994,2379,3,3,0)
+See documentation in CHANNEL^TMGRPC3
+"MBREQ")
+0
+"ORD",16,8994)
+8994;16;1;;;;;;;RPCDEL^XPDIA1
+"ORD",16,8994,0)
+REMOTE PROCEDURE
+"QUES","XPF1",0)
+Y
+"QUES","XPF1","??")
+^D REP^XPDH
+"QUES","XPF1","A")
+Shall I write over your |FLAG| File
+"QUES","XPF1","B")
+YES
+"QUES","XPF1","M")
+D XPF1^XPDIQ
+"QUES","XPF2",0)
+Y
+"QUES","XPF2","??")
+^D DTA^XPDH
+"QUES","XPF2","A")
+Want my data |FLAG| yours
+"QUES","XPF2","B")
+YES
+"QUES","XPF2","M")
+D XPF2^XPDIQ
+"QUES","XPI1",0)
+YO
+"QUES","XPI1","??")
+^D INHIBIT^XPDH
+"QUES","XPI1","A")
+Want KIDS to INHIBIT LOGONs during the install
+"QUES","XPI1","B")
+NO
+"QUES","XPI1","M")
+D XPI1^XPDIQ
+"QUES","XPM1",0)
+PO^VA(200,:EM
+"QUES","XPM1","??")
+^D MG^XPDH
+"QUES","XPM1","A")
+Enter the Coordinator for Mail Group '|FLAG|'
+"QUES","XPM1","B")
+
+"QUES","XPM1","M")
+D XPM1^XPDIQ
+"QUES","XPO1",0)
+Y
+"QUES","XPO1","??")
+^D MENU^XPDH
+"QUES","XPO1","A")
+Want KIDS to Rebuild Menu Trees Upon Completion of Install
+"QUES","XPO1","B")
+NO
+"QUES","XPO1","M")
+D XPO1^XPDIQ
+"QUES","XPZ1",0)
+Y
+"QUES","XPZ1","??")
+^D OPT^XPDH
+"QUES","XPZ1","A")
+Want to DISABLE Scheduled Options, Menu Options, and Protocols
+"QUES","XPZ1","B")
+NO
+"QUES","XPZ1","M")
+D XPZ1^XPDIQ
+"QUES","XPZ2",0)
+Y
+"QUES","XPZ2","??")
+^D RTN^XPDH
+"QUES","XPZ2","A")
+Want to MOVE routines to other CPUs
+"QUES","XPZ2","B")
+NO
+"QUES","XPZ2","M")
+D XPZ2^XPDIQ
+"RTN")
+8
+"RTN","TMGRPC3")
+0^1^B150369283
+"RTN","TMGRPC3",1,0)
+TMGRPC3 ;TMG/kst/RPC Functions for GUI_Config ;6/22/11
+"RTN","TMGRPC3",2,0)
+         ;;1.0;TMG-LIB;**1**;08/31/08;Build 2
+"RTN","TMGRPC3",3,0)
+ ;
+"RTN","TMGRPC3",4,0)
+ ;"TMG RPC FUNCTIONS for a GUI config program -- (AND CPRS uses this too)
+"RTN","TMGRPC3",5,0)
+ ;
+"RTN","TMGRPC3",6,0)
+ ;"Kevin Toppenberg MD
+"RTN","TMGRPC3",7,0)
+ ;"GNU Lessor General Public License (LGPL) applies
+"RTN","TMGRPC3",8,0)
+ ;"7/20/08
+"RTN","TMGRPC3",9,0)
+ ;
+"RTN","TMGRPC3",10,0)
+ ;"=======================================================================
+"RTN","TMGRPC3",11,0)
+ ;" RPC -- Public Functions.
+"RTN","TMGRPC3",12,0)
+ ;"=======================================================================
+"RTN","TMGRPC3",13,0)
+ ;"CHANNEL(TMGRESULT,INPUT) -- general purpose channel RPC from a GUI config program
+"RTN","TMGRPC3",14,0)
+ ;
+"RTN","TMGRPC3",15,0)
+ ;"=======================================================================
+"RTN","TMGRPC3",16,0)
+ ;"Dependencies:
+"RTN","TMGRPC3",17,0)
+ ;"  TMGRPC3* only
+"RTN","TMGRPC3",18,0)
+ ;
+"RTN","TMGRPC3",19,0)
+ ;"=======================================================================
+"RTN","TMGRPC3",20,0)
+ ;
+"RTN","TMGRPC3",21,0)
+CHANNEL(TMGRESULT,INPUT) ;
+"RTN","TMGRPC3",22,0)
+        ;"Purpose: This will be a general purpose channel RPC from a GUI config program
+"RTN","TMGRPC3",23,0)
+        ;"         Also used by FM Desktop program,
+"RTN","TMGRPC3",24,0)
+        ;"Input: TMGRESULT -- this is an OUT parameter, and it is always passed by reference
+"RTN","TMGRPC3",25,0)
+        ;"       INPUT -- this will be array of data sent from the GUI client.  Defined below:
+"RTN","TMGRPC3",26,0)
+        ;"            <Stuff will go here>
+"RTN","TMGRPC3",27,0)
+        ;"            INPUT("REQUEST")="cmd^params"  Valid values for "cmd" are:
+"RTN","TMGRPC3",28,0)
+        ;"              "GET USER LIST"
+"RTN","TMGRPC3",29,0)
+        ;"                   params: <empty> or NODISUSER
+"RTN","TMGRPC3",30,0)
+        ;"              "GET RECORDS LIST"  -- get list of all .01 fields for file.
+"RTN","TMGRPC3",31,0)
+        ;"                   params: FileNumber  (e.g. 'GET RECORDS LIST^8989.3')
+"RTN","TMGRPC3",32,0)
+        ;"              "GET ONE USER"
+"RTN","TMGRPC3",33,0)
+        ;"                   params: IEN (e.g. 'GET ONE USER^12345')
+"RTN","TMGRPC3",34,0)
+        ;"              "GET ONE RECORD"
+"RTN","TMGRPC3",35,0)
+        ;"                   params: FileNum^IENS (e.g. 'GET ONE RECORD^200^73,')
+"RTN","TMGRPC3",36,0)
+        ;"              "GET ONE FIELD"
+"RTN","TMGRPC3",37,0)
+        ;"                   params: FileNum^IENS^FldNum (e.g. 'GET ONE RECORD^200^73,^.05')
+"RTN","TMGRPC3",38,0)
+        ;"                   Note: FldNum can be name or number or computed expression.
+"RTN","TMGRPC3",39,0)
+        ;"              "GET ONE WP FIELD"
+"RTN","TMGRPC3",40,0)
+        ;"                   params: FileNum^Field^IENS^ (e.g. 'GET ONE WP FIELD^200^2^73,')
+"RTN","TMGRPC3",41,0)
+        ;"              "FILE ENTRY SUBSET"
+"RTN","TMGRPC3",42,0)
+        ;"                   params: FileNum^ListStartValue^direction^[MaxCount]^[IENS]^[SCREEN]
+"RTN","TMGRPC3",43,0)
+        ;"              "SUBFILE ENTRY SUBSET"
+"RTN","TMGRPC3",44,0)
+        ;"                   params: SubfileNum^IENS^ListStartValue^direction^[MaxCount]^[SCREEN]
+"RTN","TMGRPC3",45,0)
+        ;"              "GET SUB RECS LIST"  -- get all .01 sub record entries for a subfile
+"RTN","TMGRPC3",46,0)
+        ;"                   params: SubFileNum^ParentIENS
+"RTN","TMGRPC3",47,0)
+        ;"              "POST DATA"
+"RTN","TMGRPC3",48,0)
+        ;"                   params: (not used)
+"RTN","TMGRPC3",49,0)
+        ;"                   INPUT(0)=FileNum^IENS^FieldNum^FieldName^newValue^oldValue
+"RTN","TMGRPC3",50,0)
+        ;"                   INPUT(1)=FileNum^IENS^FieldNum^FieldName^newValue^oldValue
+"RTN","TMGRPC3",51,0)
+        ;"                   ...    (note: FieldName and oldValue are not used)
+"RTN","TMGRPC3",52,0)
+        ;"              "POST WP FIELD"
+"RTN","TMGRPC3",53,0)
+        ;"                   params: FileNum^FieldNum^IENS (e.g. 'POST WP FIELD^200^2^73,')
+"RTN","TMGRPC3",54,0)
+        ;"                   WP field itself is stored as follows:
+"RTN","TMGRPC3",55,0)
+        ;"                   INPUT(0)=0TH line
+"RTN","TMGRPC3",56,0)
+        ;"                   INPUT(1)=1st line
+"RTN","TMGRPC3",57,0)
+        ;"                   INPUT(2)=2nd line
+"RTN","TMGRPC3",58,0)
+        ;"                   ...
+"RTN","TMGRPC3",59,0)
+        ;"                   Note: don't include INPUT("REQUEST") with text.
+"RTN","TMGRPC3",60,0)
+        ;"              "GET EMPTY ENTRY"  -- getting stub entries for subfiles typically
+"RTN","TMGRPC3",61,0)
+        ;"                   params: file entry (file or subfile number)
+"RTN","TMGRPC3",62,0)
+        ;"              "GET CURRENT USER NAME" -- return name of DUZ (current) user
+"RTN","TMGRPC3",63,0)
+        ;"                   (params: not used)
+"RTN","TMGRPC3",64,0)
+        ;"              "CLONE USER"
+"RTN","TMGRPC3",65,0)
+        ;"                   params: SourceIENS^New.01Value
+"RTN","TMGRPC3",66,0)
+        ;"              "CLONE RECORD"
+"RTN","TMGRPC3",67,0)
+        ;"                   params: FileNum^SourceIENS^New.01Value
+"RTN","TMGRPC3",68,0)
+        ;"              "GET HELP MSG"
+"RTN","TMGRPC3",69,0)
+        ;"                   params     : FileNum^FieldNum^HelpType^IENS
+"RTN","TMGRPC3",70,0)
+        ;"              "IS WP FIELD"
+"RTN","TMGRPC3",71,0)
+        ;"                   params: FileNum^FieldNum
+"RTN","TMGRPC3",72,0)
+        ;"              "GET ONE WP FIELD" -- retrieve on word processing (WP) field entry
+"RTN","TMGRPC3",73,0)
+        ;"                   param -- FileNum^Field^IENS (e.g. 'GET ONE WP FIELD^200^2^73,')
+"RTN","TMGRPC3",74,0)
+        ;"              "REGISTER PATIENT"
+"RTN","TMGRPC3",75,0)
+        ;"                   param -- FieldNum1^FieldValue1^FieldNum2^FieldValue2^FieldNum3^FieldValue3^...
+"RTN","TMGRPC3",76,0)
+        ;"              "GET FIELD INFO"
+"RTN","TMGRPC3",77,0)
+        ;"                   param -- FileNum^Field
+"RTN","TMGRPC3",78,0)
+        ;"              "GET ALL FIELDS INFO"
+"RTN","TMGRPC3",79,0)
+        ;"                   param -- FileNum
+"RTN","TMGRPC3",80,0)
+        ;"              "DATE TO FMDATE"
+"RTN","TMGRPC3",81,0)
+        ;"                   param -- Date in external format
+"RTN","TMGRPC3",82,0)
+        ;"              "GET FMDESKTOP VIEWS"
+"RTN","TMGRPC3",83,0)
+        ;"                   param -- not used   
+"RTN","TMGRPC3",84,0)
+        ;"              "SAVE FMDESKTOP VIEW"
+"RTN","TMGRPC3",85,0)
+        ;"                   param -- IEN(or +1)^Name^Shared
+"RTN","TMGRPC3",86,0)
+        ;"                   Note: this will support sending TWO WP fields at once.
+"RTN","TMGRPC3",87,0)
+        ;"                   The lines will be sent contigously, but the two fields will
+"RTN","TMGRPC3",88,0)
+        ;"                   be separated by a specific tag, as below.
+"RTN","TMGRPC3",89,0)
+        ;"                   WP lines stored as follows:
+"RTN","TMGRPC3",90,0)
+        ;"                   INPUT(0)=1st line of Description
+"RTN","TMGRPC3",91,0)
+        ;"                   INPUT(1)=2nd line of Description
+"RTN","TMGRPC3",92,0)
+        ;"                   INPUT(2)=3rd line of Description
+"RTN","TMGRPC3",93,0)
+        ;"                   ...
+"RTN","TMGRPC3",94,0)
+        ;"                   INPUT(17)="{{START OF DATA}}"  <-- tag must match exactly
+"RTN","TMGRPC3",95,0)
+        ;"                   INPUT(18)=1st line of Data
+"RTN","TMGRPC3",96,0)
+        ;"                   INPUT(29)=2nd line of Data
+"RTN","TMGRPC3",97,0)
+        ;"                   ...
+"RTN","TMGRPC3",98,0)
+        ;"                   Note: if Description or Data is not provided when sending
+"RTN","TMGRPC3",99,0)
+        ;"                         data for an existing IEN, then prior results will
+"RTN","TMGRPC3",100,0)
+        ;"                         be deleted.
+"RTN","TMGRPC3",101,0)
+        ;"Output: results of this function should be put into TMGRESULTS array.
+"RTN","TMGRPC3",102,0)
+        ;"        For cmd:
+"RTN","TMGRPC3",103,0)
+        ;"          "GET USER LIST"
+"RTN","TMGRPC3",104,0)
+        ;"            TMGRESULT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3",105,0)
+        ;"            TMGRESULT(1)=Name^IEN^200^DISUSER   DISUSER will be 1 for "Y" or 0 for "N"
+"RTN","TMGRPC3",106,0)
+        ;"            TMGRESULT(2)=Name^IEN^200^DISUSER
+"RTN","TMGRPC3",107,0)
+        ;"            etc ...
+"RTN","TMGRPC3",108,0)
+        ;"          "GET RECORDS LIST"
+"RTN","TMGRPC3",109,0)
+        ;"            TMGRESULT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3",110,0)
+        ;"            TMGRESULT(1)=.01Value^IEN^FileNum
+"RTN","TMGRPC3",111,0)
+        ;"            TMGRESULT(2)=.01Value^IEN^FileNum
+"RTN","TMGRPC3",112,0)
+        ;"            etc ...
+"RTN","TMGRPC3",113,0)
+        ;"          "GET ONE USER"
+"RTN","TMGRPC3",114,0)
+        ;"            TMGRESULT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3",115,0)
+        ;"            TMGRESULT(1)=File^IENS^FieldNum^ExternalValue^DDInfo...
+"RTN","TMGRPC3",116,0)
+        ;"            TMGRESULT(2)=File^IENS^FieldNum^ExternalValue^DDInfo...
+"RTN","TMGRPC3",117,0)
+        ;"            etc ...
+"RTN","TMGRPC3",118,0)
+        ;"          "GET ONE RECORD"
+"RTN","TMGRPC3",119,0)
+        ;"            TMGRESULT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3",120,0)
+        ;"            TMGRESULT(1)=File^IENS^FieldNum^ExternalValue^DDInfo...
+"RTN","TMGRPC3",121,0)
+        ;"            TMGRESULT(2)=File^IENS^FieldNum^ExternalValue^DDInfo...
+"RTN","TMGRPC3",122,0)
+        ;"            ...
+"RTN","TMGRPC3",123,0)
+        ;"          "GET ONE FIELD"
+"RTN","TMGRPC3",124,0)
+        ;"            TMGRESULT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3",125,0)
+        ;"            TMGRESULT(1)=File^IENS^FieldNum^ExternalValue
+"RTN","TMGRPC3",126,0)
+        ;"          "GET ONE WP FIELD"
+"RTN","TMGRPC3",127,0)
+        ;"            TMGRESULT(0): "1^Success" or "-1^Message"
+"RTN","TMGRPC3",128,0)
+        ;"            TMGRESULT(1) will contain Fileman error, if any
+"RTN","TMGRPC3",129,0)
+        ;"            - or to return WP array -
+"RTN","TMGRPC3",130,0)
+        ;"            TMGRESULT(1)=1st line of text
+"RTN","TMGRPC3",131,0)
+        ;"            TMGRESULT(2)=2nd line of text
+"RTN","TMGRPC3",132,0)
+        ;"            etc..
+"RTN","TMGRPC3",133,0)
+        ;"          "FILE ENTRY SUBSET"
+"RTN","TMGRPC3",134,0)
+        ;"            TMGRESULT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3",135,0)
+        ;"            TMGRESULT(1)=Value
+"RTN","TMGRPC3",136,0)
+        ;"            TMGRESULT(2)=Value
+"RTN","TMGRPC3",137,0)
+        ;"            etc ...
+"RTN","TMGRPC3",138,0)
+        ;"          "SUBFILE ENTRY SUBSET"
+"RTN","TMGRPC3",139,0)
+        ;"            TMGRESULT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3",140,0)
+        ;"            TMGRESULT(1)=Value
+"RTN","TMGRPC3",141,0)
+        ;"            TMGRESULT(2)=Value
+"RTN","TMGRPC3",142,0)
+        ;"            etc ...
+"RTN","TMGRPC3",143,0)
+        ;"          "GET SUB RECS LIST"
+"RTN","TMGRPC3",144,0)
+        ;"            TMGRESULT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3",145,0)
+        ;"            TMGRESULT(1)=IEN^Value
+"RTN","TMGRPC3",146,0)
+        ;"            TMGRESULT(2)=IEN^Value
+"RTN","TMGRPC3",147,0)
+        ;"            ...
+"RTN","TMGRPC3",148,0)
+        ;"          "POST DATA"
+"RTN","TMGRPC3",149,0)
+        ;"            TMGRESULT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3",150,0)
+        ;"            TMGRESULT(1)=Fileman message (long) (if generated)
+"RTN","TMGRPC3",151,0)
+        ;"            -or (if +1 etc values used)-
+"RTN","TMGRPC3",152,0)
+        ;"            TMGRESULT(1)=+5^1234  <--  results of IEN array returned (+5 converted to record 1234)
+"RTN","TMGRPC3",153,0)
+        ;"            TMGRESULT(2)=+3^2341  <--  results of IEN array returned (+3 converted to record 2341)
+"RTN","TMGRPC3",154,0)
+        ;"            ...
+"RTN","TMGRPC3",155,0)
+        ;"          "GET EMPTY ENTRY"
+"RTN","TMGRPC3",156,0)
+        ;"            TMGRESULT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3",157,0)
+        ;"            TMGRESULT(1)=File^^FieldNum^^DDInfo...
+"RTN","TMGRPC3",158,0)
+        ;"            TMGRESULT(2)=File^^FieldNum^^DDInfo...
+"RTN","TMGRPC3",159,0)
+        ;"            etc ...
+"RTN","TMGRPC3",160,0)
+        ;"          "GET CURRENT USER NAME" -- return name of DUZ (current) user
+"RTN","TMGRPC3",161,0)
+        ;"            TMGRESULT(0)="1^Success^UserName" or "-1^Message"
+"RTN","TMGRPC3",162,0)
+        ;"          "CLONE USER"
+"RTN","TMGRPC3",163,0)
+        ;"            TMGRESULT(0)="1^Success^NewIENS" or "-1^Message"
+"RTN","TMGRPC3",164,0)
+        ;"            TMGRESULT(1)=Long Fileman message (if -1 error)
+"RTN","TMGRPC3",165,0)
+        ;"          "CLONE RECORD"
+"RTN","TMGRPC3",166,0)
+        ;"            TMGRESULT(0)="1^Success^NewIENS" or "-1^Message"
+"RTN","TMGRPC3",167,0)
+        ;"            TMGRESULT(1)=Fileman message (long) (if generated)
+"RTN","TMGRPC3",168,0)
+        ;"          "GET HELP MSG"
+"RTN","TMGRPC3",169,0)
+        ;"            TMGRESULT(0)="1^Success^NewIENS" or "-1^Message"
+"RTN","TMGRPC3",170,0)
+        ;"            TMGRESULT(1)=Fileman message (long) (if generated)
+"RTN","TMGRPC3",171,0)
+        ;"          "IS WP FIELD"
+"RTN","TMGRPC3",172,0)
+        ;"            TMGRESULT(0)="1^Success^YES/NO" or "-1^Message"
+"RTN","TMGRPC3",173,0)
+        ;"            "YES" if is a WP subfile, otherwise "NO"
+"RTN","TMGRPC3",174,0)
+        ;"            TMGRESULT(1)=Fileman message (long) (if generated)
+"RTN","TMGRPC3",175,0)
+        ;"          "REGISTER PATIENT"
+"RTN","TMGRPC3",176,0)
+        ;"            TMGRESULT(0)="1^Success^NewIEN" or
+"RTN","TMGRPC3",177,0)
+        ;"                         "-1^Message"    Frank failure...  or
+"RTN","TMGRPC3",178,0)
+        ;"                         "0^BoolAndMessage^NewIEN".  Format:
+"RTN","TMGRPC3",179,0)
+        ;"                       [Bool1;Bool2;Bool3;Bool4;Bool5*MessageText]  (e.g. '1;0;1;0;0*ErrorMsg')
+"RTN","TMGRPC3",180,0)
+        ;"                         (for Bool fields, 0=no or 1=yes)
+"RTN","TMGRPC3",181,0)
+        ;"                         Bool1 -- patient had previously been registered
+"RTN","TMGRPC3",182,0)
+        ;"                         Bool2 -- patient registered during this Fn
+"RTN","TMGRPC3",183,0)
+        ;"                         Bool3 -- problem filing data into non-identifier fields
+"RTN","TMGRPC3",184,0)
+        ;"                         Bool4 -- problem filing data into sub-file fields
+"RTN","TMGRPC3",185,0)
+        ;"                         Bool5 -- problem with filing HRN
+"RTN","TMGRPC3",186,0)
+        ;"            TMGRESULT(1)=Long Fileman message (if -1 error, or perhaps 0 code)
+"RTN","TMGRPC3",187,0)
+        ;"          "GET FIELD INFO"
+"RTN","TMGRPC3",188,0)
+        ;"            TMGRESULT(0)="1^Success^NewIENS" or "-1^Message"
+"RTN","TMGRPC3",189,0)
+        ;"            TMGRESULT(1)=Returns the 0 node from ^DD(File,Fieldnum,0)
+"RTN","TMGRPC3",190,0)
+        ;"          "GET ALL FIELDS INFO"
+"RTN","TMGRPC3",191,0)
+        ;"            TMGRESULT(0)="1^Success^NewIENS" or "-1^Message"
+"RTN","TMGRPC3",192,0)
+        ;"            TMGRESULT(1)=FileNum^FldNum^{Returns the 0 node from ^DD(File,Fieldnum,0)}
+"RTN","TMGRPC3",193,0)
+        ;"            TMGRESULT(2)=FileNum^FldNum^{Returns the 0 node from ^DD(File,Fieldnum,0)}  ... etc. 
+"RTN","TMGRPC3",194,0)
+        ;"            NOTE: If the DD info contains a pointer to another file (or subfile or WP field), then that is also sent.
+"RTN","TMGRPC3",195,0)
+        ;"            e.g.TMGRESULT(3)=P2FILE^.01^DDInfo    
+"RTN","TMGRPC3",196,0)
+        ;"          "DATE TO FMDATE"
+"RTN","TMGRPC3",197,0)
+        ;"            TMGRESULT(0)="-1^Error Message" or "1^FMDateTime"
+"RTN","TMGRPC3",198,0)
+        ;"          "GET FMDESKTOP SAVES"
+"RTN","TMGRPC3",199,0)
+        ;"            TMGRESULT(0)="1^Success" or "-1^Error Message"
+"RTN","TMGRPC3",200,0)
+        ;"            TMGRESULT(1)=SELF or OTHERS^Shared(Y/N)^Name^Owner^DateCreated^IEN in 22714
+"RTN","TMGRPC3",201,0)
+        ;"            TMGRESULT(2)=SELF or OTHERS^Shared(Y/N)^Name^Owner^DateCreated^IEN in 22714  ... etc
+"RTN","TMGRPC3",202,0)
+ ;
+"RTN","TMGRPC3",203,0)
+        ;"Result: none
+"RTN","TMGRPC3",204,0)
+ ;
+"RTN","TMGRPC3",205,0)
+        merge ^TMG("TMP","RPC3","INPUT")=INPUT
+"RTN","TMGRPC3",206,0)
+        KILL TMGRESULT
+"RTN","TMGRPC3",207,0)
+        NEW TMGCOMMAND,TMGCOMMAND
+"RTN","TMGRPC3",208,0)
+        SET TMGCOMMAND=$$TRIM^XLFSTR($$UP^XLFSTR($PIECE($GET(INPUT("REQUEST")),"^",1)))
+"RTN","TMGRPC3",209,0)
+        SET TMGPARAMS=$$UP^XLFSTR($PIECE($GET(INPUT("REQUEST")),"^",2,199))
+"RTN","TMGRPC3",210,0)
+        SET TMGRESULT(0)="-1^No command requested. Got: '"_$GET(INPUT("REQUEST"))_"'"  ;"default to error state.
+"RTN","TMGRPC3",211,0)
+        IF TMGCOMMAND="GET USER LIST" DO
+"RTN","TMGRPC3",212,0)
+        . DO GETUSRLT^TMGRPC3B(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",213,0)
+        IF TMGCOMMAND="GET RECORDS LIST" DO
+"RTN","TMGRPC3",214,0)
+        . DO GETRECLT^TMGRPC3B(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",215,0)
+        ELSE  IF TMGCOMMAND="GET ONE USER" DO
+"RTN","TMGRPC3",216,0)
+        . DO GET1USER^TMGRPC3B(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",217,0)
+        ELSE  IF TMGCOMMAND="GET ONE RECORD" DO
+"RTN","TMGRPC3",218,0)
+        . DO GET1REC^TMGRPC3B(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",219,0)
+        ELSE  IF TMGCOMMAND="GET ONE FIELD" DO
+"RTN","TMGRPC3",220,0)
+        . DO GET1FLD^TMGRPC3B(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",221,0)
+        ELSE  IF TMGCOMMAND="GET FIELD INFO" DO
+"RTN","TMGRPC3",222,0)
+        . DO GETFLDIF^TMGRPC3B(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",223,0)
+        ELSE  IF TMGCOMMAND="GET ALL FIELDS INFO" DO
+"RTN","TMGRPC3",224,0)
+        . DO GETAFINF^TMGRPC3B(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",225,0)
+        ELSE  IF TMGCOMMAND="FILE ENTRY SUBSET" DO
+"RTN","TMGRPC3",226,0)
+        . DO GFLSUBST^TMGRPC3B(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",227,0)
+        ELSE  IF TMGCOMMAND="SUBFILE ENTRY SUBSET" DO
+"RTN","TMGRPC3",228,0)
+        . DO GSFSUBST^TMGRPC3B(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",229,0)
+        ELSE  IF TMGCOMMAND="GET SUB RECS LIST" DO
+"RTN","TMGRPC3",230,0)
+        . DO GETSRLST^TMGRPC3D(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",231,0)
+        ELSE  IF TMGCOMMAND="POST DATA" DO
+"RTN","TMGRPC3",232,0)
+        . KILL INPUT("REQUEST")
+"RTN","TMGRPC3",233,0)
+        . DO POSTDATA^TMGRPC3C(.TMGRESULT,.INPUT)
+"RTN","TMGRPC3",234,0)
+        ELSE  IF TMGCOMMAND="GET EMPTY ENTRY" DO
+"RTN","TMGRPC3",235,0)
+        . DO GETEMPTY^TMGRPC3E(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",236,0)
+        ELSE  IF TMGCOMMAND="GET CURRENT USER NAME" DO
+"RTN","TMGRPC3",237,0)
+        . SET TMGRESULT(0)="1^Success^"_$PIECE($GET(^VA(200,DUZ,0)),"^",1)
+"RTN","TMGRPC3",238,0)
+        ELSE  IF TMGCOMMAND="CLONE RECORD" DO
+"RTN","TMGRPC3",239,0)
+        . DO CLONEREC^TMGRPC3D(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",240,0)
+        ELSE  IF TMGCOMMAND="CLONE USER" DO
+"RTN","TMGRPC3",241,0)
+        . DO CLONEUSR^TMGRPC3D(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",242,0)
+        ELSE  IF TMGCOMMAND="GET HELP MSG" DO
+"RTN","TMGRPC3",243,0)
+        . DO GETHELPM^TMGRPC3E(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",244,0)
+        ELSE  IF TMGCOMMAND="IS WP FIELD" DO
+"RTN","TMGRPC3",245,0)
+        . DO GETIFWP^TMGRPC3E(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",246,0)
+        ELSE  IF TMGCOMMAND="GET ONE WP FIELD" DO
+"RTN","TMGRPC3",247,0)
+        . DO GETWPFLD^TMGRPC3E(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",248,0)
+        ELSE  IF TMGCOMMAND="DATE TO FMDATE" DO
+"RTN","TMGRPC3",249,0)
+        . DO DTTOFMDT^TMGRPC3B(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",250,0)
+        ELSE  IF TMGCOMMAND="POST WP FIELD" DO
+"RTN","TMGRPC3",251,0)
+        . KILL INPUT("REQUEST")
+"RTN","TMGRPC3",252,0)
+        . DO PSTWPFLD^TMGRPC3E(.TMGRESULT,TMGPARAMS,.INPUT)
+"RTN","TMGRPC3",253,0)
+        ELSE  IF TMGCOMMAND="REGISTER PATIENT" DO
+"RTN","TMGRPC3",254,0)
+        . DO REGPAT^TMGRPC3F(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",255,0)
+        ELSE  IF TMGCOMMAND="GET FMDESKTOP VIEWS" DO
+"RTN","TMGRPC3",256,0)
+        . DO GETFMDSV^TMGRPC3H(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",257,0)
+        ELSE  IF TMGCOMMAND="SAVE FMDESKTOP VIEW" DO
+"RTN","TMGRPC3",258,0)
+        . KILL INPUT("REQUEST")
+"RTN","TMGRPC3",259,0)
+        . DO SAVFMDV^TMGRPC3H(.TMGRESULT,TMGPARAMS,.INPUT)
+"RTN","TMGRPC3",260,0)
+        ;"              
+"RTN","TMGRPC3",261,0)
+ ;
+"RTN","TMGRPC3",262,0)
+ ;
+"RTN","TMGRPC3",263,0)
+        QUIT
+"RTN","TMGRPC3",264,0)
+ ;
+"RTN","TMGRPC3B")
+0^3^B280709375
+"RTN","TMGRPC3B",1,0)
+TMGRPC3B ;TMG/kst/Support Functions for GUI_Config ;6/22/11
+"RTN","TMGRPC3B",2,0)
+         ;;1.0;TMG-LIB;**1**;08/31/08;Build 2
+"RTN","TMGRPC3B",3,0)
+ ;
+"RTN","TMGRPC3B",4,0)
+ ;"TMG RPC FUNCTIONS for a GUI config program
+"RTN","TMGRPC3B",5,0)
+ ;
+"RTN","TMGRPC3B",6,0)
+ ;"Kevin Toppenberg MD
+"RTN","TMGRPC3B",7,0)
+ ;"GNU Lessor General Public License (LGPL) applies
+"RTN","TMGRPC3B",8,0)
+ ;"7/20/08
+"RTN","TMGRPC3B",9,0)
+ ;
+"RTN","TMGRPC3B",10,0)
+ ;"=======================================================================
+"RTN","TMGRPC3B",11,0)
+ ;" RPC -- Public Functions.
+"RTN","TMGRPC3B",12,0)
+ ;"=======================================================================
+"RTN","TMGRPC3B",13,0)
+ ;" <none>
+"RTN","TMGRPC3B",14,0)
+ ;"=======================================================================
+"RTN","TMGRPC3B",15,0)
+ ;"PRIVATE API FUNCTIONS
+"RTN","TMGRPC3B",16,0)
+ ;"=======================================================================
+"RTN","TMGRPC3B",17,0)
+ ;"GETUSRLT(TMGOUT,TMGPARAMS) -- fill list with users on the system.
+"RTN","TMGRPC3B",18,0)
+ ;"GETRECLT(TMGOUT,TMGPARAMS) -- fill list with records in file on the system
+"RTN","TMGRPC3B",19,0)
+ ;"GET1USER(TMGOUT,TMGIEN) -- Get one user's record
+"RTN","TMGRPC3B",20,0)
+ ;"GET1REC(TMGOUT,TMGPARAMS) -- get one record in file
+"RTN","TMGRPC3B",21,0)
+ ;"GET1FLD((TMGOUT,TMGPARAMS) -- get one field from one record in file
+"RTN","TMGRPC3B",22,0)
+ ;"XTRCTFLD(TMGOUT,TMGARRAY,TMGFLAG) -- convert output from GETS^DIQ into another format
+"RTN","TMGRPC3B",23,0)
+ ;"GFLSUBST(TMGOUT,TMGPARAMS) -- return a subset of entries a file's .01 names
+"RTN","TMGRPC3B",24,0)
+ ;
+"RTN","TMGRPC3B",25,0)
+ ;"=======================================================================
+"RTN","TMGRPC3B",26,0)
+ ;"=======================================================================
+"RTN","TMGRPC3B",27,0)
+ ;"Dependencies:
+"RTN","TMGRPC3B",28,0)
+ ;"  TMGRPC3* only
+"RTN","TMGRPC3B",29,0)
+ ;
+"RTN","TMGRPC3B",30,0)
+ ;"=======================================================================
+"RTN","TMGRPC3B",31,0)
+ ;"=======================================================================
+"RTN","TMGRPC3B",32,0)
+ ;
+"RTN","TMGRPC3B",33,0)
+ ;"=======================================================================
+"RTN","TMGRPC3B",34,0)
+ ;
+"RTN","TMGRPC3B",35,0)
+GETUSRLT(TMGOUT,TMGPARAMS) ;"GET USER LIST
+"RTN","TMGRPC3B",36,0)
+        ;"Purpose: to fill list with users on the system.
+"RTN","TMGRPC3B",37,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3B",38,0)
+        ;"       TMGPARAMS -- either "" or "NODISUSER" if not to return DISUSER=YES users
+"RTN","TMGRPC3B",39,0)
+        ;"Output: TMGOUT is filled as follows:
+"RTN","TMGRPC3B",40,0)
+        ;"          TMGOUT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3B",41,0)
+        ;"          TMGOUT(1)=Name^IEN^200^DISUSER  DISUSER will be 1 for "Y" or 0 for "N"
+"RTN","TMGRPC3B",42,0)
+        ;"          TMGOUT(2)=Name^IEN^200^DISUSER
+"RTN","TMGRPC3B",43,0)
+        ;"Results: none
+"RTN","TMGRPC3B",44,0)
+ ;
+"RTN","TMGRPC3B",45,0)
+        NEW TMGACTIVEONLY SET TMGACTIVEONLY=($GET(TMGPARAMS)="NODISUSER")
+"RTN","TMGRPC3B",46,0)
+        NEW TMGINDEX SET TMGINDEX=1
+"RTN","TMGRPC3B",47,0)
+        NEW TMGNAME SET TMGNAME=""
+"RTN","TMGRPC3B",48,0)
+        FOR  SET TMGNAME=$ORDER(^VA(200,"B",TMGNAME)) QUIT:(TMGNAME="")  DO
+"RTN","TMGRPC3B",49,0)
+        . NEW TMGIEN SET TMGIEN=""
+"RTN","TMGRPC3B",50,0)
+        . FOR  SET TMGIEN=$ORDER(^VA(200,"B",TMGNAME,TMGIEN)) QUIT:(+TMGIEN'>0)  DO
+"RTN","TMGRPC3B",51,0)
+        . . NEW TMGDISUSER SET TMGDISUSER=$PIECE($GET(^VA(200,TMGIEN,0)),"^",7)
+"RTN","TMGRPC3B",52,0)
+        . . IF (TMGACTIVEONLY)&(TMGDISUSER) QUIT
+"RTN","TMGRPC3B",53,0)
+        . . NEW TMGNAME SET TMGNAME=$PIECE($GET(^VA(200,TMGIEN,0)),"^",1)
+"RTN","TMGRPC3B",54,0)
+        . . SET TMGOUT(TMGINDEX)=TMGNAME_"^"_TMGIEN_"^200^"_TMGDISUSER
+"RTN","TMGRPC3B",55,0)
+        . . SET TMGINDEX=TMGINDEX+1
+"RTN","TMGRPC3B",56,0)
+ ;
+"RTN","TMGRPC3B",57,0)
+        SET TMGOUT(0)="1^Success"
+"RTN","TMGRPC3B",58,0)
+ ;
+"RTN","TMGRPC3B",59,0)
+        QUIT
+"RTN","TMGRPC3B",60,0)
+ ;
+"RTN","TMGRPC3B",61,0)
+GETRECLT(TMGOUT,TMGPARAMS) ;"GET RECS LIST
+"RTN","TMGRPC3B",62,0)
+        ;"Purpose: to fill list with records in file on the system.
+"RTN","TMGRPC3B",63,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3B",64,0)
+        ;"       TMGPARAMS -- Filenumber
+"RTN","TMGRPC3B",65,0)
+        ;"Output: TMGOUT is filled as follows:
+"RTN","TMGRPC3B",66,0)
+        ;"          TMGOUT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3B",67,0)
+        ;"          TMGOUT(1)=.01Value^IEN^FileNum
+"RTN","TMGRPC3B",68,0)
+        ;"          TMGOUT(2)=.01Value^IEN^FileNum
+"RTN","TMGRPC3B",69,0)
+        ;"Results: none
+"RTN","TMGRPC3B",70,0)
+ ;
+"RTN","TMGRPC3B",71,0)
+        NEW TMGINDEX SET TMGINDEX=1
+"RTN","TMGRPC3B",72,0)
+        NEW TMGNAME SET TMGNAME=""
+"RTN","TMGRPC3B",73,0)
+        NEW TMGFNUM SET TMGFNUM=+$GET(TMGPARAMS)
+"RTN","TMGRPC3B",74,0)
+        IF TMGFNUM'>0 DO  GOTO GRLDONE
+"RTN","TMGRPC3B",75,0)
+        . SET TMGOUT(0)="-1^Valid file number not found"
+"RTN","TMGRPC3B",76,0)
+        NEW TMGREF SET TMGREF=$GET(^DIC(TMGFNUM,0,"GL"))
+"RTN","TMGRPC3B",77,0)
+        SET TMGREF=$$CREF^DILF(TMGREF)
+"RTN","TMGRPC3B",78,0)
+        IF TMGREF="" DO  GOTO GRLDONE
+"RTN","TMGRPC3B",79,0)
+        . SET TMGOUT(0)="-1^Unable to find global reference for file: "_TMGFNUM
+"RTN","TMGRPC3B",80,0)
+        NEW TMGLOC,TMGPIECE
+"RTN","TMGRPC3B",81,0)
+        SET TMGLOC=$PIECE(^DD(TMGFNUM,.01,0),"^",4)
+"RTN","TMGRPC3B",82,0)
+        SET TMGPIECE=$PIECE(TMGLOC,";",2)
+"RTN","TMGRPC3B",83,0)
+        SET TMGLOC=$PIECE(TMGLOC,";",1)
+"RTN","TMGRPC3B",84,0)
+        FOR  SET TMGNAME=$ORDER(@TMGREF@("B",TMGNAME)) QUIT:(TMGNAME="")  DO
+"RTN","TMGRPC3B",85,0)
+        . NEW TMGIEN SET TMGIEN=""
+"RTN","TMGRPC3B",86,0)
+        . FOR  SET TMGIEN=$ORDER(@TMGREF@("B",TMGNAME,TMGIEN)) QUIT:(+TMGIEN'>0)  DO
+"RTN","TMGRPC3B",87,0)
+        . . NEW TMGNAME SET TMGNAME=$PIECE($GET(@TMGREF@(TMGIEN,TMGLOC)),"^",TMGPIECE)
+"RTN","TMGRPC3B",88,0)
+        . . SET TMGOUT(TMGINDEX)=TMGNAME_"^"_TMGIEN_"^"_TMGFNUM
+"RTN","TMGRPC3B",89,0)
+        . . SET TMGINDEX=TMGINDEX+1
+"RTN","TMGRPC3B",90,0)
+ ;
+"RTN","TMGRPC3B",91,0)
+        SET TMGOUT(0)="1^Success"
+"RTN","TMGRPC3B",92,0)
+GRLDONE ;
+"RTN","TMGRPC3B",93,0)
+        QUIT
+"RTN","TMGRPC3B",94,0)
+ ;
+"RTN","TMGRPC3B",95,0)
+GET1USER(TMGOUT,TMGIEN) ;"GET ONE USER
+"RTN","TMGRPC3B",96,0)
+        ;"Purpose: to get record of one user
+"RTN","TMGRPC3B",97,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3B",98,0)
+        ;"       TMGIEN -- the IEN in file 200 to get
+"RTN","TMGRPC3B",99,0)
+        ;"Output: TMGOUT is filled as follows:
+"RTN","TMGRPC3B",100,0)
+        ;"          TMGOUT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3B",101,0)
+        ;"          TMGOUT(1)=File^IENS^FieldNum^ExternalValue^DDInfo...
+"RTN","TMGRPC3B",102,0)
+        ;"          TMGOUT(2)=File^IENS^FieldNum^ExternalValue^DDInfo...
+"RTN","TMGRPC3B",103,0)
+        ;"Note: the fields to return are decided HERE
+"RTN","TMGRPC3B",104,0)
+        ;"Results: none
+"RTN","TMGRPC3B",105,0)
+ ;
+"RTN","TMGRPC3B",106,0)
+        NEW TMGIENS SET TMGIENS=+$GET(TMGIEN)_","
+"RTN","TMGRPC3B",107,0)
+        DO GET1REC(.TMGOUT,"200^"_TMGIENS)
+"RTN","TMGRPC3B",108,0)
+        QUIT
+"RTN","TMGRPC3B",109,0)
+ ;
+"RTN","TMGRPC3B",110,0)
+ ;
+"RTN","TMGRPC3B",111,0)
+GET1REC(TMGOUT,TMGPARAMS) ;
+"RTN","TMGRPC3B",112,0)
+        ;"Purpose: to get one record in file
+"RTN","TMGRPC3B",113,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3B",114,0)
+        ;"       TMGPARAMS: File^IENS
+"RTN","TMGRPC3B",115,0)
+        ;"         File -- the file or subfile to retrieve from
+"RTN","TMGRPC3B",116,0)
+        ;"         IENS -- if File is a subfile, then IENS should be full IENS to get (e.g. '2,103,')
+"RTN","TMGRPC3B",117,0)
+        ;"                 if File is not a subfile, then IENS can be just IEN or IEN_","
+"RTN","TMGRPC3B",118,0)
+        ;"Output: TMGOUT is filled as follows:
+"RTN","TMGRPC3B",119,0)
+        ;"          TMGOUT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3B",120,0)
+        ;"          TMGOUT(1)=File^IENS^FieldNum^ExternalValue^DDInfo...
+"RTN","TMGRPC3B",121,0)
+        ;"          TMGOUT(2)=File^IENS^FieldNum^ExternalValue^DDInfo...
+"RTN","TMGRPC3B",122,0)
+        ;"Note: the fields to return are decided HERE
+"RTN","TMGRPC3B",123,0)
+        ;"Results: none
+"RTN","TMGRPC3B",124,0)
+ ;
+"RTN","TMGRPC3B",125,0)
+        SET TMGOUT(0)="1^Success"  ;"default to success
+"RTN","TMGRPC3B",126,0)
+        NEW TMGARRAY,TMGMSG
+"RTN","TMGRPC3B",127,0)
+        NEW TMGREF SET TMGREF="TMGARRAY"
+"RTN","TMGRPC3B",128,0)
+        SET TMGPARAMS=$GET(TMGPARAMS)
+"RTN","TMGRPC3B",129,0)
+        SET ^TMG("TMP","RPC","GET1REC")=TMGPARAMS
+"RTN","TMGRPC3B",130,0)
+        NEW TMGFILE SET TMGFILE=$PIECE(TMGPARAMS,"^",1)
+"RTN","TMGRPC3B",131,0)
+        IF +TMGFILE'>0 DO  GOTO GORDONE
+"RTN","TMGRPC3B",132,0)
+        . SET TMGOUT(0)="-1^No file number supplied"
+"RTN","TMGRPC3B",133,0)
+        NEW TMGIENS SET TMGIENS=$PIECE(TMGPARAMS,"^",2)
+"RTN","TMGRPC3B",134,0)
+        IF TMGIENS="" DO  GOTO GORDONE
+"RTN","TMGRPC3B",135,0)
+        . SET TMGOUT(0)="-1^No IENS supplied"
+"RTN","TMGRPC3B",136,0)
+ ;
+"RTN","TMGRPC3B",137,0)
+        DO GETS^DIQ(TMGFILE,TMGIENS,"**","IE",TMGREF,"TMGMSG")
+"RTN","TMGRPC3B",138,0)
+ ;
+"RTN","TMGRPC3B",139,0)
+        IF $DATA(TMGMSG("DIERR")) DO  GOTO GORDONE
+"RTN","TMGRPC3B",140,0)
+        . SET TMGOUT(0)="-1^See Fileman message"
+"RTN","TMGRPC3B",141,0)
+        . SET TMGOUT(1)=$$GETERSTR^TMGRPC3G(.TMGMSG)
+"RTN","TMGRPC3B",142,0)
+ ;
+"RTN","TMGRPC3B",143,0)
+        DO XTRCTFLD(.TMGOUT,.TMGARRAY,"E")
+"RTN","TMGRPC3B",144,0)
+ ;
+"RTN","TMGRPC3B",145,0)
+GORDONE ;
+"RTN","TMGRPC3B",146,0)
+        QUIT
+"RTN","TMGRPC3B",147,0)
+ ;
+"RTN","TMGRPC3B",148,0)
+ ;
+"RTN","TMGRPC3B",149,0)
+GET1FLD(TMGOUT,TMGPARAMS) ;  //kt 11/7/10
+"RTN","TMGRPC3B",150,0)
+        ;"Purpose: to get one record in file
+"RTN","TMGRPC3B",151,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3B",152,0)
+        ;"       TMGPARAMS: File^IENS^FldNum
+"RTN","TMGRPC3B",153,0)
+        ;"         File -- the file or subfile to retrieve from
+"RTN","TMGRPC3B",154,0)
+        ;"         IENS -- if File is a subfile, then IENS should be full IENS to get (e.g. '2,103,')
+"RTN","TMGRPC3B",155,0)
+        ;"                 if File is not a subfile, then IENS can be just IEN or IEN_","
+"RTN","TMGRPC3B",156,0)
+        ;"         FldNum -- The Field number (or name or computed expression) to lookup.
+"RTN","TMGRPC3B",157,0)
+        ;"Output: TMGOUT is filled as follows:
+"RTN","TMGRPC3B",158,0)
+        ;"          TMGOUT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3B",159,0)
+        ;"          TMGOUT(1)=File^IENS^FieldNum^ExternalValue
+"RTN","TMGRPC3B",160,0)
+        ;"Note: the fields to return are decided HERE
+"RTN","TMGRPC3B",161,0)
+        ;"NOTE: If FldNum is a WP field, then nothing is returned.
+"RTN","TMGRPC3B",162,0)
+        ;"Results: none
+"RTN","TMGRPC3B",163,0)
+        ;
+"RTN","TMGRPC3B",164,0)
+        SET TMGOUT(0)="1^Success"  ;"default to success
+"RTN","TMGRPC3B",165,0)
+        NEW TMGARRAY,TMGMSG
+"RTN","TMGRPC3B",166,0)
+        NEW TMGREF SET TMGREF="TMGARRAY"
+"RTN","TMGRPC3B",167,0)
+        SET TMGPARAMS=$GET(TMGPARAMS)
+"RTN","TMGRPC3B",168,0)
+        SET ^TMG("TMP","RPC","GET1FLD")=TMGPARAMS
+"RTN","TMGRPC3B",169,0)
+        NEW TMGFILE SET TMGFILE=$PIECE(TMGPARAMS,"^",1)
+"RTN","TMGRPC3B",170,0)
+        IF +TMGFILE'>0 DO  GOTO GORDONE
+"RTN","TMGRPC3B",171,0)
+        . SET TMGOUT(0)="-1^No file number supplied"
+"RTN","TMGRPC3B",172,0)
+        NEW TMGIENS SET TMGIENS=$PIECE(TMGPARAMS,"^",2)
+"RTN","TMGRPC3B",173,0)
+        IF TMGIENS="" DO  GOTO GOFDONE
+"RTN","TMGRPC3B",174,0)
+        . SET TMGOUT(0)="-1^No IENS supplied"
+"RTN","TMGRPC3B",175,0)
+        NEW TMGFLD SET TMGFLD=$PIECE(TMGPARAMS,"^",3)
+"RTN","TMGRPC3B",176,0)
+        ;
+"RTN","TMGRPC3B",177,0)
+        NEW TMGVAL SET TMGVAL=$$GET1^DIQ(TMGFILE,TMGIENS,TMGFLD,"",TMGREF,"TMGMSG")
+"RTN","TMGRPC3B",178,0)
+        ;
+"RTN","TMGRPC3B",179,0)
+        IF $DATA(TMGMSG("DIERR")) DO  GOTO GORDONE
+"RTN","TMGRPC3B",180,0)
+        . SET TMGOUT(0)="-1^See Fileman message"
+"RTN","TMGRPC3B",181,0)
+        . SET TMGOUT(1)=$$GETERSTR^TMGRPC3G(.TMGMSG)
+"RTN","TMGRPC3B",182,0)
+        ;        
+"RTN","TMGRPC3B",183,0)
+        SET TMGOUT(1)=TMGFILE_"^"_TMGIENS_"^"_TMGFLD_"^"_TMGVAL
+"RTN","TMGRPC3B",184,0)
+        ;
+"RTN","TMGRPC3B",185,0)
+GOFDONE ;
+"RTN","TMGRPC3B",186,0)
+        QUIT
+"RTN","TMGRPC3B",187,0)
+ ;
+"RTN","TMGRPC3B",188,0)
+GETFLDIF(TMGOUT,TMGPARAMS)  ;"GET FIELD INFO  //kt 11/17/10
+"RTN","TMGRPC3B",189,0)
+        ;"Purpose: to get data dictionary information about one field in file
+"RTN","TMGRPC3B",190,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3B",191,0)
+        ;"       TMGPARAMS: File^FldNum
+"RTN","TMGRPC3B",192,0)
+        ;"         File -- the file or subfile to retrieve from
+"RTN","TMGRPC3B",193,0)
+        ;"         FldNum -- The Field number (or name or computed expression) to lookup.
+"RTN","TMGRPC3B",194,0)
+        ;"Output: TMGOUT is filled as follows:
+"RTN","TMGRPC3B",195,0)
+        ;"          TMGOUT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3B",196,0)
+        ;"          TMGOUT(1)=(returns the 0 node from ^DD(File,Fieldnum,0)
+"RTN","TMGRPC3B",197,0)
+        ;"Results: none
+"RTN","TMGRPC3B",198,0)
+        ;
+"RTN","TMGRPC3B",199,0)
+        NEW TMGFILE SET TMGFILE=$PIECE(TMGPARAMS,"^",1)
+"RTN","TMGRPC3B",200,0)
+        IF +TMGFILE'>0 DO  GOTO GFIFDN
+"RTN","TMGRPC3B",201,0)
+        . SET TMGOUT(0)="-1^No numeric file number supplied. Got: "_TMGFILE
+"RTN","TMGRPC3B",202,0)
+        NEW TMGFLD SET TMGFLD=$PIECE(TMGPARAMS,"^",2)
+"RTN","TMGRPC3B",203,0)
+        IF +TMGFLD'>0 DO  GOTO GFIFDN
+"RTN","TMGRPC3B",204,0)
+        . SET TMGOUT(0)="-1^No numeric field number supplied. Got: "_TMGFLD
+"RTN","TMGRPC3B",205,0)
+        IF $DATA(^DD(+TMGFILE,+TMGFLD,0))=0 DO  GOTO GFIFDN
+"RTN","TMGRPC3B",206,0)
+        . SET TMGOUT(0)="-1^No data dictionary info found."
+"RTN","TMGRPC3B",207,0)
+        SET TMGOUT(0)="1^Success"
+"RTN","TMGRPC3B",208,0)
+        SET TMGOUT(1)=^DD(+TMGFILE,+TMGFLD,0)
+"RTN","TMGRPC3B",209,0)
+        ;
+"RTN","TMGRPC3B",210,0)
+GFIFDN  QUIT
+"RTN","TMGRPC3B",211,0)
+ ;
+"RTN","TMGRPC3B",212,0)
+GETAFINF(TMGOUT,TMGPARAMS)  ;"GET FIELD INFO  //elh 11/19/10
+"RTN","TMGRPC3B",213,0)
+        ;"Purpose: to get data dictionary information about all fields in file
+"RTN","TMGRPC3B",214,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3B",215,0)
+        ;"       TMGPARAMS: File
+"RTN","TMGRPC3B",216,0)
+        ;"         File -- the file or subfile to retrieve from
+"RTN","TMGRPC3B",217,0)
+        ;"Output: TMGOUT is filled as follows:
+"RTN","TMGRPC3B",218,0)
+        ;"          TMGOUT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3B",219,0)
+        ;"          TMGOUT(1)=FileNum^FieldNum^{0 node from ^DD(File,Fieldnum,0)}
+"RTN","TMGRPC3B",220,0)
+        ;"          TMGOUT(2)=FileNum^FieldNum^{0 node from ^DD(File,Fieldnum,0)} ... etc. 
+"RTN","TMGRPC3B",221,0)
+        ;"Results: none
+"RTN","TMGRPC3B",222,0)
+        ;
+"RTN","TMGRPC3B",223,0)
+        NEW TMGFILE SET TMGFILE=$PIECE(TMGPARAMS,"^",1)
+"RTN","TMGRPC3B",224,0)
+        IF +TMGFILE'>0 DO  GOTO GAFIFDN
+"RTN","TMGRPC3B",225,0)
+        . SET TMGOUT(0)="-1^No numeric file number supplied. Got: "_TMGFILE
+"RTN","TMGRPC3B",226,0)
+        SET TMGOUT(0)="1^Success"
+"RTN","TMGRPC3B",227,0)
+        NEW TMGFIELD SET TMGFIELD=0
+"RTN","TMGRPC3B",228,0)
+        NEW COUNTER SET COUNTER=1
+"RTN","TMGRPC3B",229,0)
+        FOR  SET TMGFIELD=$ORDER(^DD(+TMGFILE,+TMGFIELD)) QUIT:(+TMGFIELD'>0)  DO
+"RTN","TMGRPC3B",230,0)
+        . NEW DEF SET DEF=$GET(^DD(+TMGFILE,+TMGFIELD,0))
+"RTN","TMGRPC3B",231,0)
+        . SET TMGOUT(COUNTER)=+TMGFILE_"^"_+TMGFIELD_"^"_DEF
+"RTN","TMGRPC3B",232,0)
+        . SET COUNTER=COUNTER+1
+"RTN","TMGRPC3B",233,0)
+        . ;"IF ($PIECE(DEF,"^",2)["P")!(+$PIECE(DEF,"^",2)=$PIECE(DEF,"^",2)) DO
+"RTN","TMGRPC3B",234,0)
+        . NEW P2FILE SET P2FILE=+$PIECE(DEF,"P",2)
+"RTN","TMGRPC3B",235,0)
+        . IF P2FILE=0 SET P2FILE=+$PIECE(DEF,"^",2)
+"RTN","TMGRPC3B",236,0)
+        . IF P2FILE>0 DO
+"RTN","TMGRPC3B",237,0)
+        . . SET DEF=$GET(^DD(P2FILE,.01,0))
+"RTN","TMGRPC3B",238,0)
+        . . IF $GET(^DD(P2FILE,0,"UP"))=+TMGFILE DO
+"RTN","TMGRPC3B",239,0)
+        . . . IF $PIECE(DEF,"^",2)["W" QUIT
+"RTN","TMGRPC3B",240,0)
+        . . . SET $PIECE(DEF,"^",2)=$TRANSLATE($PIECE(DEF,"^",2),"P","p")
+"RTN","TMGRPC3B",241,0)
+        . . . IF $PIECE(DEF,"^",2)'["p" DO
+"RTN","TMGRPC3B",242,0)
+        . . . . SET $PIECE(DEF,"^",2)="p"_$PIECE(DEF,"^",2)
+"RTN","TMGRPC3B",243,0)
+        . . SET TMGOUT(COUNTER)=P2FILE_"^.01^"_DEF
+"RTN","TMGRPC3B",244,0)
+        . . SET COUNTER=COUNTER+1
+"RTN","TMGRPC3B",245,0)
+        ; 
+"RTN","TMGRPC3B",246,0)
+GAFIFDN  QUIT
+"RTN","TMGRPC3B",247,0)
+ ;
+"RTN","TMGRPC3B",248,0)
+DTTOFMDT(TMGOUT,TMGPARAMS)  ;"DATE TO FMDATE  //elh 11/22/10
+"RTN","TMGRPC3B",249,0)
+        ;"Purpose: To convert an external date into a FM date
+"RTN","TMGRPC3B",250,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3B",251,0)
+        ;"       TMGPARAMS: Date
+"RTN","TMGRPC3B",252,0)
+        ;"         Date -- the date to convert
+"RTN","TMGRPC3B",253,0)
+        ;"Output: TMGOUT is filled as follows:
+"RTN","TMGRPC3B",254,0)
+        ;"          TMGOUT(0)="-1^ERROR MESSAGE" or "1^FM DATE" 
+"RTN","TMGRPC3B",255,0)
+        ;"Results: none
+"RTN","TMGRPC3B",256,0)
+        NEW X SET X=TMGPARAMS
+"RTN","TMGRPC3B",257,0)
+        SET %DT="TX"
+"RTN","TMGRPC3B",258,0)
+        D ^%DT
+"RTN","TMGRPC3B",259,0)
+        IF Y=-1 DO
+"RTN","TMGRPC3B",260,0)
+        . SET TMGOUT(0)="-1"
+"RTN","TMGRPC3B",261,0)
+        ELSE  DO
+"RTN","TMGRPC3B",262,0)
+        . SET TMGOUT(0)="1^"_Y
+"RTN","TMGRPC3B",263,0)
+        QUIT
+"RTN","TMGRPC3B",264,0)
+        ;
+"RTN","TMGRPC3B",265,0)
+XTRCTFLD(TMGOUT,TMGARRAY,TMGFLAG) ;"EXTRACT FIELDS
+"RTN","TMGRPC3B",266,0)
+        ;"Purpose: convert output from GETS^DIQ into another format
+"RTN","TMGRPC3B",267,0)
+ ;
+"RTN","TMGRPC3B",268,0)
+        NEW TMGINDEX SET TMGINDEX=1
+"RTN","TMGRPC3B",269,0)
+        NEW TMGFILE,TMGFIELD,TMGIENS
+"RTN","TMGRPC3B",270,0)
+        SET TMGFILE=""
+"RTN","TMGRPC3B",271,0)
+        FOR  SET TMGFILE=$ORDER(TMGARRAY(TMGFILE)) QUIT:(TMGFILE="")  DO
+"RTN","TMGRPC3B",272,0)
+        . SET TMGIENS=""
+"RTN","TMGRPC3B",273,0)
+        . FOR  SET TMGIENS=$ORDER(TMGARRAY(TMGFILE,TMGIENS)) QUIT:(TMGIENS="")  DO
+"RTN","TMGRPC3B",274,0)
+        . . SET TMGFIELD=0
+"RTN","TMGRPC3B",275,0)
+        . . FOR  SET TMGFIELD=$ORDER(^DD(TMGFILE,TMGFIELD)) QUIT:(+TMGFIELD'>0)  DO
+"RTN","TMGRPC3B",276,0)
+        . . . IF $GET(TMGARRAY(TMGFILE,TMGIENS,TMGFIELD,TMGFLAG))="" DO
+"RTN","TMGRPC3B",277,0)
+        . . . . SET TMGARRAY(TMGFILE,TMGIENS,TMGFIELD,TMGFLAG)=""
+"RTN","TMGRPC3B",278,0)
+        . . SET TMGFIELD=""
+"RTN","TMGRPC3B",279,0)
+        . . FOR  SET TMGFIELD=$ORDER(TMGARRAY(TMGFILE,TMGIENS,TMGFIELD)) QUIT:(TMGFIELD="")  DO
+"RTN","TMGRPC3B",280,0)
+        . . . NEW TMGVALUE SET TMGVALUE=$GET(TMGARRAY(TMGFILE,TMGIENS,TMGFIELD,TMGFLAG))
+"RTN","TMGRPC3B",281,0)
+        . . . NEW TMGDDINFO SET TMGDDINFO=$PIECE($GET(^DD(TMGFILE,TMGFIELD,0)),"^",1,4)
+"RTN","TMGRPC3B",282,0)
+        . . . IF $PIECE(TMGDDINFO,"^",2)["D" DO  ;"convert data format to one Delphi can use
+"RTN","TMGRPC3B",283,0)
+        . . . . IF TMGFLAG="I" QUIT
+"RTN","TMGRPC3B",284,0)
+        . . . . NEW X SET X=$GET(TMGARRAY(TMGFILE,TMGIENS,TMGFIELD,"I"))
+"RTN","TMGRPC3B",285,0)
+        . . . . SET TMGVALUE=$$FMTE^XLFDT(X,5)
+"RTN","TMGRPC3B",286,0)
+        . . . SET TMGOUT(TMGINDEX)=TMGFILE_"^"_TMGIENS_"^"_TMGFIELD_"^"_TMGVALUE
+"RTN","TMGRPC3B",287,0)
+        . . . SET TMGOUT(TMGINDEX)=TMGOUT(TMGINDEX)_"^"_TMGDDINFO
+"RTN","TMGRPC3B",288,0)
+        . . . SET TMGINDEX=TMGINDEX+1
+"RTN","TMGRPC3B",289,0)
+ ;
+"RTN","TMGRPC3B",290,0)
+        QUIT
+"RTN","TMGRPC3B",291,0)
+ ;
+"RTN","TMGRPC3B",292,0)
+GFLSUBST(TMGOUT,TMGPARAMS) ;"GET FILE SUBSET
+"RTN","TMGRPC3B",293,0)
+        ;"Purpose: to return a subset of entries a file's .01 names
+"RTN","TMGRPC3B",294,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3B",295,0)
+        ;"       TMGPARAMS -- FileNum^StartFrom^Direction^maxCount^[IENS]^[SCREEN]
+"RTN","TMGRPC3B",296,0)
+        ;"              FileNum  -- file number to traverse
+"RTN","TMGRPC3B",297,0)
+        ;"              StartFrom -- text to $ORDER() from  -- OPTIONAL
+"RTN","TMGRPC3B",298,0)
+        ;"              Direction -- $ORDER(xx,Direction) direction (should be 1 or -1) -- OPTIONAL
+"RTN","TMGRPC3B",299,0)
+        ;"              maxCt -- OPTIONAL -- the max number of entries to return.
+"RTN","TMGRPC3B",300,0)
+        ;"              IENS -- OPTIONAL -- only used if FileNum is a subfile.  A standard IENS string
+"RTN","TMGRPC3B",301,0)
+        ;"              SCREEN -- OPTIONAL -- "FldNum=value|FldNum=value|FldNum=..."
+"RTN","TMGRPC3B",302,0)
+        ;"                  Each set is a matching value.  Each record that is returned
+"RTN","TMGRPC3B",303,0)
+        ;"                  will match value.  Multiple sets may be supplied, delimited by
+"RTN","TMGRPC3B",304,0)
+        ;"                  "|" Each returned value will match ALL restrictions.
+"RTN","TMGRPC3B",305,0)
+        ;"                   Only EXTERNAL value of field compared.
+"RTN","TMGRPC3B",306,0)
+        ;"Output: TMGOUT is filled as follows:
+"RTN","TMGRPC3B",307,0)
+        ;"          TMGOUT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3B",308,0)
+        ;"          TMGOUT(1)=IEN^Value
+"RTN","TMGRPC3B",309,0)
+        ;"          TMGOUT(2)=IEN^Value
+"RTN","TMGRPC3B",310,0)
+        ;"          ...
+"RTN","TMGRPC3B",311,0)
+        ;"Results: none
+"RTN","TMGRPC3B",312,0)
+ ;
+"RTN","TMGRPC3B",313,0)
+        kill ^TMG("TMP","RPC3B")
+"RTN","TMGRPC3B",314,0)
+        merge ^TMG("TMP","RPC3B","TMGPARAMS")=TMGPARAMS
+"RTN","TMGRPC3B",315,0)
+        NEW TMGFILE SET TMGFILE=+$PIECE(TMGPARAMS,"^",1)
+"RTN","TMGRPC3B",316,0)
+        IF TMGFILE'>0 DO  GOTO GFSDONE
+"RTN","TMGRPC3B",317,0)
+        . SET TMGOUT(0)="-1^No file number supplied"
+"RTN","TMGRPC3B",318,0)
+        NEW TMGFROM SET TMGFROM=$PIECE(TMGPARAMS,"^",2)
+"RTN","TMGRPC3B",319,0)
+        NEW TMGDIR SET TMGDIR=$PIECE(TMGPARAMS,"^",3)
+"RTN","TMGRPC3B",320,0)
+        IF TMGDIR'=-1 SET TMGDIR=1
+"RTN","TMGRPC3B",321,0)
+        NEW TMGMAXCT SET TMGMAXCT=+$PIECE(TMGPARAMS,"^",4)
+"RTN","TMGRPC3B",322,0)
+        IF TMGMAXCT=0 SET TMGMAXCT=44
+"RTN","TMGRPC3B",323,0)
+        NEW TMGISPTR SET TMGISPTR=($PIECE($GET(^DD(TMGFILE,.01,0)),"^",2)["P")
+"RTN","TMGRPC3B",324,0)
+        NEW TMGSTARTIEN SET TMGSTARTIEN=""
+"RTN","TMGRPC3B",325,0)
+        IF TMGISPTR DO
+"RTN","TMGRPC3B",326,0)
+        . IF $LENGTH(TMGFROM,";")>2 SET TMGSTARTIEN=+$PIECE(TMGFROM,";",2)
+"RTN","TMGRPC3B",327,0)
+        . IF TMGFROM?1.N1";".E SET TMGFROM=+TMGFROM
+"RTN","TMGRPC3B",328,0)
+        NEW TMGIENS  ;"//kt added 
+"RTN","TMGRPC3B",329,0)
+        SET TMGIENS=$PIECE(TMGPARAMS,"^",5)
+"RTN","TMGRPC3B",330,0)
+        NEW TMGSCRN SET TMGSCRN=$PIECE(TMGPARAMS,"^",6)
+"RTN","TMGRPC3B",331,0)
+        
+"RTN","TMGRPC3B",332,0)
+        FOR  QUIT:TMGSCRN=""  DO
+"RTN","TMGRPC3B",333,0)
+        . NEW SA SET SA=$PIECE(TMGSCRN,"|",1)
+"RTN","TMGRPC3B",334,0)
+        . SET TMGSCRN=$PIECE(TMGSCRN,"|",2,999)
+"RTN","TMGRPC3B",335,0)
+        . NEW I SET I=+$ORDER(TMGSCRN(""),-1)+1
+"RTN","TMGRPC3B",336,0)
+        . SET TMGSCRN(I,"FLD")=$PIECE(SA,"=",1)
+"RTN","TMGRPC3B",337,0)
+        . SET TMGSCRN(I,"VAL")=$PIECE(SA,"=",2,999)
+"RTN","TMGRPC3B",338,0)
+ ;      
+"RTN","TMGRPC3B",339,0)
+        merge ^TMG("TMP","RPC3B","TMGSCRN")=TMGSCRN
+"RTN","TMGRPC3B",340,0)
+        NEW TMGI SET TMGI=0
+"RTN","TMGRPC3B",341,0)
+        ;"NEW TMGLAST SET TMGLAST=""
+"RTN","TMGRPC3B",342,0)
+        ;"NEW prev SET prev=""
+"RTN","TMGRPC3B",343,0)
+        ;"NEW TMGREF SET TMGREF=$GET(^DIC(TMGFILE,0,"GL"))
+"RTN","TMGRPC3B",344,0)
+        NEW TMGREF SET TMGREF=$$GETGREF^TMGFMUT2(TMGFILE,TMGIENS) ;"IENS not used unless TMGFILE is a subfile
+"RTN","TMGRPC3B",345,0)
+        SET TMGREF=$$CREF^DILF(TMGREF)  ;"convert open --> closed reference
+"RTN","TMGRPC3B",346,0)
+        IF TMGREF="" DO  GOTO GFSDONE
+"RTN","TMGRPC3B",347,0)
+        . SET TMGOUT(0)="-1^Unable to obtain global ref for file #"_TMGFILE
+"RTN","TMGRPC3B",348,0)
+ ;
+"RTN","TMGRPC3B",349,0)
+        FOR  SET TMGFROM=$ORDER(@TMGREF@("B",TMGFROM),TMGDIR) QUIT:(TMGFROM="")!(TMGI'<TMGMAXCT)  DO
+"RTN","TMGRPC3B",350,0)
+        . NEW TMGIEN SET TMGIEN=TMGSTARTIEN
+"RTN","TMGRPC3B",351,0)
+        . FOR  SET TMGIEN=$ORDER(@TMGREF@("B",TMGFROM,TMGIEN),TMGDIR) QUIT:(+TMGIEN'>0)!(TMGI'<TMGMAXCT)  DO
+"RTN","TMGRPC3B",352,0)
+        . . NEW TMGIENS0 
+"RTN","TMGRPC3B",353,0)
+        . . IF TMGIENS="" SET TMGIENS0=TMGIEN_","
+"RTN","TMGRPC3B",354,0)
+        . . ELSE  DO
+"RTN","TMGRPC3B",355,0)
+        . . . SET TMGIENS0=TMGIENS
+"RTN","TMGRPC3B",356,0)
+        . . . SET $PIECE(TMGIENS0,",",1)=TMGIEN
+"RTN","TMGRPC3B",357,0)
+        . . NEW TMGFLDS SET TMGFLDS=".01"
+"RTN","TMGRPC3B",358,0)
+        . . IF $DATA(TMGSCRN)>1 DO  
+"RTN","TMGRPC3B",359,0)
+        . . . NEW I SET I=0
+"RTN","TMGRPC3B",360,0)
+        . . . FOR  SET I=$ORDER(TMGSCRN(I)) QUIT:(I'>0)  DO
+"RTN","TMGRPC3B",361,0)
+        . . . . NEW FLD SET FLD=$GET(TMGSCRN(I,"FLD"))
+"RTN","TMGRPC3B",362,0)
+        . . . . IF (FLD=.01)!(FLD="") QUIT
+"RTN","TMGRPC3B",363,0)
+        . . . . SET TMGFLDS=TMGFLDS_";"_FLD
+"RTN","TMGRPC3B",364,0)
+        . . NEW TMGARRAY,TMGMSG
+"RTN","TMGRPC3B",365,0)
+        . . DO GETS^DIQ(TMGFILE,TMGIENS0,TMGFLDS,"E","TMGARRAY","TMGMSG")
+"RTN","TMGRPC3B",366,0)
+        . . NEW TMGOK SET TMGOK=1
+"RTN","TMGRPC3B",367,0)
+        . . IF $DATA(TMGSCRN)>1 DO  QUIT:(TMGOK'=1)
+"RTN","TMGRPC3B",368,0)
+        . . . NEW I SET I=0
+"RTN","TMGRPC3B",369,0)
+        . . . FOR  SET I=$ORDER(TMGSCRN(I)) QUIT:(I'>0)!(TMGOK'=1)  DO
+"RTN","TMGRPC3B",370,0)
+        . . . . NEW FLD SET FLD=$GET(TMGSCRN(I,"FLD"))
+"RTN","TMGRPC3B",371,0)
+        . . . . IF $$UP^XLFSTR($GET(TMGARRAY(TMGFILE,TMGIENS0,FLD,"E")))'=$GET(TMGSCRN(I,"VAL")) SET TMGOK=0 QUIT
+"RTN","TMGRPC3B",372,0)
+        . . SET TMGI=TMGI+1
+"RTN","TMGRPC3B",373,0)
+        . . SET TMGOUT(TMGI)=TMGIEN_"^"
+"RTN","TMGRPC3B",374,0)
+        . . IF TMGISPTR SET TMGOUT(TMGI)=TMGOUT(TMGI)_TMGFROM_";"_TMGIEN_";"
+"RTN","TMGRPC3B",375,0)
+        . . SET TMGOUT(TMGI)=TMGOUT(TMGI)_$GET(TMGARRAY(TMGFILE,TMGIENS0,.01,"E"))
+"RTN","TMGRPC3B",376,0)
+        . . ;"SET TMGOUT(TMGI)=TMGOUT(TMGI)_$$GET1^DIQ(TMGFILE,TMGIENS0,.01)
+"RTN","TMGRPC3B",377,0)
+ ;
+"RTN","TMGRPC3B",378,0)
+        SET TMGOUT(0)="1^Success"
+"RTN","TMGRPC3B",379,0)
+GFSDONE ;
+"RTN","TMGRPC3B",380,0)
+        QUIT
+"RTN","TMGRPC3B",381,0)
+ ;
+"RTN","TMGRPC3B",382,0)
+GSFSUBST(TMGOUT,TMGPARAMS) ;"GET SUBFILE SUBSET   //kt 11/24/10
+"RTN","TMGRPC3B",383,0)
+        ;"Purpose: to return a subset of entries a file's .01 names
+"RTN","TMGRPC3B",384,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3B",385,0)
+        ;"       TMGPARAMS -- SubfileNum^IENS^StartFrom^Direction^maxCount^[SCREEN]
+"RTN","TMGRPC3B",386,0)
+        ;"              FileNum - subfilename file to traverse
+"RTN","TMGRPC3B",387,0)
+        ;"              IENS -- needed to locate particular subfile instance
+"RTN","TMGRPC3B",388,0)
+        ;"              StartFrom -- text to $ORDER() from  -- OPTIONAL
+"RTN","TMGRPC3B",389,0)
+        ;"              Direction -- $ORDER(xx,Direction) direction (should be 1 or -1) -- OPTIONAL
+"RTN","TMGRPC3B",390,0)
+        ;"              maxCt -- OPTIONAL -- the max number of entries to return.
+"RTN","TMGRPC3B",391,0)
+        ;"              SCREEN -- OPTIONAL -- see documentation in GFLSUBST
+"RTN","TMGRPC3B",392,0)
+        ;"Output: TMGOUT is filled as follows:
+"RTN","TMGRPC3B",393,0)
+        ;"          TMGOUT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3B",394,0)
+        ;"          TMGOUT(1)=IEN^Value
+"RTN","TMGRPC3B",395,0)
+        ;"          TMGOUT(2)=IEN^Value
+"RTN","TMGRPC3B",396,0)
+        ;"          ...
+"RTN","TMGRPC3B",397,0)
+        ;"Results: none
+"RTN","TMGRPC3B",398,0)
+ ;
+"RTN","TMGRPC3B",399,0)
+        NEW P2
+"RTN","TMGRPC3B",400,0)
+        merge ^TMG("TMP","RPC3B","TMGPARAMS")=TMGPARAMS
+"RTN","TMGRPC3B",401,0)
+        SET P2=$P(TMGPARAMS,"^",1)_"^"_$P(TMGPARAMS,"^",3,5)_"^"_$P(TMGPARAMS,"^",2)_"^"_$P(TMGPARAMS,"^",6)
+"RTN","TMGRPC3B",402,0)
+        SET ^EDDIE(2)=P2
+"RTN","TMGRPC3B",403,0)
+        merge ^TMG("TMP","RPC3B","P2")=P2
+"RTN","TMGRPC3B",404,0)
+        DO GFLSUBST(.TMGOUT,P2)         
+"RTN","TMGRPC3B",405,0)
+        QUIT
+"RTN","TMGRPC3B",406,0)
+ ;        
+"RTN","TMGRPC3C")
+0^4^B60526227
+"RTN","TMGRPC3C",1,0)
+TMGRPC3C ;TMG/kst/Support Functions for GUI_Config ;08/31/08
+"RTN","TMGRPC3C",2,0)
+         ;;1.0;TMG-LIB;**1**;08/12/09;Build 2
+"RTN","TMGRPC3C",3,0)
+ ;
+"RTN","TMGRPC3C",4,0)
+ ;"TMG RPC FUNCTIONS for a GUI config program
+"RTN","TMGRPC3C",5,0)
+ ;
+"RTN","TMGRPC3C",6,0)
+ ;"Kevin Toppenberg MD
+"RTN","TMGRPC3C",7,0)
+ ;"GNU Lessor General Public License (LGPL) applies
+"RTN","TMGRPC3C",8,0)
+ ;"7/20/08
+"RTN","TMGRPC3C",9,0)
+ ;
+"RTN","TMGRPC3C",10,0)
+ ;"=======================================================================
+"RTN","TMGRPC3C",11,0)
+ ;" RPC -- Public Functions.
+"RTN","TMGRPC3C",12,0)
+ ;"=======================================================================
+"RTN","TMGRPC3C",13,0)
+ ;" <none>
+"RTN","TMGRPC3C",14,0)
+ ;"=======================================================================
+"RTN","TMGRPC3C",15,0)
+ ;"PRIVATE API FUNCTIONS
+"RTN","TMGRPC3C",16,0)
+ ;"=======================================================================
+"RTN","TMGRPC3C",17,0)
+ ;"POSTDATA(TMGOUT,TMGDATA) -- Post Changes to database via Fileman
+"RTN","TMGRPC3C",18,0)
+ ;
+"RTN","TMGRPC3C",19,0)
+ ;"=======================================================================
+"RTN","TMGRPC3C",20,0)
+ ;"Dependencies:
+"RTN","TMGRPC3C",21,0)
+ ;"  TMGRPC3* only
+"RTN","TMGRPC3C",22,0)
+ ;
+"RTN","TMGRPC3C",23,0)
+ ;"=======================================================================
+"RTN","TMGRPC3C",24,0)
+ ;
+"RTN","TMGRPC3C",25,0)
+POSTDATA(TMGOUT,TMGDATA,TMGFLAG) ;
+"RTN","TMGRPC3C",26,0)
+        ;"Post Changes to database via Fileman
+"RTN","TMGRPC3C",27,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3C",28,0)
+        ;"       TMGDATA -- Entries to be filed.  Format:
+"RTN","TMGRPC3C",29,0)
+        ;"              TMGDATA(0)=FileNum^IENS^FieldNum^FieldName^newValue^oldValue
+"RTN","TMGRPC3C",30,0)
+        ;"              TMGDATA(1)=FileNum^IENS^FieldNum^FieldName^newValue^oldValue
+"RTN","TMGRPC3C",31,0)
+        ;"              TMGDATA(2)=FileNum^IENS^FieldNum^FieldName^newValue^oldValue
+"RTN","TMGRPC3C",32,0)
+        ;"              ...
+"RTN","TMGRPC3C",33,0)
+        ;"              Note: FieldName, oldValue pieces are not used (optional)
+"RTN","TMGRPC3C",34,0)
+        ;"       TMGFLAG -- OPTIONAL, "E" is default.  Flag passed to FILE^DIE or UPDATE^DIE
+"RTN","TMGRPC3C",35,0)
+        ;"                 should be "E" or "I"
+"RTN","TMGRPC3C",36,0)
+        ;"Output: TMGOUT is filled as follows:
+"RTN","TMGRPC3C",37,0)
+        ;"          TMGOUT(0)="1^Success" or "-1^Short Message"
+"RTN","TMGRPC3C",38,0)
+        ;"          TMGOUT(1)=Fileman message (long)
+"RTN","TMGRPC3C",39,0)
+        ;"          -or if new records added:
+"RTN","TMGRPC3C",40,0)
+        ;"          TMGOUT(1)=5^1234   ,c<--  results of IEN array returned (+5 converted to record 1234)
+"RTN","TMGRPC3C",41,0)
+        ;"          TMGOUT(2)=3^2341   <--  results of IEN array returned (+3 converted to record 2341)
+"RTN","TMGRPC3C",42,0)
+        ;"          ...
+"RTN","TMGRPC3C",43,0)
+        ;"Results: none
+"RTN","TMGRPC3C",44,0)
+ ;
+"RTN","TMGRPC3C",45,0)
+        NEW TMGAVC SET TMGAVC=0  ;"TMGAVC=AccessVerifyCode. Default to no change.
+"RTN","TMGRPC3C",46,0)
+        NEW TMGINACTUSER,TMGREACTUSER
+"RTN","TMGRPC3C",47,0)
+        SET TMGFLAG=$GET(TMGFLAG,"E")
+"RTN","TMGRPC3C",48,0)
+        NEW TMGI SET TMGI=""
+"RTN","TMGRPC3C",49,0)
+        NEW TMGFDA,TMGNEWFDA,TMGMSG,TMGIEN,DIC
+"RTN","TMGRPC3C",50,0)
+        NEW TMGOLDDUZ  ;"elh - to save previous fiel access level
+"RTN","TMGRPC3C",51,0)
+        NEW TMGINTFDA
+"RTN","TMGRPC3C",52,0)
+        FOR  SET TMGI=$ORDER(TMGDATA(TMGI)) QUIT:(TMGI="")  DO
+"RTN","TMGRPC3C",53,0)
+        . NEW TMGFILE,TMGIENS,TMGFIELD,TMGVALUE,TMGONEENTRY
+"RTN","TMGRPC3C",54,0)
+        . NEW TMGINTVALUE SET TMGINTVALUE=0
+"RTN","TMGRPC3C",55,0)
+        . NEW TMGCONTINUE SET TMGCONTINUE=0
+"RTN","TMGRPC3C",56,0)
+        . SET TMGONEENTRY=$GET(TMGDATA(TMGI))
+"RTN","TMGRPC3C",57,0)
+        . SET TMGFILE=$PIECE(TMGONEENTRY,"^",1)
+"RTN","TMGRPC3C",58,0)
+        . SET TMGIENS=$PIECE(TMGONEENTRY,"^",2)
+"RTN","TMGRPC3C",59,0)
+        . SET TMGFIELD=$PIECE(TMGONEENTRY,"^",3)
+"RTN","TMGRPC3C",60,0)
+        . SET TMGVALUE=$PIECE(TMGONEENTRY,"^",5)
+"RTN","TMGRPC3C",61,0)
+        . IF TMGFILE=200 DO
+"RTN","TMGRPC3C",62,0)
+        . . IF TMGFIELD=2 DO  ;"2 = Access Code
+"RTN","TMGRPC3C",63,0)
+        . . . SET TMGOLDDUZ=DUZ(0)  ;"elh   Save File Access Level
+"RTN","TMGRPC3C",64,0)
+        . . . SET DUZ(0)="^"    ;"elh   Set proper write access level
+"RTN","TMGRPC3C",65,0)
+        . . . IF TMGIENS["+" DO  QUIT
+"RTN","TMGRPC3C",66,0)
+        . . . . SET TMGCONTINUE=1
+"RTN","TMGRPC3C",67,0)
+        . . . . SET TMGOUT(1)="Can't set Access code when first adding new user.  Try again."
+"RTN","TMGRPC3C",68,0)
+        . . . ;"NOTICE: currently this code DOes NOT force code of certain length etc.
+"RTN","TMGRPC3C",69,0)
+        . . . ;"S Y=$$VCHK(XV2,XUH) Q:Y Y  ;check for valid verify code, returns 0 (for OK), or 1^msg
+"RTN","TMGRPC3C",70,0)
+        . . . ;"SET TMGVALUE=$$UP^XLFSTR(TMGVALUE)  ;"access code must be upper case   elh
+"RTN","TMGRPC3C",71,0)
+        . . . SET TMGVALUE=$$EN^XUSHSH(TMGVALUE)  ;"access code is supposed to be hashed first
+"RTN","TMGRPC3C",72,0)
+        . . . SET TMGAVC=1  ;"signal change
+"RTN","TMGRPC3C",73,0)
+        . . . SET TMGAVC("DA")=+TMGIENS
+"RTN","TMGRPC3C",74,0)
+        . . . SET TMGINTVALUE=1
+"RTN","TMGRPC3C",75,0)
+        . . ELSE  IF TMGFIELD=11 DO  ;"11 = Verify Code
+"RTN","TMGRPC3C",76,0)
+        . . . SET TMGOLDDUZ=DUZ(0) ;" elh   Save File Access Level
+"RTN","TMGRPC3C",77,0)
+        . . . SET DUZ(0)="^"  ;" elh   Set proper write access level
+"RTN","TMGRPC3C",78,0)
+        . . . IF TMGIENS["+" DO  QUIT
+"RTN","TMGRPC3C",79,0)
+        . . . . SET TMGCONTINUE=1
+"RTN","TMGRPC3C",80,0)
+        . . . . SET TMGOUT(1)="Can't set Verify code when first adding new user.  Try again."
+"RTN","TMGRPC3C",81,0)
+        . . . ;"NOTICE: currently this code does NOT force code of certain length etc.
+"RTN","TMGRPC3C",82,0)
+        . . . ;"S Y=$$VCHK(XV2,XUH) Q:Y Y  ;check for valid verify code, returns 0 (for OK), or 1^msg
+"RTN","TMGRPC3C",83,0)
+        . . . ;"SET TMGVALUE=$$UP^XLFSTR(TMGVALUE) ;"verify code must be upper case   elh
+"RTN","TMGRPC3C",84,0)
+        . . . SET TMGVALUE=$$EN^XUSHSH(TMGVALUE)  ;"verify code is supposed to be hashed first
+"RTN","TMGRPC3C",85,0)
+        . . . SET TMGAVC=1  ;"signal change
+"RTN","TMGRPC3C",86,0)
+        . . . SET TMGAVC("DA")=+TMGIENS
+"RTN","TMGRPC3C",87,0)
+        . . . SET TMGINTVALUE=1
+"RTN","TMGRPC3C",88,0)
+        . . ELSE  IF TMGFIELD=7 DO  ;"7 = DISUSER  Value should be 'YES' or 'NO'
+"RTN","TMGRPC3C",89,0)
+        . . . IF TMGIENS["+" DO  QUIT
+"RTN","TMGRPC3C",90,0)
+        . . . . SET TMGCONTINUE=1
+"RTN","TMGRPC3C",91,0)
+        . . . . SET TMGOUT(1)="Can't set DISUSER code when first adding new user.  Try again."
+"RTN","TMGRPC3C",92,0)
+        . . . IF TMGVALUE="YES" DO
+"RTN","TMGRPC3C",93,0)
+        . . . . SET TMGFDA(200,TMGIENS,9.2)="NOW" ;"add 9.2 = termination date
+"RTN","TMGRPC3C",94,0)
+        . . . . SET TMGINACTUSER("DA")=+TMGIENS
+"RTN","TMGRPC3C",95,0)
+        . . . IF (TMGVALUE="NO")!(TMGVALUE="@") DO
+"RTN","TMGRPC3C",96,0)
+        . . . . SET TMGFDA(200,TMGIENS,9.2)="@" ;"delete 9.2 = termination date
+"RTN","TMGRPC3C",97,0)
+        . . . . SET TMGFDA(200,TMGIENS,9.4)="@" ;"delete 9.4 = termination reason
+"RTN","TMGRPC3C",98,0)
+        . . . . SET TMGREACTUSER("DA")=+TMGIENS
+"RTN","TMGRPC3C",99,0)
+        . . ELSE  IF TMGFIELD=3 DO  ;"3 = FILE MANAGER ACCESS CODE  (i.e. @ etc)
+"RTN","TMGRPC3C",100,0)
+        . . . IF TMGVALUE'["^" DO
+"RTN","TMGRPC3C",101,0)
+        . . . . SET $PIECE(^VA(200,+TMGIENS,0),"^",4)=TMGVALUE  ;"force value in with low-level write
+"RTN","TMGRPC3C",102,0)
+        . . . . SET TMGCONTINUE=1
+"RTN","TMGRPC3C",103,0)
+        . IF TMGCONTINUE QUIT
+"RTN","TMGRPC3C",104,0)
+        . IF TMGIENS["+" DO
+"RTN","TMGRPC3C",105,0)
+        . . SET TMGNEWFDA(TMGFILE,TMGIENS,TMGFIELD)=TMGVALUE
+"RTN","TMGRPC3C",106,0)
+        . ELSE  DO
+"RTN","TMGRPC3C",107,0)
+        . . IF TMGINTVALUE=1 SET TMGINTFDA(TMGFILE,TMGIENS,TMGFIELD)=TMGVALUE
+"RTN","TMGRPC3C",108,0)
+        . . ELSE  SET TMGFDA(TMGFILE,TMGIENS,TMGFIELD)=TMGVALUE
+"RTN","TMGRPC3C",109,0)
+        . IF $DATA(TMGOLDDUZ) DO      ;"elh  reset file access
+"RTN","TMGRPC3C",110,0)
+        . . SET DUZ(0)=TMGOLDDUZ
+"RTN","TMGRPC3C",111,0)
+        . . KILL TMGOLDDUZ
+"RTN","TMGRPC3C",112,0)
+ ;
+"RTN","TMGRPC3C",113,0)
+ 
+"RTN","TMGRPC3C",114,0)
+        SET TMGOUT(0)="1^Success"  ;"default to success
+"RTN","TMGRPC3C",115,0)
+        IF $DATA(TMGFDA) DO
+"RTN","TMGRPC3C",116,0)
+        . DO FILE^DIE(TMGFLAG_"K","TMGFDA","TMGMSG")
+"RTN","TMGRPC3C",117,0)
+        IF $DATA(TMGMSG("DIERR")) DO
+"RTN","TMGRPC3C",118,0)
+        . SET TMGOUT(0)="-1^See Fileman message re posting"
+"RTN","TMGRPC3C",119,0)
+        . SET TMGOUT(1)=$$GETERSTR^TMGRPC3G(.TMGMSG)_";"_$GET(TMGOUT(1))
+"RTN","TMGRPC3C",120,0)
+ ;
+"RTN","TMGRPC3C",121,0)
+        IF $DATA(TMGINTFDA) DO  ;"process FDA with INTERNAL values
+"RTN","TMGRPC3C",122,0)
+        . DO FILE^DIE("K","TMGINTFDA","TMGMSG")
+"RTN","TMGRPC3C",123,0)
+        IF $DATA(TMGMSG("DIERR")) DO
+"RTN","TMGRPC3C",124,0)
+        . SET TMGOUT(0)="-1^See Fileman message re posting"
+"RTN","TMGRPC3C",125,0)
+        . SET TMGOUT(1)=$$GETERSTR^TMGRPC3G(.TMGMSG)_";"_$GET(TMGOUT(1))
+"RTN","TMGRPC3C",126,0)
+ ;
+"RTN","TMGRPC3C",127,0)
+        IF $DATA(TMGNEWFDA) DO
+"RTN","TMGRPC3C",128,0)
+        . DO UPDATE^DIE(TMGFLAG_"K","TMGNEWFDA","TMGIEN","TMGMSG")
+"RTN","TMGRPC3C",129,0)
+        IF $DATA(TMGMSG("DIERR")) DO
+"RTN","TMGRPC3C",130,0)
+        . SET TMGOUT(0)="-1^See Fileman message re posting"
+"RTN","TMGRPC3C",131,0)
+        . SET TMGOUT(1)=$$GETERSTR^TMGRPC3G(.TMGMSG)_";"_$GET(TMGOUT(1))
+"RTN","TMGRPC3C",132,0)
+ ;
+"RTN","TMGRPC3C",133,0)
+        IF ($PIECE(TMGOUT(0),"^",1)=1)&($DATA(TMGIEN)) DO
+"RTN","TMGRPC3C",134,0)
+        . NEW TMGCOUNT SET TMGCOUNT=1
+"RTN","TMGRPC3C",135,0)
+        . NEW TMGI SET TMGI=""
+"RTN","TMGRPC3C",136,0)
+        . FOR  SET TMGI=$ORDER(TMGIEN(TMGI)) QUIT:(TMGI="")  DO
+"RTN","TMGRPC3C",137,0)
+        . . SET TMGOUT(TMGCOUNT)=TMGI_"^"_$GET(TMGIEN(TMGI))
+"RTN","TMGRPC3C",138,0)
+        . . SET TMGCOUNT=TMGCOUNT+1
+"RTN","TMGRPC3C",139,0)
+ ;
+"RTN","TMGRPC3C",140,0)
+        ;"If Access code / Verify code changed, then finish some follow up business
+"RTN","TMGRPC3C",141,0)
+        ;"  as per BRCVC^XUS2<--CVC^XUSRB<--called by RPC 'XUS CVC'
+"RTN","TMGRPC3C",142,0)
+        IF TMGAVC DO
+"RTN","TMGRPC3C",143,0)
+        . NEW DA SET DA=TMGAVC("DA")
+"RTN","TMGRPC3C",144,0)
+        . DO CALL^XUSERP(DA,2)  ;"Call for Kernel Create, **Update**, Disuser or Terminate events
+"RTN","TMGRPC3C",145,0)
+        . ;"The above sets Taskman job -->DEQUE^XUSERP--> -->  D HL7^ALPBGEN
+"RTN","TMGRPC3C",146,0)
+ ;
+"RTN","TMGRPC3C",147,0)
+        IF $DATA(TMGINACTUSER) DO  ;"Finish up inactivating user with VistA code
+"RTN","TMGRPC3C",148,0)
+        . NEW TMGRESULT
+"RTN","TMGRPC3C",149,0)
+        . SET TMGRESULT=$$QTERMUSR^TMGRPC3D(TMGINACTUSER("DA"))  ;"finish termination of user code
+"RTN","TMGRPC3C",150,0)
+        . IF +TMGRESULT'=0 DO
+"RTN","TMGRPC3C",151,0)
+        . . SET TMGOUT(0)="-1^See Fileman message re terminating user"
+"RTN","TMGRPC3C",152,0)
+        . . SET TMGOUT(1)=TMGOUT(1)_";"_TMGRESULT
+"RTN","TMGRPC3C",153,0)
+ ;
+"RTN","TMGRPC3C",154,0)
+        IF $DATA(TMGREACTUSER) DO  ;"finish up reactivating user with VistA code
+"RTN","TMGRPC3C",155,0)
+        . NEW TMGRESULT
+"RTN","TMGRPC3C",156,0)
+        . SET TMGRESULT=$$QTREAUSR^TMGRPC3D(TMGREACTUSER("DA")) ;"launch quiet reactivation code
+"RTN","TMGRPC3C",157,0)
+        . IF +TMGRESULT'=0 DO
+"RTN","TMGRPC3C",158,0)
+        . . SET TMGOUT(0)="-1^See Fileman message re reactivating user"
+"RTN","TMGRPC3C",159,0)
+        . . SET TMGOUT(1)=TMGOUT(1)_";"_TMGRESULT
+"RTN","TMGRPC3C",160,0)
+ ;
+"RTN","TMGRPC3C",161,0)
+        QUIT
+"RTN","TMGRPC3D")
+0^5^B84612813
+"RTN","TMGRPC3D",1,0)
+TMGRPC3D ;TMG/kst/Support Functions for GUI_Config ;6/23/11
+"RTN","TMGRPC3D",2,0)
+         ;;1.0;TMG-LIB;**1**;08/31/08;Build 2
+"RTN","TMGRPC3D",3,0)
+ ;
+"RTN","TMGRPC3D",4,0)
+ ;"TMG RPC FUNCTIONS for a GUI config program
+"RTN","TMGRPC3D",5,0)
+ ;
+"RTN","TMGRPC3D",6,0)
+ ;"Kevin Toppenberg MD
+"RTN","TMGRPC3D",7,0)
+ ;"GNU Lessor General Public License (LGPL) applies
+"RTN","TMGRPC3D",8,0)
+ ;"7/20/08
+"RTN","TMGRPC3D",9,0)
+ ;
+"RTN","TMGRPC3D",10,0)
+ ;"=======================================================================
+"RTN","TMGRPC3D",11,0)
+ ;" RPC -- Public Functions.
+"RTN","TMGRPC3D",12,0)
+ ;"=======================================================================
+"RTN","TMGRPC3D",13,0)
+ ;" <none>
+"RTN","TMGRPC3D",14,0)
+ ;"=======================================================================
+"RTN","TMGRPC3D",15,0)
+ ;"PRIVATE API FUNCTIONS
+"RTN","TMGRPC3D",16,0)
+ ;"=======================================================================
+"RTN","TMGRPC3D",17,0)
+ ;"QTERMUSR(XUDA) -- quietly inactive a given user
+"RTN","TMGRPC3D",18,0)
+ ;"QTREAUSR(TMGDA) -- launch quiet reactivation code
+"RTN","TMGRPC3D",19,0)
+ ;"GETSRLST(TMGOUT,TMGPARAMS) -- Get all .01 sub record entries for a subfile
+"RTN","TMGRPC3D",20,0)
+ ;"CLONEUSR(TMGOUT,TMGPARAMS) -- replicate a record into a new record, including all subrecs.
+"RTN","TMGRPC3D",21,0)
+ ;"CLONEREC(TMGOUT,TMGPARAMS) --- replicate a record into a new record, including all subrecs.
+"RTN","TMGRPC3D",22,0)
+ ;
+"RTN","TMGRPC3D",23,0)
+ ;"=======================================================================
+"RTN","TMGRPC3D",24,0)
+ ;"=======================================================================
+"RTN","TMGRPC3D",25,0)
+ ;"Dependencies:
+"RTN","TMGRPC3D",26,0)
+ ;"  TMGRPC3* only
+"RTN","TMGRPC3D",27,0)
+ ;
+"RTN","TMGRPC3D",28,0)
+ ;"=======================================================================
+"RTN","TMGRPC3D",29,0)
+ ;"=======================================================================
+"RTN","TMGRPC3D",30,0)
+ ;
+"RTN","TMGRPC3D",31,0)
+QTERMUSR(XUDA) ;"QUITELY TERMINATE USER
+"RTN","TMGRPC3D",32,0)
+        ;"Purpose: to quietly inactive a given user
+"RTN","TMGRPC3D",33,0)
+        ;"         I traced through menu option XUSERDEACT --> XUSTERM to create below
+"RTN","TMGRPC3D",34,0)
+        ;"Input: XUDA -- the IEN in 200 of user to inactivate
+"RTN","TMGRPC3D",35,0)
+        ;"Note:  based on code from XUSTERM
+"RTN","TMGRPC3D",36,0)
+        ;"Results: 0 = OK, or 1^message if error
+"RTN","TMGRPC3D",37,0)
+ ;
+"RTN","TMGRPC3D",38,0)
+        NEW TMGRESULT SET TMGRESULT=0
+"RTN","TMGRPC3D",39,0)
+        NEW TMGFDA,TMGMSG,XUDT,DIC
+"RTN","TMGRPC3D",40,0)
+        SET TMGFDA(200,+XUDA_",",9.2)="NOW"
+"RTN","TMGRPC3D",41,0)
+        DO FILE^DIE("EK","TMGFDA","TMGMSG")
+"RTN","TMGRPC3D",42,0)
+        IF $DATA(TMGMSG("DIERR")) DO  GOTO QTUDONE
+"RTN","TMGRPC3D",43,0)
+        . SET TMGRESULT="1^"_$$GETERSTR^TMGRPC3G(.TMGMSG)_";"_$GET(TMGOUT(1))
+"RTN","TMGRPC3D",44,0)
+        SET XUDT=$P(^VA(200,+XUDA,0),"^",11)  ;" field 9.2 termination date
+"RTN","TMGRPC3D",45,0)
+        DO GET^XUSTERM  ;"load up info about mail, mailboxes, keys   ? needed ?
+"RTN","TMGRPC3D",46,0)
+        SET ZTDTH=XUDT  ;"Task Start time. VA FileMan or $HOROLOG format
+"RTN","TMGRPC3D",47,0)
+        SET ZTRTN="DQ1^XUSTERM1"  ;"routine to be fired
+"RTN","TMGRPC3D",48,0)
+        SET ZTDESC="DEACTIVATE USER"  ;"description
+"RTN","TMGRPC3D",49,0)
+        SET ZTSAVE("XUDA")=""    ;"save variable XUDA for use in task
+"RTN","TMGRPC3D",50,0)
+        SET ZTIO=""    ;"no IO device needed
+"RTN","TMGRPC3D",51,0)
+        DO ^%ZTLOAD  ;"que a taskman task
+"RTN","TMGRPC3D",52,0)
+QTUDONE ;
+"RTN","TMGRPC3D",53,0)
+        QUIT TMGRESULT
+"RTN","TMGRPC3D",54,0)
+ ;
+"RTN","TMGRPC3D",55,0)
+ ;
+"RTN","TMGRPC3D",56,0)
+QTREAUSR(TMGDA) ;"QUITELY REACTIVE USER
+"RTN","TMGRPC3D",57,0)
+        ;"Purpose: launch quiet reactivation code
+"RTN","TMGRPC3D",58,0)
+        ;"         I traced through menu option XUSERREACT --> REACT^XUSERNEW to create below
+"RTN","TMGRPC3D",59,0)
+        ;"Input: TMGDA -- the IEN in 200 to be reactivated
+"RTN","TMGRPC3D",60,0)
+        ;"Results: 0 if OK, or 1^ErrMsg
+"RTN","TMGRPC3D",61,0)
+        ;"NOTE: when user is deleated through VistA code, the access and verify codes
+"RTN","TMGRPC3D",62,0)
+        ;"      are deleted.  This function does NOT replace these.
+"RTN","TMGRPC3D",63,0)
+ ;
+"RTN","TMGRPC3D",64,0)
+        NEW TMGRESULT SET TMGRESULT=0
+"RTN","TMGRPC3D",65,0)
+        NEW TMGFDA,TMGMSG,DIC,Y
+"RTN","TMGRPC3D",66,0)
+        SET TMGFDA(200,TMGDA_",",9.2)="@" ;"Clear the Termination date
+"RTN","TMGRPC3D",67,0)
+        DO FILE^DIE("EK","TMGFDA","TMGMSG")      ;"Post data
+"RTN","TMGRPC3D",68,0)
+        IF $DATA(TMGMSG("DIERR")) DO  GOTO QRUDONE
+"RTN","TMGRPC3D",69,0)
+        . SET TMGRESULT="1^"_$$GETERSTR^TMGRPC3G(.TMGMSG)
+"RTN","TMGRPC3D",70,0)
+ ;
+"RTN","TMGRPC3D",71,0)
+        KILL XMZ   ;" if null, then user can access old mail.
+"RTN","TMGRPC3D",72,0)
+        SET Y=TMGDA ;"set user to work on.
+"RTN","TMGRPC3D",73,0)
+        DO NEW^XM  ;"mailman driver -- create a mailbox for user Y
+"RTN","TMGRPC3D",74,0)
+ ;
+"RTN","TMGRPC3D",75,0)
+        IF +$PIECE($GET(^VA(200,TMGDA,201)),"^",1)'>0 DO  ;"201;1 = PRIMARY MENU OPTION (#201)
+"RTN","TMGRPC3D",76,0)
+        . SET TMGFDA(200,TMGDA_",",201)="EVE"  ;"set default primary menu to EVE (high level!)
+"RTN","TMGRPC3D",77,0)
+        . DO FILE^DIE("EK","TMGFDA","TMGMSG")
+"RTN","TMGRPC3D",78,0)
+        . IF $DATA(TMGMSG("DIERR")) DO
+"RTN","TMGRPC3D",79,0)
+        . . SET TMGRESULT="1^"_$$GETERSTR^TMGRPC3G(.TMGMSG)
+"RTN","TMGRPC3D",80,0)
+        IF +TMGRESULT>0 GOTO QRUDONE
+"RTN","TMGRPC3D",81,0)
+ ;
+"RTN","TMGRPC3D",82,0)
+        KILL XMDT,XMM,XMZ
+"RTN","TMGRPC3D",83,0)
+        DO REACT^XQ84(TMGDA) ;"See if this user's menu trees need to be rebuilt
+"RTN","TMGRPC3D",84,0)
+QRUDONE ;
+"RTN","TMGRPC3D",85,0)
+        QUIT TMGRESULT
+"RTN","TMGRPC3D",86,0)
+ ;
+"RTN","TMGRPC3D",87,0)
+ ;
+"RTN","TMGRPC3D",88,0)
+GETSRLST(TMGOUT,TMGPARAMS) ;"GET SUB-RECS LIST
+"RTN","TMGRPC3D",89,0)
+        ;"Purpose: Get all .01 sub record entries for a subfile
+"RTN","TMGRPC3D",90,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3D",91,0)
+        ;"       TMGPARAMS -- SubFileNum^ParentIENS^[FIELDS]
+"RTN","TMGRPC3D",92,0)
+        ;"              SubFileNum - Subfile Number to get list from.
+"RTN","TMGRPC3D",93,0)
+        ;"              ParentIENS -- IENS for parent to get list from (e.g. "73,"
+"RTN","TMGRPC3D",94,0)
+        ;"              FIELDS -- OPTIONAL, a Fields string to pass to LIST^DIC, for getting back values
+"RTN","TMGRPC3D",95,0)
+        ;"Output: TMGOUT is filled as follows:
+"RTN","TMGRPC3D",96,0)
+        ;"          TMGOUT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3D",97,0)
+        ;"          TMGOUT(1)=IEN^Value^... (return depends of fields requested.  Default is .01)
+"RTN","TMGRPC3D",98,0)
+        ;"          TMGOUT(2)=IEN^Value^...
+"RTN","TMGRPC3D",99,0)
+        ;"          ...
+"RTN","TMGRPC3D",100,0)
+        ;"Results: none
+"RTN","TMGRPC3D",101,0)
+ ;
+"RTN","TMGRPC3D",102,0)
+        SET TMGOUT(0)="1^Success"
+"RTN","TMGRPC3D",103,0)
+        NEW TMGSUBFILE SET TMGSUBFILE=+$PIECE(TMGPARAMS,"^",1)
+"RTN","TMGRPC3D",104,0)
+        IF TMGSUBFILE'>0 DO  GOTO GSRLDONE
+"RTN","TMGRPC3D",105,0)
+        . SET TMGOUT(0)="-1^No Subfile number supplied"
+"RTN","TMGRPC3D",106,0)
+        NEW TMGPARIENTIENS SET TMGPARIENTIENS=$PIECE(TMGPARAMS,"^",2)
+"RTN","TMGRPC3D",107,0)
+        IF TMGPARIENTIENS="" DO  GOTO GSRLDONE
+"RTN","TMGRPC3D",108,0)
+        . SET TMGOUT(0)="-1^No Parent IENS supplied"
+"RTN","TMGRPC3D",109,0)
+        NEW TMGIENS SET TMGIENS=","_TMGPARIENTIENS
+"RTN","TMGRPC3D",110,0)
+        NEW TMGFLDS SET TMGFLDS=$PIECE(TMGPARAMS,"^",3)
+"RTN","TMGRPC3D",111,0)
+ ;
+"RTN","TMGRPC3D",112,0)
+        DO LIST^DIC(TMGSUBFILE,TMGIENS,TMGFLDS,"PU","*",,,,,,"TMGMSG","TMGERR")
+"RTN","TMGRPC3D",113,0)
+ ;
+"RTN","TMGRPC3D",114,0)
+        IF $DATA(TMGMSG("DIERR")) DO  GOTO GSRLDONE
+"RTN","TMGRPC3D",115,0)
+        . SET TMGOUT(0)="-1^See Fileman message"
+"RTN","TMGRPC3D",116,0)
+        . SET TMGOUT(1)=$$GETERSTR^TMGRPC3G(.TMGMSG)
+"RTN","TMGRPC3D",117,0)
+ ;
+"RTN","TMGRPC3D",118,0)
+        NEW TMGCOUNT SET TMGCOUNT=1
+"RTN","TMGRPC3D",119,0)
+        NEW TMGI SET TMGI=0
+"RTN","TMGRPC3D",120,0)
+        FOR  SET TMGI=$ORDER(TMGMSG("DILIST",TMGI)) QUIT:(+TMGI'>0)  DO
+"RTN","TMGRPC3D",121,0)
+        . NEW TMGONEENTRY SET TMGONEENTRY=$GET(TMGMSG("DILIST",TMGI,0))
+"RTN","TMGRPC3D",122,0)
+        . IF TMGONEENTRY="" QUIT
+"RTN","TMGRPC3D",123,0)
+        . NEW TMGIEN SET TMGIEN=$PIECE(TMGONEENTRY,"^",1)
+"RTN","TMGRPC3D",124,0)
+        . SET $PIECE(TMGONEENTRY,"^",1)=TMGIEN_","_TMGPARIENTIENS
+"RTN","TMGRPC3D",125,0)
+        . SET TMGOUT(TMGCOUNT)=TMGONEENTRY
+"RTN","TMGRPC3D",126,0)
+        . SET TMGCOUNT=TMGCOUNT+1
+"RTN","TMGRPC3D",127,0)
+ ;
+"RTN","TMGRPC3D",128,0)
+GSRLDONE ;
+"RTN","TMGRPC3D",129,0)
+        QUIT
+"RTN","TMGRPC3D",130,0)
+ ;
+"RTN","TMGRPC3D",131,0)
+ ;
+"RTN","TMGRPC3D",132,0)
+CLONEUSR(TMGOUT,TMGPARAMS) ;
+"RTN","TMGRPC3D",133,0)
+        ;"Purpose: to replicate a record into a new record, including all subrecs.
+"RTN","TMGRPC3D",134,0)
+        ;"         Implementation of "CLONE RECORD" request
+"RTN","TMGRPC3D",135,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3D",136,0)
+        ;"       TMGPARAMS -- SourceIENS^New.01Value
+"RTN","TMGRPC3D",137,0)
+        ;"          FileNum - filename file that is to be worked in
+"RTN","TMGRPC3D",138,0)
+        ;"          SourceIENS -- source IENS for new record, (i.e. '123,'  not '123')
+"RTN","TMGRPC3D",139,0)
+        ;"          New.01Value -- new value to be put into the .01 field (to distinguish it from the old record)
+"RTN","TMGRPC3D",140,0)
+        ;"Output: TMGOUT is filled as follows:
+"RTN","TMGRPC3D",141,0)
+        ;"          TMGOUT(0)="1^Success^NewIENS" or "-1^Message"
+"RTN","TMGRPC3D",142,0)
+        ;"          TMGOUT(1)=Long Fileman message (if -1 error)
+"RTN","TMGRPC3D",143,0)
+ ;
+"RTN","TMGRPC3D",144,0)
+        SET TMGPARAMS="200^"_TMGPARAMS
+"RTN","TMGRPC3D",145,0)
+        DO CLONEREC(.TMGOUT,TMGPARAMS)
+"RTN","TMGRPC3D",146,0)
+        NEW TMGFDA,TMGMSG
+"RTN","TMGRPC3D",147,0)
+        IF +TMGOUT(0)'=1 GOTO CUDONE
+"RTN","TMGRPC3D",148,0)
+        NEW TMGNEWIEN
+"RTN","TMGRPC3D",149,0)
+        SET TMGNEWIEN=+$PIECE(TMGOUT(0),"^",3)
+"RTN","TMGRPC3D",150,0)
+        IF TMGNEWIEN="" DO  GOTO CUDONE
+"RTN","TMGRPC3D",151,0)
+        . SET TMGOUT(0)="-1^Can't find IEN of added record"
+"RTN","TMGRPC3D",152,0)
+ ;
+"RTN","TMGRPC3D",153,0)
+        ;"Set new user to inactive (needs editing before it is active)
+"RTN","TMGRPC3D",154,0)
+        NEW TMGDATA
+"RTN","TMGRPC3D",155,0)
+        SET TMGDATA(0)="200^"_TMGNEWIEN_",^7^^YES"
+"RTN","TMGRPC3D",156,0)
+        DO POSTDATA^TMGRPC3C(.TMGOUT,.TMGDATA,"E")
+"RTN","TMGRPC3D",157,0)
+        IF +TMGOUT(0)=1 SET $PIECE(TMGOUT(0),"^",3)=TMGNEWIEN
+"RTN","TMGRPC3D",158,0)
+ ;
+"RTN","TMGRPC3D",159,0)
+CUDONE  ;
+"RTN","TMGRPC3D",160,0)
+        QUIT
+"RTN","TMGRPC3D",161,0)
+ ;
+"RTN","TMGRPC3D",162,0)
+CLONEREC(TMGOUT,TMGPARAMS) ;
+"RTN","TMGRPC3D",163,0)
+        ;"Purpose: to replicate a record into a NEW record, including all subrecs.
+"RTN","TMGRPC3D",164,0)
+        ;"         Implementation of "CLONE RECORD" request
+"RTN","TMGRPC3D",165,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3D",166,0)
+        ;"       TMGPARAMS -- FileNum^SourceIENS^New.01Value
+"RTN","TMGRPC3D",167,0)
+        ;"              FileNum - filename file that is to be worked in
+"RTN","TMGRPC3D",168,0)
+        ;"              SourceIENS -- the source IENS for the new record, (i.e. 123,  not 123)
+"RTN","TMGRPC3D",169,0)
+        ;"              New.01Value -- the new value to be put into the .01 field (to distinguish it from the old record)
+"RTN","TMGRPC3D",170,0)
+        ;"Output: TMGOUT is filled as follows:
+"RTN","TMGRPC3D",171,0)
+        ;"          TMGOUT(0)="1^Success^NewIENS" or "-1^Message"
+"RTN","TMGRPC3D",172,0)
+        ;"          TMGOUT(1)=Long Fileman message (if -1 error)
+"RTN","TMGRPC3D",173,0)
+        ;"NOTE: This hasn't been tested on subfiles yet...
+"RTN","TMGRPC3D",174,0)
+ ;
+"RTN","TMGRPC3D",175,0)
+        NEW TMGFILE,TMGIENS,TMGNEW01VALUE
+"RTN","TMGRPC3D",176,0)
+        SET TMGOUT(0)="-1^Error"  ;"default to error
+"RTN","TMGRPC3D",177,0)
+ ;
+"RTN","TMGRPC3D",178,0)
+        SET TMGFILE=+$PIECE(TMGPARAMS,"^",1)
+"RTN","TMGRPC3D",179,0)
+        IF TMGFILE'>0 DO  GOTO CRDONE
+"RTN","TMGRPC3D",180,0)
+        . SET TMGOUT(0)="-1^No file number supplied"
+"RTN","TMGRPC3D",181,0)
+        SET TMGIENS=$PIECE(TMGPARAMS,"^",2)
+"RTN","TMGRPC3D",182,0)
+        IF TMGIENS="" DO  GOTO CRDONE
+"RTN","TMGRPC3D",183,0)
+        . SET TMGOUT(0)="-1^IENS supplied"
+"RTN","TMGRPC3D",184,0)
+        IF +TMGIENS=TMGIENS DO
+"RTN","TMGRPC3D",185,0)
+        . IF TMGIENS'["," SET TMGIENS=TMGIENS_","
+"RTN","TMGRPC3D",186,0)
+        SET TMGNEW01VALUE=$PIECE(TMGPARAMS,"^",3)
+"RTN","TMGRPC3D",187,0)
+        IF TMGNEW01VALUE="" DO  GOTO CRDONE
+"RTN","TMGRPC3D",188,0)
+        . SET TMGOUT(0)="-1^No new value supplied for .01 value"
+"RTN","TMGRPC3D",189,0)
+ ;
+"RTN","TMGRPC3D",190,0)
+        NEW TMGARRAY,TMGMSG,TMGTEMP
+"RTN","TMGRPC3D",191,0)
+        NEW TMGREF SET TMGREF="TMGARRAY"
+"RTN","TMGRPC3D",192,0)
+ ;
+"RTN","TMGRPC3D",193,0)
+        DO STUBNEWR^TMGRPC3E(TMGFILE,TMGNEW01VALUE,.TMGOUT)
+"RTN","TMGRPC3D",194,0)
+        IF +TMGOUT(0)'=1 DO  GOTO CRDONE
+"RTN","TMGRPC3D",195,0)
+        . SET $PIECE(TMGOUT(0),"^",2)="Unable to stub in new record. "_$PIECE(TMGOUT(0),"^",2)
+"RTN","TMGRPC3D",196,0)
+        NEW TMGNEWIEN SET TMGNEWIEN=$PIECE(TMGOUT(0),"^",3)
+"RTN","TMGRPC3D",197,0)
+        ;"Write "The IENS of the new record is: ",TMGNEWIEN,! ;"TEMP!!!
+"RTN","TMGRPC3D",198,0)
+ ;
+"RTN","TMGRPC3D",199,0)
+        ;"Note: Using a "X" flag is VERY slow, because it reindexes
+"RTN","TMGRPC3D",200,0)
+        ;"      ALL XREFS for ALL entries in file (e.g. 60 seconds)
+"RTN","TMGRPC3D",201,0)
+        ;"DO TRNMRG^TMGDIT("M",TMGFILE,TMGFILE,TMGIENS,TMGNEWIEN_",")  ;"DO actual record copy.
+"RTN","TMGRPC3D",202,0)
+        DO TRNMRG^DIT("M",TMGFILE,TMGFILE,TMGIENS,TMGNEWIEN_",")  ;"do actual record copy.
+"RTN","TMGRPC3D",203,0)
+        NEW DA,DIK
+"RTN","TMGRPC3D",204,0)
+        SET DIK=$GET(^DIC(TMGFILE,0,"GL"))
+"RTN","TMGRPC3D",205,0)
+        SET DA=TMGNEWIEN
+"RTN","TMGRPC3D",206,0)
+        IF (+DA>0)&(DIK'="") DO IX1^DIK  ;"index just the new record
+"RTN","TMGRPC3D",207,0)
+ ;
+"RTN","TMGRPC3D",208,0)
+        ;"OK if we got this far (can't check error from TRNMRG)
+"RTN","TMGRPC3D",209,0)
+        SET TMGOUT(0)="1^Success^"_TMGNEWIEN
+"RTN","TMGRPC3D",210,0)
+ ;
+"RTN","TMGRPC3D",211,0)
+CRDONE  QUIT
+"RTN","TMGRPC3D",212,0)
+ ;
+"RTN","TMGRPC3D",213,0)
+ ;
+"RTN","TMGRPC3E")
+0^2^B74240131
+"RTN","TMGRPC3E",1,0)
+TMGRPC3E ;TMG/kst/Support Functions for GUI_Config ;08/31/08, 7/7/10
+"RTN","TMGRPC3E",2,0)
+         ;;1.0;TMG-LIB;**1**;08/31/08;Build 2
+"RTN","TMGRPC3E",3,0)
+ ;
+"RTN","TMGRPC3E",4,0)
+ ;"TMG RPC FUNCTIONS for a GUI config program
+"RTN","TMGRPC3E",5,0)
+ ;
+"RTN","TMGRPC3E",6,0)
+ ;"Kevin Toppenberg MD
+"RTN","TMGRPC3E",7,0)
+ ;"GNU Lessor General Public License (LGPL) applies
+"RTN","TMGRPC3E",8,0)
+ ;"7/20/08
+"RTN","TMGRPC3E",9,0)
+ ;
+"RTN","TMGRPC3E",10,0)
+ ;"=======================================================================
+"RTN","TMGRPC3E",11,0)
+ ;" RPC -- Public Functions.
+"RTN","TMGRPC3E",12,0)
+ ;"=======================================================================
+"RTN","TMGRPC3E",13,0)
+ ;" <none>
+"RTN","TMGRPC3E",14,0)
+ ;"=======================================================================
+"RTN","TMGRPC3E",15,0)
+ ;"PRIVATE API FUNCTIONS
+"RTN","TMGRPC3E",16,0)
+ ;"=======================================================================
+"RTN","TMGRPC3E",17,0)
+ ;"GETEMPTY(TMGOUT,TMGPARAMS) -- get stub entries for a file (typically a subfile)
+"RTN","TMGRPC3E",18,0)
+ ;"GETHELPM(TMGOUT,TMGPARAMS)  -- retrieve the help message for a given field.
+"RTN","TMGRPC3E",19,0)
+ ;"STUBNEWR(TMGFILE,NewValue,TMGOUT) -- create a stub entry in the file (200), to be filled in elsewhere
+"RTN","TMGRPC3E",20,0)
+ ;"GETIFWP(TMGOUT,TMGPARAMS) -- return if filenumber is a WP subfile
+"RTN","TMGRPC3E",21,0)
+ ;"GETWPFLD(TMGOUT,TMGPARAMS) -- retrieve on word processing (WP) field entry
+"RTN","TMGRPC3E",22,0)
+ ;"PSTWPFLD(TMGOUT,TMGPARAMS,INPUT) -- store a word processing (WP) field entry
+"RTN","TMGRPC3E",23,0)
+ ;
+"RTN","TMGRPC3E",24,0)
+ ;"=======================================================================
+"RTN","TMGRPC3E",25,0)
+ ;"=======================================================================
+"RTN","TMGRPC3E",26,0)
+ ;"Dependencies:
+"RTN","TMGRPC3E",27,0)
+ ;"  TMGRPC3* only
+"RTN","TMGRPC3E",28,0)
+ ;
+"RTN","TMGRPC3E",29,0)
+ ;"=======================================================================
+"RTN","TMGRPC3E",30,0)
+ ;"=======================================================================
+"RTN","TMGRPC3E",31,0)
+ ;
+"RTN","TMGRPC3E",32,0)
+GETEMPTY(TMGOUT,TMGPARAMS) ;"GET EMPTY ENTRY
+"RTN","TMGRPC3E",33,0)
+        ;"Purpose: to get stub entries for a file (typically a subfile)
+"RTN","TMGRPC3E",34,0)
+        ;"              "GET EMPTY ENTRY"  -- getting stub entries for subfiles typically
+"RTN","TMGRPC3E",35,0)
+        ;"                   TMGPARAMS: file entry (file or subfile number)
+"RTN","TMGRPC3E",36,0)
+        ;"Input: TMGOUT --an OUT ARRAY, filled as follows:
+"RTN","TMGRPC3E",37,0)
+        ;"          TMGOUT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3E",38,0)
+        ;"          TMGOUT(1)=File^^FieldNum^^DDInfo...
+"RTN","TMGRPC3E",39,0)
+        ;"          TMGOUT(2)=File^^FieldNum^^DDInfo...
+"RTN","TMGRPC3E",40,0)
+        ;"          Etc ...
+"RTN","TMGRPC3E",41,0)
+        ;"       Params: filenumber (typically a subfilenumber)
+"RTN","TMGRPC3E",42,0)
+        ;"Result: None
+"RTN","TMGRPC3E",43,0)
+ ;
+"RTN","TMGRPC3E",44,0)
+        SET TMGOUT(0)="1^Success"
+"RTN","TMGRPC3E",45,0)
+        NEW TMGCOUNT SET TMGCOUNT=1
+"RTN","TMGRPC3E",46,0)
+        NEW TMGFNUM SET TMGFNUM=+$GET(TMGPARAMS)
+"RTN","TMGRPC3E",47,0)
+        NEW TMGFLDNUM SET TMGFLDNUM=0
+"RTN","TMGRPC3E",48,0)
+        FOR  SET TMGFLDNUM=$ORDER(^DD(TMGFNUM,TMGFLDNUM)) QUIT:(+TMGFLDNUM'>0)  DO
+"RTN","TMGRPC3E",49,0)
+        . NEW TMGDDINFO SET TMGDDINFO=$PIECE($GET(^DD(TMGFNUM,TMGFLDNUM,0)),"^",1,4)
+"RTN","TMGRPC3E",50,0)
+        . SET TMGOUT(TMGCOUNT)=TMGFNUM_"^^"_TMGFLDNUM_"^^"_TMGDDINFO
+"RTN","TMGRPC3E",51,0)
+        . SET TMGCOUNT=TMGCOUNT+1
+"RTN","TMGRPC3E",52,0)
+ ;
+"RTN","TMGRPC3E",53,0)
+        QUIT
+"RTN","TMGRPC3E",54,0)
+ ;
+"RTN","TMGRPC3E",55,0)
+ ;
+"RTN","TMGRPC3E",56,0)
+GETHELPM(TMGOUT,TMGPARAMS) ;
+"RTN","TMGRPC3E",57,0)
+        ;"Purpose: to retrieve the help message for a given field.
+"RTN","TMGRPC3E",58,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3E",59,0)
+        ;"       TMGPARAMS -- file^field^HelpType^IENS
+"RTN","TMGRPC3E",60,0)
+        ;"Output: TMGOUT is filled as follows:
+"RTN","TMGRPC3E",61,0)
+        ;"          TMGOUT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3E",62,0)
+        ;"          TMGOUT(1...?)=Help Message
+"RTN","TMGRPC3E",63,0)
+ ;
+"RTN","TMGRPC3E",64,0)
+        NEW TMGMSG
+"RTN","TMGRPC3E",65,0)
+        NEW TMGINDEX SET TMGINDEX=1
+"RTN","TMGRPC3E",66,0)
+        NEW TMGFILE SET TMGFILE=+$PIECE(TMGPARAMS,"^",1)
+"RTN","TMGRPC3E",67,0)
+        NEW TMGFIELD SET TMGFIELD=+$PIECE(TMGPARAMS,"^",2)
+"RTN","TMGRPC3E",68,0)
+        NEW TMGHELPTYPE SET TMGHELPTYPE=$PIECE(TMGPARAMS,"^",3)
+"RTN","TMGRPC3E",69,0)
+        NEW TMGIENS SET TMGIENS=$PIECE(TMGPARAMS,"^",4)
+"RTN","TMGRPC3E",70,0)
+        IF TMGFILE'>0 DO  GOTO GHMDONE
+"RTN","TMGRPC3E",71,0)
+        . SET TMGOUT(0)="-1^No file number supplied"
+"RTN","TMGRPC3E",72,0)
+        IF TMGFIELD'>0 DO  GOTO GHMDONE
+"RTN","TMGRPC3E",73,0)
+        . SET TMGOUT(0)="-1^No Field Number supplied"
+"RTN","TMGRPC3E",74,0)
+        DO HELP^DIE(TMGFILE,TMGIENS,TMGFIELD,TMGHELPTYPE,"TMGMSG")
+"RTN","TMGRPC3E",75,0)
+        NEW TMGI SET TMGI=""
+"RTN","TMGRPC3E",76,0)
+        FOR  SET TMGI=$ORDER(TMGMSG("DIHELP",TMGI)) QUIT:(TMGI="")  DO
+"RTN","TMGRPC3E",77,0)
+        . SET TMGOUT(TMGINDEX)=TMGMSG("DIHELP",TMGI)
+"RTN","TMGRPC3E",78,0)
+        . SET TMGINDEX=TMGINDEX+1
+"RTN","TMGRPC3E",79,0)
+ ;
+"RTN","TMGRPC3E",80,0)
+        SET TMGOUT(0)="1^Success"
+"RTN","TMGRPC3E",81,0)
+ ;
+"RTN","TMGRPC3E",82,0)
+GHMDONE ;
+"RTN","TMGRPC3E",83,0)
+        QUIT
+"RTN","TMGRPC3E",84,0)
+ ;
+"RTN","TMGRPC3E",85,0)
+ ;
+"RTN","TMGRPC3E",86,0)
+STUBNEWR(TMGFILE,TMGNEWVALUE,TMGOUT) ;"STUB NEW RECORD
+"RTN","TMGRPC3E",87,0)
+        ;"Purpose: to create a stub entry in the file (200), to be filled in elsewhere
+"RTN","TMGRPC3E",88,0)
+        ;"Input: TMGNEWVALUE -- a value for the .01 field
+"RTN","TMGRPC3E",89,0)
+        ;"       TMGOUT -- PASS BY REFERENCE, an OUT PARAMETER.
+"RTN","TMGRPC3E",90,0)
+        ;"Output: A new record will be added to file, if no errors
+"RTN","TMGRPC3E",91,0)
+        ;"       TMGOUT(0): 1^Success^NewIEN   or -1^See Fileman message
+"RTN","TMGRPC3E",92,0)
+        ;"       TMGOUT(1) will contain Fileman error, if any
+"RTN","TMGRPC3E",93,0)
+        ;"Results: none
+"RTN","TMGRPC3E",94,0)
+        ;"NOTICE: This function makes no promise that the creation of the
+"RTN","TMGRPC3E",95,0)
+        ;"      new record will succeed.  For example, if there are required
+"RTN","TMGRPC3E",96,0)
+        ;"      fields, the creation will fail.  So users should check for success
+"RTN","TMGRPC3E",97,0)
+        ;"      result and error feedback.
+"RTN","TMGRPC3E",98,0)
+        ;"Results: none
+"RTN","TMGRPC3E",99,0)
+ ;
+"RTN","TMGRPC3E",100,0)
+        NEW TMGFDA,TMGIEN,TMGMSG,DIC
+"RTN","TMGRPC3E",101,0)
+        SET DIC(0)=""  ;"I get a crash without this, for some reason...
+"RTN","TMGRPC3E",102,0)
+        SET TMGFDA(TMGFILE,"+1,",.01)=TMGNEWVALUE
+"RTN","TMGRPC3E",103,0)
+        DO UPDATE^DIE("S","TMGFDA","TMGIEN","TMGMSG")
+"RTN","TMGRPC3E",104,0)
+ ;
+"RTN","TMGRPC3E",105,0)
+        IF $DATA(TMGMSG("DIERR")) DO  GOTO SNPDONE
+"RTN","TMGRPC3E",106,0)
+        . SET TMGOUT(0)="-1^See Fileman message"
+"RTN","TMGRPC3E",107,0)
+        . SET TMGOUT(1)=$$GETERSTR^TMGRPC3G(.TMGMSG)
+"RTN","TMGRPC3E",108,0)
+ ;
+"RTN","TMGRPC3E",109,0)
+        SET TMGOUT(0)="1^Success^"_$GET(TMGIEN(1))
+"RTN","TMGRPC3E",110,0)
+ ;
+"RTN","TMGRPC3E",111,0)
+SNPDONE ;
+"RTN","TMGRPC3E",112,0)
+        QUIT
+"RTN","TMGRPC3E",113,0)
+ ;
+"RTN","TMGRPC3E",114,0)
+ ;
+"RTN","TMGRPC3E",115,0)
+GETIFWP(TMGOUT,TMGPARAMS) ;"GET IF WP FIELD
+"RTN","TMGRPC3E",116,0)
+        ;"Purpose: to return if filenumber is a WP subfile
+"RTN","TMGRPC3E",117,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3E",118,0)
+        ;"       TMGPARAMS -- file^field
+"RTN","TMGRPC3E",119,0)
+        ;"Output:
+"RTN","TMGRPC3E",120,0)
+        ;"       TMGOUT(0): "1^Success^YES/NO" or "-1^Message"
+"RTN","TMGRPC3E",121,0)
+        ;"            "YES" if is a WP subfile, otherwise "NO"
+"RTN","TMGRPC3E",122,0)
+        ;"       TMGOUT(1) will contain Fileman error, if any
+"RTN","TMGRPC3E",123,0)
+        ;"Results: none
+"RTN","TMGRPC3E",124,0)
+ ;
+"RTN","TMGRPC3E",125,0)
+        NEW TMGRESULT
+"RTN","TMGRPC3E",126,0)
+        NEW TMGFILE SET TMGFILE=+$PIECE(TMGPARAMS,"^",1)
+"RTN","TMGRPC3E",127,0)
+        NEW TMGFIELD SET TMGFIELD=+$PIECE(TMGPARAMS,"^",2)
+"RTN","TMGRPC3E",128,0)
+        IF TMGFILE'>0 DO  GOTO GWPSDONE
+"RTN","TMGRPC3E",129,0)
+        . SET TMGOUT(0)="-1^No file number supplied"
+"RTN","TMGRPC3E",130,0)
+        IF TMGFIELD'>0 DO  GOTO GWPSDONE
+"RTN","TMGRPC3E",131,0)
+        . SET TMGOUT(0)="-1^No Field Number supplied"
+"RTN","TMGRPC3E",132,0)
+ ;
+"RTN","TMGRPC3E",133,0)
+        DO FIELD^DID(TMGFILE,TMGFIELD,"","TYPE","TMGARRAY","TMGMSG")
+"RTN","TMGRPC3E",134,0)
+ ;
+"RTN","TMGRPC3E",135,0)
+        IF $DATA(TMGMSG("DIERR")) DO  GOTO GWPSDONE
+"RTN","TMGRPC3E",136,0)
+        . SET TMGOUT(0)="-1^See Fileman message"
+"RTN","TMGRPC3E",137,0)
+        . SET TMGOUT(1)=$$GETERSTR^TMGRPC3G(.TMGMSG)
+"RTN","TMGRPC3E",138,0)
+ ;
+"RTN","TMGRPC3E",139,0)
+        IF $GET(TMGARRAY("TYPE"))="WORD-PROCESSING" DO
+"RTN","TMGRPC3E",140,0)
+        . SET TMGRESULT="YES"
+"RTN","TMGRPC3E",141,0)
+        ELSE  DO
+"RTN","TMGRPC3E",142,0)
+        . SET TMGRESULT="NO"
+"RTN","TMGRPC3E",143,0)
+ ;
+"RTN","TMGRPC3E",144,0)
+        SET TMGOUT(0)="1^Success^"_TMGRESULT
+"RTN","TMGRPC3E",145,0)
+ ;
+"RTN","TMGRPC3E",146,0)
+GWPSDONE ;
+"RTN","TMGRPC3E",147,0)
+        QUIT
+"RTN","TMGRPC3E",148,0)
+ ;
+"RTN","TMGRPC3E",149,0)
+ ;
+"RTN","TMGRPC3E",150,0)
+GETWPFLD(TMGOUT,TMGPARAMS) ;"GET WP FIELD
+"RTN","TMGRPC3E",151,0)
+        ;"Purpose: To retrieve on word processing (WP) field entry
+"RTN","TMGRPC3E",152,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3E",153,0)
+        ;"       TMGPARAMS -- FileNum^Field^IENS (e.g. 'GET ONE WP FIELD^200^73,')
+"RTN","TMGRPC3E",154,0)
+        ;"Output:
+"RTN","TMGRPC3E",155,0)
+        ;"       TMGOUT(0): "1^Success" or "-1^Message"
+"RTN","TMGRPC3E",156,0)
+        ;"       TMGOUT(1) will contain Fileman error, if any
+"RTN","TMGRPC3E",157,0)
+        ;"       - or to return WP array -
+"RTN","TMGRPC3E",158,0)
+        ;"       TMGOUT(1)=1st line of text
+"RTN","TMGRPC3E",159,0)
+        ;"       TMGOUT(2)=2nd line of text
+"RTN","TMGRPC3E",160,0)
+        ;"       etc..
+"RTN","TMGRPC3E",161,0)
+        ;"Results: None
+"RTN","TMGRPC3E",162,0)
+ ;
+"RTN","TMGRPC3E",163,0)
+        NEW TMGFILE SET TMGFILE=+$PIECE(TMGPARAMS,"^",1)
+"RTN","TMGRPC3E",164,0)
+        NEW TMGFIELD SET TMGFIELD=+$PIECE(TMGPARAMS,"^",2)
+"RTN","TMGRPC3E",165,0)
+        NEW TMGIENS SET TMGIENS=+$PIECE(TMGPARAMS,"^",3)
+"RTN","TMGRPC3E",166,0)
+        NEW TMGARRAY
+"RTN","TMGRPC3E",167,0)
+        IF TMGFILE'>0 DO  GOTO GWPDONE
+"RTN","TMGRPC3E",168,0)
+        . SET TMGOUT(0)="-1^No file number supplied"
+"RTN","TMGRPC3E",169,0)
+        IF TMGFIELD'>0 DO  GOTO GWPDONE
+"RTN","TMGRPC3E",170,0)
+        . SET TMGOUT(0)="-1^No Field Number supplied"
+"RTN","TMGRPC3E",171,0)
+        IF TMGIENS="" DO  GOTO GWPDONE
+"RTN","TMGRPC3E",172,0)
+        . SET TMGOUT(0)="-1^No IENS supplied"
+"RTN","TMGRPC3E",173,0)
+ ;
+"RTN","TMGRPC3E",174,0)
+        NEW TMGTEMP
+"RTN","TMGRPC3E",175,0)
+        SET TMGTEMP=$$GET1^DIQ(TMGFILE,TMGIENS,TMGFIELD,"","TMGARRAY","TMGMSG")
+"RTN","TMGRPC3E",176,0)
+        IF $DATA(TMGMSG("DIERR")) DO  GOTO GWPDONE
+"RTN","TMGRPC3E",177,0)
+        . SET TMGOUT(0)="-1^See Fileman message"
+"RTN","TMGRPC3E",178,0)
+        . SET TMGOUT(1)=$$GETERSTR^TMGRPC3G(.TMGMSG)
+"RTN","TMGRPC3E",179,0)
+ ;
+"RTN","TMGRPC3E",180,0)
+        SET TMGOUT(0)="1^Success"
+"RTN","TMGRPC3E",181,0)
+        NEW TMGINDEX SET TMGINDEX=1
+"RTN","TMGRPC3E",182,0)
+        NEW TMGI SET TMGI=0
+"RTN","TMGRPC3E",183,0)
+        FOR  SET TMGI=$ORDER(TMGARRAY(TMGI)) QUIT:(TMGI="")  DO
+"RTN","TMGRPC3E",184,0)
+        . SET TMGOUT(TMGINDEX)=TMGARRAY(TMGI)
+"RTN","TMGRPC3E",185,0)
+        . SET TMGINDEX=TMGINDEX+1
+"RTN","TMGRPC3E",186,0)
+ ;
+"RTN","TMGRPC3E",187,0)
+GWPDONE ;
+"RTN","TMGRPC3E",188,0)
+        QUIT
+"RTN","TMGRPC3E",189,0)
+ ;
+"RTN","TMGRPC3E",190,0)
+ ;
+"RTN","TMGRPC3E",191,0)
+PSTWPFLD(TMGOUT,TMGPARAMS,INPUT) ;"POST WP FIELD
+"RTN","TMGRPC3E",192,0)
+        ;"Purpose: To store a word processing (WP) field entry
+"RTN","TMGRPC3E",193,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3E",194,0)
+        ;"       TMGPARAMS -- FileNum^FieldNum^IENS (e.g. 'GET ONE WP FIELD^200^73,')
+"RTN","TMGRPC3E",195,0)
+        ;"       INPUT -- holds the WP itself to be stored:
+"RTN","TMGRPC3E",196,0)
+        ;"                   INPUT(0)=0TH line
+"RTN","TMGRPC3E",197,0)
+        ;"                   INPUT(1)=1st line
+"RTN","TMGRPC3E",198,0)
+        ;"                   INPUT(2)=2nd line
+"RTN","TMGRPC3E",199,0)
+        ;"                   ...
+"RTN","TMGRPC3E",200,0)
+        ;"Output:
+"RTN","TMGRPC3E",201,0)
+        ;"       TMGOUT(0): "1^Success" or "-1^Message"
+"RTN","TMGRPC3E",202,0)
+        ;"       TMGOUT(1) will contain Fileman error, if any
+"RTN","TMGRPC3E",203,0)
+        ;"Results: None
+"RTN","TMGRPC3E",204,0)
+ ;
+"RTN","TMGRPC3E",205,0)
+        NEW TMGFILE SET TMGFILE=+$PIECE(TMGPARAMS,"^",1)
+"RTN","TMGRPC3E",206,0)
+        NEW TMGFIELD SET TMGFIELD=+$PIECE(TMGPARAMS,"^",2)
+"RTN","TMGRPC3E",207,0)
+        NEW TMGIENS SET TMGIENS=+$PIECE(TMGPARAMS,"^",3)
+"RTN","TMGRPC3E",208,0)
+        IF TMGFILE'>0 DO  GOTO PWPDONE
+"RTN","TMGRPC3E",209,0)
+        . SET TMGOUT(0)="-1^No file number supplied"
+"RTN","TMGRPC3E",210,0)
+        IF TMGFIELD'>0 DO  GOTO PWPDONE
+"RTN","TMGRPC3E",211,0)
+        . SET TMGOUT(0)="-1^No Field Number supplied"
+"RTN","TMGRPC3E",212,0)
+        IF TMGIENS="" DO  GOTO PWPDONE
+"RTN","TMGRPC3E",213,0)
+        . SET TMGOUT(0)="-1^No IENS supplied"
+"RTN","TMGRPC3E",214,0)
+        IF $LENGTH(TMGIENS,",")=1 SET TMGIENS=TMGIENS_","
+"RTN","TMGRPC3E",215,0)
+ ;
+"RTN","TMGRPC3E",216,0)
+        DO WP^DIE(TMGFILE,TMGIENS,TMGFIELD,"K","INPUT","TMGMSG")
+"RTN","TMGRPC3E",217,0)
+ ;
+"RTN","TMGRPC3E",218,0)
+        IF $DATA(TMGMSG("DIERR")) DO  GOTO GWPDONE
+"RTN","TMGRPC3E",219,0)
+        . SET TMGOUT(0)="-1^See Fileman message"
+"RTN","TMGRPC3E",220,0)
+        . SET TMGOUT(1)=$$GETERSTR^TMGRPC3G(.TMGMSG)
+"RTN","TMGRPC3E",221,0)
+ ;
+"RTN","TMGRPC3E",222,0)
+        SET TMGOUT(0)="1^Success"
+"RTN","TMGRPC3E",223,0)
+ ;
+"RTN","TMGRPC3E",224,0)
+PWPDONE ;
+"RTN","TMGRPC3E",225,0)
+        QUIT
+"RTN","TMGRPC3E",226,0)
+ ;
+"RTN","TMGRPC3E",227,0)
+ ;
+"RTN","TMGRPC3F")
+0^6^B148831387
+"RTN","TMGRPC3F",1,0)
+TMGRPC3F ;TMG/kst/Support Functions for GUI_Config ;08/31/08
+"RTN","TMGRPC3F",2,0)
+         ;;1.02;TMG-LIB;**1**;11/18/08;Build 2
+"RTN","TMGRPC3F",3,0)
+ ;
+"RTN","TMGRPC3F",4,0)
+ ;"TMG RPC FUNCTIONS for a GUI config program
+"RTN","TMGRPC3F",5,0)
+ ;
+"RTN","TMGRPC3F",6,0)
+ ;"Kevin Toppenberg MD
+"RTN","TMGRPC3F",7,0)
+ ;"GNU Lessor General Public License (LGPL) applies
+"RTN","TMGRPC3F",8,0)
+ ;"7/20/08
+"RTN","TMGRPC3F",9,0)
+ ;
+"RTN","TMGRPC3F",10,0)
+ ;"=======================================================================
+"RTN","TMGRPC3F",11,0)
+ ;" RPC -- Public Functions.
+"RTN","TMGRPC3F",12,0)
+ ;"=======================================================================
+"RTN","TMGRPC3F",13,0)
+ ;" <none>
+"RTN","TMGRPC3F",14,0)
+ ;"=======================================================================
+"RTN","TMGRPC3F",15,0)
+ ;"PRIVATE API FUNCTIONS
+"RTN","TMGRPC3F",16,0)
+ ;"=======================================================================
+"RTN","TMGRPC3F",17,0)
+ ;"REGPAT(TMGOUT,TMGPARAMS) -- register a new patient into VistA, providing not already been registered.
+"RTN","TMGRPC3F",18,0)
+ ;"SRCHPTEXACT(TMGARRAY) -- search for a preexisting patient, using an exact search
+"RTN","TMGRPC3F",19,0)
+ ;
+"RTN","TMGRPC3F",20,0)
+ ;"=======================================================================
+"RTN","TMGRPC3F",21,0)
+ ;"Dependencies:
+"RTN","TMGRPC3F",22,0)
+ ;"  TMGRPC3* only
+"RTN","TMGRPC3F",23,0)
+ ;
+"RTN","TMGRPC3F",24,0)
+ ;"=======================================================================
+"RTN","TMGRPC3F",25,0)
+ ;
+"RTN","TMGRPC3F",26,0)
+REGPAT(TMGOUT,TMGPARAMS) ;"REGISTER PATIENT
+"RTN","TMGRPC3F",27,0)
+        ;"Purpose: to register a new patient into VistA, providing that they have not
+"RTN","TMGRPC3F",28,0)
+        ;"         already been registered.
+"RTN","TMGRPC3F",29,0)
+        ;"Note: The search for preexisting records is exact, meaning that DOE,JOHN
+"RTN","TMGRPC3F",30,0)
+        ;"      would be considered different from DOE,JOHN H
+"RTN","TMGRPC3F",31,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3F",32,0)
+        ;"       TMGPARAMS -- FieldNum1^FieldValue1^FieldNum2^FieldValue2^FieldNum3^FieldValue3^...
+"RTN","TMGRPC3F",33,0)
+        ;"       NOTE: Because I want to be able to specify here the HealthRecordNumber (HRN),
+"RTN","TMGRPC3F",34,0)
+        ;"             even though it is not truly a field in the PATIENT file, I am going
+"RTN","TMGRPC3F",35,0)
+        ;"             to manually allow a field of '0' (HRN) to be specified as a FieldNumber
+"RTN","TMGRPC3F",36,0)
+        ;"Output: TMGOUT is filled as follows:
+"RTN","TMGRPC3F",37,0)
+        ;"          TMGOUT(0)="1^Success^NewIEN" or
+"RTN","TMGRPC3F",38,0)
+        ;"                    "0^BoolAndMessage^NewIEN".  Format:
+"RTN","TMGRPC3F",39,0)
+        ;"                       [Bool1;Bool2;Bool3;Bool4;Bool5*MessageText]  (e.g. '1;0;1;0;0*ErrorMsg')
+"RTN","TMGRPC3F",40,0)
+        ;"                         (for Bool fields, 0=no or 1=yes)
+"RTN","TMGRPC3F",41,0)
+        ;"                         Bool1 -- patient had previously been registered
+"RTN","TMGRPC3F",42,0)
+        ;"                         Bool2 -- patient registered during this Fn
+"RTN","TMGRPC3F",43,0)
+        ;"                         Bool3 -- problem filing data into non-identifier fields
+"RTN","TMGRPC3F",44,0)
+        ;"                         Bool4 -- problem filing data into sub-file fields
+"RTN","TMGRPC3F",45,0)
+        ;"                         Bool5 -- problem with filing HRN
+"RTN","TMGRPC3F",46,0)
+        ;"                    "-1^Message"    Frank failure...
+"RTN","TMGRPC3F",47,0)
+        ;"          TMGOUT(1)=Long Fileman message (if -1 error, or perhaps 0 code)
+"RTN","TMGRPC3F",48,0)
+ ;
+"RTN","TMGRPC3F",49,0)
+        NEW TMGRSLT,TMGRCOD1,TMGRCOD2,TMGRCOD3,TMGRCOD4,TMGRCOD5,TMGRMSG
+"RTN","TMGRPC3F",50,0)
+        SET TMGRSLT=1,(TMGCOD1,TMGCOD2,TMGCOD3,TMGCOD4,TMGCOD5)=0,TMGMSG=""
+"RTN","TMGRPC3F",51,0)
+        NEW TMGARRAY
+"RTN","TMGRPC3F",52,0)
+        NEW TMGFDA,TMGMSG
+"RTN","TMGRPC3F",53,0)
+        FOR  DO  QUIT:($LENGTH(TMGPARAMS,"^"))<2
+"RTN","TMGRPC3F",54,0)
+        . NEW TMGPAIR,TMGFIELD,TMGVALUE
+"RTN","TMGRPC3F",55,0)
+        . SET TMGPAIR=$PIECE(TMGPARAMS,"^",1,2)
+"RTN","TMGRPC3F",56,0)
+        . SET TMGFIELD=$PIECE(TMGPAIR,"^",1)
+"RTN","TMGRPC3F",57,0)
+        . SET TMGVALUE=$PIECE(TMGPAIR,"^",2)
+"RTN","TMGRPC3F",58,0)
+        . SET TMGPARAMS=$EXTRACT(TMGPARAMS,$LENGTH(TMGPAIR)+2,999)
+"RTN","TMGRPC3F",59,0)
+        . IF (TMGFIELD="")!(TMGVALUE="") QUIT
+"RTN","TMGRPC3F",60,0)
+        . SET TMGARRAY(TMGFIELD)=TMGVALUE
+"RTN","TMGRPC3F",61,0)
+ ;
+"RTN","TMGRPC3F",62,0)
+        ;"Prepair list of required identifiers (needed to create record)
+"RTN","TMGRPC3F",63,0)
+        NEW TMGRECID,TMGFLD
+"RTN","TMGRPC3F",64,0)
+        SET TMGFLD=0
+"RTN","TMGRPC3F",65,0)
+        FOR  SET TMGFLD=$O(^DD(2,TMGFLD)) Q:'TMGFLD  DO
+"RTN","TMGRPC3F",66,0)
+        . NEW NODE,REQUIRED,ID
+"RTN","TMGRPC3F",67,0)
+        . SET NODE=$GET(^(TMGFLD,0))
+"RTN","TMGRPC3F",68,0)
+        . IF NODE'="" DO
+"RTN","TMGRPC3F",69,0)
+        . . SET NAME=$P(NODE,"^")
+"RTN","TMGRPC3F",70,0)
+        . . SET REQUIRED=$P(NODE,"^",2)["R"
+"RTN","TMGRPC3F",71,0)
+        . . SET ID=$DATA(^DD(2,0,"ID",TMGFLD))
+"RTN","TMGRPC3F",72,0)
+        . . IF REQUIRED&ID SET TMGRECID(TMGFLD)=1
+"RTN","TMGRPC3F",73,0)
+ ;
+"RTN","TMGRPC3F",74,0)
+        NEW TMGIEN SET TMGIEN=$$SRCHPTEXACT(.TMGARRAY)
+"RTN","TMGRPC3F",75,0)
+        IF +TMGIEN>0 DO  GOTO RP2  ;"Continue to possibly update data in other fields
+"RTN","TMGRPC3F",76,0)
+        . SET TMGRSL=0,TMGCOD1=1
+"RTN","TMGRPC3F",77,0)
+        . ;"SET TMGOUT(0)="-1^Patient already registered^"_TMGIEN
+"RTN","TMGRPC3F",78,0)
+ ;
+"RTN","TMGRPC3F",79,0)
+        ;"Load TMGFDA with elements of basic record first, then add other
+"RTN","TMGRPC3F",80,0)
+        ;"fields on subsequent post (I think I have had problems trying to
+"RTN","TMGRPC3F",81,0)
+        ;"load some fields when the record has not already been created.)
+"RTN","TMGRPC3F",82,0)
+        KILL TMGIEN
+"RTN","TMGRPC3F",83,0)
+        SET TMGFDA(2,"+1,",.01)=TMGARRAY(.01)
+"RTN","TMGRPC3F",84,0)
+        KILL TMGARRAY(.01)
+"RTN","TMGRPC3F",85,0)
+        SET TMGFLD=""
+"RTN","TMGRPC3F",86,0)
+        FOR  SET TMGFLD=$ORDER(TMGRECID(TMGFLD)) Q:TMGFLD=""  DO
+"RTN","TMGRPC3F",87,0)
+        . IF $DATA(TMGARRAY(TMGFLD))=0 QUIT  ;"Required identifier is missing, expect Filman error below
+"RTN","TMGRPC3F",88,0)
+        . NEW TMGVALUE SET TMGVALUE=$GET(TMGARRAY(TMGFLD))
+"RTN","TMGRPC3F",89,0)
+        . KILL TMGARRAY(TMGFLD)
+"RTN","TMGRPC3F",90,0)
+        . IF TMGVALUE="" QUIT
+"RTN","TMGRPC3F",91,0)
+        . SET TMGFDA(2,"+1,",TMGFLD)=TMGVALUE
+"RTN","TMGRPC3F",92,0)
+        ;"Create new record
+"RTN","TMGRPC3F",93,0)
+        DO UPDATE^DIE("SE","TMGFDA","TMGIEN","TMGMSG")
+"RTN","TMGRPC3F",94,0)
+        IF $DATA(TMGMSG("DIERR")) DO  GOTO RPTDONE
+"RTN","TMGRPC3F",95,0)
+        . SET TMGOUT(0)="-1^See Fileman message"
+"RTN","TMGRPC3F",96,0)
+        . SET TMGOUT(1)=$$GETERSTR^TMGRPC3G(.TMGMSG)
+"RTN","TMGRPC3F",97,0)
+        . DO ADDFDA^TMGRPC3G(.TMGFDA,.TMGOUT,2)
+"RTN","TMGRPC3F",98,0)
+        SET TMGCOD2=1  ;"patient registered OK
+"RTN","TMGRPC3F",99,0)
+        ;"Get IEN of new record
+"RTN","TMGRPC3F",100,0)
+        SET TMGIEN=$GET(TMGIEN(1))
+"RTN","TMGRPC3F",101,0)
+        IF TMGIEN'>0 DO  GOTO RPTDONE
+"RTN","TMGRPC3F",102,0)
+        . SET TMGRSLT=0
+"RTN","TMGRPC3F",103,0)
+        . SET TMGOUT(0)=TMGRSLT_"^"_TMGCOD1_";"_TMGCOD2_";"_TMGCOD3_";"_TMGCOD4_";"_TMGCOD5_"*Unable to find IEN of added record"
+"RTN","TMGRPC3F",104,0)
+ ;
+"RTN","TMGRPC3F",105,0)
+RP2     ;"Now add the other fields not put in on first pass.
+"RTN","TMGRPC3F",106,0)
+        NEW TMGFIELD SET TMGFIELD=""
+"RTN","TMGRPC3F",107,0)
+        KILL TMGFDA,TMGMSG,TMGMVA
+"RTN","TMGRPC3F",108,0)
+        FOR  SET TMGFIELD=$ORDER(TMGARRAY(TMGFIELD)) QUIT:(TMGFIELD="")  DO
+"RTN","TMGRPC3F",109,0)
+        . IF TMGFIELD="0" QUIT   ;" pseudoField '0' from client will hold HRN
+"RTN","TMGRPC3F",110,0)
+        . NEW TMGA
+"RTN","TMGRPC3F",111,0)
+        . DO FIELD^DID(2,TMGFIELD,,"MULTIPLE-VALUED","TMGA","TMGMSG")
+"RTN","TMGRPC3F",112,0)
+        . IF TMGA("MULTIPLE-VALUED")=1 SET TMGMVA(TMGFIELD)=1 QUIT ;"Process separately later
+"RTN","TMGRPC3F",113,0)
+        . NEW TMGVALUE SET TMGVALUE=$GET(TMGARRAY(TMGFIELD))
+"RTN","TMGRPC3F",114,0)
+        . IF TMGVALUE="" QUIT
+"RTN","TMGRPC3F",115,0)
+        . SET TMGFDA(2,TMGIEN_",",TMGFIELD)=TMGVALUE
+"RTN","TMGRPC3F",116,0)
+ ;
+"RTN","TMGRPC3F",117,0)
+        ;"File additional info in additional fields (Not multi-valued fields)
+"RTN","TMGRPC3F",118,0)
+        IF $DATA(TMGFDA) DO
+"RTN","TMGRPC3F",119,0)
+        . DO FILE^DIE("SE","TMGFDA","TMGMSG")
+"RTN","TMGRPC3F",120,0)
+        IF $DATA(TMGMSG("DIERR")) DO  ;"GOTO RPTDONE  --Keep going, try to file more...
+"RTN","TMGRPC3F",121,0)
+        . SET TMGRSLT=0,TMGCOD3=1 ;"Error adding fields
+"RTN","TMGRPC3F",122,0)
+        . SET TMGOUT(0)=TMGRSLT_"^"_TMGCOD1_";"_TMGCOD2_";"_TMGCOD3_";"_TMGCOD4_";"_TMGCOD5_"*See Fileman message^"_TMGIEN
+"RTN","TMGRPC3F",123,0)
+        . IF $GET(TMGOUT(1))'="" SET TMGOUT(1)=TMGOUT(1)_"// "
+"RTN","TMGRPC3F",124,0)
+        . SET TMGOUT(1)=$GET(TMGOUT(1))_$$GETERSTR^TMGRPC3G(.TMGMSG)
+"RTN","TMGRPC3F",125,0)
+        . DO ADDFDA^TMGRPC3G(.TMGFDA,.TMGOUT,2)
+"RTN","TMGRPC3F",126,0)
+ ;
+"RTN","TMGRPC3F",127,0)
+        ;"Now add multi-valued fields into subfiles.
+"RTN","TMGRPC3F",128,0)
+        ;"It is assumed that the value supplied will go into the .01 field in the subfile.
+"RTN","TMGRPC3F",129,0)
+        SET TMGFIELD=""
+"RTN","TMGRPC3F",130,0)
+        KILL TMGFDA,TMGMSG
+"RTN","TMGRPC3F",131,0)
+        NEW TMGABORT SET TMGABORT=0
+"RTN","TMGRPC3F",132,0)
+        FOR  SET TMGFIELD=$ORDER(TMGMVA(TMGFIELD)) QUIT:(TMGFIELD="")!TMGABORT  DO
+"RTN","TMGRPC3F",133,0)
+        . NEW TMGTEMP,TMGFN SET TMGFN=+$PIECE($GET(^DD(2,TMGFIELD,0)),"^",2)
+"RTN","TMGRPC3F",134,0)
+        . IF TMGFN'>0 QUIT
+"RTN","TMGRPC3F",135,0)
+        . NEW TMGVALUE SET TMGVALUE=$GET(TMGARRAY(TMGFIELD))
+"RTN","TMGRPC3F",136,0)
+        . IF TMGVALUE="" QUIT
+"RTN","TMGRPC3F",137,0)
+        . SET TMGFDA(TMGFN,"?+1,"_TMGIEN_",",.01)=TMGVALUE
+"RTN","TMGRPC3F",138,0)
+        . DO UPDATE^DIE("E","TMGFDA","TMGTEMP","TMGMSG")
+"RTN","TMGRPC3F",139,0)
+        . IF $DATA(TMGMSG("DIERR")) DO
+"RTN","TMGRPC3F",140,0)
+        . . SET TMGRSLT=0,TMGCOD4=1 ;"Problem adding to subfiles
+"RTN","TMGRPC3F",141,0)
+        . . SET TMGOUT(0)=TMGRSLT_"^"_TMGCOD1_";"_TMGCOD2_";"_TMGCOD3_";"_TMGCOD4_";"_TMGCOD5_"*See Fileman message^"_TMGIEN
+"RTN","TMGRPC3F",142,0)
+        . . IF $GET(TMGOUT(1))'="" SET TMGOUT(1)=TMGOUT(1)_"// "
+"RTN","TMGRPC3F",143,0)
+        . . SET TMGOUT(1)=$GET(TMGOUT(1))_$$GETERSTR^TMGRPC3G(.TMGMSG)
+"RTN","TMGRPC3F",144,0)
+        . . DO ADDFDA^TMGRPC3G(.TMGFDA,.TMGOUT,2)
+"RTN","TMGRPC3F",145,0)
+        . . ;"SET TMGABORT=1  --keep going...
+"RTN","TMGRPC3F",146,0)
+        IF TMGABORT GOTO RPTDONE
+"RTN","TMGRPC3F",147,0)
+ ;
+"RTN","TMGRPC3F",148,0)
+        IF $GET(TMGOUT(0))="" SET TMGOUT(0)="1^Success^"_TMGIEN
+"RTN","TMGRPC3F",149,0)
+ ;
+"RTN","TMGRPC3F",150,0)
+        NEW TMGHRN SET TMGHRN=$GET(TMGARRAY("0"))=""   ;" pseudoField '0' from client will hold HRN
+"RTN","TMGRPC3F",151,0)
+        IF TMGHRN="" GOTO RPTDONE
+"RTN","TMGRPC3F",152,0)
+        ;"Set TMGHRN field in file 9000001 (^AUPNPAT), linked to Patient entry
+"RTN","TMGRPC3F",153,0)
+ ;
+"RTN","TMGRPC3F",154,0)
+        NEW TMGLOCIEN,TMGINSTIEN
+"RTN","TMGRPC3F",155,0)
+        ;"Get DEFAULT INSTITUTION from KERNEL SYSTEM PARAMETERS.
+"RTN","TMGRPC3F",156,0)
+        SET TMGINSTIEN=$PIECE($GET(^XTV(8989.3,1,"XUS")),"^",17) ;" XUS;17 = DEFAULT INSTITUTION
+"RTN","TMGRPC3F",157,0)
+        IF +TMGINSTIEN'>0 DO  GOTO RPTDONE
+"RTN","TMGRPC3F",158,0)
+        . ;"SET TMGOUT(0)="1^Success (but see message)^"_TMGIEN
+"RTN","TMGRPC3F",159,0)
+        . SET TMGOUT(0)="0^"_TMGCOD1_";"_TMGCOD2_";"_TMGCOD3_";"_TMGCOD4_";"_TMGCOD5_"*See message^"_TMGIEN
+"RTN","TMGRPC3F",160,0)
+        . SET TMGOUT(1)="Unable to add HRN because couldn't find value for DEFAULT INSTITUTION in KERNEL SYSTEM PARAMETERS file."
+"RTN","TMGRPC3F",161,0)
+ ;
+"RTN","TMGRPC3F",162,0)
+        ;"Get LOCATION file entry pointing to this INSTITUTION
+"RTN","TMGRPC3F",163,0)
+        SET TMGLOCIEN=$ORDER(^AUTTLOC("B",TMGINSTIEN,""))
+"RTN","TMGRPC3F",164,0)
+        IF +TMGLOCIEN'>0 DO  GOTO RPTDONE
+"RTN","TMGRPC3F",165,0)
+        . SET TMGOUT(0)="0^"_TMGCOD1_";"_TMGCOD2_";"_TMGCOD3_";"_TMGCOD4_";"_TMGCOD5_"*See message^"_TMGIEN
+"RTN","TMGRPC3F",166,0)
+        . ;"SET TMGOUT(0)="1^Success (but see message)^"_TMGIEN
+"RTN","TMGRPC3F",167,0)
+        . SET TMGOUT(1)="Unable to add HRN because couldn't find `"_TMGINSTIEN_" in LOCATION file"
+"RTN","TMGRPC3F",168,0)
+ ;
+"RTN","TMGRPC3F",169,0)
+        NEW TMGHRNIEN SET TMGHRNIEN=+$ORDER(^AUNPNPAT("B",TMGIEN,""))
+"RTN","TMGRPC3F",170,0)
+        IF TMGHRNIEN'>0 DO  GOTO RPTDONE
+"RTN","TMGRPC3F",171,0)
+        . SET TMGOUT(0)="0^"_TMGCOD1_";"_TMGCOD2_";"_TMGCOD3_";"_TMGCOD4_";"_TMGCOD5_"*See message^"_TMGIEN
+"RTN","TMGRPC3F",172,0)
+        . ;"SET TMGOUT(0)="1^Success (but see message)^"_TMGIEN
+"RTN","TMGRPC3F",173,0)
+        . SET TMGOUT(1)="Unable to add HRN because couldn't find record in PATIENT/IHS file"
+"RTN","TMGRPC3F",174,0)
+ ;
+"RTN","TMGRPC3F",175,0)
+        KILL TMGFDA,TMGMSG
+"RTN","TMGRPC3F",176,0)
+        ;"Now see if there already is an entry for TMGLOCIEN  (DINUM in play, so subFile record#=TMGLOCIEN)
+"RTN","TMGRPC3F",177,0)
+        IF $GET(^AUPNPAT(TMGHRNIEN,41,TMGLOCIEN,0))="" DO
+"RTN","TMGRPC3F",178,0)
+        . ;"Put HRN into value for current subfile entry
+"RTN","TMGRPC3F",179,0)
+        . SET TMGFDA(9000001.41,TMGLOCIEN_","_TMGHRNIEN_",",.02)=TMGHRN
+"RTN","TMGRPC3F",180,0)
+        . DO FILE^DIE("S","TMGFDA","TMGMSG")
+"RTN","TMGRPC3F",181,0)
+        . IF $DATA(TMGMSG("DIERR")) DO
+"RTN","TMGRPC3F",182,0)
+        . . SET TMGOUT(0)="0^"_TMGCOD1_";"_TMGCOD2_";"_TMGCOD3_";"_TMGCOD4_";"_TMGCOD5_"*See message^"_TMGIEN
+"RTN","TMGRPC3F",183,0)
+        . . ;"SET TMGOUT(0)="1^Success (but see message)^"_TMGIEN
+"RTN","TMGRPC3F",184,0)
+        . . IF $GET(TMGOUT(1))'="" SET TMGOUT(1)=TMGOUT(1)_"// "
+"RTN","TMGRPC3F",185,0)
+        . . SET TMGOUT(1)=$GET(TMGOUT(1))_$$GETERSTR^TMGRPC3G(.TMGMSG)
+"RTN","TMGRPC3F",186,0)
+        . . DO ADDFDA^TMGRPC3G(.TMGFDA,.TMGOUT,2)
+"RTN","TMGRPC3F",187,0)
+        ELSE  DO
+"RTN","TMGRPC3F",188,0)
+        . ;"Add new subfile entry for HRN
+"RTN","TMGRPC3F",189,0)
+        . NEW TMGSIEN
+"RTN","TMGRPC3F",190,0)
+        . SET TMGFDA(9000001.41,TMGLOCIEN_","_TMGHRNIEN_",",.01)=TMGLOCIEN
+"RTN","TMGRPC3F",191,0)
+        . SET TMGFDA(9000001.41,TMGLOCIEN_","_TMGHRNIEN_",",.02)=TMGHRN
+"RTN","TMGRPC3F",192,0)
+        . DO UPDATE^DIE("S","TMGFDA","TMGSIEN","TMGMSG")
+"RTN","TMGRPC3F",193,0)
+        . IF $DATA(TMGMSG("DIERR")) DO
+"RTN","TMGRPC3F",194,0)
+        . . SET TMGOUT(0)="0^"_TMGCOD1_";"_TMGCOD2_";"_TMGCOD3_";"_TMGCOD4_";"_TMGCOD5_"*See message^"_TMGIEN
+"RTN","TMGRPC3F",195,0)
+        . . ;"SET TMGOUT(0)="1^Success (but see message)^"_TMGIEN
+"RTN","TMGRPC3F",196,0)
+        . . IF $GET(TMGOUT(1))'="" SET TMGOUT(1)=TMGOUT(1)_"// "
+"RTN","TMGRPC3F",197,0)
+        . . SET TMGOUT(1)=$GET(TMGOUT(1))_$$GETERSTR^TMGRPC3G(.TMGMSG)
+"RTN","TMGRPC3F",198,0)
+        . . DO ADDFDA^TMGRPC3G(.TMGFDA,.TMGOUT,2)
+"RTN","TMGRPC3F",199,0)
+ ;
+"RTN","TMGRPC3F",200,0)
+RPTDONE ;
+"RTN","TMGRPC3F",201,0)
+        QUIT
+"RTN","TMGRPC3F",202,0)
+ ;
+"RTN","TMGRPC3F",203,0)
+SRCHPTEXACT(TMGARRAY) ;
+"RTN","TMGRPC3F",204,0)
+        ;"Purpose: to search for a preexisting patient, using an exact search
+"RTN","TMGRPC3F",205,0)
+        ;"      By exact search, I mean that DOE,JOHN would be considered different
+"RTN","TMGRPC3F",206,0)
+        ;"      from DOE,JOHN H because it is a different ascii string.  Etc.
+"RTN","TMGRPC3F",207,0)
+        ;"      However, see search description below.
+"RTN","TMGRPC3F",208,0)
+        ;"Input: TMGARRAY -- PASS BY REFERENCE. Search info.  Format:
+"RTN","TMGRPC3F",209,0)
+        ;"              TMGARRAY(.01)=PatientName, e.g. DOE,JOHN
+"RTN","TMGRPC3F",210,0)
+        ;"              TMGARRAY(.02)=Sex          e.g. M
+"RTN","TMGRPC3F",211,0)
+        ;"              TMGARRAY(.03)=DOB          e.g. 01-04-69 (an external date format)
+"RTN","TMGRPC3F",212,0)
+        ;"              TMGARRAY(.09)=SSNum        e.g. 123-45-6789
+"RTN","TMGRPC3F",213,0)
+        ;"Result: returns DFN (patient IEN), or 0^Message if not found.
+"RTN","TMGRPC3F",214,0)
+        ;"Notes:
+"RTN","TMGRPC3F",215,0)
+        ;"    The following are sufficient for search:
+"RTN","TMGRPC3F",216,0)
+        ;"    -- SSNum only
+"RTN","TMGRPC3F",217,0)
+        ;"    -- or Name-Sex-DOB
+"RTN","TMGRPC3F",218,0)
+        ;"
+"RTN","TMGRPC3F",219,0)
+        ;"    Search technique:
+"RTN","TMGRPC3F",220,0)
+        ;"    1. Search for SSN, if found then no further comparison made.
+"RTN","TMGRPC3F",221,0)
+        ;"    2. Search for exact name match, no none found, then exit with 0
+"RTN","TMGRPC3F",222,0)
+        ;"    3. ...
+"RTN","TMGRPC3F",223,0)
+ ;
+"RTN","TMGRPC3F",224,0)
+        NEW TMGRESULT SET TMGRESULT=0
+"RTN","TMGRPC3F",225,0)
+ ;
+"RTN","TMGRPC3F",226,0)
+        ;"Search by SSN.  Quit if match found
+"RTN","TMGRPC3F",227,0)
+        NEW TMGSSN SET TMGSSN=$TRANSLATE($GET(TMGARRAY(.09)),"-","")
+"RTN","TMGRPC3F",228,0)
+        IF TMGSSN'="" SET TMGRESULT=+$ORDER(^DPT("SSN",TMGSSN,""))
+"RTN","TMGRPC3F",229,0)
+        IF TMGRESULT>0 GOTO PSEDONE
+"RTN","TMGRPC3F",230,0)
+ ;
+"RTN","TMGRPC3F",231,0)
+        NEW TMGNAME,TMGSEX,TMGDOB
+"RTN","TMGRPC3F",232,0)
+        SET TMGNAME=$GET(TMGARRAY(.01))
+"RTN","TMGRPC3F",233,0)
+        IF TMGNAME="" DO  GOTO PSEDONE
+"RTN","TMGRPC3F",234,0)
+        . SET TMGRESULT="0^No Name (.01 field) provided"
+"RTN","TMGRPC3F",235,0)
+ ;
+"RTN","TMGRPC3F",236,0)
+        SET TMGSEX=$GET(TMGARRAY(.02))
+"RTN","TMGRPC3F",237,0)
+        IF TMGSEX="" DO  GOTO PSEDONE
+"RTN","TMGRPC3F",238,0)
+        . SET TMGRESULT="0^Sex (.02 field) not specified"
+"RTN","TMGRPC3F",239,0)
+        IF (TMGSEX'="M")&(TMGSEX'="F") DO  GOTO PSEDONE
+"RTN","TMGRPC3F",240,0)
+        . SET TMGRESULT="0^Sex should be 'Y' or 'N'.  Value provided="_TMGSEX
+"RTN","TMGRPC3F",241,0)
+ ;
+"RTN","TMGRPC3F",242,0)
+        SET TMGDOB=$GET(TMGARRAY(.03))
+"RTN","TMGRPC3F",243,0)
+        IF TMGDOB="" DO  GOTO PSEDONE
+"RTN","TMGRPC3F",244,0)
+        . SET TMGRESULT="0^No DOB (.03 field) provided"
+"RTN","TMGRPC3F",245,0)
+        NEW %DT,X,Y SET %DT="P"  ;"P-Post dates assumed
+"RTN","TMGRPC3F",246,0)
+        SET X=TMGDOB DO ^%DT SET TMGDOB=Y  ;"convert external date into internal format
+"RTN","TMGRPC3F",247,0)
+        IF +TMGDOB'>0 DO  GOTO PSEDONE
+"RTN","TMGRPC3F",248,0)
+        . SET TMGRESULT="0^Invalid date: "_$GET(TMGARRAY(.03))
+"RTN","TMGRPC3F",249,0)
+ ;
+"RTN","TMGRPC3F",250,0)
+        NEW TMGMATCHES MERGE TMGMATCHES=^DPT("B",TMGNAME)
+"RTN","TMGRPC3F",251,0)
+        IF $DATA(TMGMATCHES)=0 DO  GOTO PSEDONE
+"RTN","TMGRPC3F",252,0)
+        . SET TMGRESULT="0^No match for name"
+"RTN","TMGRPC3F",253,0)
+ ;
+"RTN","TMGRPC3F",254,0)
+        ;"Now compare each name match for also matching sex and DOB
+"RTN","TMGRPC3F",255,0)
+        NEW TMGIEN SET TMGIEN=""
+"RTN","TMGRPC3F",256,0)
+        FOR  SET TMGIEN=$ORDER(TMGMATCHES(TMGIEN)) QUIT:(+TMGIEN'>0)  DO
+"RTN","TMGRPC3F",257,0)
+        . NEW TMGNODE0 SET TMGNODE0=$GET(^DPT(TMGIEN,0))
+"RTN","TMGRPC3F",258,0)
+        . IF $PIECE(TMGNODE0,"^",2)'=TMGSEX DO  QUIT
+"RTN","TMGRPC3F",259,0)
+        . . KILL TMGMATCHES(TMGIEN)
+"RTN","TMGRPC3F",260,0)
+        . IF $PIECE(TMGNODE0,"^",3)'=TMGDOB DO  QUIT
+"RTN","TMGRPC3F",261,0)
+        . . KILL TMGMATCHES(TMGIEN)
+"RTN","TMGRPC3F",262,0)
+ ;
+"RTN","TMGRPC3F",263,0)
+        ;"TMGMATCHES should contain all entries matching name+sex+DOB
+"RTN","TMGRPC3F",264,0)
+        SET TMGRESULT=+$ORDER(TMGMATCHES(""))
+"RTN","TMGRPC3F",265,0)
+        ;"Now check for more than one match
+"RTN","TMGRPC3F",266,0)
+        IF $ORDER(TMGMATCHES(TMGRESULT))'="" DO  GOTO PSEDONE
+"RTN","TMGRPC3F",267,0)
+        . SET TMGRESULT="0^More than one match found for Name+Sex+DOB"
+"RTN","TMGRPC3F",268,0)
+ ;
+"RTN","TMGRPC3F",269,0)
+PSEDONE ;
+"RTN","TMGRPC3F",270,0)
+        QUIT TMGRESULT
+"RTN","TMGRPC3F",271,0)
+ ;
+"RTN","TMGRPC3F",272,0)
+ ;
+"RTN","TMGRPC3G")
+0^7^B12787583
+"RTN","TMGRPC3G",1,0)
+TMGRPC3G ;TMG/kst/Support Functions for GUI_Config ;08/31/08
+"RTN","TMGRPC3G",2,0)
+         ;;1.0;TMG-LIB;**1**;08/31/08;Build 2
+"RTN","TMGRPC3G",3,0)
+ ;
+"RTN","TMGRPC3G",4,0)
+ ;"TMG RPC FUNCTIONS for a GUI config program
+"RTN","TMGRPC3G",5,0)
+ ;
+"RTN","TMGRPC3G",6,0)
+ ;"Kevin Toppenberg MD
+"RTN","TMGRPC3G",7,0)
+ ;"GNU Lessor General Public License (LGPL) applies
+"RTN","TMGRPC3G",8,0)
+ ;"7/20/08
+"RTN","TMGRPC3G",9,0)
+ ;
+"RTN","TMGRPC3G",10,0)
+ ;"=======================================================================
+"RTN","TMGRPC3G",11,0)
+ ;" RPC -- Public Functions.
+"RTN","TMGRPC3G",12,0)
+ ;"=======================================================================
+"RTN","TMGRPC3G",13,0)
+ ;" <none>
+"RTN","TMGRPC3G",14,0)
+ ;"=======================================================================
+"RTN","TMGRPC3G",15,0)
+ ;"PRIVATE API FUNCTIONS
+"RTN","TMGRPC3G",16,0)
+ ;"=======================================================================
+"RTN","TMGRPC3G",17,0)
+ ;"GETERSTR(TMGEARRAY) -- convert a standard DIERR array into a string for output
+"RTN","TMGRPC3G",18,0)
+ ;"ADDFDA(TMGFDA,TMGOUT,INDX) -- output the TMGFDA into the TMGOUT variable
+"RTN","TMGRPC3G",19,0)
+ ;
+"RTN","TMGRPC3G",20,0)
+ ;"=======================================================================
+"RTN","TMGRPC3G",21,0)
+ ;"=======================================================================
+"RTN","TMGRPC3G",22,0)
+ ;"Dependencies:
+"RTN","TMGRPC3G",23,0)
+ ;"  None, but should be called FROM TMGRPC3* only
+"RTN","TMGRPC3G",24,0)
+ ;
+"RTN","TMGRPC3G",25,0)
+ ;"=======================================================================
+"RTN","TMGRPC3G",26,0)
+ ;"=======================================================================
+"RTN","TMGRPC3G",27,0)
+ ;
+"RTN","TMGRPC3G",28,0)
+GETERSTR(TMGEARRAY) ;
+"RTN","TMGRPC3G",29,0)
+        ;"Purpose: convert a standard DIERR array into a string for output
+"RTN","TMGRPC3G",30,0)
+        ;"Input: TMGEARRAY -- PASS BY REFERENCE.  example:
+"RTN","TMGRPC3G",31,0)
+        ;"      array("DIERR")="1^1"
+"RTN","TMGRPC3G",32,0)
+        ;"      array("DIERR",1)=311
+"RTN","TMGRPC3G",33,0)
+        ;"      array("DIERR",1,"PARAM",0)=3
+"RTN","TMGRPC3G",34,0)
+        ;"      array("DIERR",1,"PARAM","FIELD")=.02
+"RTN","TMGRPC3G",35,0)
+        ;"      array("DIERR",1,"PARAM","FILE")=2
+"RTN","TMGRPC3G",36,0)
+        ;"      array("DIERR",1,"PARAM","IENS")="+1,"
+"RTN","TMGRPC3G",37,0)
+        ;"      array("DIERR",1,"TEXT",1)="The new record '+1,' lacks some required identifiers."
+"RTN","TMGRPC3G",38,0)
+        ;"      array("DIERR","E",311,1)=""
+"RTN","TMGRPC3G",39,0)
+        ;"Results: returns one long equivalent string from above array.
+"RTN","TMGRPC3G",40,0)
+        ;"Note: This is a copy of the function GetErrStr^TMGDEBUG
+"RTN","TMGRPC3G",41,0)
+        ;"      I copied it here so that this file has no TMG* dependencies.
+"RTN","TMGRPC3G",42,0)
+ ;
+"RTN","TMGRPC3G",43,0)
+        NEW TMGESTR,TMGIDX,TMGENUM
+"RTN","TMGRPC3G",44,0)
+        SET TMGESTR=""
+"RTN","TMGRPC3G",45,0)
+        FOR TMGENUM=1:1:+$GET(TMGEARRAY("DIERR")) DO
+"RTN","TMGRPC3G",46,0)
+        . SET TMGESTR=TMGESTR_"Fileman says: '"
+"RTN","TMGRPC3G",47,0)
+        . IF TMGENUM'=1 SET TMGESTR=TMGESTR_"(Error# "_TMGENUM_") "
+"RTN","TMGRPC3G",48,0)
+        . SET TMGIDX=$ORDER(TMGEARRAY("DIERR",TMGENUM,"TEXT",""))
+"RTN","TMGRPC3G",49,0)
+        . IF TMGIDX'="" FOR  DO  QUIT:(TMGIDX="")
+"RTN","TMGRPC3G",50,0)
+        . . SET TMGESTR=TMGESTR_$GET(TMGEARRAY("DIERR",TMGENUM,"TEXT",TMGIDX))_" "
+"RTN","TMGRPC3G",51,0)
+        . . SET TMGIDX=$ORDER(TMGEARRAY("DIERR",TMGENUM,"TEXT",TMGIDX))
+"RTN","TMGRPC3G",52,0)
+        . IF $GET(TMGEARRAY("DIERR",TMGENUM,"PARAM",0))>0 DO
+"RTN","TMGRPC3G",53,0)
+        . . SET TMGIDX=$ORDER(TMGEARRAY("DIERR",TMGENUM,"PARAM",0))
+"RTN","TMGRPC3G",54,0)
+        . . SET TMGESTR=TMGESTR_"Details: "
+"RTN","TMGRPC3G",55,0)
+        . . FOR  DO  QUIT:(TMGIDX="")
+"RTN","TMGRPC3G",56,0)
+        . . . IF TMGIDX="" QUIT
+"RTN","TMGRPC3G",57,0)
+        . . . SET TMGESTR=TMGESTR_"["_TMGIDX_"]="_$GET(TMGEARRAY("DIERR",1,"PARAM",TMGIDX))_"  "
+"RTN","TMGRPC3G",58,0)
+        . . . SET TMGIDX=$ORDER(TMGEARRAY("DIERR",TMGENUM,"PARAM",TMGIDX))
+"RTN","TMGRPC3G",59,0)
+ ;
+"RTN","TMGRPC3G",60,0)
+        QUIT TMGESTR
+"RTN","TMGRPC3G",61,0)
+ ;
+"RTN","TMGRPC3G",62,0)
+ADDFDA(TMGFDA,TMGOUT,INDX) ;
+"RTN","TMGRPC3G",63,0)
+        ;"Purpose: To output the TMGFDA into the TMGOUT variable (so show erroneous
+"RTN","TMGRPC3G",64,0)
+        ;"         FDA.
+"RTN","TMGRPC3G",65,0)
+        ;"Input: TMGFDA -- the FDA as send to fileman.  PASS BY REFERENCE
+"RTN","TMGRPC3G",66,0)
+        ;"       TMGOUT -- the variable that will be passed back as the result of
+"RTN","TMGRPC3G",67,0)
+        ;"                 the RPC call.  PASS BY REFERENCE.
+"RTN","TMGRPC3G",68,0)
+        ;"       INDX -- the index to start adding the TMGFDA at.
+"RTN","TMGRPC3G",69,0)
+        ;"Results: none.
+"RTN","TMGRPC3G",70,0)
+        ;"
+"RTN","TMGRPC3G",71,0)
+        NEW TMGI SET TMGI=""
+"RTN","TMGRPC3G",72,0)
+        FOR  SET TMGI=$ORDER(TMGFDA(TMGI)) QUIT:TMGI=""  DO
+"RTN","TMGRPC3G",73,0)
+        . SET TMGOUT(INDX)="FDA("_TMGI_")="_$GET(TMGFDA(TMGI))
+"RTN","TMGRPC3G",74,0)
+        . SET INDX=INDX+1
+"RTN","TMGRPC3G",75,0)
+        QUIT
+"RTN","TMGRPC3G",76,0)
+        ;
+"RTN","TMGRPC3H")
+0^8^B41416424
+"RTN","TMGRPC3H",1,0)
+TMGRPC3H ;TMG/kst/Support Functions for GUI_Config ;12/1/10
+"RTN","TMGRPC3H",2,0)
+         ;;1.0;TMG-LIB;**1**;12/1/10;Build 2
+"RTN","TMGRPC3H",3,0)
+ ;
+"RTN","TMGRPC3H",4,0)
+ ;"TMG RPC FUNCTIONS for a FM DESKTOP program
+"RTN","TMGRPC3H",5,0)
+ ;
+"RTN","TMGRPC3H",6,0)
+ ;"Kevin Toppenberg MD
+"RTN","TMGRPC3H",7,0)
+ ;"GNU Lessor General Public License (LGPL) applies
+"RTN","TMGRPC3H",8,0)
+ ;"12/1/10
+"RTN","TMGRPC3H",9,0)
+ ;
+"RTN","TMGRPC3H",10,0)
+ ;"=======================================================================
+"RTN","TMGRPC3H",11,0)
+ ;" RPC -- Public Functions.
+"RTN","TMGRPC3H",12,0)
+ ;"=======================================================================
+"RTN","TMGRPC3H",13,0)
+ ;" <none>
+"RTN","TMGRPC3H",14,0)
+ ;"=======================================================================
+"RTN","TMGRPC3H",15,0)
+ ;"PRIVATE API FUNCTIONS
+"RTN","TMGRPC3H",16,0)
+ ;"=======================================================================
+"RTN","TMGRPC3H",17,0)
+ ;
+"RTN","TMGRPC3H",18,0)
+ ;"=======================================================================
+"RTN","TMGRPC3H",19,0)
+ ;"=======================================================================
+"RTN","TMGRPC3H",20,0)
+ ;"Dependencies:
+"RTN","TMGRPC3H",21,0)
+ ;"  TMGRPC3* only
+"RTN","TMGRPC3H",22,0)
+ ;
+"RTN","TMGRPC3H",23,0)
+ ;"=======================================================================
+"RTN","TMGRPC3H",24,0)
+ ;"=======================================================================
+"RTN","TMGRPC3H",25,0)
+ ;
+"RTN","TMGRPC3H",26,0)
+GETFMDSV(TMGOUT,TMGPARAMS) ;
+"RTN","TMGRPC3H",27,0)
+        ;"Purpose: Get a list of saved data views.  Those for user, and those shared by others
+"RTN","TMGRPC3H",28,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3H",29,0)
+        ;"       TMGPARAMS -- not used
+"RTN","TMGRPC3H",30,0)
+        ;"Output: TMGOUT is filled as follows:
+"RTN","TMGRPC3H",31,0)
+        ;"            TMGOUT(0)="1^Success" or "-1^Error Message"
+"RTN","TMGRPC3H",32,0)
+        ;"            TMGOUT(1)=SELF or OTHERS^Shared(Y/N)^Name^Owner^DateCreated^IEN in 22714
+"RTN","TMGRPC3H",33,0)
+        ;"            TMGOUT(2)=SELF or OTHERS^Shared(Y/N)^Name^Owner^DateCreated^IEN in 22714  ... etc
+"RTN","TMGRPC3H",34,0)
+        ;"              Shared:  1 (if shared), or 0 if owned by user
+"RTN","TMGRPC3H",35,0)
+        ;"              Name:  Name of data view
+"RTN","TMGRPC3H",36,0)
+        ;"              Owner: external format name of owner
+"RTN","TMGRPC3H",37,0)
+        ;"              Date: external format of date of creation of view
+"RTN","TMGRPC3H",38,0)
+        ;"Results: none
+"RTN","TMGRPC3H",39,0)
+        NEW SELF,OTHERS,CT
+"RTN","TMGRPC3H",40,0)
+        NEW TMGI SET TMGI=0
+"RTN","TMGRPC3H",41,0)
+        FOR  SET TMGI=$ORDER(^TMG(22714,"C",+DUZ,TMGI)) QUIT:(+TMGI'>0)  DO
+"RTN","TMGRPC3H",42,0)
+        . SET SELF(TMGI)=""
+"RTN","TMGRPC3H",43,0)
+        SET TMGI=0
+"RTN","TMGRPC3H",44,0)
+        FOR  SET TMGI=$ORDER(^TMG(22714,"AC","Y",TMGI)) QUIT:(+TMGI'>0)  DO
+"RTN","TMGRPC3H",45,0)
+        . IF $DATA(SELF(TMGI)) QUIT
+"RTN","TMGRPC3H",46,0)
+        . SET OTHERS(TMGI)=""
+"RTN","TMGRPC3H",47,0)
+        SET TMGI=0 
+"RTN","TMGRPC3H",48,0)
+        SET CT=1
+"RTN","TMGRPC3H",49,0)
+        FOR  SET TMGI=$ORDER(SELF(TMGI)) QUIT:(+TMGI'>0)  DO
+"RTN","TMGRPC3H",50,0)
+        . SET TMGOUT(CT)="SELF^"_$$STROUT(TMGI)
+"RTN","TMGRPC3H",51,0)
+        . SET CT=CT+1
+"RTN","TMGRPC3H",52,0)
+        SET TMGI=0
+"RTN","TMGRPC3H",53,0)
+        FOR  SET TMGI=$ORDER(OTHERS(TMGI)) QUIT:(+TMGI'>0)  DO
+"RTN","TMGRPC3H",54,0)
+        . SET TMGOUT(CT)="OTHERS^"_$$STROUT(TMGI)
+"RTN","TMGRPC3H",55,0)
+        . SET CT=CT+1
+"RTN","TMGRPC3H",56,0)
+        IF CT>1 SET TMGOUT(0)="1^Success"
+"RTN","TMGRPC3H",57,0)
+        ELSE  SET TMGOUT(0)="0^No entries found"                 
+"RTN","TMGRPC3H",58,0)
+        QUIT
+"RTN","TMGRPC3H",59,0)
+        ;
+"RTN","TMGRPC3H",60,0)
+STROUT(IEN) ; Utility function for GETFMDSV 
+"RTN","TMGRPC3H",61,0)
+        NEW S
+"RTN","TMGRPC3H",62,0)
+        NEW ZN SET ZN=$GET(^TMG(22714,IEN,0))
+"RTN","TMGRPC3H",63,0)
+        SET S=$PIECE(ZN,"^",3)_"^"                    ;"Shared
+"RTN","TMGRPC3H",64,0)
+        SET S=S_$PIECE(ZN,"^",1)_"^"                  ;"Name
+"RTN","TMGRPC3H",65,0)
+        NEW P SET P=+$PIECE(ZN,"^",2)                 ;"Ptr to owner   
+"RTN","TMGRPC3H",66,0)
+        SET S=S_$PIECE($GET(^VA(200,P,0)),"^",1)_"^"  ;"Name of owner
+"RTN","TMGRPC3H",67,0)
+        NEW Y SET Y=$PIECE(ZN,"^",4)                  ;"Date, internal format 
+"RTN","TMGRPC3H",68,0)
+        DO DD^%DT                                     ;"convert to external 
+"RTN","TMGRPC3H",69,0)
+        SET S=S_Y_"^"_IEN
+"RTN","TMGRPC3H",70,0)
+        QUIT S        
+"RTN","TMGRPC3H",71,0)
+        ;
+"RTN","TMGRPC3H",72,0)
+        ;
+"RTN","TMGRPC3H",73,0)
+SAVFMDV(TMGRESULT,TMGPARAMS,INPUT) ;
+"RTN","TMGRPC3H",74,0)
+        ;"Purpose: To save (or edit existing) FILEMAN DESKTOP View
+"RTN","TMGRPC3H",75,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3H",76,0)
+        ;"       TMGPARAMS -- IEN^Name^Shared  or +1^Name^Shared (for a new entry)
+"RTN","TMGRPC3H",77,0)
+        ;"       INPUT -- PASS BY REFERENCE.  Stores WP data for 2 WP fields.      
+"RTN","TMGRPC3H",78,0)
+        ;"                   The lines will be sent contigously, but the two fields will
+"RTN","TMGRPC3H",79,0)
+        ;"                   be separated by a specific tag, as below.
+"RTN","TMGRPC3H",80,0)
+        ;"                   WP lines stored as follows:
+"RTN","TMGRPC3H",81,0)
+        ;"                   INPUT(0)=1st line of Description
+"RTN","TMGRPC3H",82,0)
+        ;"                   INPUT(1)=2nd line of Description
+"RTN","TMGRPC3H",83,0)
+        ;"                   INPUT(2)=3rd line of Description
+"RTN","TMGRPC3H",84,0)
+        ;"                   ...
+"RTN","TMGRPC3H",85,0)
+        ;"                   INPUT(17)="{{START OF DATA}}"  <-- tag must match exactly
+"RTN","TMGRPC3H",86,0)
+        ;"                   INPUT(18)=1st line of Data
+"RTN","TMGRPC3H",87,0)
+        ;"                   INPUT(29)=2nd line of Data
+"RTN","TMGRPC3H",88,0)
+        ;"                   ...
+"RTN","TMGRPC3H",89,0)
+        ;"                   Note: if Description or Data is not provided when sending
+"RTN","TMGRPC3H",90,0)
+        ;"                         data for an existing IEN, then prior results will
+"RTN","TMGRPC3H",91,0)
+        ;"                         be deleted.
+"RTN","TMGRPC3H",92,0)
+        ;"Output: TMGOUT is filled as follows:
+"RTN","TMGRPC3H",93,0)
+        ;"          TMGOUT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3H",94,0)
+        ;"Results: none
+"RTN","TMGRPC3H",95,0)
+        new temp
+"RTN","TMGRPC3H",96,0)
+        set temp=0
+"RTN","TMGRPC3H",97,0)
+        if temp=1 do
+"RTN","TMGRPC3H",98,0)
+        . kill TMGPARAMS
+"RTN","TMGRPC3H",99,0)
+        . kill INPUT
+"RTN","TMGRPC3H",100,0)
+        . MERGE TMGPARAMS=^TMG("TMP","RPC","SAVFMDV","TMGPARAMS")
+"RTN","TMGRPC3H",101,0)
+        . MERGE INPUT=^TMG("TMP","RPC","SAVFMDV","INPUT")
+"RTN","TMGRPC3H",102,0)
+        KILL ^TMG("TMP","RPC","SAVFMDV")
+"RTN","TMGRPC3H",103,0)
+        MERGE ^TMG("TMP","RPC","SAVFMDV","TMGPARAMS")=TMGPARAMS
+"RTN","TMGRPC3H",104,0)
+        MERGE ^TMG("TMP","RPC","SAVFMDV","INPUT")=INPUT
+"RTN","TMGRPC3H",105,0)
+        NEW TMGIENS,NAME,SHARED,LINE
+"RTN","TMGRPC3H",106,0)
+        NEW TMGI SET TMGI=-1
+"RTN","TMGRPC3H",107,0)
+        NEW BDATA SET BDATA=0  ;"Boolean set when data begins
+"RTN","TMGRPC3H",108,0)
+        NEW COUNT SET COUNT=1  ;"Array counter
+"RTN","TMGRPC3H",109,0)
+        NEW DESC,DATA
+"RTN","TMGRPC3H",110,0)
+        SET TMGIENS=$PIECE(TMGPARAMS,"^",1)
+"RTN","TMGRPC3H",111,0)
+        SET NAME=$PIECE(TMGPARAMS,"^",2)
+"RTN","TMGRPC3H",112,0)
+        SET SHARED=$$UP^XLFSTR($PIECE(TMGPARAMS,"^",3))
+"RTN","TMGRPC3H",113,0)
+        IF SHARED'="Y" SET SHARED="N"  ;"Ensure shared is either Y or N
+"RTN","TMGRPC3H",114,0)
+        ;"PARSE DESC AND DATA INTO SEPARATE ARRAYS
+"RTN","TMGRPC3H",115,0)
+        FOR  SET TMGI=$ORDER(INPUT(TMGI)) QUIT:(TMGI="")  DO
+"RTN","TMGRPC3H",116,0)
+        . SET LINE=INPUT(TMGI)
+"RTN","TMGRPC3H",117,0)
+        . IF LINE="{{START OF DATA}}" DO
+"RTN","TMGRPC3H",118,0)
+        . . SET BDATA=1
+"RTN","TMGRPC3H",119,0)
+        . . SET COUNT=0
+"RTN","TMGRPC3H",120,0)
+        . ELSE  IF BDATA=1 DO
+"RTN","TMGRPC3H",121,0)
+        . . SET DATA(COUNT)=LINE
+"RTN","TMGRPC3H",122,0)
+        . ELSE  DO
+"RTN","TMGRPC3H",123,0)
+        . . SET DESC(COUNT)=LINE
+"RTN","TMGRPC3H",124,0)
+        . SET COUNT=COUNT+1
+"RTN","TMGRPC3H",125,0)
+        ;"
+"RTN","TMGRPC3H",126,0)
+        NEW TMGFDA KILL TMGFDA
+"RTN","TMGRPC3H",127,0)
+        NEW TMGMSG
+"RTN","TMGRPC3H",128,0)
+        ;"Test View Data and IENS
+"RTN","TMGRPC3H",129,0)
+        IF +TMGIENS'>0 GOTO FDAERR
+"RTN","TMGRPC3H",130,0)
+        . SET TMGRESULT(0)="-1^No record number sent."
+"RTN","TMGRPC3H",131,0)
+        IF DATA(1)="" GOTO FDAERR
+"RTN","TMGRPC3H",132,0)
+        . SET TMGRESULT(1)="-1^No view data received." 
+"RTN","TMGRPC3H",133,0)
+        IF TMGIENS="+1" SET TMGIENS="+1,"
+"RTN","TMGRPC3H",134,0)
+        ;"
+"RTN","TMGRPC3H",135,0)
+        ;"FILE DATA
+"RTN","TMGRPC3H",136,0)
+        SET TMGFDA(22714,TMGIENS,.01)=NAME
+"RTN","TMGRPC3H",137,0)
+        SET TMGFDA(22714,TMGIENS,1)="`"_DUZ
+"RTN","TMGRPC3H",138,0)
+        SET TMGFDA(22714,TMGIENS,2)=SHARED
+"RTN","TMGRPC3H",139,0)
+        SET TMGFDA(22714,TMGIENS,2.5)="NOW"
+"RTN","TMGRPC3H",140,0)
+        NEW TMGIEN
+"RTN","TMGRPC3H",141,0)
+        DO UPDATE^DIE("SE","TMGFDA","TMGIEN","TMGMSG")
+"RTN","TMGRPC3H",142,0)
+        IF $DATA(TMGMSG("DIERR")) DO  GOTO FDAERR
+"RTN","TMGRPC3H",143,0)
+        . SET TMGRESULT(0)="-1^See Fileman message"
+"RTN","TMGRPC3H",144,0)
+        . SET TMGRESULT(1)=$$GETERSTR^TMGRPC3G(.TMGMSG)
+"RTN","TMGRPC3H",145,0)
+        . DO ADDFDA^TMGRPC3G(.TMGFDA,.TMGRESULT,2)
+"RTN","TMGRPC3H",146,0)
+        IF TMGIENS="+1," SET TMGIENS=$GET(TMGIEN(1))_","
+"RTN","TMGRPC3H",147,0)
+        ;"
+"RTN","TMGRPC3H",148,0)
+        ;"FILE WP ARRAYS
+"RTN","TMGRPC3H",149,0)
+        NEW DESCPARAMS,DATAPARAMS
+"RTN","TMGRPC3H",150,0)
+        SET DESCPARAMS="22714^3^"_TMGIENS
+"RTN","TMGRPC3H",151,0)
+        SET DATAPARAMS="22714^4^"_TMGIENS
+"RTN","TMGRPC3H",152,0)
+        DO PSTWPFLD^TMGRPC3E(.TMGRESULT,.DESCPARAMS,.DESC)
+"RTN","TMGRPC3H",153,0)
+        DO PSTWPFLD^TMGRPC3E(.TMGRESULT,.DATAPARAMS,.DATA)     
+"RTN","TMGRPC3H",154,0)
+FDAERR: QUIT
+"RTN","TMGRPC3H",155,0)
+ 
+"VER")
+8.0^22.0
+**END**
+**END**

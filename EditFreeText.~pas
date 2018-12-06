@@ -1,0 +1,45 @@
+unit EditFreeText;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Buttons;
+
+type
+  TEditFreeTextForm = class(TForm)
+    OKBtn: TBitBtn;
+    CancelBtn: TBitBtn;
+    TextToEdit: TEdit;
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  EditFreeTextForm: TEditFreeTextForm;
+
+implementation
+
+uses SelDateTimeU;
+
+{$R *.dfm}
+
+procedure TEditFreeTextForm.FormShow(Sender: TObject);
+var mousePos : TPoint;
+  begin
+    GetCursorPos(mousePos);
+    with EditFreeTextForm do begin
+      Top := mousePos.Y - 39;
+      Left := mousePos.X - 15;
+      if Left + Width > Screen.DesktopWidth then begin
+        Left := Screen.DesktopWidth - Width;
+      end;
+    end;
+  end;
+
+
+end.
+

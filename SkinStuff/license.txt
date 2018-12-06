@@ -1,0 +1,68 @@
+Notes:
+I, Kevin Toppenberg, purchased a developer license on 8/10/2008 for the ipSkin technology from web: http://www.rhoStyle.com
+
+Below is their license.  It gives me the right to distribute my compiled application that uses their compiled component code.  But others may not extend their product etc.  Read deatils below.
+
+=============================================================================
+License agrement 
+RHOSTYLE DEVELOPERS TEAM
+IPSKIN LIBRARY SOFTWARE PRODUCT(S) SUITE 
+END-USER LICENSE AGREEMENT
+FOR ALL SOFTWARE COMPONENT PRODUCT(S)
+
+IMPORTANT- READ CAREFULLY: This RHOSTYLE DEVELOPERS TEAM ("rhoStyle") End-User License Agreement ("EULA") is a legal agreement between you, an individual developer of SOFTWARE COMPONENT PRODUCT(S) applications, ("Developer End User") and rhoStyle for all RHOSTYLE SOFTWARE COMPONENT PRODUCT(S) components, source code, demos, intermediate files, media, printed materials, and "online" or electronic documentation ("SOFTWARE COMPONENT PRODUCT(S)") contained in this installation file. 
+
+RHOSTYLE grants to you as an individual, a personal, nonexclusive license to install and use the SOFTWARE COMPONENT PRODUCT(S) for the sole purposes of designing, developing, testing, and deploying application programs which you create. If you are an entity, you must designate one individual within your organization to license the right to use the SOFTWARE COMPONENT PRODUCT(S) in the manner provided herein.
+
+By installing, copying, or otherwise using the SOFTWARE COMPONENT PRODUCT(S), you agree to be bound by the terms of this EULA. If you do not agree to any part of the terms of this EULA, DO NOT INSTALL, USE, DISTRIBUTE IN ANY MANNER, OR REPLICATE IN ANY MANNER, ANY PART, FILE OR PORTION OF THE SOFTWARE COMPONENT PRODUCT(S). Immediately return it to place of purchase.
+
+All SOFTWARE COMPONENT PRODUCT(S) is licensed, not sold.
+
+
+RIGOROUS ENFORCEMENT OF INTELLECTUAL PROPERTY RIGHTS. If the licensed right of use for this SOFTWARE COMPONENT PRODUCT(S) is purchased by you with any intent to reverse engineer, decompile, and the exploitation or unauthorized transfer of, any RHOSTYLE intellectual property and trade secrets, to include any exposed methods or source code where provided, no licensed right of use shall exist, and any PRODUCT(s) created as a result shall be judged illegal by definition of all applicable law. Any sale or resale of intellectual property or created derivatives so obtained will be prosecuted to the fullest extent of all local, federal and international law.
+
+NOT FOR RESALE SOFTWARE. This the SOFTWARE COMPONENT PRODUCT(S) is labeled and provided as "Not for Resale" or "NFR", and, notwithstanding other sections of this EULA, you may not resell, distribute, or otherwise transfer for value or benefit in any manner, the SOFTWARE COMPONENT PRODUCT(S) or any derivative work using the SOFTWARE COMPONENT PRODUCT(S). You may not transfer, rent, lease, lend, copy, modify, translate, sublicense, time-share or electronically transmit the SOFTWARE COMPONENT PRODUCT(S), media or documentation. This also applies to any and all intermediate files, source code, and compiled executables.
+
+LIMITATIONS ON REVERSE ENGINEERING, DECOMPILATION, AND DISASSEMBLY.
+You may not reverse engineer, decompile, or disassemble the SOFTWARE COMPONENT PRODUCT(S), and only to the extent that such activity is expressly permitted by applicable law notwithstanding this limitation. The provision of source code, if included with the SOFTWARE COMPONENT PRODUCT(S), does not constitute transfer of any legal rights to such code, and resale or distribution of all or any portion of all source code and intellectual property will be prosecuted to the fullest extent of all applicable local, federal and international laws. You agree to take all reasonable, legal and appropriate measures to prohibit the illegal dissemination of the SOFTWARE COMPONENT PRODUCT(S) or any of its constituent parts and Distributables to the fullest extent of all applicable local, US Codes and International Laws and Treaties regarding anti-circumvention, including but not limited to, the Geneva and Berne World Intellectual Property Organization (WIPO) Diplomatic Conferences. 
+
+ADDING USERS
+You may add users by paying for a separate software package for each user you wish to add. You may also add users by purchasing a site-license, so long as the number of persons who are able to use the software at one time is not more than the number of authorized users specified in our package or license.
+
+
+LIMITED WARRANTY
+The entire and exclusive liability and remedy for breach of this limited warranty shall be limited to replacement of defective media or documentation and shall not include or extend to any claim for or right to recover any other damages, including but not limited to, loss of profit, data, or use of the software or special, incidental or consequential damages, or other similar claims, even if rhoStyle has been specifically advised of the possibility of such damages. In no event will rhoStyle liability for any damages to you or any other person ever exceed the lower of the list price or the actual price paid for the package or the license to use the software, regardless of the form of the claim.
+rhoStyle specifically disclaims all other warranties, representations, or conditions, express or implied, including but not limited to, any implied warranty or condition of merchantability or fitness for a particular purpose. All other implied terms are excluded.
+Specifically, rhoStyle makes no representation or warranty that the software or documentation are "error-free," or meet any user's particular standards, requirements, or needs. In all events, any implied warranty, representation, condition, or other term is limited to the electronic distribution file(s) and online documentation and is limited to the 60-day duration of the limited warranty.
+rhoStyle is not responsible for, and does not make any representation, warranty, or condition concerning product, media, software, or documentation not manufactured or supplied by rhoStyle, such as third-parties' programs that are designed using rhoStyle software or which include rhoStyle programs or files.
+
+
+GENERAL TERMS THAT APPLY TO COMPILED PROGRAMS
+The license granted in this statement for you to create your own compiled programs and distribute your programs using the software in this package is subject to all of the following conditions: 
+1. You may not remove or alter any rhoStyle's copyright, trademark, or other proprietary rights notice contained in any portion of rhoStyle units, source code, or other files that bear such a notice.
+2. rhoStyle provides no warranty at all to any person, other than the Limited Warranty provided to the original purchaser of this package.
+3. You will remain solely responsible to anyone receiving your programs for support, service, upgrades, or technical or other assistance, and such recipients will have no right to contact rhoStyle for such services or assistance.
+4. You will indemnify, hold harmless, and defend rhoStyle from and against any claims or lawsuits, including attorney's fees, that arise or result from the use, reproduction, or distribution of your programs.
+5. Your programs must be written using a licensed, registered copy of this rhoStyle's product.
+
+
+PROVISIONS FOR VISUAL COMPONENT LIBRARY CLASSES
+RHOSTYLE grants you a non-exclusive royalty-free right to compile, reproduce, and distribute any new software programs created using the components included in this package provided that you:
+1. distribute the components only in compiled executable programs;
+2. do not use any part of the source code of the components to build any other components for public distribution or commercial sale;
+3. do not use any of the components as an object-oriented ancestor to build any other components (through inheritance) for public distribution or commercial sale.
+4. do not create new 'VCL' components or 'ACTIVE X' components, or any other component architecture, including but not limited to DLLs, for distribution outside of your company in any form, manner or media or using any distribution channel, which utilized all or any portion of the SOFTWARE COMPONENT PRODUCT(S) and its related source code.
+
+ADDITIONAL SITE LICENSE RIGHTS
+Customers who have purchased a Site License may install and use multiple copies of the software for all users at a single site or within a single development team.
+
+Using rhoStyle Components In Property Editors And Component Editors
+Distributing a property editor or component editor that uses one or more of the components from this package requires that the compiled unit (i.e. he DCU file) for the Components also be distributed. (The compiled unit may be explicitly redistributed individually, or implicitly redistributed in the runtime packages that ship with this product.
+IMPORTANT: The design-time package's files for each runtime package in this product MAY NOT be redistributed. In addition, redistributing the design packages included with this product is prohibited.
+It is permissible to use the rhoStyle classes in custom design-time editors (such as property editors and component editors). However, because the DCU files will need to be distributed along with your design-time editor, it is possible for a user to install and use the component (implemented in the DCU file) even though the user may not be a licensed, registered user of Visual Component Library. Under these circumstances, your users WILL NOT be able to receive technical support on the component included in your editor, unless the user is also a licensed, registered user of rhoStyle Classes.
+
+Copyright (c) 2003-2005 Roman Lysov. All right reserved.
+Delphi is a trademark of Borland Software Corporation.
+Microsoft is a registered trademark, and Windows is a trademark of Microsoft Corporation.
+ICQ is a registered trademark of ICQ Inc. 
+ICQPlus Copyright (C) 1999-2002 Vadim Eremeev

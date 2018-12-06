@@ -1,0 +1,3336 @@
+unit MainU;
+
+   (*
+   WorldVistA Configuration Utility
+   (c) 8/2008 Kevin Toppenberg
+   Programmed by Kevin Toppenberg, Eddie Hagood
+
+   Family Physicians of Greeneville, PC
+   1410 Tusculum Blvd, Suite 2600
+   Greeneville, TN 37745
+   kdtop@yahoo.com
+
+   This library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   This library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with this library; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+  *)
+
+{ $DEFINE HIDE_REMINDER DIALOGS}
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, StrUtils,
+  ORNet, ORFn, ComCtrls, ToolWin, Grids, ORCtrls, ExtCtrls, Buttons,
+  AppEvnts, Menus, ImgList, XML2Dlg,
+  {$IFDEF USE_SKINS}
+  ipSkinManager,
+  {$ENDIF}
+  Trpcb, //needed for .ptype types
+  ValEdit, SortStringGrid;
+
+type
+  tFileEntry = record
+    Field     : string;
+    FileNum   : string;
+    FieldName : String;
+    IENS      : string;
+    oldValue,newValue : string;
+  end;
+
+  TIENSelector = function : longint of object;
+
+  TGridInfo = class;  //forward declaration
+  TGridDataLoader = procedure (GridInfo: TGridInfo) of object;
+  TGridInfo = class (TObject)
+  public
+    Name         : string;            //used in debugging.
+    Grid         : TSortStringGrid;   //doesn't own object
+    FileNum      : string;
+    IENS         : string;
+    BasicTemplate: TStringList;       //doesn't own object
+    Data         : TStringList;       //doesn't own object
+    MessageStr   : string;            //optional text.
+    DataLoadProc : TGridDataLoader;   //doesn't own object
+    ApplyBtn     : TButton;           //doesn't own object
+    RevertBtn    : TButton;           //doesn't own object
+    OnAfterPost  : TNotifyEvent;
+    RecordSelector : TIENSelector;    //doesn't own object
+    procedure Clear;
+    procedure Assign(Source : TGridInfo);
+  end;
+
+
+  TMainForm = class(TForm)
+    PageControl: TPageControl;
+    tsUsers: TTabSheet;
+    UsersTreeView: TTreeView;
+    UserPageControl: TPageControl;
+    tsBasicPage: TTabSheet;
+    tsAdvancedPage: TTabSheet;
+    RightPanel: TPanel;
+    ButtonPanel: TPanel;
+    btnUsersApply: TBitBtn;
+    btnUsersRevert: TBitBtn;
+    LeftPanel: TPanel;
+    Splitter1: TSplitter;
+    Panel5: TPanel;
+    ApplicationEvents: TApplicationEvents;
+    AdvancedUsersGrid: TSortStringGrid;
+    BasicUsersGrid: TSortStringGrid;
+    MainMenu: TMainMenu;
+    FileMenu: TMenuItem;
+    ExitMenuItem: TMenuItem;
+    AboutMenu: TMenuItem;
+    CloneBtn: TBitBtn;
+    ImageList1: TImageList;
+    tsSettings: TTabSheet;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    SettingsPageControl: TPageControl;
+    tsBasicSettings: TTabSheet;
+    BasicSettingsGrid: TSortStringGrid;
+    tsAdvancedSettings: TTabSheet;
+    AdvancedSettingsGrid: TSortStringGrid;
+    Panel3: TPanel;
+    btnSettingsApply: TBitBtn;
+    btnSettingsRevert: TBitBtn;
+    Panel4: TPanel;
+    SettingsTreeView: TTreeView;
+    Panel6: TPanel;
+    Splitter2: TSplitter;
+    tsPatients: TTabSheet;
+    Panel7: TPanel;
+    Splitter3: TSplitter;
+    Panel8: TPanel;
+    PatientsPageControl: TPageControl;
+    tsBasicPatients: TTabSheet;
+    BasicPatientGrid: TSortStringGrid;
+    tsAdvancedPatients: TTabSheet;
+    AdvancedPatientGrid: TSortStringGrid;
+    Panel9: TPanel;
+    btnPatientApply: TBitBtn;
+    btnPatientRevert: TBitBtn;
+    Panel10: TPanel;
+    Panel11: TPanel;
+    AddBtn: TBitBtn;
+    PatientORComboBox: TORComboBox;
+    tsAdvanced: TTabSheet;
+    Panel12: TPanel;
+    Splitter4: TSplitter;
+    RtAdvPanel: TPanel;
+    AnyFilePageControl: TPageControl;
+    TabSheet2: TTabSheet;
+    AllFilesGrid: TSortStringGrid;
+    Panel14: TPanel;
+    btnAdvancedApply: TBitBtn;
+    btnAdvancedRevert: TBitBtn;
+    LeftAdvPanel: TPanel;
+    BotLeftAdvBtnPanel: TPanel;
+    btnAddAnyRecord: TBitBtn;
+    FileORComboBox: TORComboBox;
+    Label1: TLabel;
+    RecordORComboBox: TORComboBox;
+    Label2: TLabel;
+    TopLeftAdvPanel: TPanel;
+    BotLeftAdvPanel: TPanel;
+    Splitter5: TSplitter;
+    Panel13: TPanel;
+    btnBatchAdd: TBitBtn;
+    tsReminders: TTabSheet;
+    pnlDialogGroup: TPanel;
+    LRSplitter: TSplitter;
+    pnlRight: TPanel;
+    RemDlgPageControl: TPageControl;
+    tsRemDlgAdvanced: TTabSheet;
+    Panel17: TPanel;
+    btnRDlgApply: TBitBtn;
+    btnRDlgRevert: TBitBtn;
+    pnlLeft: TPanel;
+    pnlButtonArea: TPanel;
+    btnAddChild: TBitBtn;
+    pnlSelection: TPanel;
+    Splitter7: TSplitter;
+    pnlSelReminder: TPanel;
+    pnlElements: TPanel;
+    orcboSelRemDlg: TORComboBox;
+    Label4: TLabel;
+    tvElements: TTreeView;
+    AdvRemDlgGrid: TSortStringGrid;
+    tsReminderDialog: TTabSheet;
+    tsRemDlgElement: TTabSheet;
+    tsRemDlgPrompt: TTabSheet;
+    tsRemDlgForcedValue: TTabSheet;
+    tsRemDlgGroup: TTabSheet;
+    tsRemDlgRsltGroup: TTabSheet;
+    tsRemDlgRsltElement: TTabSheet;
+    RemDlgGrid: TSortStringGrid;
+    RemDlgElementGrid: TSortStringGrid;
+    RemDlgPromptGrid: TSortStringGrid;
+    RemDlgForcedVGrid: TSortStringGrid;
+    RemDlgGroupGrid: TSortStringGrid;
+    RemDlgRsltGroupGrid: TSortStringGrid;
+    RemDlgRsltElementGrid: TSortStringGrid;
+    cboDisplayDialogType: TComboBox;
+    pnlSelTop: TPanel;
+    btnLaunchRemDlg: TBitBtn;
+    lblSelectedRemdlgIEN: TLabel;
+    SpeedButton1: TSpeedButton;
+    Help1: TMenuItem;
+    ShowBrokerCalls1: TMenuItem;
+    cbDynamicDlgs: TCheckBox;
+    tempXMLOpenDialog: TOpenDialog;
+    VinStuff1: TMenuItem;
+    ShowVinWindow1: TMenuItem;
+    RemindersPageControl: TPageControl;
+    tsRemDialogs: TTabSheet;
+    tsReminderDefs: TTabSheet;
+    pnlRemDefLft: TPanel;
+    Splitter6: TSplitter;
+    pnlRemDefRt: TPanel;
+    mnuEmbed: TMenuItem;
+    procedure mnuEmbedClick(Sender: TObject);
+    procedure ShowVinWindow1Click(Sender: TObject);
+    procedure GridSetEditText(Sender: TObject; ACol, ARow: Integer; const Value: String);
+    procedure GridSelectCell(Sender: TObject; ACol, ARow: Integer; var CanSelect: Boolean);
+    procedure FormDestroy(Sender: TObject);
+    procedure UsersTreeViewChanging(Sender: TObject; Node: TTreeNode; var AllowChange: Boolean);
+    procedure UsersTreeViewChange(Sender: TObject; Node: TTreeNode);
+    procedure Button1Click(Sender: TObject);
+    procedure btnUsersRevertClick(Sender: TObject);
+    procedure btnUsersApplyClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure ExitMenuItemClick(Sender: TObject);
+    procedure UserPageControlDrawTab(Control: TCustomTabControl; TabIndex: Integer; const Rect: TRect; Active: Boolean);
+    procedure AboutMenuClick(Sender: TObject);
+    procedure CloneBtnClick(Sender: TObject);
+    procedure ApplicationEventsIdle(Sender: TObject; var Done: Boolean);
+    procedure ApplicationEventsShowHint(var HintStr: String; var CanShow: Boolean; var HintInfo: THintInfo);
+    procedure SettingsTreeViewChange(Sender: TObject; Node: TTreeNode);
+    procedure SettingsTreeViewChanging(Sender: TObject; Node: TTreeNode; var AllowChange: Boolean);
+    procedure BasicSettingsGridSetEditText(Sender: TObject; ACol, ARow: Integer; const Value: String);
+    procedure PageControlChanging(Sender: TObject; var AllowChange: Boolean);
+    procedure UserPageControlChanging(Sender: TObject; var AllowChange: Boolean);
+    procedure PatientORComboBoxNeedData(Sender: TObject; const StartFrom: String; Direction, InsertAt: Integer);
+    procedure PageControlChange(Sender: TObject);
+    procedure PatientORComboBoxClick(Sender: TObject);
+    procedure PatientsPageControlChanging(Sender: TObject; var AllowChange: Boolean);
+    procedure SettingsPageControlChanging(Sender: TObject; var AllowChange: Boolean);
+    procedure PatientsPageControlChange(Sender: TObject);
+    procedure SettingsPageControlChange(Sender: TObject);
+    procedure UserPageControlChange(Sender: TObject);
+    procedure FileORComboBoxNeedData(Sender: TObject; const StartFrom: String; Direction, InsertAt: Integer);
+    procedure FileORComboBoxClick(Sender: TObject);
+    procedure RecordORComboBoxNeedData(Sender: TObject; const StartFrom: String; Direction, InsertAt: Integer);
+    procedure RecordORComboBoxClick(Sender: TObject);
+    procedure btnAddAnyRecordClick(Sender: TObject);
+    procedure AddBtnClick(Sender: TObject);
+    procedure btnAdvancedApplyClick(Sender: TObject);
+    procedure btnAdvancedRevertClick(Sender: TObject);
+    procedure AllFilesGridClick(Sender: TObject);
+    procedure btnBatchAddClick(Sender: TObject);
+    procedure ChangeSkinClick(Sender: TObject);
+    procedure btnPatientApplyClick(Sender: TObject);
+    procedure btnPatientRevertClick(Sender: TObject);
+    procedure BasicPatientGridClick(Sender: TObject);
+    procedure ApplicationEventsException(Sender: TObject; E: Exception);
+    procedure btnSettingsRevertClick(Sender: TObject);
+    procedure btnSettingsApplyClick(Sender: TObject);
+    function InitRemDlgTab : boolean;
+    procedure RemDlgNeedData(Sender: TObject; const StartFrom: String; Direction, InsertAt: Integer);
+    procedure ScreenRemDlgData(Results : TStrings; Mode : Integer);
+    procedure GetRemDlgInfo;
+    procedure orcboSelRemDlgClick(Sender: TObject);
+    procedure tvElementsExpanding(Sender: TObject; Node: TTreeNode;
+      var AllowExpansion: Boolean);
+    procedure tvElementsClick(Sender: TObject);
+    procedure btnAddChildClick(Sender: TObject);
+    procedure RemDlgPageControlChange(Sender: TObject);
+    procedure RemDlgPageControlChanging(Sender: TObject;
+      var AllowChange: Boolean);
+    procedure cboDisplayDialogTypeChange(Sender: TObject);
+    procedure btnLaunchRemDlgClick(Sender: TObject);
+    procedure orcboSelRemDlgChange(Sender: TObject);
+    procedure tvElementsCustomDrawItem(Sender: TCustomTreeView;
+      Node: TTreeNode; State: TCustomDrawState; var DoDefaultDraw: Boolean);
+    procedure tvElementsOpenedOrClosed(Sender: TObject; Node: TTreeNode);
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure tvElementsStartDrag(Sender: TObject;
+      var DragObject: TDragObject);
+    procedure tvElementsDragDrop(Sender, Source: TObject; X, Y: Integer);
+    procedure tvElementsDragOver(Sender, Source: TObject; X, Y: Integer;
+      State: TDragState; var Accept: Boolean);
+    procedure tvElementsEndDrag(Sender, Target: TObject; X, Y: Integer);
+    procedure ShowBrokerCalls1Click(Sender: TObject);
+    procedure cbDynamicDlgsClick(Sender: TObject);
+  private
+    { Private declarations }
+    CurrentUserData : TStringList;
+    CurrentSettingsData : TStringList;
+    CurrentPatientData : TStringList;
+    CurrentAnyFileData : TStringList;
+    CurrentRemDlgFileData : TStringList;
+    BasicModeTemplate : TStringList;
+    DlgTemplate : TStringList;
+    DlgElementTemplate : TStringList;
+    DlgPromptTemplate : TStringList;
+    DlgForcedVTemplate : TStringList;
+    DlgGroupTemplate : TStringList;
+    DlgRsltGroupTemplate : TStringList;
+    DlgRsltElementTemplate : TStringList;
+
+    AllUsers : TTreeNode;
+    AllSettings : TTreeNode;
+    ActiveUsers : TTreeNode;
+    InactiveUsers : TTreeNode;
+    SettingsFiles : TStringList;
+    KernelSysParams : TTreeNode;
+    HospLoc : TTreeNode;
+    RPCBrokerParams : TTreeNode;
+    Devices : TTreeNode;
+    FLastSelectedRow,FLastSelectedCol : integer;
+    FLoadingGrid: boolean;
+    DataForGrid : TStringList;   // doesn't own TGridInfo objects
+    CachedHelp : TStringList;
+    CachedHelpIdx : TStringList;
+    CachedWPField : TStringList;
+    FVisibleGridIdx : integer;
+    SelectedDialogIEN : integer;
+    FINIFileName : string;  // 8-12-09   elh
+    SettingsGridList : TList;
+    PatientsGridList : TList;
+    UsersGridList : TList;
+    AnyFileGridList : TList;
+    DlgsGridList : TList;
+    RemDlgInfo : TStringList;
+    RemDlgScreenMode : integer;
+    NodeBeingDraggedOver : TTreeNode;
+    MainFormTriggeringRemDlgChanges : boolean;
+    procedure ShowDebugClick(Sender: TObject);
+    function FindParam(Param : string) : string;
+    function GetCurrentUserName : string;
+    function GetCursorImage : TCursor;
+    procedure SetCursorImage(Cursor : TCursor);
+    function FileNumForSettingsNode (Node : TTreeNode) : string;
+    function GetVisibleGridInfo : TGridInfo;
+
+    function GetInfoIndexForGrid(Grid : TSortStringGrid) : integer;
+    procedure GetUsersList(UsersList : TStringList; HideInactive: boolean);
+    procedure GetRecordsList(RecordsList : TStringList; FileNum : string);
+    procedure InitializeUsersTreeView;
+    procedure InitializeSettingsFilesTreeView;
+    procedure InitUsersStuff(BasicTemplate : TStringList);
+    procedure InitSettingsFilesStuff(BasicTemplate : TStringList);
+    procedure InitRemDlgsStuff;
+    Procedure LoadUsersTreeView(UsersList : TStringList);
+    Procedure LoadSettingsTreeView(RecordsList : TStringList;DestNode : TTreeNode);
+    procedure LoadUserData(GridInfo : TGridInfo);
+    procedure GetRecordsInfo(GridInfo : TGridInfo; GridList : TList; CmdName : string='');
+    procedure GetSettingsInfo(GridInfo : TGridInfo);
+    procedure GetPatientInfo(GridInfo : TGridInfo);
+    function AnyFileIENSelector() : longint;
+    procedure GetAllFilesInfo(GridInfo : TGridInfo);
+    procedure GetRemDlgFilesInfo(GridInfo : TGridInfo);
+    function FindInStrings(fieldNum : string; Strings : TStringList; var fileNum : string) : integer;
+    procedure CompileChanges(Grid : TSortStringGrid; CurrentUserData,Changes : TStringList);
+    function PostChanges(Grid : TSortStringGrid) : TModalResult;
+    function DisuserChanged(Changes: TStringList) : boolean;
+    procedure DrawTab(Control: TCustomTabControl; TabIndex: Integer; const Rect: TRect; Active: Boolean);
+    function DoCloneRecord(FileNum, SourceIENS, New01Field : String) : string;
+    function DoCloneUser(SourceIENS, New01Field : String) : string;
+    function GetGridHint(Grid : TSortStringGrid; FileNum : string; ACol, ARow : integer) : string;
+    function FieldHelp(FileNum, IENS, FieldNum, HelpStyle : string) : string;
+    procedure DoRevert(BasicGrid,AdvancedGrid : TSortStringGrid);
+    procedure LoadRemDlgSubRecords(IENS: String);
+    procedure LoadElementTree(Parent : TTreeNode; ParentIENS: string);
+    function RemDlgIENSelector() : longint;
+    procedure HandleRemDlgOnAfterPost(Sender: TObject);
+    procedure SyncTVElementToRemDlg(Node : TTreeNode; CheckNodeCB : boolean = false);
+    procedure CloseAnyRemDlgForm;
+    procedure MoveElement(SourceNode, DestNode : TTreeNode);
+  public
+    { Public declarations }
+    CurrentUserName: string;
+    LastSelTreeNode : TTreeNode;
+    DebugMode : boolean;
+    CurrentFileEntry : TStringList;
+    XMLDlg : TXMLDlg;
+    function GetVisibleGrid: TSortStringGrid;
+    function PostVisibleGrid: TModalResult;
+    procedure SetVisibleGridIdx(Grid : TSortStringGrid);
+    procedure SelectExternalGridCell(Sender: TObject; ACol, ARow: Integer; var CanSelect: Boolean);
+    function GetUserLine(CurrentUserData : TStringList; Grid : TSortStringGrid; ARow:integer) :integer;
+    function GetLineInfo(Grid : TSortStringGrid; CurrentUserData : TStringList; ARow: integer) : tFileEntry;
+    procedure ExtractVarPtrInfo(VarPtrInfo, Data : TStringList; FileNum,FieldNum : string);
+    function IsSubFile(FieldDef: string ; var SubFileNum : string) : boolean;
+    function IsWPField(FileNum,FieldNum : string) : boolean;
+    function ExtractNum (S : String; StartPos : integer) : string;
+    procedure Initialize;
+    procedure InitORComboBox(ORComboBox: TORComboBox; initValue : string);
+    Procedure GetBlankFileInfo(FileNum : string; BlankList : TStringList);
+    procedure GetOneRecord(FileNum, IENS : string; Data, BlankFileInfo : TStringList);
+    function getOneLine(CurrentData : TStringList; oneFileNum,oneFieldNum : string) : string;
+    procedure AddGridInfo(Name : string;
+                          Grid: TSortStringGrid; Data : TStringList;
+                          BasicTemplate : TStringList;
+                          DataLoader : TGridDataLoader; FileNum : string;
+                          ApplyBtn,RevertBtn : TButton;
+                          RecSelector : TIENSelector = nil);
+    procedure LoadAnyGrid(Grid : TSortStringGrid;
+                          BasicTemplate : TStringList;
+                          FileNum,IENS : string; CurrentData : TStringList); overload;
+    procedure LoadAnyGrid(GridInfo : TGridInfo); overload;
+    procedure LoadAnyGrid(Grid: TSortStringGrid); overload;
+    procedure LoadAnyGrid(Grid: TSortStringGrid; GridInfo : TGridInfo); overload;
+    procedure ClearGrid(Grid : TSortStringGrid);
+    procedure RegisterGridInfo(GridInfo : TGridInfo);
+    procedure UnRegisterGridInfo(GridInfo : TGridInfo);
+    function GetInfoForGrid(Grid : TSortStringGrid) : TGridInfo;
+    procedure RemDlgDisplayElement(IEN : string);
+    procedure RemDlgExpandElement(IEN : string; Expanded : boolean);
+  end;
+
+
+var
+  MainForm: TMainForm;
+
+  TMG_Create_Dynamic_Dialog : boolean;
+  TMG_Create_Dynamic_Dialog_XML_Filename : String;
+
+Const
+  DEF_GRID_ROW_HEIGHT = 17;
+  COMPUTED_FIELD     = '<Computed Field --> CAN''T EDIT>';
+  CLICK_TO           = '<CLICK to ';
+  //CLICK_FOR_SUBS     = CLICK_ + 'for Sub-Entries>';
+  CLICK_TO_EDIT_SUBS = CLICK_TO + 'Edit Sub-Entries>';
+  CLICK_TO_ADD_SUBS  = CLICK_TO + 'Add Sub-Entries>';
+  CLICK_TO_EDIT_TEXT = CLICK_TO + 'Edit Text>';
+  CLICK_TO_ADD_TEXT  = CLICK_TO + 'Add Text>';
+  HIDDEN_FIELD       = '<Hidden>';
+  crCustDrag         = 1;
+  crCustNodrop       = 2;
+
+implementation
+
+uses
+  frmSplash, LookupU, SubfilesU, SetSelU, SelDateTimeU, PostU,
+  FMErrorU, AboutU, PleaseWaitU, EditTextU, CreateTemplateU, SkinFormU,
+  BatchAddU, DebugU,
+  fNotes, fPtSel, fEncnt, uConst,
+  DrawersUnit,EditFreeText,
+  fReminderDialog,
+  fxBroker,
+  VinUnit,
+  uCore, {access to TUser, TEncounter}
+  inifiles, AddOneFileEntryU;  //8-12-09  elh
+
+{$R *.dfm}
+const
+  RPC_CONTEXT = 'TMG RPC CONTEXT GUI_CONFIG';
+
+type
+  TDragTreeNode = class(TDragObjectEx)
+    private
+      FDragImages : TDragImageList;
+    public
+      TreeNode : TTreeNode;
+      function GetDragCursor(Accepted : boolean; X, Y : Integer) : TCursor; override;
+      function GetDragImages : TDragImageList; override;
+      constructor Create;
+      destructor Destroy;
+  end;
+
+
+
+
+  //---------------------------------------------------
+
+  procedure TGridInfo.Clear;
+  begin
+    Grid         := nil;
+    FileNum      := '';
+    IENS         := '';
+    BasicTemplate:= nil;
+    Data         := nil;
+    MessageStr   := '';
+    DataLoadProc := nil;
+    ApplyBtn     := nil;
+    RevertBtn    := nil;
+    RecordSelector := nil;
+  end;
+
+  procedure TGridInfo.Assign(Source : TGridInfo);
+  begin
+    Name             := Source.Name;
+    Grid             := Source.Grid;
+    filenum          := Source.filenum;
+    IENS             := Source.IENS;
+    BasicTemplate    := Source.BasicTemplate;
+    Data             := Source.Data;
+    MessageStr       := Source.MessageStr;
+    DataLoadProc     := Source.DataLoadProc;
+    ApplyBtn         := Source.ApplyBtn;
+    RevertBtn        := Source.RevertBtn;
+    RecordSelector   := Source.RecordSelector;
+  end;
+
+  //---------------------------------------------------
+
+  procedure TMainForm.Initialize;
+  var tempMenu : TMenuItem;
+    {$IFDEF USE_SKINS}
+    tempSubMenu : TMenuItem;
+    {$ENDIF}
+
+    procedure SetupAfterPostHandler(Grid : TSortStringGrid; Handler : TNotifyEvent);
+    var GridInfo : TGridInfo;
+    begin
+      GridInfo := GetInfoForGrid(Grid);
+      if not assigned(GridInfo) then exit;
+      GridInfo.OnAfterPost := Handler;
+    end;
+
+  begin
+    {$IFDEF HIDE_REMINDER DIALOGS}
+    tsReminders.PageControl := nil;
+    {$ENDIF}
+    DebugMode := (FindParam('debug')='enable');
+    if DebugMode then begin
+      DebugForm.show;
+      tempMenu := TMenuItem.Create(FileMenu);
+      tempMenu.Caption := '&Show Debug Log';
+      tempMenu.OnClick := ShowDebugClick;
+      FileMenu.Add(tempMenu);
+    end else begin
+      DebugForm.Hide;
+    end;
+    {$IFDEF USE_SKINS}
+    DebugForm.Memo.Lines.Add('Adding Menus');
+    tempMenu := TMenuItem.Create(MainMenu);
+    tempMenu.Caption := '&Appearance';
+    tempSubMenu := TMenuItem.Create(tempMenu);
+    tempSubMenu.Caption := '&Change Skin';
+    tempSubMenu.OnClick := ChangeSkinClick;
+    tempMenu.Add(tempSubMenu);
+    MainMenu.Items.Add(tempMenu);
+    {$ENDIF}
+
+    DebugForm.Memo.Lines.Add('Showing Splash');
+    SplashForm.show;
+
+    FLoadingGrid := false;
+    SettingsFiles := TStringList.Create;
+    CurrentUserData := TStringList.create;
+    CurrentSettingsData := TStringList.Create;
+    CurrentPatientData := TStringList.Create;
+    CurrentAnyFileData := TStringList.Create;
+    CurrentRemDlgFileData := TStringList.Create;
+
+    SettingsGridList := TList.Create;
+    PatientsGridList := TList.Create;
+    UsersGridList := TList.Create;
+    AnyFileGridList := TList.Create;
+    DlgsGridList := TList.Create;
+
+    DataForGrid := TStringList.Create;  //will own GridInfo objects.
+    CachedHelp := TStringList.Create;
+    CachedHelpIdx := TStringList.Create;
+    CachedWPField := TStringList.Create;
+
+    BasicModeTemplate := TStringList.create;
+    BasicModeTemplate.Sorted := false;
+
+    DlgTemplate := TStringList.Create;
+    DlgElementTemplate := TStringList.Create;
+    DlgPromptTemplate := TStringList.Create;
+    DlgForcedVTemplate := TStringList.Create;
+    DlgGroupTemplate := TStringList.Create;
+    DlgRsltGroupTemplate := TStringList.Create;
+    DlgRsltElementTemplate := TStringList.Create;
+
+    CurrentFileEntry := TStringList.Create;
+
+    DebugForm.Memo.Lines.Add('Adding Grid Info');
+    AddGridInfo('BasicUsersGrid',       BasicUsersGrid,       CurrentUserData,       BasicModeTemplate,       LoadUserData,       '200',    btnUsersApply,    btnUsersRevert);
+    AddGridInfo('AdvancedUsersGrid',    AdvancedUsersGrid,    CurrentUserData,       nil,                     LoadUserData,       '200',    btnUsersApply,    btnUsersRevert);
+    AddGridInfo('BasicSettingsGrid',    BasicSettingsGrid,    CurrentSettingsData,   BasicModeTemplate,       GetSettingsInfo,    '',       btnSettingsApply, btnSettingsRevert);
+    AddGridInfo('AdvancedSettingsGrid', AdvancedSettingsGrid, CurrentSettingsData,   nil,                     GetSettingsInfo,    '',       btnSettingsApply, btnSettingsRevert);
+    AddGridInfo('BasicPatientGrid',     BasicPatientGrid,     CurrentPatientData,    BasicModeTemplate,       GetPatientInfo,     '2',      btnPatientApply,  btnPatientRevert);
+    AddGridInfo('AdvancedPatientGrid',  AdvancedPatientGrid,  CurrentPatientData,    nil,                     GetPatientInfo,     '2',      btnPatientApply,  btnPatientRevert);
+    AddGridInfo('AnyFileGrid',          AllFilesGrid,         CurrentAnyFileData,    nil,                     GetAllFilesInfo,    '',       btnAdvancedApply, btnAdvancedRevert, AnyFileIENSelector);
+    AddGridInfo('RemDlgGrid',           RemDlgGrid,           CurrentRemDlgFileData, DlgTemplate,             GetRemDlgFilesInfo, '801.41', btnRDlgApply,     btnRDlgRevert,     RemDlgIENSelector);
+    AddGridInfo('RemDlgElementGrid',    RemDlgElementGrid,    CurrentRemDlgFileData, DlgElementTemplate,      GetRemDlgFilesInfo, '801.41', btnRDlgApply,     btnRDlgRevert,     RemDlgIENSelector);
+    AddGridInfo('RemDlgPromptGrid',     RemDlgPromptGrid,     CurrentRemDlgFileData, DlgPromptTemplate,       GetRemDlgFilesInfo, '801.41', btnRDlgApply,     btnRDlgRevert,     RemDlgIENSelector);
+    AddGridInfo('RemDlgForcedVGrid',    RemDlgForcedVGrid,    CurrentRemDlgFileData, DlgForcedVTemplate,      GetRemDlgFilesInfo, '801.41', btnRDlgApply,     btnRDlgRevert,     RemDlgIENSelector);
+    AddGridInfo('RemDlgGroupGrid',      RemDlgGroupGrid,      CurrentRemDlgFileData, DlgGroupTemplate,        GetRemDlgFilesInfo, '801.41', btnRDlgApply,     btnRDlgRevert,     RemDlgIENSelector);
+    AddGridInfo('RemDlgRsltGroupGrid',  RemDlgRsltGroupGrid,  CurrentRemDlgFileData, DlgRsltGroupTemplate,    GetRemDlgFilesInfo, '801.41', btnRDlgApply,     btnRDlgRevert,     RemDlgIENSelector);
+    AddGridInfo('RemDlgRsltElementGrid',RemDlgRsltElementGrid,CurrentRemDlgFileData, DlgRsltElementTemplate,  GetRemDlgFilesInfo, '801.41', btnRDlgApply,     btnRDlgRevert,     RemDlgIENSelector);
+    AddGridInfo('AdvRemDlgGrid',        AdvRemDlgGrid,        CurrentRemDlgFileData, nil,                     GetRemDlgFilesInfo, '801.41', btnRDlgApply,     btnRDlgRevert,     RemDlgIENSelector);
+    AddGridInfo('AddFileEntry', AddOneFileEntry.AddFileEntry, CurrentFileEntry,      nil,                     GetRemDlgFilesInfo, '',       btnRDlgApply,     btnRDlgRevert,     RemDlgIENSelector);
+
+    //For each tab (Settings, DebugFients, etc, add all grids that can be worked on)
+    SettingsGridList.Add(BasicSettingsGrid);
+    SettingsGridList.Add(AdvancedSettingsGrid);
+    UsersGridList.Add(BasicUsersGrid);
+    UsersGridList.Add(AdvancedUsersGrid);
+    PatientsGridList.Add(BasicPatientGrid);
+    PatientsGridList.Add(AdvancedPatientGrid);
+    AnyFileGridList.Add(AllFilesGrid);
+    DlgsGridList.Add(AdvRemDlgGrid);
+    DlgsGridList.Add(RemDlgGrid);
+    DlgsGridList.Add(RemDlgElementGrid);
+    DlgsGridList.Add(RemDlgPromptGrid);
+    DlgsGridList.Add(RemDlgForcedVGrid);
+    DlgsGridList.Add(RemDlgGroupGrid);
+    DlgsGridList.Add(RemDlgRsltElementGrid);
+    DlgsGridList.Add(RemDlgRsltGroupGrid);
+    DlgsGridList.Add(RemDlgElementGrid);
+
+    SetupAfterPostHandler(AdvRemDlgGrid,         HandleRemDlgOnAfterPost);
+    SetupAfterPostHandler(RemDlgGrid,            HandleRemDlgOnAfterPost);
+    SetupAfterPostHandler(RemDlgElementGrid,     HandleRemDlgOnAfterPost);
+    SetupAfterPostHandler(RemDlgPromptGrid,      HandleRemDlgOnAfterPost);
+    SetupAfterPostHandler(RemDlgForcedVGrid,     HandleRemDlgOnAfterPost);
+    SetupAfterPostHandler(RemDlgGroupGrid,       HandleRemDlgOnAfterPost);
+    SetupAfterPostHandler(RemDlgRsltElementGrid, HandleRemDlgOnAfterPost);
+    SetupAfterPostHandler(RemDlgRsltGroupGrid,   HandleRemDlgOnAfterPost);
+    SetupAfterPostHandler(RemDlgElementGrid,     HandleRemDlgOnAfterPost);
+
+    MainForm.Visible := false;
+
+    DebugForm.Memo.Lines.Add('Trying to connect to server');
+    if not ORNet.ConnectToServer(RPC_CONTEXT) then begin
+      DebugForm.Memo.Lines.Add('Failed connection.  Closing.');
+      messagedlg('Login Failed.',mtError,[mbOK],0);
+      Close;
+      Exit;
+    end;
+    User := TUser.Create;
+    Encounter := TEncounter.Create;
+    Patient := TPatient.Create;
+    Changes := TChanges.Create;
+
+    DebugForm.Memo.Lines.Add('Connected to server!');
+    Application.ProcessMessages;
+    LastSelTreeNode := nil;
+    RPCBrokerV.ClearParameters := true;
+
+    DebugForm.Memo.Lines.Add('Initializing Combo Boxes');
+    InitORCombobox(PatientORComboBox,'A');
+    InitORCombobox(FileORComboBox,'A');
+    {$IFNDEF HIDE_REMINDER DIALOGS}
+    InitORCombobox(orcboSelRemDlg,'A');
+    {$ENDIF}
+
+    InitUsersStuff(BasicModeTemplate);
+    InitSettingsFilesStuff(BasicModeTemplate);
+    {$IFNDEF HIDE_REMINDER DIALOGS}
+    InitRemDlgsStuff;
+    {$ENDIF}
+    CurrentUserName := GetCurrentUserName;
+
+    PageControl.ActivePage := tsUsers;
+    UserPageControl.ActivePage := tsBasicPage;
+    SettingsPageControl.ActivePage := tsBasicSettings;
+
+    PageControlChange(nil); //ensure VisibleGridIdx is initialized.
+
+    {$IFDEF USE_SKINS}
+    if SkinForm.cbSkinAtStartup.Checked then begin
+      DebugForm.Memo.Lines.Add('Activating Skins');
+      SkinForm.ActivateCurrentSkin;
+    end;
+    {$ENDIF}
+
+    self.Visible := true;
+    SplashForm.Hide;
+
+    frmNotes:= TfrmNotes.Create(Self);
+
+    DebugForm.Memo.Lines.Add('Done Initializing.');
+
+    RemDlgInfo := TStringList.Create;
+    RemDlgScreenMode := -1;
+    XMLDlg := TXMLDlg.Create(self);
+  end;
+
+  function TMainForm.FindParam(Param : string) : string;
+  //Searches command line parameters for Param.  If found, then value returned.
+  //Case insensitive
+  //Must be in 'param=value' format, i.e. must have '='
+  var  i : integer;
+       tempS : string;    
+  begin
+    Result := '';
+    Param := LowerCase(Param);
+    for i := 1 to ParamCount do begin
+      tempS := LowerCase (ParamStr(i));
+      if Pos(Param,tempS)>0 then Result := Piece(tempS,'=',2);
+    end;
+  end;
+
+
+  procedure TMainForm.AddGridInfo(Name : string;
+                                  Grid: TSortStringGrid;
+                                  Data : TStringList;
+                                  BasicTemplate : TStringList;
+                                  DataLoader : TGridDataLoader;
+                                  FileNum : string;
+                                  ApplyBtn,RevertBtn : TButton;
+                                  RecSelector : TIENSelector = nil);
+  var GridInfo : TGridInfo;
+  begin
+    GridInfo := TGridInfo.Create;
+    GridInfo.Name := Name;
+    GridInfo.Grid := Grid;
+    GridInfo.Data := Data;
+    GridInfo.BasicTemplate := BasicTemplate;
+    GridInfo.FileNum := FileNum;
+    GridInfo.DataLoadProc := DataLoader;
+    GridInfo.ApplyBtn := ApplyBtn;
+    GridInfo.RevertBtn := RevertBtn;
+    GridInfo.RecordSelector := RecSelector;
+    RegisterGridInfo(GridInfo);
+  end;
+
+  procedure TMainForm.RegisterGridInfo(GridInfo : TGridInfo);
+  var s : string;
+      i :integer;
+  begin
+    if GridInfo = nil then exit;
+    s := IntToStr(integer(GridInfo.Grid));
+    i := DataForGrid.IndexOf(s);
+    if i >= 0 then begin
+      DataForGrid.Objects[i] := GridInfo;
+    end else begin
+      DataForGrid.AddObject(s,GridInfo);
+    end;
+  end;
+
+  procedure TMainForm.UnRegisterGridInfo(GridInfo : TGridInfo);
+  var s : string;
+      i : integer;
+  begin
+    if GridInfo = nil then exit;
+    s := IntToStr(integer(GridInfo.Grid));
+    i := DataForGrid.IndexOf(s);
+    if i > -1 then DataForGrid.Delete(i);
+  end;
+
+  function TMainForm.GetCurrentUserName : string;
+  var RPCResult : string;
+  begin
+    RPCBrokerV.remoteprocedure := 'TMG CHANNEL';
+    RPCBrokerV.param[0].ptype := list;
+    RPCBrokerV.Param[0].Mult['"REQUEST"'] := 'GET CURRENT USER NAME';
+    CallBroker; //RPCBrokerV.Call;
+    RPCResult := RPCBrokerV.Results[0];    //returns:  error: -1;  success=1
+    if piece(RPCResult,'^',1)='-1' then begin
+      CurrentUserName := '';
+      FMErrorForm.Memo.Lines.Assign(RPCBrokerV.Results);
+      FMErrorForm.PrepMessage;
+      FMErrorForm.ShowModal;
+    end else begin
+      result := piece(RPCResult,'^',3);
+    end;     
+  end;
+  
+  procedure TMainForm.GetUsersList(UsersList : TStringList; HideInactive: boolean);
+  var  RPCResult : string;
+  begin
+    UsersList.Clear;
+    RPCBrokerV.remoteprocedure := 'TMG CHANNEL';
+    RPCBrokerV.Param[0].Value := '.X';  // not used
+    RPCBrokerV.param[0].ptype := list;
+    RPCBrokerV.Param[0].Mult['"REQUEST"'] := 'GET USER LIST';
+    CallBroker; //RPCBrokerV.Call;
+    RPCResult := RPCBrokerV.Results[0];    //returns:  error: -1;  success=1
+    if piece(RPCResult,'^',1)='-1' then begin
+      FMErrorForm.Memo.Lines.Assign(RPCBrokerV.Results);
+      FMErrorForm.PrepMessage;
+      FMErrorForm.ShowModal;
+    end else begin
+      UsersList.Assign(RPCBrokerV.Results);
+    end;
+  end;
+
+  procedure TMainForm.GetRecordsList(RecordsList : TStringList; FileNum : string);
+  //Format of Records list:
+  //  .01Value^IEN^FileNum
+  //  .01Value^IEN^FileNum
+  var  RPCResult : string;
+  begin
+    RecordsList.Clear;
+    RPCBrokerV.remoteprocedure := 'TMG CHANNEL';
+    RPCBrokerV.param[0].ptype := list;
+    RPCBrokerV.Param[0].Mult['"REQUEST"'] := 'GET RECORDS LIST^' + FileNum;
+    CallBroker; //RPCBrokerV.Call;
+    RPCResult := RPCBrokerV.Results[0];    //returns:  error: -1;  success=1
+    if piece(RPCResult,'^',1)='-1' then begin
+      FMErrorForm.Memo.Lines.Assign(RPCBrokerV.Results);
+      FMErrorForm.PrepMessage;
+      FMErrorForm.ShowModal;
+    end else begin
+      RecordsList.Assign(RPCBrokerV.Results);
+    end;
+  end;
+  
+  Procedure TMainForm.LoadUsersTreeView(UsersList : TStringList);
+  //UsersList Format:
+  // Name^IEN^FileNum^Disuser(1 or 0)
+  // Name^IEN^FileNum^Disuser(1 or 0)
+  
+    procedure AddChild(Parent : TTreeNode; Name : string;IEN : longInt);
+    var Node : TTreeNode;
+    begin
+      Node := UsersTreeView.Items.AddChildObject(Parent,Name,pointer(IEN));
+      if Parent=InactiveUsers then begin
+        Node.ImageIndex := 1;
+        Node.SelectedIndex := 4;
+      end else begin
+        Node.ImageIndex := 0;
+        Node.SelectedIndex := 5;
+      end;
+    end;
+    
+  var i : integer;
+      oneEntry,Name,IENStr,inactive : string;
+      IEN : longInt;
+  begin
+    for i := 1 to UsersList.Count-1 do begin    
+      oneEntry := UsersList.Strings[i];
+      Name := Piece(oneEntry,'^',1);
+      IENStr := Piece(oneEntry,'^',2);
+      inactive := Piece(oneEntry,'^',4);
+      if (Pos('.',IENStr)=0) then begin
+        IEN := StrToInt64(IENStr);
+        if (inactive='1') then begin
+          AddChild(InactiveUsers,Name,IEN)
+        end else begin
+          AddChild(ActiveUsers,Name,IEN)
+        end;  
+      end;
+    end;
+  End;
+
+
+Procedure TMainForm.LoadSettingsTreeView(RecordsList : TStringList;DestNode : TTreeNode);
+  //RecordsList Format:
+  // .01Value^IEN^FileNum
+  // .01Value^IEN^FileNum
+  //Note: Will ADD into tree view, leaving prior entries intact
+
+  var i : integer;
+      oneEntry,Name,IENStr : string;
+      IEN : longInt;
+      Node: TTreeNode;
+  begin
+    for i := 1 to RecordsList.Count-1 do begin
+      oneEntry := RecordsList.Strings[i];
+      Name := Piece(oneEntry,'^',1);
+      IENStr := Piece(oneEntry,'^',2);
+      IEN := StrToInt64(IENStr);
+      Node := UsersTreeView.Items.AddChildObject(DestNode,Name,pointer(IEN));
+      Node.ImageIndex := 9;  //change later for icon
+      Node.SelectedIndex := 10; //change later for icon
+    end;
+  End;
+
+
+  procedure TMainForm.InitUsersStuff(BasicTemplate : TStringList);
+  begin
+    BasicTemplate.Add('200^.01');  //Name
+    BasicTemplate.Add('200^1');    //initials
+    BasicTemplate.Add('200^13');   //Nickname
+    BasicTemplate.Add('200^10.6'); //Degree
+    BasicTemplate.Add('200^53.2'); //DEA#
+    BasicTemplate.Add('200^2');    //Access Code
+    BasicTemplate.Add('200^11');   //Verify Code
+    BasicTemplate.Add('200^7');    //DISUSER
+    BasicTemplate.Add('200^20.2'); //Signature block printed name
+    BasicTemplate.Add('200^20.3'); //Signature block title
+    BasicTemplate.Add('200^20.4'); //Electronic signature code
+    BasicTemplate.Add('200^51');   //Keys
+    BasicTemplate.Add('200^8932.1');//Person class
+    BasicTemplate.Add('200^53.5'); //Provider class
+    BasicTemplate.Add('200^53.7'); //Requires cosigner
+    BasicTemplate.Add('200^53.8'); //Usually cosigner
+    BasicTemplate.Add('200^101.13'); //CPRS TAb
+    BasicTemplate.Add('200^200.1');//Timed read #sec
+    BasicTemplate.Add('200^201');  //Primary menu option
+    InitializeUsersTreeView;
+  end;
+
+  procedure TMainForm.InitSettingsFilesStuff(BasicTemplate : TStringList);
+  begin
+    // -- KERNEL SYSTEM PARAMETERS
+    BasicTemplate.Add('8989.3^.01');  // DOMAIN NAME
+    BasicTemplate.Add('8989.3^202');  // DEFAULT # OF ATTEMPTS
+    BasicTemplate.Add('8989.3^203');  // DEFAULT LOCK-OUT TIME
+    BasicTemplate.Add('8989.3^204');  // DEFAULT MULTIPLE SIGN-ON
+    BasicTemplate.Add('8989.3^205');  // ASK DEVICE TYPE AT SIGN-ON
+    BasicTemplate.Add('8989.3^206');  // DEFAULT AUTO-MENU
+    BasicTemplate.Add('8989.3^207');  // DEFAULT LANGUAGE
+    BasicTemplate.Add('8989.3^209');  // DEFAULT TYPE-AHEAD
+    BasicTemplate.Add('8989.3^210');  // DEFAULT TIMED-READ (SECONDS)
+    BasicTemplate.Add('8989.3^214');  // LIFETIME OF VERIFY CODE
+    BasicTemplate.Add('8989.3^217');  // DEFAULT INSTITUTION
+    BasicTemplate.Add('8989.3^218');  // DEFAULT AUTO SIGN-ON
+    BasicTemplate.Add('8989.3^219');  // DEFAULT MULTIPLE SIGN-ON LIMIT
+    BasicTemplate.Add('8989.3^230');  // BROKER ACTIVITY TIMEOUT
+    BasicTemplate.Add('8989.3^240');  // INTRO MESSAGE
+    BasicTemplate.Add('8989.3^245');  // POST SIGN-IN MESSAGE
+    BasicTemplate.Add('8989.3^320');  // DEFAULT DIRECTORY FOR HFS
+    BasicTemplate.Add('8989.3^501');  // PRODUCTION account
+
+    // -- HOSPITAL LOCATION
+    BasicTemplate.Add('44^.01');   //  NAME
+    BasicTemplate.Add('44^1');     //  ABBREVIATION
+    BasicTemplate.Add('44^2');     //  TYPE
+    BasicTemplate.Add('44^2.1');   //  TYPE EXTENSION
+    BasicTemplate.Add('44^3');     //  INSTITUTION
+    BasicTemplate.Add('44^3.5');   //  DIVISION
+    BasicTemplate.Add('44^5');     //  DEFAULT DEVICE
+    BasicTemplate.Add('44^9');     //  SERVICE
+    BasicTemplate.Add('44^9.5');   //  TREATING SPECIALTY
+    BasicTemplate.Add('44^10');    //  PHYSICAL LOCATION
+    BasicTemplate.Add('44^15');    //  CATEGORY OF VISIT
+    BasicTemplate.Add('44^16');    //  DEFAULT PROVIDER
+    BasicTemplate.Add('44^23');    //  AGENCY
+    BasicTemplate.Add('44^29');    //  CLINIC SERVICES RESOURCE
+    BasicTemplate.Add('44^99');    //  TELEPHONE
+    BasicTemplate.Add('44^101');   //  ASSOCIATED LOCATION TYPES
+    BasicTemplate.Add('44^1916');  //  PRINCIPAL CLINIC
+    BasicTemplate.Add('44^2505');  //  INACTIVATE DATE
+    BasicTemplate.Add('44^2506');  //  REACTIVATE DATE
+    BasicTemplate.Add('44^2507');  //  DEFAULT APPOINTMENT TYPE
+    BasicTemplate.Add('44^2508');  //  NO SHOW LETTER
+    BasicTemplate.Add('44^2509');  //  PRE-APPOINTMENT LETTER
+    BasicTemplate.Add('44^2510');  //  CLINIC CANCELLATION LETTER
+    BasicTemplate.Add('44^2511');  //  APPT. CANCELLATION LETTER
+    BasicTemplate.Add('44^2600');  //  PROVIDER
+    BasicTemplate.Add('44^2700');  //  DIAGNOSIS
+    BasicTemplate.Add('44^2801');  //  DEFAULT TO PC PRACTITIONER?
+
+    // --  RPC BROKER SITE PARAMETERS
+    BasicTemplate.Add('8994.1^.01');  //  DOMAIN NAME
+    BasicTemplate.Add('8994.1^2');    //  MAIL GROUP FOR ALERTS
+    BasicTemplate.Add('8994.1^7');    //  LISTENER
+
+    // -- DEVICE file
+    BasicTemplate.Add('3.5^.01');     //  NAME
+    BasicTemplate.Add('3.5^.02');     //  LOCATION OF TERMINAL
+    BasicTemplate.Add('3.5^.03');     //  MNEMONIC
+    BasicTemplate.Add('3.5^.04');     //  LOCAL SYNONYM
+    BasicTemplate.Add('3.5^1');       //  $I
+    BasicTemplate.Add('3.5^1.95');    //  SIGN-ON/SYSTEM DEVICE
+    BasicTemplate.Add('3.5^2');       //  TYPE
+    BasicTemplate.Add('3.5^3');       //  SUBTYPE
+    BasicTemplate.Add('3.5^5.5');     //  QUEUING
+    BasicTemplate.Add('3.5^6');       //  OUT-OF-SERVICE DATE
+    BasicTemplate.Add('3.5^7');       //  NEAREST PHONE
+    BasicTemplate.Add('3.5^8');       //  KEY OPERATOR
+    BasicTemplate.Add('3.5^9');       //  MARGIN WIDTH
+    BasicTemplate.Add('3.5^11');      //  PAGE LENGTH
+    BasicTemplate.Add('3.5^16');      //  CLOSEST PRINTER
+    BasicTemplate.Add('3.5^19');      //  OPEN PARAMETERS
+    BasicTemplate.Add('3.5^19.3');    //  CLOSE PARAMETERS
+    BasicTemplate.Add('3.5^19.5');    //  USE PARAMETERS
+    BasicTemplate.Add('3.5^19.7');    //  PRE-OPEN EXECUTE
+    BasicTemplate.Add('3.5^19.8');    //  POST-CLOSE EXECUTE
+    BasicTemplate.Add('3.5^27');      //  PASSWORD
+    BasicTemplate.Add('3.5^51.5');    //  ASK DEVICE TYPE AT SIGN-ON
+    BasicTemplate.Add('3.5^51.6');    //  AUTO MENU
+    BasicTemplate.Add('3.5^51.9');    //  TYPE-AHEAD
+
+    // -- PATIENT file
+    BasicTemplate.Add('2^.01');       //  NAME
+    BasicTemplate.Add('2^.02');       //  SEX
+    BasicTemplate.Add('2^.03');       //  DATE OF BIRTH
+    BasicTemplate.Add('2^.05');       //  MARITAL STATUS
+    BasicTemplate.Add('2^.06');       //  RACE
+    BasicTemplate.Add('2^.07');       //  OCCUPATION
+    BasicTemplate.Add('2^.08');       //  RELIGIOUS PREFERENCE
+    BasicTemplate.Add('2^.09');       //  SOCIAL SECURITY NUMBER
+    BasicTemplate.Add('2^.091');      //  REMARKS
+    BasicTemplate.Add('2^.092');      //  PLACE OF BIRTH [CITY]
+    BasicTemplate.Add('2^.093');      //  PLACE OF BIRTH [STATE]
+    BasicTemplate.Add('2^.096');      //  WHO ENTERED PATIENT
+    BasicTemplate.Add('2^.097');      //  DATE ENTERED INTO FILE
+    BasicTemplate.Add('2^.098');      //  HOW WAS PATIENT ENTERED?
+    BasicTemplate.Add('2^.103');      //  TREATING SPECIALTY
+    BasicTemplate.Add('2^.104');      //  PROVIDER
+    BasicTemplate.Add('2^.1041');     //  ATTENDING PHYSICIAN
+    BasicTemplate.Add('2^.111');      //  STREET ADDRESS [LINE 1]
+    BasicTemplate.Add('2^.1112');     //  ZIP+4
+    BasicTemplate.Add('2^.112');      //  STREET ADDRESS [LINE 2]
+    BasicTemplate.Add('2^.113');      //  STREET ADDRESS [LINE 3]
+    BasicTemplate.Add('2^.114');      //  CITY
+    BasicTemplate.Add('2^.115');      //  STATE
+    BasicTemplate.Add('2^.116');      //  ZIP CODE
+    BasicTemplate.Add('2^.117');      //  COUNTY
+    BasicTemplate.Add('2^.131');      //  PHONE NUMBER [RESIDENCE]
+    BasicTemplate.Add('2^.132');      //  PHONE NUMBER [WORK]
+    BasicTemplate.Add('2^.133');      //  PHONE [CELL}
+    BasicTemplate.Add('2^.2401');     //  FATHER'S NAME
+    BasicTemplate.Add('2^.2402');     //  MOTHER'S NAME
+    BasicTemplate.Add('2^.2403');     //  MOTHER'S MAIDEN NAME
+    BasicTemplate.Add('2^994');       //  MULTIPLE BIRTH INDICATOR
+    BasicTemplate.Add('2^1901');      //  VETERAN (Y/N)?
+
+    InitializeSettingsFilesTreeView;
+  end;
+
+  procedure TMainForm.InitRemDlgsStuff;
+  begin
+    DlgTemplate.Add('801.41^.01');
+    DlgTemplate.Add('801.41^3');
+    DlgTemplate.Add('801.41^100');     //class
+    DlgTemplate.Add('801.41^101');     //sponsor
+    DlgTemplate.Add('801.41^102');     //review date
+    DlgTemplate.Add('801.41^2');
+    DlgTemplate.Add('801.41^112');
+    DlgTemplate.Add('801.41^10');      //Components
+
+    DlgElementTemplate.Add('801.41^.01'); //Name
+    DlgElementTemplate.Add('801.41^3');   //Disable
+    DlgElementTemplate.Add('801.41^100'); //Class
+    DlgElementTemplate.Add('801.41^101'); //Sponsor
+    DlgElementTemplate.Add('801.41^102'); //Review Date
+    DlgElementTemplate.Add('801.41^13');  //resolution type
+    DlgElementTemplate.Add('801.41^15');  //Finding item
+    DlgElementTemplate.Add('801.41^17');  //orderable item
+    DlgElementTemplate.Add('801.41^14');  //finding item
+    DlgElementTemplate.Add('801.41^18');  //additional finding
+    DlgElementTemplate.Add('801.41^25');  //dialog progress note text
+    DlgElementTemplate.Add('801.41^35');  //alternative progress note text
+    DlgElementTemplate.Add('801.41^23');  //Exclude from progress note
+    DlgElementTemplate.Add('801.41^51');  //Suppress checkboxx
+    DlgElementTemplate.Add('801.41^10');  //Components
+    DlgElementTemplate.Add('801.41^116'); //Reminder term
+
+    DlgPromptTemplate.Add('801.41^.01');  //Name
+    DlgPromptTemplate.Add('801.41^3');    //Disable
+    DlgPromptTemplate.Add('801.41^100');  //Class
+    DlgPromptTemplate.Add('801.41^101');  //Sponsor
+    DlgPromptTemplate.Add('801.41^102');  //Review Date
+    DlgPromptTemplate.Add('801.41^24');   //Prompt Caption
+    DlgPromptTemplate.Add('801.41^23');  //Exclude from progress note
+    DlgPromptTemplate.Add('801.41^21');  //Default Value
+    DlgPromptTemplate.Add('801.41^45');  //Checkbox Sequence
+    DlgPromptTemplate.Add('801.41^10');  //Edit History
+
+    DlgForcedVTemplate.Add('801.41^.01'); //Name
+    DlgForcedVTemplate.Add('801.41^3');   //Disable
+    DlgForcedVTemplate.Add('801.41^100'); //Class
+    DlgForcedVTemplate.Add('801.41^101'); //Sponsor
+    DlgForcedVTemplate.Add('801.41^102'); //Review Date
+    DlgForcedVTemplate.Add('801.41^22'); //Forced Value
+    //Can't find entry for: RESTRICTED TO FINDING TYPE
+
+    DlgGroupTemplate.Add('801.41^.01');   //Name
+    DlgGroupTemplate.Add('801.41^3');     //Disable
+    DlgGroupTemplate.Add('801.41^100');   //Class
+    DlgGroupTemplate.Add('801.41^101');   //Sponsor
+    DlgGroupTemplate.Add('801.41^102');   //Review Date
+    DlgGroupTemplate.Add('801.41^13');  //Resolution type
+    DlgGroupTemplate.Add('801.41^17');  //orderable item
+    DlgGroupTemplate.Add('801.41^15');  //Finding item
+    DlgGroupTemplate.Add('801.41^18');  //Additional finding
+    DlgGroupTemplate.Add('801.41^5');   //Caption
+    DlgGroupTemplate.Add('801.41^6');   //Box -- put a box around the group
+    DlgGroupTemplate.Add('801.41^8');   //Share Common Prompts
+    DlgGroupTemplate.Add('801.41^9');   //group entry -- 'MULTIPLE SELECTION'
+    DlgGroupTemplate.Add('801.41^50');  //Hide show group
+    DlgGroupTemplate.Add('801.41^25');  //Dialog/Progress Note Text -- 'GROUP HEADER DIALOG TEXT'
+    DlgGroupTemplate.Add('801.41^35');  //Alternative PN text -- 'GROUP HEADER ALTERNATIVE P/N TEXT'
+    DlgGroupTemplate.Add('801.41^23');  //Exclude from PN
+    DlgGroupTemplate.Add('801.41^51');  //Suppress checkbox
+    DlgGroupTemplate.Add('801.41^7');   //Number of indents
+    DlgGroupTemplate.Add('801.41^52');  //Indent progress note text
+    DlgGroupTemplate.Add('801.41^10');  //Components
+    DlgGroupTemplate.Add('801.41^116'); //Reminder term
+
+    DlgRsltGroupTemplate.Add('801.41^.01');  //Name
+    DlgRsltGroupTemplate.Add('801.41^3');    //Disable
+    DlgRsltGroupTemplate.Add('801.41^100');  //Class
+    DlgRsltGroupTemplate.Add('801.41^101');  //Sponsor
+    DlgRsltGroupTemplate.Add('801.41^102');  //Review Date
+    DlgRsltGroupTemplate.Add('801.41^119');  //MH Test
+    DlgRsltGroupTemplate.Add('801.41^120');  //MH Scale
+    DlgRsltGroupTemplate.Add('801.41^23');   //Exclude from progress note
+    DlgRsltGroupTemplate.Add('801.41^10');   //Components
+    DlgRsltGroupTemplate.Add('801.41^110');  //Edit history
+
+    DlgRsltElementTemplate.Add('801.41^.01');  //Name
+    DlgRsltElementTemplate.Add('801.41^3');    //Disable
+    DlgRsltElementTemplate.Add('801.41^100');  //Class
+    DlgRsltElementTemplate.Add('801.41^101');  //Sponsor
+    DlgRsltElementTemplate.Add('801.41^102');  //Review Date
+    DlgRsltElementTemplate.Add('801.41^53');   //Result condition
+    DlgRsltElementTemplate.Add('801.41^25');   //Dialog/Progress Note Text -- 'PROGRESS NOTE TEXT'
+    DlgRsltElementTemplate.Add('801.41^35');   //Alternative PN text -- 'INFORMATIONAL MESSAGE TEXT'
+    DlgRsltElementTemplate.Add('801.41^10');   //Components
+
+  end;
+
+  procedure TMainForm.InitializeUsersTreeView;
+  var
+    UsersList : TStringList;
+
+  begin
+    CurrentUserData.Clear;
+    ClearGrid(AdvancedUsersGrid);
+    ClearGrid(BasicUsersGrid);
+    UsersTreeView.Items.Clear;
+    AllUsers := UsersTreeView.Items.Add(nil, 'All Users'); { Add root node }
+    AllUsers.ImageIndex := 2;
+    AllUsers.SelectedIndex := 2;
+    ActiveUsers := UsersTreeView.Items.AddChild(AllUsers,'Active Users');
+    ActiveUsers.ImageIndex := 0;
+    ActiveUsers.SelectedIndex := 0;
+    InactiveUsers := UsersTreeView.Items.AddChild(AllUsers,'Inactive Users');
+    InactiveUsers.ImageIndex := 1;
+    InactiveUsers.SelectedIndex := 1;
+    AllUsers.Expand(true);
+    UsersList := TStringList.create;
+    UsersList.Sorted := false;
+    GetUsersList(UsersList,false);
+    LoadUsersTreeView(UsersList);
+    UsersList.free;
+  end;
+
+  
+  procedure TMainForm.InitializeSettingsFilesTreeView;
+  var
+    RecordsList : TStringList;
+    index : integer;
+  begin
+    RecordsList := TStringList.Create;
+    SettingsFiles.Clear;
+    SettingsFiles.Add('<blank line>');  // to index 0 is not used for file info.
+    ClearGrid(AdvancedSettingsGrid);
+    ClearGrid(BasicSettingsGrid);
+    SettingsTreeView.Items.Clear;
+    AllSettings := SettingsTreeView.Items.Add(nil, 'All Settings Files'); { Add root node }
+    AllSettings.ImageIndex := 8;
+    AllSettings.SelectedIndex := 8;
+    AllSettings.StateIndex := 7;
+
+    index := SettingsFiles.Add('8989.3');
+    KernelSysParams := SettingsTreeView.Items.AddChildObject(AllSettings,'Kernel System Parameters',Pointer(index));
+    KernelSysParams.ImageIndex := 8; 
+    KernelSysParams.SelectedIndex := 8; 
+    KernelSysParams.StateIndex := 7;    
+    GetRecordsList(RecordsList,'8989.3');  // KERNEL SYSTEM PARAMETERS file
+    LoadSettingsTreeView(RecordsList,KernelSysParams);
+    RecordsList.Clear;
+    
+    index := SettingsFiles.Add('44');    
+    HospLoc := SettingsTreeView.Items.AddChildObject(AllSettings,'Practice Locations',Pointer(index));
+    HospLoc.ImageIndex := 8;
+    HospLoc.SelectedIndex := 8;
+    HospLoc.StateIndex := 7;
+    GetRecordsList(RecordsList,'44');  //HOSPITAL LOCATION file
+    LoadSettingsTreeView(RecordsList,HospLoc);
+    RecordsList.Clear;
+
+    index := SettingsFiles.Add('8994.1');    
+    RPCBrokerParams := SettingsTreeView.Items.AddChildObject(AllSettings,'RPC Broker Settings',Pointer(index));
+    RPCBrokerParams.ImageIndex := 8; 
+    RPCBrokerParams.SelectedIndex := 8; 
+    RPCBrokerParams.StateIndex := 7;
+    GetRecordsList(RecordsList,'8994.1');  // RPC BROKER SITE PARAMETERS
+    LoadSettingsTreeView(RecordsList,RPCBrokerParams);
+    RecordsList.Clear;
+
+    index := SettingsFiles.Add('3.5');    
+    Devices := SettingsTreeView.Items.AddChildObject(AllSettings,'Devices',Pointer(index));
+    Devices.ImageIndex := 8; 
+    Devices.SelectedIndex := 8; 
+    Devices.StateIndex := 7;
+    GetRecordsList(RecordsList,'3.5');  // DEVICE
+    LoadSettingsTreeView(RecordsList,Devices);
+    RecordsList.Clear;
+    
+    RecordsList.Free;
+  end;
+
+  
+  procedure TMainForm.FormDestroy(Sender: TObject);
+  var i : integer;
+      tempInfo : TGridInfo;
+  begin
+    {$IFDEF HIDE_REMINDER DIALOGS}
+    tsReminders.PageControl := PageControl;
+    {$ENDIF}
+    CurrentUserData.Free;
+    BasicModeTemplate.Free;
+
+    DlgTemplate.Free;
+    DlgPromptTemplate.Free;
+    DlgForcedVTemplate.Free;
+    DlgGroupTemplate.Free;
+    DlgRsltGroupTemplate.Free;
+    DlgElementTemplate.Free;
+
+    SettingsFiles.Free;
+    CurrentSettingsData.Free;
+    CurrentPatientData.Free;
+    CurrentAnyFileData.Free;
+    CurrentRemDlgFileData.Free;
+
+    SettingsGridList.Free;
+    PatientsGridList.Free;
+    UsersGridList.Free;
+    AnyFileGridList.Free;
+    DlgsGridList.Free;
+
+    CurrentFileEntry.Free;
+
+    for i := 0 to DataForGrid.Count-1 do begin
+      tempInfo := TGridInfo(DataForGrid.Objects[i]);
+      //tempInfo.Data.Free;    //not owned here....
+      tempInfo.Free;
+    end;
+    DataForGrid.Free;
+
+    CachedHelp.Free;
+    CachedHelpIdx.Free;
+    CachedWPField.Free;
+
+    User.Free;
+    Encounter.Free;
+    Patient.Free;
+    Changes.Free;
+    RemDlgInfo.Free;
+    XMLDlg.Free;
+  end;
+
+
+  procedure TMainForm.UsersTreeViewChanging(Sender: TObject; Node: TTreeNode; var AllowChange: Boolean);
+  begin
+    AllowChange := (PostVisibleGrid <> mrNO);
+    if AllowChange then LastSelTreeNode := Node;
+  end;
+
+
+  function TMainForm.PostVisibleGrid: TModalResult;
+  begin
+    result := PostChanges(GetVisibleGrid);
+  end;
+
+  
+  procedure TMainForm.SettingsTreeViewChanging(Sender: TObject; Node: TTreeNode; var AllowChange: Boolean);
+  begin
+    AllowChange := (PostVisibleGrid <> mrNO);
+    if AllowChange then LastSelTreeNode := Node;
+  end;
+
+  
+  procedure TMainForm.UsersTreeViewChange(Sender: TObject; Node: TTreeNode);
+  var  IEN : longInt;
+       GridInfo : TGridInfo;
+  begin
+    //get info from selected node.
+    LastSelTreeNode := Node;
+    IEN := longInt(Node.Data);
+    if IEN = 0 then exit;
+    GridInfo := GetInfoForGrid(BasicUsersGrid);
+    if GridInfo = nil then exit;
+    GridInfo.IENS := IntToStr(IEN) + ',';
+    LoadUserData(GridInfo);
+  end;
+
+  procedure TMainForm.SettingsTreeViewChange(Sender: TObject; Node: TTreeNode);
+  var  IEN : longInt;
+       FileNum : string;
+       GridInfo : TGridInfo;
+  begin
+    //get info from selected node.
+    LastSelTreeNode := Node;
+    GridInfo := GetInfoForGrid(BasicSettingsGrid);
+    if GridInfo = nil then exit;
+    IEN := longInt(Node.Data);
+    if IEN = 0 then exit;
+    FileNum := FileNumForSettingsNode (Node);
+    if FileNum = '' then exit;
+    GridInfo.IENS := IntToStr(IEN) + ',';
+    GridInfo.FileNum := FileNum;
+    GetSettingsInfo(GridInfo);
+  end;
+
+  function TMainForm.FileNumForSettingsNode (Node : TTreeNode) : string;
+  var index : integer;
+      Parent : TTreeNode;
+  begin
+    Result := '';
+    Parent := Node.Parent;
+    if Parent <> nil then begin
+      index := integer(Parent.Data);
+      if (index >0) and (index < SettingsFiles.count) then Result := SettingsFiles.Strings[index];
+    end;
+  end;
+
+  function TMainForm.GetCursorImage : TCursor;
+  begin
+    //All should be the same, so just return first from list (See SetCursorImage)
+    Result := BasicUsersGrid.Cursor;
+  end;
+
+
+  procedure TMainForm.SetCursorImage(Cursor : TCursor);
+  begin
+    BasicUsersGrid.Cursor := Cursor;
+    AdvancedUsersGrid.Cursor := Cursor;
+    UsersTreeView.Cursor := Cursor;
+
+    BasicSettingsGrid.Cursor := Cursor;
+    AdvancedSettingsGrid.Cursor := Cursor;
+    SettingsTreeView.Cursor := Cursor;
+
+    PatientORComboBox.Cursor := Cursor;
+    BasicPatientGrid.Cursor := Cursor;
+    AdvancedPatientGrid.Cursor := Cursor;
+
+  end;
+
+  procedure TMainForm.GetRecordsInfo(GridInfo : TGridInfo; GridList : TList; CmdName : string='');
+  //Purpose: Get all fields from server for one record.
+  //Data is an OUT parameter.
+  var cmd,RPCResult : string;
+      i : integer;
+      IENS : string;
+      AGrid : TSortStringGrid;
+      AGridInfo : TGridInfo;
+      PriorCursor : TCursor;
+  begin
+    PriorCursor := GetCursorImage;
+    SetCursorImage(crHourGlass);
+    IENS := GridInfo.IENS;
+    if CmdName = '' then CmdName := 'GET ONE RECORD';
+    for i := 0 to GridList.Count - 1 do begin
+      AGrid := TSortStringGrid(GridList.Items[i]);
+      ClearGrid(AGrid);
+      AGridInfo := GetInfoForGrid(AGrid);
+      if AGridInfo = nil then continue;
+      if AGridInfo.Data = nil then continue;
+      AGridInfo.Data.Clear;
+      AGridInfo.IENS := IENS;
+    end;
+    if GridInfo.IENS <> '0,' then begin
+      RPCBrokerV.remoteprocedure := 'TMG CHANNEL';
+      RPCBrokerV.param[0].ptype := list;
+      cmd := CmdName + '^' + GridInfo.FileNum + '^' + GridInfo.IENS;
+      RPCBrokerV.Param[0].Mult['"REQUEST"'] := cmd;
+      CallBroker; //RPCBrokerV.Call;
+      RPCResult := RPCBrokerV.Results[0];    //returns:  error: -1;  success=1
+      if piece(RPCResult,'^',1)='-1' then begin
+        FMErrorForm.Memo.Lines.Assign(RPCBrokerV.Results);
+        FMErrorForm.PrepMessage;
+        FMErrorForm.ShowModal;
+      end else begin
+        for i := 0 to GridList.Count - 1 do begin
+          AGrid := TSortStringGrid(GridList.Items[i]);
+          AGridInfo := GetInfoForGrid(AGrid);
+          if AGridInfo = nil then continue;
+          if AGridInfo.Data = nil then continue;
+          AGridInfo.Data.Assign(RPCBrokerV.results);  //must save to each GridInfo before any other server calls.
+        end;
+        for i := 0 to GridList.Count - 1 do begin
+          AGrid := TSortStringGrid(GridList.Items[i]);
+          AGridInfo := GetInfoForGrid(AGrid);
+          if AGridInfo = nil then continue;
+          LoadAnyGrid(AGrid,AGridInfo);
+          AGridInfo.ApplyBtn.Enabled := false;
+          AGridInfo.RevertBtn.Enabled := false;
+        end;
+      end;
+    end;
+    SetCursorImage(PriorCursor);
+  end;
+
+  procedure TMainForm.LoadUserData(GridInfo : TGridInfo);
+  //Purpose: Get all fields from server for one record.
+  begin
+    GetRecordsInfo(GridInfo, UsersGridList);
+  end;
+
+  procedure TMainForm.GetSettingsInfo(GridInfo : TGridInfo);
+  //Purpose: Get all fields from server for one record.
+  begin
+    GetRecordsInfo(GridInfo, SettingsGridList);
+  end;
+
+  procedure TMainForm.GetPatientInfo(GridInfo : TGridInfo);
+  //var cmd,RPCResult : string;
+  begin
+    GetRecordsInfo(GridInfo, PatientsGridList);
+  end;
+
+  procedure TMainForm.GetRemDlgFilesInfo(GridInfo : TGridInfo);
+  //Purpose: Get all fields from server for one record.
+  begin
+    GetRecordsInfo(GridInfo, DlgsGridList);
+  end;
+
+
+  procedure TMainForm.GetAllFilesInfo(GridInfo : TGridInfo);
+  //Purpose: Get all fields from server for one record.
+  begin
+    GetRecordsInfo(GridInfo, AnyFileGridList);
+  end;
+
+  function TMainForm.AnyFileIENSelector() : longint;
+  begin
+    Result := RecordORComboBox.ItemID;
+  end;
+
+  procedure TMainForm.ClearGrid(Grid : TSortStringGrid);
+  var i:integer;
+  begin
+    for i := 1 to 23 do begin    //elh added to clear all data as some residual remained
+       Grid.Cells[0,i] := '';
+       Grid.Cells[1,i] := '';
+       Grid.Cells[2,i] := '';
+    end;
+    Grid.RowCount :=2;
+  end;
+
+
+  procedure TMainForm.LoadAnyGrid(Grid : TSortStringGrid;  //the TSortStringGrid to load
+                                  //BasicMode: boolean;
+                                  BasicTemplate : TStringList;
+                                  FileNum : string;
+                                  IENS : string;
+                                  CurrentData : TStringList);
+  var
+    GridInfo : TGridInfo;
+  begin
+    //This stores load information into GridInfo.
+    GridInfo := GetInfoForGrid(Grid);
+    if GridInfo = nil then exit;
+    GridInfo.Grid := Grid;
+    GridInfo.BasicTemplate := BasicTemplate;
+    GridInfo.FileNum := FileNum;
+    GridInfo.IENS := IENS;
+    GridInfo.Data := CurrentData;
+    LoadAnyGrid(GridInfo);
+  end;
+
+  procedure TMainForm.LoadAnyGrid(Grid: TSortStringGrid);
+  begin
+    LoadAnyGrid(GetInfoForGrid(Grid));
+  end;
+
+  procedure TMainForm.LoadAnyGrid(Grid: TSortStringGrid; GridInfo : TGridInfo);
+  var tempGridInfo : TGridInfo;
+  begin
+    if GridInfo.Grid = Grid then begin
+      LoadAnyGrid(GridInfo);
+    end else begin
+      tempGridInfo := TGridInfo.Create;
+      tempGridInfo.Assign(GridInfo);
+      tempGridInfo.Grid := Grid;
+      LoadAnyGrid(tempGridInfo);
+      tempGridInfo.Free;
+    end;
+  end;
+
+  function TMainForm.getOneLine(CurrentData : TStringList; oneFileNum,oneFieldNum : string) : string;
+  var i : integer;
+      FileNum,FieldNum : string;
+  begin
+    result := '';
+    // FileNum^IENS^FieldNum^FieldName^newValue^oldValue
+    for i := 1 to CurrentData.Count - 1 do begin
+      FileNum := piece(CurrentData.Strings[i],'^',1);
+      if FileNum <> oneFileNum then continue;
+      FieldNum := piece(CurrentData.Strings[i],'^',3);
+      if FieldNum <> oneFieldNum then continue;
+      result := CurrentData.Strings[i];
+      break;
+    end;
+  end;
+
+  procedure TMainForm.LoadAnyGrid(GridInfo : TGridInfo);
+  //Format of CurrentData:
+  //Data[0]=1^Success
+  //Data[1]='FileNum^IENS^FieldNum^ExtValue^FieldName^DDInfo...
+  //Data[2]='FileNum^IENS^FieldNum^ExtValue^FieldName^DDInfo...
+  //...
+  //Data[3]='INFO^DD^FileNum^FieldNum^"V" nodes...  (see ExtractVarPtrInfo for more documentation)
+
+  //This assumes that GridInfo already has loaded info.
+  var
+    Grid : TSortStringGrid;  //the TSortStringGrid to load
+    BasicMode: boolean;
+    //Text : string;
+    FileNum : string;
+    IENS : string;
+    CurrentData : TStringList;
+
+    function LoadOneLine (Grid : TSortStringGrid; oneEntry : string; GridRow : integer) : boolean;
+    //Result = false if line skipped (nothing added to grid)
+    //         true if line added normally
+    var
+      tempFile,IENS : string;
+      fieldNum,fieldName,fieldDef : string;
+      subFileNum : string;
+      value : string;
+    begin
+      tempFile := Piece(oneEntry,'^',1);
+      if tempFile = FileNum then begin //handle subfiles later...
+        Result := true;
+        IENS := Piece(oneEntry,'^',2);
+        fieldNum := Piece(oneEntry,'^',3);
+        value := Piece(oneEntry,'^',4);
+        fieldName := Piece(oneEntry,'^',5);
+        fieldDef := Piece(oneEntry,'^',6);
+        Grid.RowCount := GridRow + 1;
+        Grid.Cells[0,GridRow] := fieldNum;
+        Grid.Cells[1,GridRow] := fieldName;
+        if Pos('W',fieldDef)>0 then begin
+          Grid.Cells[2,GridRow] := CLICK_TO_EDIT_TEXT;
+        end else if IsSubFile(fieldDef, subFileNum) then begin
+          if IsWPField(FileNum,fieldNum) then begin
+            IENS :=  Piece(oneEntry,'^',2);  //kt
+            EditTextForm.PrepForm(FileNum,FieldNum,IENS);  //kt
+            Grid.Cells[2,GridRow] := EditTextForm.GetPreviewText;
+          end else begin
+            Grid.Cells[2,GridRow] := SubFilesU.GetPreviewText(subFileNum, IENS);
+          end;
+        end else if Pos('C',fieldDef)>0 then begin
+          Grid.Cells[2,GridRow] := COMPUTED_FIELD;
+        end else begin
+          Grid.Cells[2,GridRow] := value;
+        end;
+        Grid.RowHeights[GridRow] := DEF_GRID_ROW_HEIGHT;
+      end else begin
+        Result := false;
+      end;
+    end;
+
+  var i : integer;
+      oneEntry  : string;
+      oneFileNum,oneFieldNum : string;
+      gridRow : integer;
+      //GridInfo : TGridInfo;
+
+  begin
+    if GridInfo=nil then exit;
+    FLoadingGrid := true;
+
+    Grid := GridInfo.Grid;
+    BasicMode := (GridInfo.BasicTemplate <> nil);
+    FileNum := GridInfo.FileNum;
+    IENS := GridInfo.IENS;
+    CurrentData := GridInfo.Data;
+
+    ClearGrid(Grid);
+    Grid.ColWidths[0] := 50;
+    Grid.ColWidths[1] := 200;
+    Grid.ColWidths[2] := 300;
+    Grid.Cells[0,0] := '#';
+    Grid.Cells[1,0] := 'Name';
+    Grid.Cells[2,0] := 'Value';
+
+    if BasicMode=false then begin
+      gridRow := 1;
+      for i := 1 to CurrentData.Count-1 do begin  //start at 1 because [0] = 1^Success
+        oneEntry := CurrentData.Strings[i];
+        //LoadOneLine (Grid,oneEntry,i);
+        if LoadOneLine (Grid,oneEntry,gridRow) then begin
+          Inc(GridRow);
+        end;
+      end;
+    end else if BasicMode=true then begin
+      gridRow := 1;
+      for i := 0 to GridInfo.BasicTemplate.Count-1 do begin
+        oneFileNum := Piece(GridInfo.BasicTemplate.Strings[i],'^',1);
+        if oneFileNum <> fileNum then continue;
+        oneFieldNum := Piece(GridInfo.BasicTemplate.Strings[i],'^',2);
+        oneEntry := getOneLine(CurrentData,oneFileNum,oneFieldNum);
+        if LoadOneLine (Grid,oneEntry,gridRow) then begin
+          Inc(GridRow);
+        end;
+      end;
+    end;
+    FLoadingGrid := false;
+  end;
+
+
+
+  procedure TMainForm.GridSelectCell(Sender: TObject; ACol, ARow: Integer;
+                                     var CanSelect: Boolean);
+    (*
+    For Field def, here is the legend
+    character     meaning
+
+    + = supported
+
+    +BC 	          The data is Boolean Computed (true or false).
+    +C 	          The data is Computed.
+    +Cm 	        The data is multiline Computed.
+    +DC 	        The data is Date-valued, Computed.
+    +D 	          The data is Date-valued.
+    +F 	          The data is Free text.
+    +I 	          The data is uneditable.
+    +Pn 	          The data is a Pointer reference to file "n".
+    +S 	          The data is from a discrete Set of codes.
+
+    N 	          The data is Numeric-valued.
+
+    Jn 	          To specify a print length of n characters.
+    Jn,d 	        To specify printing n characters with decimals.
+
+    V 	          The data is a Variable pointer.
+    +W 	          The data is Word processing.
+    WL 	          The Word processing data is normally printed in Line mode (i.e., without word wrap).
+      *)
+  var oneEntry,FieldDef : string;
+      date,time: string;
+      FileNum,FieldNum,SubFileNum : string;
+      GridFileNum : string;
+      UserLine : integer;
+      Grid : TSortStringGrid;
+      IEN : int64;
+      //Text : string;
+      IENS : string;
+      CurrentData : TStringList;
+      GridInfo : TGridInfo;
+      SubFileForm : TSubFileForm;
+      VarPtrInfo : TStringList;
+  begin
+    if FLoadingGrid then exit;  //prevent pseudo-clicks during loading...
+    Grid := (Sender as TSortStringGrid);
+    GridInfo := GetInfoForGrid(Grid);
+    if GridInfo=nil then exit;
+    GridFileNum := GridInfo.FileNum;
+    CanSelect := false;  //default to NOT selectable.
+    CurrentData := GridInfo.Data;
+    if CurrentData=nil then exit;
+    if CurrentData.Count = 0 then exit;
+    CanSelect := True;
+    UserLine := GetUserLine(CurrentData,Grid,ARow);
+    if UserLine = -1 then exit;
+    oneEntry := CurrentData.Strings[UserLine];
+    FieldDef := Piece(oneEntry,'^',6);
+    if Pos('F',FieldDef)>0 then begin  //Free text
+      //CanSelect := true;
+      EditFreeTextForm.TextToEdit.Text := Grid.Cells[ACol,ARow];
+      EditFreeTextForm.Caption := 'Edit: ' + Grid.Cells[ACol-1,ARow];
+      if EditFreeTextForm.ShowModal = mrOK then begin
+        Grid.Cells[ACol,ARow] := EditFreeTextForm.TextToEdit.Text;
+      end;
+    end else if IsSubFile(FieldDef,SubFileNum) then begin  //Subfiles.
+      FileNum :=  Piece(oneEntry,'^',1);
+      FieldNum :=  Piece(oneEntry,'^',3);
+      if IsWPField(FileNum,FieldNum) then begin
+        IENS :=  Piece(oneEntry,'^',2);
+        EditTextForm.PrepForm(FileNum,FieldNum,IENS);
+        EditTextForm.ShowModal;
+        Grid.Cells[ACol,ARow] := EditTextForm.GetPreviewText;
+        if assigned(GridInfo.OnAfterPost) and EditTextForm.Posted then begin
+          GridInfo.OnAfterPost(Self);
+        end;
+      end else begin
+        //handle subfiles here
+        IENS := '';
+        if GridInfo.MessageStr = MSG_SUB_FILE then begin  //used message from subfile Grid
+          IENS := GridInfo.IENS;
+        end else if LastSelTreeNode <> nil then begin  //this is one of the selction trees.
+          IEN := longInt(LastSelTreeNode.Data);
+          if IEN > 0 then IENS := InttoStr(IEN) + ',';
+        end else if Assigned(GridInfo.RecordSelector) then begin
+          IEN := GridInfo.RecordSelector; //get info from selected record
+          if IEN > 0 then IENS := InttoStr(IEN) + ',';
+        //end else if GridInfo.Data = CurrentAnyFileData then begin
+        //  IEN := RecordORComboBox.ItemID;  //get info from selected record
+        //  if IEN > 0 then IENS := InttoStr(IEN) + ',';
+        end;
+        if IENS <> '' then begin
+          SubFileForm := TSubFileForm.Create(self);
+          SubFileForm.PrepForm(SubFileNum,IENS);
+          SubfileForm.ShowModal;  // note: may call this function again recursively for sub-sub-files etc.
+          Grid.Cells[ACol,ARow] := SubFilesU.GetPreviewText(SubFileNum, IENS);
+          if assigned(GridInfo.OnAfterPost) and SubFileForm.Posted then begin
+            GridInfo.OnAfterPost(Self);
+          end;
+          SubFileForm.Free;
+        end else begin
+          MessageDlg('IENS for File="".  Can''t process.',mtInformation,[MBOK],0);
+        end;
+      end;
+    end else if Pos('C',FieldDef)>0 then begin  //computed fields.
+      CanSelect := false;
+    end else if Pos('D',FieldDef)>0 then begin  //date field
+      date := piece(Grid.Cells[ACol,ARow],'@',1);
+      time := piece(Grid.Cells[ACol,ARow],'@',2);
+      if date <> '' then begin
+        SelDateTimeForm.DateTimePicker.Date := StrToDate(date);
+      end else begin
+        SelDateTimeForm.DateTimePicker.Date := SysUtils.Date;
+      end;
+      if SelDateTimeForm.ShowModal = mrOK then begin
+        date := DateToStr(SelDateTimeForm.DateTimePicker.Date);
+        time := TimeToStr(SelDateTimeForm.DateTimePicker.Time);
+        if time <> '' then date := date; // + '@' + time;    elh 8/15/08
+        Grid.Cells[ACol,ARow] := date;
+      end;
+      CanSelect := true;
+    end else if Pos('S',FieldDef)>0 then begin  //Set of Codes
+      SetSelForm.PrepForm(Piece(oneEntry,'^',7), Grid.Cells[ACol,ARow]);
+      if SetSelForm.ShowModal = mrOK then begin
+        Grid.Cells[ACol,ARow] := SetSelForm.SelectedValue;
+        CanSelect := true;
+      end;
+    end else if Pos('I',FieldDef)>0 then begin  //uneditable
+      MessageDlg('Sorry. Flagged as UNEDITABLE.',mtInformation ,[mbOK],0);
+    end else if Pos('V',FieldDef)>0 then begin  //Variable Pointer to file.
+      FileNum :=  Piece(oneEntry,'^',1);
+      FieldNum := Piece(oneEntry,'^',3);
+      VarPtrInfo := TStringList.Create;
+      ExtractVarPtrInfo(VarPtrInfo,CurrentData, FileNum,FieldNum);
+      FieldLookupForm.PrepFormAsMultFile(VarPtrInfo,Grid.Cells[ACol,ARow]);
+      VarPtrInfo.Free;
+      if FieldLookupForm.ShowModal = mrOK then begin
+        Grid.Cells[ACol,ARow] := FieldLookupForm.SelectedValue;
+        CanSelect := true;
+      end;
+    end else if Pos('P',FieldDef)>0 then begin  //Pointer to file.
+      FileNum := ExtractNum (FieldDef,Pos('P',FieldDef)+1);
+      //check for validity here...
+      FieldLookupForm.PrepForm(FileNum,Grid.Cells[ACol,ARow]);
+      if FieldLookupForm.ShowModal = mrOK then begin
+        Grid.Cells[ACol,ARow] := FieldLookupForm.SelectedValue;
+        CanSelect := true;
+      end;
+    end;
+    if CanSelect then begin
+      FLastSelectedRow := ARow;
+      FLastSelectedCol := ACol;
+    end;
+    GridInfo.ApplyBtn.Enabled := true;
+    GridInfo.RevertBtn.Enabled := true;
+  end;
+
+
+  function TMainForm.GetLineInfo(Grid : TSortStringGrid; CurrentUserData : TStringList; ARow: integer) : tFileEntry;
+  var fieldNum : string;
+      oneEntry : string;
+      fileNum : string;
+      gridRow : integer;
+  begin
+    fieldNum := Grid.Cells[0,ARow];
+    gridRow := FindInStrings(fieldNum, CurrentUserData, fileNum);
+    if gridRow > -1 then begin
+      oneEntry := CurrentUserData.Strings[gridRow];
+      Result.Field := fieldNum;
+      Result.FieldName := Grid.Cells[1,ARow];
+      Result.FileNum := fileNum;
+      Result.IENS := Piece(oneEntry,'^',2);
+      Result.oldValue := Piece(oneEntry,'^',4);
+      Result.newValue := Grid.Cells[2,ARow];
+    end else begin
+      Result.Field := '';
+      Result.FieldName := '';
+      Result.FileNum := '';
+      Result.IENS := '';
+      Result.oldValue := '';
+      Result.newValue := '';
+    end;
+  end;
+  
+  function TMainForm.GetUserLine(CurrentUserData : TStringList; Grid : TSortStringGrid; ARow: integer) : integer;
+  var fieldNum: string;
+      tempFileNum : string;
+  begin
+    fieldNum := Grid.Cells[0,ARow];
+    Result := FindInStrings(fieldNum,CurrentUserData,tempFileNum);
+  end;
+
+  function TMainForm.FindInStrings(fieldNum : string; Strings : TStringList; var fileNum : string) : integer;
+  //Note: if fileNum is passed blank, then first matching file will be placed in it (i.e. OUT parameter)
+  var tempFieldNum : string;
+      oneEntry,tempFile : string;
+      i : integer;
+  begin
+    result := -1;
+    fileNum := '';
+    for i := 1 to Strings.Count-1 do begin   //0 --> 1^success
+      oneEntry := Strings.Strings[i];
+      tempFile := Piece(oneEntry,'^',1);
+      if (fileNum='') and (tempFile<>'INFO') then fileNum := tempFile;
+      if tempFile <> fileNum then continue; //ignore subfiles
+      tempFieldNum := Piece(oneEntry,'^',3);
+      if tempFieldNum <> fieldNum then continue;
+      Result := i;
+      break;
+    end;
+  end;
+
+  procedure TMainForm.ExtractVarPtrInfo(VarPtrInfo,Data : TStringList;
+                                        FileNum,FieldNum : string);
+  //Format of Data:
+  //Data[1]='FileNum^IENS^FieldNum^ExtValue^FieldName^DDInfo...
+  //Data[2]='FileNum^IENS^FieldNum^ExtValue^FieldName^DDInfo...
+  //...
+  //Data[3]='INFO^DD^FileNum^FieldNum^V ...
+  //       this provides all the V nodes for a variable pointer.  See Fileman documentation for details.
+  //Example:
+  //Data[x]='INFO^DD^801.41,15,"V",0)&=&"^.12P^12^12"
+  //Data[x]='INFO^DD^801.41,15,"V",1,0)&=&"9999999.09^EDUCATION TOPICS^5^ED^n^n"
+  //Data[x]='INFO^DD^801.41,15,"V",2,0)&=&"9999999.14^IMMUNIZATION^10^IM^n^n"
+  //Data[x]='INFO^DD^801.41,15,"V",3,0)&=&"9999999.28^SKIN TEST^15^ST^n^n"
+  //Data[x]='INFO^DD^801.41,15,"V",4,0)&=&"9999999.15^EXAM^20^EX^n^n"
+  //Data[x]='INFO^DD^801.41,15,"V",5,0)&=&"9999999.64^HEALTH FACTOR^25^HF^y^n"
+  //Data[x]='INFO^DD^801.41,15,"V",5,1)&=&"S DIC(""S"")=""I $P(^(0),U,10)'=""""C"""""""
+  //Data[x]='INFO^DD^801.41,15,"V",5,2)&=&"IGNORE CATEGORIES"
+  //Data[x]='INFO^DD^801.41,15,"V",6,0)&=&"81^PROCEDURE^30^CPT^n^n"
+  //Data[x]='INFO^DD^801.41,15,"V",7,0)&=&"80^ICD9 DIAGNOSIS^35^ICD9^n^n"
+  //Data[x]='INFO^DD^801.41,15,"V",8,0)&=&"120.51^VITAL TYPE^40^VM^n^n"
+  //Data[x]='INFO^DD^801.41,15,"V",9,0)&=&"811.2^TAXONOMY^45^TX^n^n"
+  //Data[x]='INFO^DD^801.41,15,"V",10,0)&=&"101.41^ORDER DIALOG^50^Q^n^n"
+  //Data[x]='INFO^DD^801.41,15,"V",11,0)&=&"601.71^MENTAL HEALTH^55^MH^y^n"
+  //Data[x]='INFO^DD^801.41,15,"V",11,1)&=&"S DIC(""S"")=""I $$MH^PXRMDLG5(Y)=1"""
+  //Data[x]='INFO^DD^801.41,15,"V",11,2)&=&"Check to see if the MH test exceeds the maxinum numbers of questions defined in file 800"
+  //Data[x]='INFO^DD^801.41,15,"V",12,0)&=&"790.404^WH NOTIFICATION PURPOSE^60^WH^n^n"
+
+  //Format of output VarPtrInfo
+  //VarPtrInfo[1]=ShowOrder^Filenum^FileName^Abbreviation
+
+  var i : integer;
+      temp, oneEntry : string;
+      Order,P2FileNum,P2FileName,Abbrev : string;
+      Nodes,DDVal : string;
+  begin
+    VarPtrInfo.Clear;
+    for i := 0 to Data.Count-1 do begin
+      oneEntry := Data.Strings[i];
+      if piece(oneEntry,'^',1) <> 'INFO' then continue;
+      if piece(oneEntry,'^',3) <> FileNum then continue;
+      if piece(oneEntry,'^',4) <> FieldNum then continue;
+      temp := pieces(oneEntry,'^',1,4)+'^';
+      oneEntry := MidStr(oneEntry,length(temp)+1,length(oneEntry));
+      Nodes := piece(oneEntry,'&=&',1);
+      Nodes := piece(Nodes,')',1);
+      DDVal := piece(oneEntry,'&=&',2);
+      if StrToIntDef(piece(Nodes,',',2),-1) = -1 then continue;
+      if StrToIntDef(piece(Nodes,',',3),-1) <> 0 then continue;
+      P2FileNum := Piece(DDVal,'^',1);
+      P2FileName := Piece(DDVal,'^',2);
+      Order := Piece(DDVal,'^',3);
+      Abbrev := Piece(DDVal,'^',4);
+      VarPtrInfo.Add(Order+'^'+P2FileNum+'^'+P2FileName+'^'+Abbrev);
+    end;
+  end;
+
+  function TMainForm.IsSubFile(FieldDef: string ; var SubFileNum : string) : boolean;
+  //SubFileNum is OUT parameter
+  begin
+    SubFileNum := ExtractNum(FieldDef,1);
+    result := (SubFileNum <> '');
+  end;
+
+  function TMainForm.IsWPField(FileNum,FieldNum : string) : boolean;
+  var RPCResult : string;
+      SrchStr : string;
+      Idx: integer;
+  begin
+    SrchStr := FileNum + '^' +  FieldNum + '^';
+    Idx := CachedWPField.IndexOf(SrchStr + 'YES');
+    if Idx > -1 then begin Result := true; exit; end;
+    Idx := CachedWPField.IndexOf(SrchStr + 'NO');
+    if Idx > -1 then begin Result := false; exit; end;
+
+    result := false;
+    RPCBrokerV.remoteprocedure := 'TMG CHANNEL';
+    RPCBrokerV.param[0].ptype := list;
+    RPCBrokerV.Param[0].Mult['"REQUEST"'] := 'IS WP FIELD^' + FileNum + '^' + FieldNum;
+    CallBroker; //RPCBrokerV.Call;
+    RPCResult := RPCBrokerV.Results[0];    //returns:  error: -1;  success=1
+    if piece(RPCResult,'^',1)='-1' then begin
+      FMErrorForm.Memo.Lines.Assign(RPCBrokerV.Results);
+      FMErrorForm.PrepMessage;
+      FMErrorForm.ShowModal;
+    end else begin
+      RPCResult := piece(RPCResult,'^',3);
+      result := (RPCResult = 'YES');
+      CachedWPField.Add(SrchStr + RPCResult);
+    end;
+  end;
+
+
+  function TMainForm.ExtractNum (S : String; StartPos : integer) : string;
+  var i : integer;
+      ch : char;
+  begin
+    result := '';
+    if (S = '') or (StartPos < 0) then exit;
+    i := StartPos;
+    repeat
+      ch := S[i]; 
+      i := i + 1;
+      if ch in ['0'..'9','.'] then begin
+        Result := Result + ch;
+      end;  
+    until (i > length(S)) or not  (ch in ['0'..'9','.'])
+  end;  
+
+  procedure TMainForm.Button1Click(Sender: TObject);
+  begin
+    FieldLookupForm.Show;
+  end;
+
+  procedure TMainForm.btnUsersRevertClick(Sender: TObject);
+  begin
+    DoRevert(BasicUsersGrid,AdvancedUsersGrid);
+  end;
+
+  function TMainForm.GetVisibleGridInfo : TGridInfo;
+  begin
+    result := GetInfoForGrid(GetVisibleGrid);
+  end;
+  
+  function TMainForm.GetVisibleGrid: TSortStringGrid;
+  begin
+    if FVisibleGridIdx > -1 then begin
+      result := TGridInfo(DataForGrid.Objects[FVisibleGridIdx]).Grid;
+    end else begin
+      result := nil;
+    end;
+  end;
+  
+  function TMainForm.GetInfoForGrid(Grid : TSortStringGrid) : TGridInfo;
+  var i : integer;
+  begin
+    i := GetInfoIndexForGrid(Grid);
+    if i > -1 then begin
+      result := TGridInfo(DataForGrid.Objects[i]);
+    end else begin
+      result := nil;
+    end;
+  end;
+
+  
+  function TMainForm.GetInfoIndexForGrid(Grid : TSortStringGrid) : integer;
+  var s : string;
+  begin
+    s := IntToStr(integer(Grid));
+    result := DataForGrid.IndexOf(s);
+  end;
+  
+  procedure TMainForm.SetVisibleGridIdx(Grid : TSortStringGrid);
+  begin
+    FVisibleGridIdx := GetInfoIndexForGrid(Grid);
+  end;
+
+
+  procedure TMainForm.CompileChanges(Grid : TSortStringGrid; CurrentUserData,Changes : TStringList);
+  //Output format:
+  // FileNum^IENS^FieldNum^FieldName^newValue^oldValue
+
+  var row : integer;
+      Entry : tFileEntry;
+      oneEntry : string;
+      iniFile : TIniFile; // 8-12-09   elh
+      UCaseOnly : boolean;
+  begin
+    FINIFileName := ExtractFilePath(ParamStr(0)) + 'GUI_Config.ini';
+    iniFile := TIniFile.Create(FINIFileName);            //8-12-09  elh
+    UCaseOnly := inifile.ReadBool('Settings','UCaseOnly',true);
+    iniFile.Free;
+    for row := 1 to Grid.RowCount-1 do begin
+      Entry := GetLineInfo(Grid,CurrentUserData, row);
+      //Reject any value containing a "^"
+      //Do we need an @ here as well?
+      if AnsiPos('^',Entry.newvalue) > 0 then begin  //or (AnsiPos(':',Entry.newvalue) > 0) or  (AnsiPos(';',Entry.newvalue) > 0) //elh Taken out because : used in time
+         messagedlg('Invalid value entered for ' + Entry.Fieldname + #13 + #10
+                     + #13 + #10 + 'Invalid Entry:   ' + Entry.newvalue + #13 + #10 +
+                     'Ignoring Value.',mtError,[mbOK],0);
+      end else begin
+        //if Entry.newValue = ' ' then Entry.newValue := '';
+        Entry.newValue := Trim(Entry.newvalue);
+        if Trim(Entry.oldValue) <> Entry.newValue then begin
+          if (Entry.newValue <> COMPUTED_FIELD) and
+            (Entry.newValue <> CLICK_TO_ADD_TEXT) and
+            (Pos(CLICK_TO, Entry.newValue)=0)
+          then begin
+           oneEntry := Entry.FileNum + '^' + Entry.IENS + '^' + Entry.Field + '^' + Entry.FieldName;
+           //Test to see if change is an AV Code (2 or 11) or ES Code (20.4) in User File (200)
+           //If so, make it uppercase.       8/12/09   elh
+           if Entry.FileNum = '200' then begin
+              if ((Entry.Field = '2') and (UCaseOnly = true)) or
+                 ((Entry.Field = '11') and (UCaseOnly = true)) or
+                 ((Entry.Field = '20.4') and (UCaseOnly = true)) then begin
+                 messagedlg('Converting ' + Entry.Fieldname + ' to uppercase for VistA interactivity.' +#13 +#10 +
+                            #13 +#10 +
+                            'Old Value: ' + Entry.newvalue + '  ' + 'New Value: ' + Uppercase(Entry.newvalue),
+                            mtinformation,[mbOK],0);
+                 Entry.newValue := Uppercase(Entry.newValue);
+              end;
+           end;
+           oneEntry := oneEntry + '^' + Entry.newValue + '^' + Entry.oldValue;
+           Changes.Add(oneEntry);
+          end;
+        end;
+      end;
+    end;
+  end;
+
+
+  function TMainForm.PostChanges(Grid : TSortStringGrid) : TModalResult;
+  //Results:  mrNone -- no post done (not needed)
+  //          mrCancel -- user pressed cancel on confirmation screen.
+  //          mrNo -- signals posting error.
+  var Changes : TStringList;
+      PostResult : TModalResult;
+      CurrentData : TStringList;
+      GridInfo : TGridInfo;
+      IENS : string;  
+  begin
+    Result := mrNone;  //default to No changes
+    GridInfo := GetInfoForGrid(Grid);
+    if GridInfo=nil then exit;
+    CurrentData := GridInfo.Data;
+    if CurrentData=nil then exit;
+    if CurrentData.Count = 0 then exit;
+    IENS := GridInfo.IENS;
+    if IENS='' then exit;
+    Changes := TStringList.Create;
+    CompileChanges(Grid,CurrentData,Changes);
+    if Changes.Count>0 then begin
+      PostForm.PrepForm(Changes);
+      PostResult := PostForm.ShowModal;
+      if assigned(GridInfo.OnAfterPost) and PostForm.Posted then begin
+        GridInfo.OnAfterPost(Self);
+      end;
+      if PostResult = mrOK then begin
+        if DisuserChanged(Changes) then begin  //looks for change in file 200, field 4
+          InitializeUsersTreeView;
+        end else begin
+          if Pos('+',IENS)>0 then begin
+            GridInfo.IENS := PostForm.GetNewIENS(IENS);
+          end;
+          if assigned(GridInfo.DataLoadProc) then begin
+            GridInfo.DataLoadProc(GridInfo);
+          end;
+          {
+          if CurrentData = CurrentUserData then begin
+            LoadUserData(IENS,CurrentData);  //reload record from server.
+          end else if CurrentData = CurrentSettingsData then begin
+            GetSettingsInfo(GridInfo.FileNum, GridInfo.IENS, CurrentData);
+          end else if CurrentData = CurrentPatientData then begin
+            GetPatientInfo(GridInfo.IENS, CurrentData);
+          end else if CurrentData = CurrentAnyFileData then begin
+            GetAllFilesInfo(GridInfo.FileNum, GridInfo.IENS, CurrentData);
+          end;
+          }
+        end;
+      end else if PostResult = mrNo then begin  //mrNo is signal of post Error
+        // show error...
+      end;
+      Result := PostResult;
+    end else begin
+      Result := mrNone;
+    end;
+    Changes.Free;
+  end;
+
+  function TMainForm.DisuserChanged(Changes: TStringList) : boolean;
+  var i : integer;
+  //Changes format:
+  // FileNum^IENS^FieldNum^FieldName^newValue^oldValue  
+  begin
+    result := false;
+    for i := 0 to Changes.Count-1 do begin
+      if piece(Changes.Strings[i],'^',1)<> '200' then continue;
+      if piece(Changes.Strings[i],'^',4)<> 'DISUSER' then continue;
+      result := true;
+      break;            
+    end;
+  end;
+  
+
+  procedure TMainForm.btnUsersApplyClick(Sender: TObject);
+  var result : TModalResult;
+  begin
+    result:= PostVisibleGrid;
+    if result <> mrNone then InitializeUsersTreeView;
+  end;
+
+  procedure TMainForm.GridSetEditText(Sender: TObject; ACol, ARow: Integer; const Value: String);
+  begin
+    btnUsersRevert.Enabled := true;
+    btnUsersApply.Enabled := true;
+  end;
+
+  procedure TMainForm.BasicSettingsGridSetEditText(Sender: TObject; ACol, ARow: Integer; const Value: String);
+  begin
+    btnSettingsRevert.Enabled := true;
+    btnSettingsApply.Enabled := true;
+  end;
+  
+
+  procedure TMainForm.FormClose(Sender: TObject; var Action: TCloseAction);
+  begin
+    PostVisibleGrid;
+    RPCBrokerV.Connected := false; //disconnect
+  end;
+
+  procedure TMainForm.ExitMenuItemClick(Sender: TObject);
+  begin
+       Close;
+  end;
+
+  procedure TMainForm.UserPageControlDrawTab(Control: TCustomTabControl;
+                                             TabIndex: Integer; 
+                                             const Rect: TRect; 
+                                             Active: Boolean);
+  begin
+    DrawTab(Control,TabIndex,Rect,Active);
+  end;
+
+  procedure TMainForm.DrawTab(Control: TCustomTabControl; 
+                              TabIndex: Integer; 
+                              const Rect: TRect;
+                              Active: Boolean);
+  var
+    oRect    : TRect;
+    sCaption,temp : String;
+    iTop     : Integer;
+    iLeft    : Integer;
+    i        : integer;
+
+  begin
+    oRect    := Rect;
+    temp := TPageControl(Control).Pages[TabIndex].Caption;
+    for i := 1 to length(temp) do begin
+      if temp[i] <> '&' then sCaption := sCaption + temp[i];
+    end;
+    
+    iTop     := Rect.Top  + ((Rect.Bottom - Rect.Top  - Control.Canvas.TextHeight(sCaption)) div 2) + 1;
+    iLeft    := Rect.Left + ((Rect.Right  - Rect.Left - Control.Canvas.TextWidth (sCaption)) div 2) + 1;
+    if Active then begin
+       Control.Canvas.Brush.Color := TColor($0000FFFF);  //Bright yellow
+       Control.Canvas.FillRect(Rect);
+//       Frame3d(Control.Canvas,oRect,clBtnHighLight,clBtnShadow,3);
+
+     end else begin
+       Control.Canvas.Brush.Color := TColor($000079EFE8);  //dull yellow
+       Control.Canvas.FillRect(Rect);
+     end;  
+     Control.Canvas.TextOut(iLeft,iTop,sCaption);
+  end;
+
+
+  procedure TMainForm.AboutMenuClick(Sender: TObject);
+  begin
+    AboutForm.show;
+  end;
+
+  procedure TMainForm.CloneBtnClick(Sender: TObject);
+  var IEN : longInt;
+      newName : string;
+      IENS,newIENS : string;
+      
+  begin
+    if btnUsersApply.Enabled then btnUsersApplyClick(self);  //post any changes first.
+    if MessageDlg('Clone user: '+LastSelTreeNode.Text+' --> New user?' + #10 + #13 +
+                  'Note: This can not be undone.',
+                  mtConfirmation, mbOKCancel,0) = mrCancel then exit;
+    IEN := longInt(LastSelTreeNode.Data);
+    IENS := IntToStr(IEN) + ',';
+    WaitForm.Show;
+    newName := 'TEMP,MUST-EDIT';
+    newIENS := DoCloneUser(IENS,newName);
+    InitializeUsersTreeView;  //refresh UsersTreeView.
+    WaitForm.Hide;
+    MessageDlg('A new cloned user has been created,' + #10 + #13 +
+                  'named: ' + newName + #10 + #13 +
+                  #10 + #13 +
+                  'This user can be found in the ''Inactive users'' list,' + #10 + #13 +
+                  'but must must be edited before it may be used.' + #10 + #13 +
+                  'Edit it''s DISUSER field to a value of ''NO''' + #10 + #13 +
+                  'to activate.',mtInformation,[mbOK],0);
+  end;
+
+  
+  function TMainForm.DoCloneRecord(FileNum, SourceIENS, New01Field : String) : string;
+  //Returns IENS of new record in FileNum, or '' if error 
+  var  cmd,RPCResult : string;
+  begin
+    Result := '';
+    RPCBrokerV.remoteprocedure := 'TMG CHANNEL';
+    RPCBrokerV.param[0].ptype := list;
+    cmd := 'CLONE RECORD' + '^' + FileNum + '^' + SourceIENS + '^' + New01Field;
+    RPCBrokerV.Param[0].Mult['"REQUEST"'] := cmd;
+    CallBroker; //RPCBrokerV.Call;
+    RPCResult := RPCBrokerV.Results[0];    //returns:  error: -1^ShortMsg;  success=1^Success^NewIENS
+    if piece(RPCResult,'^',1)='-1' then begin
+      FMErrorForm.Memo.Lines.Assign(RPCBrokerV.Results);
+      FMErrorForm.PrepMessage;
+      FMErrorForm.ShowModal;
+    end else begin
+      result := piece(RPCResult,'^',3);
+    end;
+  end;  
+
+  function TMainForm.DoCloneUser(SourceIENS, New01Field : String) : string;
+  //Returns IENS of new record in FileNum, or '' if error 
+  var  cmd,RPCResult : string;
+  begin
+    Result := '';
+    RPCBrokerV.remoteprocedure := 'TMG CHANNEL';
+    RPCBrokerV.param[0].ptype := list;
+    cmd := 'CLONE USER' + '^' + SourceIENS + '^' + New01Field;
+    RPCBrokerV.Param[0].Mult['"REQUEST"'] := cmd;
+    CallBroker; //RPCBrokerV.Call;
+    RPCResult := RPCBrokerV.Results[0];    //returns:  error: -1^ShortMsg;  success=1^Success^NewIENS
+    if piece(RPCResult,'^',1)='-1' then begin
+      FMErrorForm.Memo.Lines.Assign(RPCBrokerV.Results);
+      FMErrorForm.PrepMessage;
+      FMErrorForm.ShowModal;
+    end else begin
+      result := piece(RPCResult,'^',3);
+    end;
+  end;  
+
+  function TMainForm.FieldHelp(FileNum, IENS, FieldNum, HelpStyle : string) : string;
+  var
+     RPCResult: string;
+     cmd : string;
+     SrchStr : string;
+     Idx : integer;
+  begin
+    Result := '';
+    SrchStr := FileNum + '^' + FieldNum + '^' + HelpStyle + '^' + IENS;
+    Idx := CachedHelpIdx.IndexOf(SrchStr);
+    if Idx = -1 then begin
+      RPCBrokerV.remoteprocedure := 'TMG CHANNEL';
+      RPCBrokerV.param[0].ptype := list;
+      cmd := 'GET HELP MSG^' + SrchStr;
+      RPCBrokerV.Param[0].Mult['"REQUEST"'] := cmd;
+      CallBroker; //RPCBrokerV.Call;
+      RPCResult := RPCBrokerV.Results[0];    //returns:  error: -1;  success=1
+      if piece(RPCResult,'^',1)='-1' then begin
+        FMErrorForm.Memo.Lines.Assign(RPCBrokerV.Results);
+        FMErrorForm.PrepMessage;
+        FMErrorForm.ShowModal;
+      end else begin
+        RPCBrokerV.Results.Delete(0);
+        if RPCBrokerV.Results.Count > 0 then begin
+          if RPCBrokerV.Results.Strings[RPCBrokerV.Results.Count-1]='' then begin
+            RPCBrokerV.Results.Delete(RPCBrokerV.Results.Count-1);
+          end;
+        end;
+        result := RPCBrokerV.Results.Text;
+        if result = '' then result := ' ';
+        //Maybe later replace text with "Enter F1 for more help."
+        Result := AnsiReplaceText(Result,'Enter ''??'' for more help.','');
+        while Result[Length(Result)] in [#10,#13] do begin
+          Result := AnsiLeftStr(Result,Length(Result)-1);
+        end;
+        Idx := CachedHelp.Add(result);
+        CachedHelpIdx.AddObject(SrchStr,Pointer(Idx));  //Store index here to help stored in CachedHelp
+      end;
+    end else begin
+      Idx := Integer(CachedHelpIdx.Objects[Idx]);
+      if (Idx >= 0) and (Idx < CachedHelp.Count) then begin
+        result := CachedHelp.Strings[Idx];
+      end;
+    end;
+  end;
+
+  function TMainForm.GetGridHint(Grid : TSortStringGrid; FileNum : string; ACol, ARow : integer) : string;
+  var fieldNum : string;
+      GridInfo : TGridInfo;
+  begin
+    Result := '';
+    //Result := 'Row=' + IntToStr(ARow) + ', Col='+ IntToStr(ACol);
+    if ARow > Grid.RowCount-1 then exit;
+    if (ARow < 1) or (ACol < 0) then exit;
+    if ACol=0 then begin
+      Result := 'This is the database field NUMBER';
+    end else if ACol=1 then begin
+      Result := 'This is the database field NAME';
+    end else begin
+      fieldNum := Grid.Cells[0,ARow];
+      //if Grid.Cells[ACol,ARow]=CLICK_FOR_SUBS then begin
+      //  result := 'Clicking will open new window...';
+      {end else} if Grid.Cells[ACol,ARow]=COMPUTED_FIELD then begin
+        result := 'This field can''t be edited';
+      end else if Grid.Cells[ACol,ARow]=HIDDEN_FIELD then begin
+        result := 'Original value hidden.  Click to edit new value.';
+    //end else if Grid.Cells[ACol,ARow]=CLICK_TO_EDIT_TEXT then begin
+      end else if (Pos(CLICK_TO, Grid.Cells[ACol,ARow]) > 0) then begin
+        result := 'Clicking will open new window...';
+      end else begin
+        GridInfo := GetInfoForGrid(Grid);
+        Result := FieldHelp(FileNum,  GridInfo.IENS, fieldNum, '?');
+      end;
+    end;
+  end;
+
+  
+  procedure TMainForm.ApplicationEventsIdle(Sender: TObject; var Done: Boolean);
+  begin
+  end; (*ApplicationIdle*)
+
+  
+  procedure TMainForm.ApplicationEventsShowHint(var HintStr: String;
+                                                var CanShow: Boolean; 
+                                                var HintInfo: THintInfo);
+  var
+      Pos         : TPoint;
+      Handle      : Hwnd;
+      ItemBuffer  : array[0..256] of Char;
+      ClassName   : AnsiString;
+      ACol,ARow   : integer;
+      VisibleGridInfo : TGridInfo;
+  begin
+    CanShow := true;
+    //Label2.Caption := HintStr;
+    Pos := Mouse.CursorPos;
+    Handle := WindowFromPoint(Pos);
+    if Handle = 0 then Exit;
+    GetClassName(Handle, ItemBuffer, SizeOf(ItemBuffer));
+    ClassName := ItemBuffer;
+    Windows.ScreenToClient(Handle, Pos);
+    VisibleGridInfo :=  GetVisibleGridInfo;
+    if VisibleGridInfo = nil then exit;
+    if VisibleGridInfo.Grid = nil then exit;
+    if (ClassName='TSortStringGrid') then begin      
+      VisibleGridInfo.Grid.MouseToCell(Pos.X,Pos.Y,ACol,ARow);
+      HintInfo.HintStr := GetGridHint(VisibleGridInfo.Grid,VisibleGridInfo.FileNum,ACol, ARow);
+      if HintInfo.HintStr = '' then CanShow := False;
+      HintInfo.HideTimeout := 1000;
+      HintInfo.ReshowTimeout := 2000;
+      HintInfo.HintMaxWidth:= 300;  //hint box width.
+    end;
+  
+  end;
+
+  procedure TMainForm.PageControlChanging(Sender: TObject; var AllowChange: Boolean);
+  begin
+    AllowChange := (PostVisibleGrid <> mrNO);
+    if AllowChange then begin
+      LastSelTreeNode := nil;
+    end;  
+  end;
+
+  procedure TMainForm.PatientORComboBoxNeedData(Sender: TObject;
+    const StartFrom: String; Direction, InsertAt: Integer);
+  var
+      Result : TStrings;
+  begin
+      Result := FieldLookUpForm.SubSetOfFile('2', StartFrom, Direction);
+      TORComboBox(Sender).ForDataUse(Result);
+  end;
+
+  
+  procedure TMainForm.PageControlChange(Sender: TObject);
+  begin
+    if (PageControl.ActivePage = tsUsers) then begin
+      UserPageControlChange(nil);
+    end else if (PageControl.ActivePage = tsSettings) then begin
+      SettingsPageControlChange(nil);
+    end else if (PageControl.ActivePage = tsPatients) then begin
+      PatientsPageControlChange(nil);
+    end else if (PageControl.ActivePage = tsAdvanced) then begin
+      SetVisibleGridIdx(AllFilesGrid);
+    end else if (PageControl.ActivePage = tsReminders) then begin
+      //SetVisibleGridIdx(AdvRemDlgGrid);    elh
+      RemDlgPageControlChange(nil);
+    end;
+
+  end;
+
+  procedure TMainForm.PatientORComboBoxClick(Sender: TObject);
+  var  IEN : longInt;
+       ModalResult : TModalResult;
+       GridInfo : TGridInfo;
+  begin
+    ModalResult := PostVisibleGrid;
+    if ModalResult = mrNo then exit;
+    IEN := PatientORComboBox.ItemIEN;  //get info from selected patient
+    if IEN = 0 then exit;
+    GridInfo := GetInfoForGrid(BasicPatientGrid);
+    if GridInfo = nil then exit;
+    GridInfo.IENS := IntToStr(IEN)+',';
+    GetPatientInfo(GridInfo);
+  end;
+
+  procedure TMainForm.PatientsPageControlChanging(Sender: TObject; var AllowChange: Boolean);
+  begin
+    AllowChange := (PostVisibleGrid <> mrNO);
+  end;
+
+  procedure TMainForm.PatientsPageControlChange(Sender: TObject);
+  begin
+    if PatientsPageControl.ActivePage = tsBasicPatients then begin
+      SetVisibleGridIdx(BasicPatientGrid);
+    end else begin
+      SetVisibleGridIdx(AdvancedPatientGrid);
+    end;
+  end;
+
+
+  procedure TMainForm.UserPageControlChanging(Sender: TObject; var AllowChange: Boolean);
+  var result : TModalResult;
+  begin
+    result := PostVisibleGrid;
+    AllowChange := (result <> mrNO);
+    if (result <> mrNone) then begin
+      InitializeUsersTreeView;
+    end;  
+  end;
+
+  procedure TMainForm.UserPageControlChange(Sender: TObject);
+  begin
+    if UserPageControl.ActivePage = tsBasicPage then begin
+      SetVisibleGridIdx(BasicUsersGrid);
+    end else begin
+      SetVisibleGridIdx(AdvancedUsersGrid);        
+    end;  
+  end;
+
+  
+  procedure TMainForm.SettingsPageControlChanging(Sender: TObject; var AllowChange: Boolean);
+  begin
+    AllowChange := (PostVisibleGrid <> mrNO);
+  end;
+
+  procedure TMainForm.SettingsPageControlChange(Sender: TObject);
+  begin
+    if SettingsPageControl.ActivePage = tsBasicSettings then begin
+      SetVisibleGridIdx(BasicSettingsGrid);        
+    end else begin
+      SetVisibleGridIdx(AdvancedSettingsGrid);        
+    end;  
+  end;
+
+  procedure TMainForm.FileORComboBoxClick(Sender: TObject);
+  begin
+    PostVisibleGrid;
+    InitORCombobox(RecordORComboBox,'');
+    ClearGrid(GetVisibleGrid);
+  end;
+
+  procedure TMainForm.FileORComboBoxNeedData(Sender: TObject; const StartFrom: String; Direction, InsertAt: Integer);
+  var  Result : TStrings;
+  begin
+    Result := FieldLookUpForm.SubSetOfFile('1', StartFrom, Direction);
+    TORComboBox(Sender).ForDataUse(Result);
+  end;
+
+
+  procedure TMainForm.RecordORComboBoxNeedData(Sender: TObject; const StartFrom: String; Direction, InsertAt: Integer);
+  var  Result : TStrings;
+       FileNum : string;
+  begin
+    FileNum := FileORComboBox.ItemID;
+    Result := FieldLookUpForm.SubSetOfFile(FileNum, StartFrom, Direction);
+    TORComboBox(Sender).ForDataUse(Result);
+  end;
+
+  procedure TMainForm.RecordORComboBoxClick(Sender: TObject);
+  var ModalResult : TModalResult;
+      IEN : LongInt;
+      FileNum : String;
+      GridInfo : TGridInfo;
+  begin
+    ModalResult := PostVisibleGrid;
+    if ModalResult = mrNo then exit;
+    FileNum := FileORComboBox.ItemID;
+    IEN := RecordORComboBox.ItemID;  //get info from selected record
+    if IEN=0 then exit;
+    GridInfo := GetInfoForGrid(AllFilesGrid);
+    if GridInfo = nil then exit;
+    GridInfo.IENS := IntToStr(IEN) + ',';
+    GridInfo.FileNum := FileNum;
+    GetAllFilesInfo(GridInfo);
+  end;
+
+  procedure TMainForm.btnAddAnyRecordClick(Sender: TObject);
+  var IENS, FileNum : string;
+      BlankFileInfo : TStringList;
+  begin
+    BlankFileInfo := Tstringlist.Create;
+    btnAdvancedRevert.Enabled := True;
+    btnAdvancedApply.Enabled := True;
+    FileNum := FileORComboBox.ItemID;
+    IENS := '+1,';
+    GetOneRecord(FileNum,IENS,CurrentAnyFileData, BlankFileInfo);
+
+    LoadAnyGrid(GetInfoForGrid(AllFilesGrid));
+    BlankFileInfo.Free;
+  end;
+
+  procedure TMainForm.AddBtnClick(Sender: TObject);
+  var IENS : string;
+      BlankFileInfo : TStringList;
+      GridInfo : TGridInfo;
+  begin
+    BlankFileInfo := Tstringlist.Create;
+    btnPatientRevert.Enabled := True;
+    btnPatientApply.Enabled := True;
+    GridInfo := GetVisibleGridInfo;
+    IENS := '+1,';
+    GetOneRecord(GridInfo.FileNum, IENS, GridInfo.Data, BlankFileInfo);
+    GridInfo.IENS := IENS;
+    LoadAnyGrid(GridInfo);  //load Basic or Advanced Grid
+    if GridInfo.Grid = BasicPatientGrid then begin
+      GridInfo := GetInfoForGrid(AdvancedPatientGrid)
+    end else begin  //Advanced grid is visible.
+      GridInfo := GetInfoForGrid(BasicPatientGrid)
+    end;  
+    GridInfo.IENS := IENS;
+    LoadAnyGrid(GridInfo);  // Load OTHER grid, Advanced or Basic grid.
+    BlankFileInfo.Free;
+  end;
+
+  procedure TMainForm.btnAdvancedApplyClick(Sender: TObject);
+  begin
+    PostVisibleGrid;
+  end;
+
+  procedure TMainForm.btnAdvancedRevertClick(Sender: TObject);
+  begin
+    DoRevert(nil,AllFilesGrid);
+  end;
+
+  procedure TMainForm.AllFilesGridClick(Sender: TObject);
+  begin
+     btnAdvancedApply.Enabled := True;
+     btnAdvancedRevert.Enabled := True;     
+  end;
+
+  procedure TMainForm.btnBatchAddClick(Sender: TObject);
+  begin
+    BatchAddForm.ShowModal;
+    InitORCombobox(PatientORComboBox,'A');
+  end;
+
+  procedure TMainForm.ShowDebugClick(Sender: TObject);
+  begin
+    DebugForm.Show;
+  end;
+
+  procedure TMainForm.ShowVinWindow1Click(Sender: TObject);
+  begin
+    VinForm.ShowModal;
+  end;
+
+  procedure TMainForm.mnuEmbedClick(Sender: TObject);
+  begin
+    VinForm.Show;
+    VinForm.ParentWindow := pnlRemDefLft.Handle;
+    VinForm.Visible := true;
+//    VinForm.Align := alClient;
+  end;
+
+
+  procedure TMainForm.ChangeSkinClick(Sender: TObject);
+  var result : TModalResult;
+  begin
+    try
+      result := SkinForm.ShowModal;
+      case result of
+        mrOK : SkinForm.ActivateCurrentSkin;
+        mrNo : SkinForm.InactivateSkin;
+      end; {case}  
+    except
+      on EInvalidOperation do MessageDlg('Error1',mtInformation,[mbOK],0);
+      else MessageDlg('Error Applying Skin.  Please try another Skin.',mtInformation,[mbOK],0);
+    end;
+  end;
+
+  procedure TMainForm.InitORComboBox(ORComboBox: TORComboBox; initValue : string);
+  begin
+    ORComboBox.Items.Clear;
+    ORComboBox.Text := initValue;
+    ORComboBox.InitLongList(initValue);
+    if ORComboBox.Items.Count > 0 then begin
+      ORComboBox.Text := Piece(ORComboBox.Items[0],'^',2);
+    end else begin
+      ORComboBox.Text := '<Start Typing to Search>';
+    end;
+  end;
+
+
+  procedure TMainForm.btnPatientApplyClick(Sender: TObject);  //Added elh 8/15/08
+  begin
+    PostVisibleGrid;
+    InitORCombobox(PatientORComboBox,'A');
+  end;
+
+  procedure TMainForm.btnPatientRevertClick(Sender: TObject);    //Added elh 8/15/08
+  begin
+    DoRevert(BasicUsersGrid,AdvancedUsersGrid);
+  end;
+
+  procedure TMainForm.BasicPatientGridClick(Sender: TObject);     //Added elh 8/15/08
+  begin
+    btnPatientRevert.Enabled := true;
+    btnPatientApply.Enabled := true;
+  end;
+
+  Procedure TMainForm.GetBlankFileInfo(FileNum : string; BlankList : TStringList);
+  var   RPCResult: string;
+  //Returned format for BlankList is:
+  //FileNum^^FieldNum^^FieldName^More DDInfo
+  //FileNum^^FieldNum^^FieldName^More DDInfo
+  begin
+    RPCBrokerV.remoteprocedure := 'TMG CHANNEL';
+    RPCBrokerV.Param[0].Value := '.X';  // not used
+    RPCBrokerV.param[0].ptype := list;
+    RPCBrokerV.Param[0].Mult['"REQUEST"'] := 'GET EMPTY ENTRY^' + FileNum;
+    CallBroker; //RPCBrokerV.Call;
+    RPCResult := RPCBrokerV.Results[0];    //returns:  error: -1;  success=1
+    //Return Format is: FileNum^^FieldNum^^DDInfo...
+    if piece(RPCResult,'^',1)='-1' then begin
+      FMErrorForm.Memo.Lines.Assign(RPCBrokerV.Results);
+      FMErrorForm.PrepMessage;
+      FMErrorForm.ShowModal;
+    end else begin
+      BlankList.Assign(RPCBrokerV.Results);
+    end;
+  end;
+
+
+  procedure TMainForm.GetOneRecord(FileNum, IENS : string; Data, BlankFileInfo: TStringList);
+  //Data is an OUT parameter.
+
+  var cmd,RPCResult : string;
+      i : integer;
+      oneEntry : string;
+  begin
+    Data.Clear;
+    if (IENS='') then exit;
+    if Pos('+',IENS)=0 then begin //don't ask server to load +1 records.
+      RPCBrokerV.remoteprocedure := 'TMG CHANNEL';
+      RPCBrokerV.Param[0].Value := '.X';  // not used
+      RPCBrokerV.param[0].ptype := list;
+      cmd := 'GET ONE RECORD^' + FileNum + '^' + IENS;
+      RPCBrokerV.Param[0].Mult['"REQUEST"'] := cmd;
+      CallBroker; //RPCBrokerV.Call;
+      RPCResult := RPCBrokerV.Results[0];    //returns:  error: -1;  success=1
+      if piece(RPCResult,'^',1)='-1' then begin
+      FMErrorForm.Memo.Lines.Assign(RPCBrokerV.Results);
+      FMErrorForm.PrepMessage;
+      FMErrorForm.ShowModal;
+      end else begin
+        Data.Assign(RPCBrokerV.Results);
+      end;
+    end else begin
+      Data.Add('1^Success');  //to keep same as call to server
+      if BlankFileInfo.Count = 0 then begin
+        //Format is: FileNum^^FieldNum^^DDInfo...    
+        GetBlankFileInfo(FileNum,BlankFileInfo);
+      end;  
+      for i := 1 to BlankFileInfo.Count-1 do begin  //0 is 1^success
+        oneEntry := BlankFileInfo.Strings[i];
+        SetPiece(oneEntry,'^',2,IENS);
+        Data.Add(oneEntry); 
+      end;
+    end;  
+  end;
+
+
+  procedure TMainForm.ApplicationEventsException(Sender: TObject; E: Exception);
+  begin
+    if E.Message <> 'Cannot focus a disabled or invisible window' then begin
+      ShowException(E,nil);
+    end;
+  end;
+
+
+  procedure TMainForm.btnSettingsRevertClick(Sender: TObject);
+  //var tempInfo : TGridInfo;
+  begin
+    DoRevert(BasicSettingsGrid,AdvancedSettingsGrid);
+    {
+    tempInfo := GetInfoForGrid(BasicSettingsGrid);
+    LoadAnyGrid(tempInfo);
+
+    tempInfo := GetInfoForGrid(AdvancedSettingsGrid);
+    LoadAnyGrid(tempInfo);
+
+    tempInfo.ApplyBtn.Enabled := false;
+    tempInfo.RevertBtn.Enabled := false;
+    }
+  end;
+
+
+  procedure TMainForm.DoRevert(BasicGrid,AdvancedGrid : TSortStringGrid);
+  //BasicGrid doesn't have to be supplied.  Can be nil value.
+  //AdvancedGrid is required.
+  var tempInfo : TGridInfo;
+  begin
+    tempInfo := GetInfoForGrid(AdvancedGrid);
+    LoadAnyGrid(tempInfo);
+    tempInfo.ApplyBtn.Enabled := false;
+    tempInfo.RevertBtn.Enabled := false;
+
+    if BasicGrid <> nil then begin
+      tempInfo := GetInfoForGrid(BasicGrid);
+      LoadAnyGrid(tempInfo);
+    end;
+  end;
+
+
+  procedure TMainForm.btnSettingsApplyClick(Sender: TObject);
+  begin
+    PostVisibleGrid;
+  end;
+
+  // ------------ Reminder Dialog Stuff --------------------------
+
+const
+  RemDlgLinkedReminder = 0;  //index in cboDisplayDialogType
+  RemDlgAll = 1;             //index in cboDisplayDialogType
+
+  function TMainForm.InitRemDlgTab : boolean;
+  //returns true if OK, false if aborted
+  var
+    debugForcePickPt : boolean;
+    UserCancelled: boolean;
+  begin
+    result := false;  //default to error
+    debugForcePickPt := false;
+    if (Patient.DFN = '') or debugForcePickPt then begin
+      MessageDlg('To work with reminders, the system must make'+#13#10 +
+                 'reference to a sample patient and encounter.'+#13#10+
+                 'Please click [OK] and then select these.',mtInformation,[mbOK],0);
+      SelectPatient(false, 11, UserCancelled);
+      if UserCancelled then exit;
+      UpdateEncounter(NPF_PROVIDER);
+    end;
+    if not assigned(frmNotes) then begin
+      frmNotes := TfrmNotes.Create(Self);
+    end;
+    frmNotes.ForceReminderShow;
+    Result := true;
+  end;
+
+  procedure TMainForm.RemDlgNeedData(Sender: TObject; const StartFrom: String; Direction, InsertAt: Integer);
+  var  Result : TStrings;
+       FileNum : string;
+       Scrn    : string;
+  begin
+    FileNum := '801.41';  //REMINDER DIALOG file
+    if (RemDlgScreenMode <> 2) then begin  //2 is index in cboDisplayDialogType = ALL elements  
+      Scrn := '4=reminder dialog';
+    end else Scrn := '';
+    Result := FieldLookUpForm.SubSetOfFile(FileNum, StartFrom, Direction, Scrn);
+    ScreenRemDlgData(Result, RemDlgScreenMode);
+    TORComboBox(Sender).ForDataUse(Result);
+  end;
+
+  procedure TMainForm.ScreenRemDlgData(Results : TStrings; Mode : Integer);
+  begin
+    if Mode <> RemDlgLinkedReminder then exit;
+    if not Assigned(RemDlgInfo) then exit;
+    if RemDlgInfo.Count = 0 then GetRemDlgInfo;
+    // screen Results here...
+  end;
+
+  procedure TMainForm.GetRemDlgInfo;
+  begin
+   //rpc call here.
+  end;
+
+  procedure TMainForm.cboDisplayDialogTypeChange(Sender: TObject);
+  begin
+    RemDlgInfo.Clear;
+    GetRemDlgInfo;
+    RemDlgScreenMode := cboDisplayDialogType.ItemIndex;
+    //
+    InitORCombobox(orcboSelRemDlg,'A');
+  end;
+
+  procedure TMainForm.orcboSelRemDlgClick(Sender: TObject);
+  var  IEN : longInt;
+       ModalResult : TModalResult;
+       GridInfo : TGridInfo;
+  begin
+    ModalResult := PostVisibleGrid;
+    if ModalResult = mrNo then exit;
+    IEN := orcboSelRemDlg.ItemIEN;  //get info from Reminder Dialog
+    SelectedDialogIEN := IEN;
+    if IEN = 0 then exit;
+    GridInfo := GetInfoForGrid(AdvRemDlgGrid);
+    if GridInfo = nil then exit;
+    GridInfo.IENS := IntToStr(IEN)+',';
+    GetRemDlgFilesInfo(GridInfo);
+    LoadRemDlgSubRecords(GridInfo.IENS);
+  end;
+
+  procedure TMainForm.LoadRemDlgSubRecords(IENS: String);
+  var Parent : TTreeNode;
+      IEN : string;
+  begin
+    tvElements.Items.Clear;
+    CloseAnyRemDlgForm;
+    Parent := tvElements.Items.Add(nil, orcboSelRemDlg.Text); { Add root node }
+    Parent.ImageIndex := 8;
+    Parent.SelectedIndex := 8;
+    Parent.StateIndex := 7;
+    IEN := piece(IENS,',',1);
+    Parent.Data := Pointer(StrToInt64Def(IEN,0));
+    SetCursorImage(crHourGlass);
+    LoadElementTree(Parent,IENS);
+    SetCursorImage(crDefault);
+    if Parent.HasChildren then Parent.Expand(False);
+    //kt if tvElements.Items[0].HasChildren then begin
+    //kt  tvElements.Items[0].Expand(False);
+    //kt end;
+  end;
+
+  CONST
+    EMPTY_NODE = '<EMPTY>';
+
+  procedure TMainForm.LoadElementTree(Parent : TTreeNode; ParentIENS: string);
+  var
+    NewNode, Child : TTreeNode;
+    i : integer;
+    SubRecords : TStringList;
+    //dataLine : integer;
+    StrItemIEN : string;
+    ItemIEN : longInt;
+    oneEntry, SeqNum, Name, Text : string;
+    SubFileForm : TSubFileForm;
+    GridInfo : TGridInfo;
+    NodeType : string;
+
+  begin
+    //-------------
+    GridInfo := GetInfoForGrid(AdvRemDlgGrid);
+    if GridInfo = nil then exit;
+    //-------------
+    SubRecords := TStringList.Create;
+    SubFileForm := TSubFileForm.Create(self);
+    try
+      SubFileForm.PrepForm('801.412',ParentIENS);
+      SubFileForm.GetAllSubRecords(SubRecords,'.01;2I');
+      if SubRecords.Count=1 then exit;
+      for i := 1 to SubRecords.Count -1 do begin
+        oneEntry := SubRecords.Strings[i];
+        StrItemIEN := Piece(oneEntry,'^',4);
+        ItemIEN := StrToInt64Def(StrItemIEN,0);
+        SeqNum := Piece(oneEntry,'^',2);
+        while Length(SeqNum) < 3 do SeqNum := '0'+SeqNum;
+        Text := Trim(piece(oneEntry,'^',5));
+        //-------------
+        GridInfo.IENS := StrItemIEN + ',';
+        GetRemDlgFilesInfo(GridInfo);
+        oneEntry := getOneLine(GridInfo.Data,'801.41','4');
+        NodeType := UpperCase(Piece(oneEntry,'^',4));
+       //-------------
+        Name := SeqNum + ' [' +NodeType + '] ' + Text;
+        NewNode := tvElements.Items.AddChildObject(Parent, Name, Pointer(ItemIEN));
+        tvElements.Items.AddChildObject(NewNode, EMPTY_NODE, nil);
+        NewNode.ImageIndex := 8;
+        NewNode.SelectedIndex := 8;
+        NewNode.StateIndex := 7;
+        //tvElements.Invalidate;
+        //Application.ProcessMessages;
+        //LoadElementTree(NewNode,StrItemIEN+',', Depth+1); <-- done in Expanding Event
+      end;
+      Parent.AlphaSort(False);  //Sort by sequence number
+      for i := 0 to Parent.Count-1 do begin
+        Child := Parent.Item[i];
+        Child.Text := MidStr(Child.Text,5, Length(Child.Text));
+      end;
+    finally
+      SubRecords.Free;
+      SubFileForm.Free;
+    end;
+  end;
+
+  procedure TMainForm.tvElementsExpanding(Sender: TObject; Node: TTreeNode;
+                                          var AllowExpansion: Boolean);
+  var  ItemIEN : integer;
+       ChildNode : TTreeNode;
+  begin
+    AllowExpansion := true;
+    ChildNode := Node.GetFirstChild;
+    if Assigned(ChildNode) and (ChildNode.Text = EMPTY_NODE) then begin
+      ChildNode.Delete;
+      Node.DeleteChildren;
+      ItemIEN := Integer(Node.Data);
+      if ItemIEN > 0 then begin
+        SetCursorImage(crHourGlass);
+        LoadElementTree(Node,IntToStr(ItemIEN)+',');
+        AllowExpansion := true;
+        SetCursorImage(crDefault);
+      end;
+    end;
+  end;
+
+  procedure TMainForm.RemDlgExpandElement(IEN : string; Expanded : boolean);
+  var i : integer;
+      numIEN : integer;
+      Node : TTreeNode;
+  begin
+    if MainFormTriggeringRemDlgChanges then exit;
+    for i := 0 to tvElements.Items.Count-1 do begin
+      try       //kt   research why this is necessary
+        Node := tvElements.Items.Item[i];
+        numIEN := Integer(Node.Data);
+        if IntToStr(numIEN) <> IEN then continue;
+        if Expanded then begin
+          Node.Expand(False);
+        end else begin
+          Node.Collapse(False);
+        end;
+        tvElements.Selected := Node;
+      except
+        on ETreeViewError do continue;
+      end;
+    end;
+  end;
+
+
+  procedure TMainForm.RemDlgDisplayElement(IEN : string);
+  //NOTE: This should only be called rendered/displayed reminder dialog
+  //Assumption: That Reminder Dialog tab is displayed
+  //That orcboSelRemDlg is selected to match rendered reminder dialog
+  //That tvElements is loaded with all elements for reminder dialog.
+  var i : integer;
+      numIEN : integer;
+      Node : TTreeNode;
+  begin
+    if MainFormTriggeringRemDlgChanges then exit;
+    for i := 0 to tvElements.Items.Count-1 do begin
+      Node := tvElements.Items.Item[i];
+      numIEN := Integer(Node.Data);
+      if IntToStr(numIEN) <> IEN then continue;
+      tvElements.Select(Node);
+      tvElementsClick(Self);
+    end;
+  end;
+
+  procedure TMainForm.tvElementsCustomDrawItem(Sender: TCustomTreeView;
+                                               Node: TTreeNode;
+                                               State: TCustomDrawState;
+                                               var DoDefaultDraw: Boolean);
+  var
+    NodeRect: TRect;
+  begin
+    with tvElements.Canvas do begin
+      Brush.Color :=  clWindow;
+      Pen.Color := clWindow;
+      Rectangle(NodeRect);
+      if cdsSelected in State then begin
+        //Font.Assign(SelectedFontDialog.Font);
+        Font.Color := clBlack;
+        Font.Style := [fsBold];
+        Brush.Color := clYellow;
+      {
+      end else if Node = NodeBeingDraggedOver then begin
+        Font.Color := clBlack;
+        //Brush.Color := clGreen;
+        Font.Style := [fsBold];
+      }
+      end else begin
+        Font.Color := clBlack;
+        Font.Style := [];
+      end;
+
+      NodeRect := Node.DisplayRect(False);
+      tvElements.Canvas.Rectangle(NodeRect);
+    end;
+  end;
+
+  procedure TMainForm.tvElementsClick(Sender: TObject);
+  var Node : TTreeNode;
+      IEN : longInt;
+      ModalResult : TModalResult;
+      GridInfo : TGridInfo;
+      NodeType, oneEntry : string;
+  begin
+    Node := tvElements.Selected;
+    btnAddChild.Enabled := (Node <> nil);
+    lblSelectedRemdlgIEN.Caption := '0';  //temp, for debugging
+    if Node = nil then exit;
+    ModalResult := PostVisibleGrid;
+    if ModalResult = mrNo then exit;
+    IEN := Integer(Node.Data);
+    lblSelectedRemdlgIEN.Caption := IntToStr(IEN);  //temp, for debugging
+    //if SelectedDialogIEN = IEN then exit;  //already selected.
+    SelectedDialogIEN := IEN;
+    if IEN = 0 then exit;
+    GridInfo := GetInfoForGrid(AdvRemDlgGrid);
+    if GridInfo = nil then exit;
+    GridInfo.IENS := IntToStr(IEN)+',';
+    GetRemDlgFilesInfo(GridInfo);
+    oneEntry := getOneLine(GridInfo.Data,'801.41','4');
+    NodeType := Piece(oneEntry,'^',4);
+    if NodeType = 'reminder dialog' then begin
+      RemDlgPageControl.ActivePage := tsReminderDialog;
+    end else if NodeType = 'prompt' then begin
+      RemDlgPageControl.ActivePage := tsRemDlgPrompt;
+    end else if NodeType = 'dialog element' then begin
+      RemDlgPageControl.ActivePage := tsRemDlgElement;
+    end else if NodeType = 'forced value' then begin
+      RemDlgPageControl.ActivePage := tsRemDlgForcedValue;
+    end else if NodeType = 'dialog group' then begin
+      RemDlgPageControl.ActivePage := tsRemDlgGroup;
+    end else if NodeType = 'result group' then begin
+      RemDlgPageControl.ActivePage := tsRemDlgRsltGroup;
+    end else if NodeType = 'result element' then begin
+      RemDlgPageControl.ActivePage := tsRemDlgRsltElement;
+    end;
+    RemDlgPageControlChange(nil);
+    SyncTVElementToRemDlg(Node, false);
+  end;
+
+  procedure TMainForm.SyncTVElementToRemDlg(Node : TTreeNode; CheckNodeCB : boolean = false);
+  var
+    tempIEN : longInt;
+    SelectedIENStr, IENStr : string;
+    i, i2 : integer;
+    ParentSL : TStringList;
+    Parent : TTreeNode;
+  begin
+    if not assigned(frmRemDlg) then exit;
+    if not assigned(Node) then exit;
+    SelectedIENStr := IntToStr(Integer(Node.Data));
+    ParentSL := TStringList.Create;
+    repeat
+      Parent := Node.Parent;
+      if assigned(Parent) then begin
+        TempIEN := Integer(Node.Data);
+        ParentSL.Add(IntToStr(TempIEN));
+        Node := Parent;
+      end;
+    until not assigned(Parent);
+    MainFormTriggeringRemDlgChanges := true;
+    if CheckNodeCB then i2 := 0 else i2 := 1;
+    for i := ParentSL.Count-1 downto i2 do begin
+      IENStr := ParentSL.Strings[i];
+      frmRemDlg.TMGSetCBValueForControl(IENStr, true);
+    end;
+    MainFormTriggeringRemDlgChanges := false;
+    Application.ProcessMessages;
+    frmRemDlg.TMGHighlightControl(SelectedIENStr);
+    ParentSL.Free;
+  end;
+
+  procedure TMainForm.tvElementsOpenedOrClosed(Sender: TObject; Node: TTreeNode);
+  var
+    SelectedIENStr : string;
+  begin
+    if MainFormTriggeringRemDlgChanges then exit;
+    if not assigned(Node) then exit;
+    if not assigned(frmRemDlg) then exit;
+    SelectedIENStr := IntToStr(Integer(Node.Data));
+    MainFormTriggeringRemDlgChanges := true;
+    frmRemDlg.TMGSetCBValueForControl(SelectedIENStr, Node.Expanded);    
+    MainFormTriggeringRemDlgChanges := false;
+    Application.ProcessMessages;
+    frmRemDlg.TMGHighlightControl(SelectedIENStr);
+  end;
+
+  function TMainForm.RemDlgIENSelector() : longint;
+  begin
+    //Later I will vary this depending on if Advanced or basic shown...
+    Result := SelectedDialogIEN;
+  end;
+
+
+  procedure TMainForm.btnAddChildClick(Sender: TObject);
+  var Node : TTreeNode;
+      IEN : longInt;
+      IENS : string;
+      ModalResult : TModalResult;
+      SubFileForm : TSubFileForm;
+
+  begin
+    Node := tvElements.Selected;
+    btnAddChild.Enabled := (Node <> nil);
+    if Node = nil then exit;
+    ModalResult := PostVisibleGrid;
+    if ModalResult = mrNo then exit;
+    IEN := Integer(Node.Data);
+    if IEN = 0 then exit;
+    IENS := IntToStr(IEN) + ',';
+    SubFileForm := TSubFileForm.Create(self);
+    SubFileForm.PrepForm('801.412',IENS);
+    SubFileForm.ActionOnShowMode := ACTION_ON_SHOW_ADD;
+    SubfileForm.ShowModal;  // note: may call this function again recursively for sub-sub-files etc.
+    SubFileForm.Free;
+    orcboSelRemDlgClick(Sender); //refresh tree;
+  end;
+
+  procedure TMainForm.RemDlgPageControlChange(Sender: TObject);
+  begin
+     if RemDlgPageControl.ActivePage = tsReminderDialog then begin
+        SetVisibleGridIdx(RemDlgGrid);
+     end else if RemDlgPageControl.ActivePage = tsRemDlgElement then begin
+        SetVisibleGridIdx(RemDlgElementGrid);
+     end else if RemDlgPageControl.ActivePage = tsRemDlgPrompt then begin
+        SetVisibleGridIdx(RemDlgPromptGrid);
+     end else if RemDlgPageControl.ActivePage = tsRemDlgForcedValue then begin
+        SetVisibleGridIdx(RemDlgForcedVGrid);
+     end else if RemDlgPageControl.ActivePage = tsRemDlgGroup then begin
+        SetVisibleGridIdx(RemDlgGroupGrid);
+     end else if RemDlgPageControl.ActivePage = tsRemDlgRsltGroup then begin
+        SetVisibleGridIdx(RemDlgRsltGroupGrid);
+     end else if RemDlgPageControl.ActivePage = tsRemDlgRsltElement then begin
+        SetVisibleGridIdx(RemDlgRsltElementGrid);
+     end else begin
+        SetVisibleGridIdx(AdvRemDlgGrid);
+     end;
+  end;
+
+  procedure TMainForm.RemDlgPageControlChanging(Sender: TObject;
+    var AllowChange: Boolean);
+  begin
+     RemDlgPageControlChange(Sender);
+  end;
+
+  procedure TMainForm.SelectExternalGridCell(Sender: TObject; ACol, ARow: Integer; var CanSelect: Boolean);
+  begin
+     GridSelectCell(Sender, ACol, ARow, CanSelect);
+  end;
+
+  procedure TMainForm.btnLaunchRemDlgClick(Sender: TObject);
+  var  IEN, PrintName : string ;
+  begin
+    if InitRemDlgTab = false then exit;
+    if cbDynamicDlgs.Checked then begin
+      IEN := '0';
+      PrintName := 'CUSTOM DIALOG';
+    end else begin
+      if orcboSelRemDlg.ItemIndex < 0 then exit;
+      //if InitRemDlgTab = false then exit;
+      IEN := IntToStr(orcboSelRemDlg.ItemIEN);
+      if (IEN='0') or (IEN='') then exit;
+      PrintName := Piece(orcboSelRemDlg.Items[orcboSelRemDlg.ItemIndex],'^',2);
+      if (PrintName = '') then exit;
+    end;
+      MainFormTriggeringRemDlgChanges := true;
+      TMGViewReminderDialog(IEN, PrintName, true);
+      MainFormTriggeringRemDlgChanges := false;
+  end;
+
+  //==============================================================
+  //== Reminder dialog Stuff                                    ==
+  //==============================================================
+
+  procedure TMainForm.orcboSelRemDlgChange(Sender: TObject);
+  begin
+    CloseAnyRemDlgForm;
+    orcboSelRemDlgClick(self);
+    btnLaunchRemDlgClick(self);
+  end;
+
+  procedure TMainForm.CloseAnyRemDlgForm;
+  begin
+    if assigned(frmRemDlg) then begin
+      //frmRemDlg.Close;
+      FreeAndNil(frmRemDlg);
+    end;
+  end;
+
+
+  procedure TMainForm.HandleRemDlgOnAfterPost(Sender: TObject);
+  var Node : TTreeNode;
+  begin
+    if assigned(frmRemDlg) then begin
+      //frmRemDlg.ReminderDlg.RemWipe := 1;
+      frmRemDlg.Close;
+      frmRemDlg.Free;
+    end;
+    btnLaunchRemDlgClick(Self);
+    Node := tvElements.Selected;
+    if assigned(Node) then begin
+      SyncTVElementToRemDlg(Node);
+    end;
+  end;
+
+  procedure TMainForm.SpeedButton1Click(Sender: TObject);
+  begin
+    MessageDlg('Here I can add new blank record for Reminder Dialog',mtInformation,[mbOK],0);
+  end;
+
+  procedure TMainForm.tvElementsStartDrag(Sender: TObject; var DragObject: TDragObject);
+  var TextRect : TRect;
+      SelNode : TTreeNode;
+  begin
+    DragObject := TDragTreeNode.Create;  //will automatically be deleted by Delphi because derived from TDragObjectEx
+    SelNode := tvElements.Selected;
+    TDragTreeNode(DragObject).TreeNode := SelNode;
+
+    tvElements.DragCursor := crDrag;
+  end;
+
+  //----------------------------
+
+  function TDragTreeNode.GetDragCursor(Accepted : boolean; X, Y : Integer) : TCursor;
+  begin
+    Result := inherited GetDragCursor(Accepted, X, Y);
+  end;
+
+  function TDragTreeNode.GetDragImages : TDragImageList;
+  var
+    Size : TSize;
+    DragCursorBM : TBitmap;
+    BMIndex : integer;
+    ANode : TTreeNode;
+    s : string;
+
+  begin
+    Result := FDragImages;
+    ANode := Self.TreeNode;  //test ANode for nil?
+    DragCursorBM := TBitmap.Create;
+    try
+      DragCursorBM.Canvas.Font.Name := 'Arial';
+      DragCursorBM.Canvas.Font.Style := DragCursorBM.Canvas.Font.Style + [fsBold];
+      s := '       ' + ANode.Text;
+      Size := DragCursorBM.Canvas.TextExtent(s);
+
+      DragCursorBM.Width := Size.cx;
+      DragCursorBM.Height := Size.cy;
+      DragCursorBM.Canvas.Brush.Color := clYellow; //clOlive;
+      DragCursorBM.Canvas.FloodFill(0,0, clWhite, fsSurface);
+
+      DragCursorBM.Canvas.TextOut(0, 0, s);
+      Result.Width := DragCursorBM.Width;
+      Result.Height := DragCursorBM.Height;
+      BMIndex := Result.AddMasked(DragCursorBM, clOlive);
+    finally
+      DragCursorBM.Free;
+    end;
+  end;
+
+  constructor TDragTreeNode.Create;
+  begin
+    inherited Create;
+    FDragImages := TDragImageList.Create(nil);
+  end;
+
+  destructor TDragTreeNode.Destroy;
+  begin
+    FDragImages.Free;
+    Inherited Destroy;
+  end;
+
+  //----------------------------
+
+  procedure TMainForm.tvElementsDragOver(Sender, Source: TObject; X, Y: Integer;
+                                         State: TDragState; var Accept: Boolean);
+  var ANode: TTreeNode;
+      Title : string;
+      PriorNodeBeingDraggedOver : TTreeNode;
+  begin
+    Accept := false;
+    if Sender <> tvElements then exit;
+    ANode := tvElements.GetNodeAt(X, Y);
+    if not assigned(ANode) then exit;
+    Title := ANode.Text;
+    Title := Piece(Piece(Title,'[',2),']',1);
+    Accept := (Title = 'DIALOG GROUP') or
+              not assigned(ANode.Parent);
+    PriorNodeBeingDraggedOver := NodeBeingDraggedOver;
+    case State of
+      dsDragEnter, DsDragMove : NodeBeingDraggedOver := ANode;
+      dsDragLeave             : NodeBeingDraggedOver := nil;
+    end;
+    if NodeBeingDraggedOver <> PriorNodeBeingDraggedOver then begin
+      //tvElements.Repaint;
+    end;
+  end;
+
+  procedure TMainForm.tvElementsDragDrop(Sender, Source: TObject; X, Y: Integer);
+  var SourceNode, DestNode: TTreeNode;
+  begin
+    if not IsDragObject(Source) then exit;
+    SourceNode := TDragTreeNode(Source).TreeNode;
+    if not assigned(SourceNode) then exit;
+    DestNode := tvElements.GetNodeAt(X, Y);
+    if not assigned(DestNode) then exit;
+    MoveElement(SourceNode, DestNode);
+  end;
+
+  procedure TMainForm.tvElementsEndDrag(Sender, Target: TObject; X, Y: Integer);
+  begin
+    NodeBeingDraggedOver := nil;
+    //tvElements.Repaint;
+    //Application.ProcessMessages;
+  end;
+
+  procedure TMainForm.MoveElement(SourceNode, DestNode : TTreeNode);
+  var  Cmd,Req,RPCResult : string;
+       i : integer;
+       SrcIEN,DestIEN,ParentIEN : String;
+       SeqNum : string;
+  begin
+    SrcIEN := IntToStr(Integer(SourceNode.Data));
+    DestIEN := IntToStr(Integer(DestNode.Data));
+    ParentIEN := IntToStr(Integer(SourceNode.Parent.Data));
+    SeqNum := ''; //Later determine new sequence number...
+    RPCBrokerV.remoteprocedure := 'TMG CHANNEL';
+    RPCBrokerV.Param[0].Value := '.X';  // not used
+    RPCBrokerV.param[0].ptype := list;
+    RPCBrokerV.param[0].ptype := list;
+    cmd := 'REMINDER DIALOG MOVE ELEMENT';
+    Req := cmd + '^'+SrcIEN+'^'+ParentIEN+'^'+DestIEN+'^'+SeqNum;
+    RPCBrokerV.Param[0].Mult['"REQUEST"'] := Req;
+    CallBroker; //RPCBrokerV.Call;
+    RPCResult := RPCBrokerV.Results[0];    //returns:  error: -1;  success=1
+    if piece(RPCResult,'^',1)='-1' then begin
+      FMErrorForm.Memo.Lines.Assign(RPCBrokerV.Results);
+      FMErrorForm.PrepMessage;
+      FMErrorForm.ShowModal;
+    end else begin
+      SourceNode.MoveTo(DestNode, naAddChild);  //**FINISH** change TNodeAttachMode to match Sequence
+      btnLaunchRemDlgClick(self);
+    end;
+
+  end;
+
+  //==============================================================
+  //==============================================================
+
+  procedure TMainForm.ShowBrokerCalls1Click(Sender: TObject);
+  begin
+    //fxBroker.ShowBroker;
+    frmBroker.Show;
+  end;
+
+  procedure TMainForm.cbDynamicDlgsClick(Sender: TObject);
+  begin
+    TMG_Create_Dynamic_Dialog := cbDynamicDlgs.Checked;
+{$IFDEF TMG_XML_DLG}
+    if TMG_Create_Dynamic_Dialog then begin
+      if tempXMLOpenDialog.FileName = '' then begin
+        tempXMLOpenDialog.FileName := 'C:\Documents and Settings\kdtop\My Documents\Downloads\1316243HTN.xml';
+      end;
+      if tempXMLOpenDialog.Execute then begin
+        TMG_Create_Dynamic_Dialog_XML_Filename := tempXMLOpenDialog.FileName;
+      end;
+    end else begin
+      TMG_Create_Dynamic_Dialog_XML_Filename := '';
+    end;
+{$ENDIF}
+  end;
+
+end.
+
+

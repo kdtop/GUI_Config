@@ -1,0 +1,73 @@
+object AddOneFileEntry: TAddOneFileEntry
+  Left = -723
+  Top = 65
+  Width = 475
+  Height = 365
+  Caption = 'AddOneFileEntry'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  OnShow = FormShow
+  DesignSize = (
+    467
+    331)
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 464
+    Height = 274
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Caption = 'Panel1'
+    TabOrder = 0
+    object AddFileEntry: TSortStringGrid
+      Left = 1
+      Top = 1
+      Width = 462
+      Height = 272
+      Cursor = crHandPoint
+      Hint = 'Edit User Fields Here'
+      Align = alClient
+      BorderStyle = bsNone
+      ColCount = 3
+      FixedCols = 2
+      RowCount = 2
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goDrawFocusSelected, goRowSizing, goColSizing, goRowMoving, goEditing, goAlwaysShowEditor, goThumbTracking]
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      OnClick = AddFileEntryClick
+      OnSelectCell = AddFileEntrySelectCell
+      OnSetEditText = AddFileEntrySetEditText
+      RowHeights = (
+        24
+        24)
+    end
+  end
+  object btnCancel: TBitBtn
+    Left = 293
+    Top = 291
+    Width = 75
+    Height = 25
+    Anchors = [akRight, akBottom]
+    Caption = '&Close'
+    ModalResult = 2
+    TabOrder = 1
+    OnClick = btnCancelClick
+  end
+  object btnOk: TBitBtn
+    Left = 377
+    Top = 290
+    Width = 75
+    Height = 25
+    Anchors = [akRight, akBottom]
+    Caption = '&Save'
+    TabOrder = 2
+    OnClick = btnOkClick
+  end
+end

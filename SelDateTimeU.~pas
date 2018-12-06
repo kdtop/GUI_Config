@@ -1,0 +1,46 @@
+unit SelDateTimeU;
+(* WorldVistA Configuration Utility
+   (c) 8/2008.  Released under LGPL
+   Programmed by Kevin Toppenberg, Eddie Hagood  *)
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Buttons, ComCtrls;
+
+type
+  TSelDateTimeForm = class(TForm)
+    DateTimePicker: TDateTimePicker;
+    OKBtn: TBitBtn;
+    CancelBtn: TBitBtn;
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  SelDateTimeForm: TSelDateTimeForm;
+
+implementation
+
+
+{$R *.dfm}
+
+  procedure TSelDateTimeForm.FormShow(Sender: TObject);
+    var mousePos : TPoint;
+  begin
+    GetCursorPos(mousePos);
+    with SelDateTimeForm do begin
+      Top := mousePos.Y - 39;
+      Left := mousePos.X - 15;
+      if Left + Width > Screen.DesktopWidth then begin
+        Left := Screen.DesktopWidth - Width;
+      end;
+    end;
+  end;
+
+end.
+

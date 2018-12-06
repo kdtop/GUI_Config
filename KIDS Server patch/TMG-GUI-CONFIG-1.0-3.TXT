@@ -1,0 +1,142 @@
+$TXT Created by TOPPENBERG,KEVIN at FAMILY PHYSICANS OF GREENEVILLE (KIDS) on Wednesday, 08/20/08 
+=============================================================================
+Run Date: AUG 12,2008                   Designation: TMG-GUI-CONFIG*1.0*3
+Package : TMG - FAMILY PHYSICANS OF GREENEVILLE  Priority: Optional
+Version : 1       SEQ #3                       Status: Released
+=============================================================================
+
+Associated patches: None
+
+Subject: Patch to support WorldVistA Configuration Utility
+
+Category: 
+  - Routine
+
+Description: 
+============
+
+  This patch fixes issues related to setting Access and Verify codes.
+
+  SECURITY ISSUES:
+  The configuration utility allows users easy access to all files on the system.
+  Generally Fileman DB API calls are used for posting to the database.  One exception
+  is made that allows users to set their Fileman access code to @.  Thus a user
+  of this application can gain complete control of the sytem.  That was the intent,
+  to allow administrators to effectively manage their systems.  But with easy use
+  come easy potential for mistakes.
+
+  Methods to limit access to the server:  During start up of the application, a 
+  standard RPC login into the server is required.  The user must have the XUPROGMODE
+  security key, OR have a unlocking menu OPTION added to their secondary menu field
+  in their NEW PERSON file record.  The needed menu OPTION is:
+
+      TMG RPC CONTEXT GUI_CONFIG  
+    
+  ROUTINE SUMMARY:
+  ================
+  Routine Summary
+  The following routines are included in this patch.  The second line of each
+  of these routines now looks like:
+           ;;1.0;TMG-LIB;**[Patch List]**;08/12/09
+
+  
+  INSTALLATION INSTRUCTIONS:
+  ==========================
+  This patch should cause minimal impact on live systems, as it provides only 1 routine,
+  1 OPTION, and 1 REMOTE PROCEDURE.  Installation will take less than 1 minute.  Users
+  may remain on the system.  Note: the follow instructions were copied from another KIDS
+  install and modified.  There may be some discrepancies.
+
+  The following are instructions for those using the Packman method:
+  ------------------------------------------------------------------  
+  1.  Use the INSTALL/CHECK MESSAGE option on the PackMan menu.
+   
+  2.  Review your mapped set.  If any of the routines listed in the
+      ROUTINE SUMMARY section are mapped, they should be removed
+      from the mapped set at this time.
+   
+  3.  From the Kernel Installation and Distribution System Menu, select
+      the Installation menu.
+   
+  4.  From this menu, you may elect to use the following options
+      (when prompted for INSTALL NAME, enter TMG-GUI-CONFIG*1.0*3):
+          a.  Backup a Transport Global
+          b.  Compare Transport Global to Current System
+          c.  Verify Checksums in Transport Global
+   
+  5.  Use the Install Package(s) option and select the package TMG-GUI-CONFIG*1.0*3.
+   
+  6.  When prompted 'Want KIDS to INHIBIT LOGONs during the install? YES//'
+      respond NO.
+    
+  7.  When prompted 'Want to DISABLE Scheduled Options, Menu Options, and
+      Protocols? YES//', respond NO.
+   
+  8.  If routines were unmapped as part of step 2, they should be returned
+      to the mapped set once the installation has run to completion.
+
+  9.  (See step 9 below)
+
+  The following are instructions for those loading the patch via Host File System:
+  ---------------------------------------------------------------------------------
+  1.  Navigate the menu option path to reach the Kernel Installation and Distribution
+      System Menu.  Or, the menu option XPD MAIN may be entered directly.
+
+  2.  Next, at the menu displaying:
+          Edits and Distribution ...
+          Utilities ...
+          Installation ...     <---------- pick this one.
+
+  3.  Next, at the menu displaying the options as below, choose each of the options
+      in a step-by-step fashion, in numerical order (i.e. 1, 2, 3 etc.)  Step #1 will
+      prompt the user to enter the file path on the host file system where the source
+      file is stored.  The filename to enter is TMG_GUI_CONFIG-1.0-3.KID, but add the
+      appropriate path.  E.g. /tmp/TMG_GUI_CONFIG-1.0-3.KID
+
+       1      Load a Distribution
+       2      Verify Checksums in Transport Global
+       3      Print Transport Global
+       4      Compare Transport Global to Current System
+       5      Backup a Transport Global
+       6      Install Package(s)
+              Restart Install of Package(s)
+              Unload a Distribution
+
+  4.  From this menu, you may elect to use the following options
+      (when prompted for INSTALL NAME, enter TMG-GUI-CONFIG*1.0*3):
+          a.  Backup a Transport Global
+          b.  Compare Transport Global to Current System
+          c.  Verify Checksums in Transport Global
+   
+  5.  Use the Install Package(s) option and select the package TMG-GUI-CONFIG*1.0*3.
+   
+  6.  When prompted 'Want KIDS to INHIBIT LOGONs during the install? YES//'
+      respond NO.
+    
+  7.  When prompted 'Want to DISABLE Scheduled Options, Menu Options, and
+      Protocols? YES//', respond NO.
+   
+  8.  If routines were unmapped as part of step 2, they should be returned
+      to the mapped set once the installation has run to completion.
+
+
+Routine Information:
+====================
+
+Routine Name:
+  - CHANNEL^TMGRPC3
+
+
+Routine Checksum:
+
+=============================================================================
+User Information:                               
+Entered By  : TOPPENBERG,KEVIN            Date Entered : AUG 12, 2009
+Completed By: TOPPENBERG,KEVIN            Date Completed: AUG 12, 2009
+Released By : TOPPENBERG,KEVIN            Date Released : AUG 12, 2009
+=============================================================================
+
+Packman Mail Message:
+=====================
+
+$END TXT

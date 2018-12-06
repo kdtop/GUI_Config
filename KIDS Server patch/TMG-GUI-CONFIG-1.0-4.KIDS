@@ -1,0 +1,1042 @@
+KIDS Distribution saved on Jul 07, 2010@13:39:05
+TMG GUI CONFIG 1.0*4
+**KIDS**:TMG-GUI-CONFIG*1.0*4^
+
+**INSTALL NAME**
+TMG-GUI-CONFIG*1.0*4
+"BLD",7637,0)
+TMG-GUI-CONFIG*1.0*4^^0^3100707^n
+"BLD",7637,1,0)
+^^8^8^3100707^^
+"BLD",7637,1,1,0)
+This patch fixes server crashes when accessing
+"BLD",7637,1,2,0)
+help message for fields that have help code
+"BLD",7637,1,3,0)
+expecting information about specific record being
+"BLD",7637,1,4,0)
+viewed.
+"BLD",7637,1,5,0)
+
+"BLD",7637,1,6,0)
+It provides updated versions of two files:
+"BLD",7637,1,7,0)
+TMGRPC3.m
+"BLD",7637,1,8,0)
+TMGRPC3E.m
+"BLD",7637,4,0)
+^9.64PA^^
+"BLD",7637,6.3)
+1
+"BLD",7637,"KRN",0)
+^9.67PA^8989.52^19
+"BLD",7637,"KRN",.4,0)
+.4
+"BLD",7637,"KRN",.401,0)
+.401
+"BLD",7637,"KRN",.402,0)
+.402
+"BLD",7637,"KRN",.403,0)
+.403
+"BLD",7637,"KRN",.5,0)
+.5
+"BLD",7637,"KRN",.84,0)
+.84
+"BLD",7637,"KRN",3.6,0)
+3.6
+"BLD",7637,"KRN",3.8,0)
+3.8
+"BLD",7637,"KRN",9.2,0)
+9.2
+"BLD",7637,"KRN",9.8,0)
+9.8
+"BLD",7637,"KRN",9.8,"NM",0)
+^9.68A^2^2
+"BLD",7637,"KRN",9.8,"NM",1,0)
+TMGRPC3^^0^B83275090
+"BLD",7637,"KRN",9.8,"NM",2,0)
+TMGRPC3E^^0^B73901626
+"BLD",7637,"KRN",9.8,"NM","B","TMGRPC3",1)
+
+"BLD",7637,"KRN",9.8,"NM","B","TMGRPC3E",2)
+
+"BLD",7637,"KRN",19,0)
+19
+"BLD",7637,"KRN",19.1,0)
+19.1
+"BLD",7637,"KRN",101,0)
+101
+"BLD",7637,"KRN",409.61,0)
+409.61
+"BLD",7637,"KRN",771,0)
+771
+"BLD",7637,"KRN",870,0)
+870
+"BLD",7637,"KRN",8989.51,0)
+8989.51
+"BLD",7637,"KRN",8989.52,0)
+8989.52
+"BLD",7637,"KRN",8994,0)
+8994
+"BLD",7637,"KRN","B",.4,.4)
+
+"BLD",7637,"KRN","B",.401,.401)
+
+"BLD",7637,"KRN","B",.402,.402)
+
+"BLD",7637,"KRN","B",.403,.403)
+
+"BLD",7637,"KRN","B",.5,.5)
+
+"BLD",7637,"KRN","B",.84,.84)
+
+"BLD",7637,"KRN","B",3.6,3.6)
+
+"BLD",7637,"KRN","B",3.8,3.8)
+
+"BLD",7637,"KRN","B",9.2,9.2)
+
+"BLD",7637,"KRN","B",9.8,9.8)
+
+"BLD",7637,"KRN","B",19,19)
+
+"BLD",7637,"KRN","B",19.1,19.1)
+
+"BLD",7637,"KRN","B",101,101)
+
+"BLD",7637,"KRN","B",409.61,409.61)
+
+"BLD",7637,"KRN","B",771,771)
+
+"BLD",7637,"KRN","B",870,870)
+
+"BLD",7637,"KRN","B",8989.51,8989.51)
+
+"BLD",7637,"KRN","B",8989.52,8989.52)
+
+"BLD",7637,"KRN","B",8994,8994)
+
+"BLD",7637,"QDEF")
+^^^^NO^^^^NO^^NO
+"BLD",7637,"QUES",0)
+^9.62^^
+"MBREQ")
+0
+"QUES","XPF1",0)
+Y
+"QUES","XPF1","??")
+^D REP^XPDH
+"QUES","XPF1","A")
+Shall I write over your |FLAG| File
+"QUES","XPF1","B")
+YES
+"QUES","XPF1","M")
+D XPF1^XPDIQ
+"QUES","XPF2",0)
+Y
+"QUES","XPF2","??")
+^D DTA^XPDH
+"QUES","XPF2","A")
+Want my data |FLAG| yours
+"QUES","XPF2","B")
+YES
+"QUES","XPF2","M")
+D XPF2^XPDIQ
+"QUES","XPI1",0)
+YO
+"QUES","XPI1","??")
+^D INHIBIT^XPDH
+"QUES","XPI1","A")
+Want KIDS to INHIBIT LOGONs during the install
+"QUES","XPI1","B")
+NO
+"QUES","XPI1","M")
+D XPI1^XPDIQ
+"QUES","XPM1",0)
+PO^VA(200,:EM
+"QUES","XPM1","??")
+^D MG^XPDH
+"QUES","XPM1","A")
+Enter the Coordinator for Mail Group '|FLAG|'
+"QUES","XPM1","B")
+
+"QUES","XPM1","M")
+D XPM1^XPDIQ
+"QUES","XPO1",0)
+Y
+"QUES","XPO1","??")
+^D MENU^XPDH
+"QUES","XPO1","A")
+Want KIDS to Rebuild Menu Trees Upon Completion of Install
+"QUES","XPO1","B")
+NO
+"QUES","XPO1","M")
+D XPO1^XPDIQ
+"QUES","XPZ1",0)
+Y
+"QUES","XPZ1","??")
+^D OPT^XPDH
+"QUES","XPZ1","A")
+Want to DISABLE Scheduled Options, Menu Options, and Protocols
+"QUES","XPZ1","B")
+NO
+"QUES","XPZ1","M")
+D XPZ1^XPDIQ
+"QUES","XPZ2",0)
+Y
+"QUES","XPZ2","??")
+^D RTN^XPDH
+"QUES","XPZ2","A")
+Want to MOVE routines to other CPUs
+"QUES","XPZ2","B")
+NO
+"QUES","XPZ2","M")
+D XPZ2^XPDIQ
+"RTN")
+2
+"RTN","TMGRPC3")
+0^1^B83275090
+"RTN","TMGRPC3",1,0)
+TMGRPC3 ;TMG/kst/RPC Functions for GUI_Config ;07/20/08, 7/7/10
+"RTN","TMGRPC3",2,0)
+         ;;1.0;TMG-LIB;**1**;08/31/08;Build 1
+"RTN","TMGRPC3",3,0)
+ ;
+"RTN","TMGRPC3",4,0)
+ ;"TMG RPC FUNCTIONS for a GUI config program
+"RTN","TMGRPC3",5,0)
+ ;
+"RTN","TMGRPC3",6,0)
+ ;"Kevin Toppenberg MD
+"RTN","TMGRPC3",7,0)
+ ;"GNU Lessor General Public License (LGPL) applies
+"RTN","TMGRPC3",8,0)
+ ;"7/20/08
+"RTN","TMGRPC3",9,0)
+ ;
+"RTN","TMGRPC3",10,0)
+ ;"=======================================================================
+"RTN","TMGRPC3",11,0)
+ ;" RPC -- Public Functions.
+"RTN","TMGRPC3",12,0)
+ ;"=======================================================================
+"RTN","TMGRPC3",13,0)
+ ;"CHANNEL(TMGRESULT,INPUT) -- general purpose channel RPC from a GUI config program
+"RTN","TMGRPC3",14,0)
+ ;
+"RTN","TMGRPC3",15,0)
+ ;"=======================================================================
+"RTN","TMGRPC3",16,0)
+ ;"Dependencies:
+"RTN","TMGRPC3",17,0)
+ ;"  TMGRPC3* only
+"RTN","TMGRPC3",18,0)
+ ;
+"RTN","TMGRPC3",19,0)
+ ;"=======================================================================
+"RTN","TMGRPC3",20,0)
+ ;
+"RTN","TMGRPC3",21,0)
+CHANNEL(TMGRESULT,INPUT) ;
+"RTN","TMGRPC3",22,0)
+        ;"Purpose: This will be a general purpose channel RPC from a GUI config program
+"RTN","TMGRPC3",23,0)
+        ;"Input: TMGRESULT -- this is an OUT parameter, and it is always passed by reference
+"RTN","TMGRPC3",24,0)
+        ;"       INPUT -- this will be array of data sent from the GUI client.  Defined below:
+"RTN","TMGRPC3",25,0)
+        ;"            <Stuff will go here>
+"RTN","TMGRPC3",26,0)
+        ;"            INPUT("REQUEST")="cmd^params"  Valid values for "cmd" are:
+"RTN","TMGRPC3",27,0)
+        ;"              "GET USER LIST"
+"RTN","TMGRPC3",28,0)
+        ;"                   params: <empty> or NODISUSER
+"RTN","TMGRPC3",29,0)
+        ;"              "GET RECORDS LIST"  -- get list of all .01 fields for file.
+"RTN","TMGRPC3",30,0)
+        ;"                   params: FileNumber  (e.g. 'GET RECORDS LIST^8989.3')
+"RTN","TMGRPC3",31,0)
+        ;"              "GET ONE USER"
+"RTN","TMGRPC3",32,0)
+        ;"                   params: IEN (e.g. 'GET ONE USER^12345')
+"RTN","TMGRPC3",33,0)
+        ;"              "GET ONE RECORD"
+"RTN","TMGRPC3",34,0)
+        ;"                   params: FileNum^IENS (e.g. 'GET ONE RECORD^200^73,')
+"RTN","TMGRPC3",35,0)
+        ;"              "GET ONE WP FIELD"
+"RTN","TMGRPC3",36,0)
+        ;"                   params: FileNum^Field^IENS^ (e.g. 'GET ONE WP FIELD^200^2^73,')
+"RTN","TMGRPC3",37,0)
+        ;"              "FILE ENTRY SUBSET"
+"RTN","TMGRPC3",38,0)
+        ;"                   params: FileNum^ListStartValue^direction^MaxCount(optional, def=44)
+"RTN","TMGRPC3",39,0)
+        ;"              "GET SUB RECS LIST"  -- get all .01 sub record entries for a subfile
+"RTN","TMGRPC3",40,0)
+        ;"                   params: SubFileNum^ParentIENS
+"RTN","TMGRPC3",41,0)
+        ;"              "POST DATA"
+"RTN","TMGRPC3",42,0)
+        ;"                   params: (not used)
+"RTN","TMGRPC3",43,0)
+        ;"                   INPUT(0)=FileNum^IENS^FieldNum^FieldName^newValue^oldValue
+"RTN","TMGRPC3",44,0)
+        ;"                   INPUT(1)=FileNum^IENS^FieldNum^FieldName^newValue^oldValue
+"RTN","TMGRPC3",45,0)
+        ;"                   ...    (note: FieldName and oldValue are not used)
+"RTN","TMGRPC3",46,0)
+        ;"              "POST WP FIELD"
+"RTN","TMGRPC3",47,0)
+        ;"                   params: FileNum^FieldNum^IENS (e.g. 'POST WP FIELD^200^2^73,')
+"RTN","TMGRPC3",48,0)
+        ;"                   WP field itself is stored as follows:
+"RTN","TMGRPC3",49,0)
+        ;"                   INPUT(0)=0TH line
+"RTN","TMGRPC3",50,0)
+        ;"                   INPUT(1)=1st line
+"RTN","TMGRPC3",51,0)
+        ;"                   INPUT(2)=2nd line
+"RTN","TMGRPC3",52,0)
+        ;"                   ...
+"RTN","TMGRPC3",53,0)
+        ;"                   Note: don't include INPUT("REQUEST") with text.
+"RTN","TMGRPC3",54,0)
+        ;"              "GET EMPTY ENTRY"  -- getting stub entries for subfiles typically
+"RTN","TMGRPC3",55,0)
+        ;"                   params: file entry (file or subfile number)
+"RTN","TMGRPC3",56,0)
+        ;"              "GET CURRENT USER NAME" -- return name of DUZ (current) user
+"RTN","TMGRPC3",57,0)
+        ;"                   (params: not used)
+"RTN","TMGRPC3",58,0)
+        ;"              "CLONE USER"
+"RTN","TMGRPC3",59,0)
+        ;"                   params: SourceIENS^New.01Value
+"RTN","TMGRPC3",60,0)
+        ;"              "CLONE RECORD"
+"RTN","TMGRPC3",61,0)
+        ;"                   params: FileNum^SourceIENS^New.01Value
+"RTN","TMGRPC3",62,0)
+        ;"              "GET HELP MSG"
+"RTN","TMGRPC3",63,0)
+        ;"                   params     : FileNum^FieldNum^HelpType^IENS
+"RTN","TMGRPC3",64,0)
+        ;"              "IS WP FIELD"
+"RTN","TMGRPC3",65,0)
+        ;"                   params: FileNum^FieldNum
+"RTN","TMGRPC3",66,0)
+        ;"              "GET ONE WP FIELD" -- retrieve on word processing (WP) field entry
+"RTN","TMGRPC3",67,0)
+        ;"                   param -- FileNum^Field^IENS (e.g. 'GET ONE WP FIELD^200^2^73,')
+"RTN","TMGRPC3",68,0)
+        ;"              "REGISTER PATIENT"
+"RTN","TMGRPC3",69,0)
+        ;"                   param -- FieldNum1^FieldValue1^FieldNum2^FieldValue2^FieldNum3^FieldValue3^...
+"RTN","TMGRPC3",70,0)
+        ;"Output: results of this function should be put into TMGRESULTS array.
+"RTN","TMGRPC3",71,0)
+        ;"        For cmd:
+"RTN","TMGRPC3",72,0)
+        ;"          "GET USER LIST"
+"RTN","TMGRPC3",73,0)
+        ;"            TMGRESULT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3",74,0)
+        ;"            TMGRESULT(1)=Name^IEN^200^DISUSER   DISUSER will be 1 for "Y" or 0 for "N"
+"RTN","TMGRPC3",75,0)
+        ;"            TMGRESULT(2)=Name^IEN^200^DISUSER
+"RTN","TMGRPC3",76,0)
+        ;"            etc ...
+"RTN","TMGRPC3",77,0)
+        ;"          "GET RECORDS LIST"
+"RTN","TMGRPC3",78,0)
+        ;"            TMGRESULT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3",79,0)
+        ;"            TMGRESULT(1)=.01Value^IEN^FileNum
+"RTN","TMGRPC3",80,0)
+        ;"            TMGRESULT(2)=.01Value^IEN^FileNum
+"RTN","TMGRPC3",81,0)
+        ;"            etc ...
+"RTN","TMGRPC3",82,0)
+        ;"          "GET ONE USER"
+"RTN","TMGRPC3",83,0)
+        ;"            TMGRESULT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3",84,0)
+        ;"            TMGRESULT(1)=File^IENS^FieldNum^ExternalValue^DDInfo...
+"RTN","TMGRPC3",85,0)
+        ;"            TMGRESULT(2)=File^IENS^FieldNum^ExternalValue^DDInfo...
+"RTN","TMGRPC3",86,0)
+        ;"            etc ...
+"RTN","TMGRPC3",87,0)
+        ;"          "GET ONE RECORD"
+"RTN","TMGRPC3",88,0)
+        ;"            TMGRESULT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3",89,0)
+        ;"            TMGRESULT(1)=File^IENS^FieldNum^ExternalValue^DDInfo...
+"RTN","TMGRPC3",90,0)
+        ;"            TMGRESULT(2)=File^IENS^FieldNum^ExternalValue^DDInfo...
+"RTN","TMGRPC3",91,0)
+        ;"            ...
+"RTN","TMGRPC3",92,0)
+        ;"          "GET ONE WP FIELD"
+"RTN","TMGRPC3",93,0)
+        ;"            TMGRESULT(0): "1^Success" or "-1^Message"
+"RTN","TMGRPC3",94,0)
+        ;"            TMGRESULT(1) will contain Fileman error, if any
+"RTN","TMGRPC3",95,0)
+        ;"            - or to return WP array -
+"RTN","TMGRPC3",96,0)
+        ;"            TMGRESULT(1)=1st line of text
+"RTN","TMGRPC3",97,0)
+        ;"            TMGRESULT(2)=2nd line of text
+"RTN","TMGRPC3",98,0)
+        ;"            etc..
+"RTN","TMGRPC3",99,0)
+        ;"          "FILE ENTRY SUBSET"
+"RTN","TMGRPC3",100,0)
+        ;"            TMGRESULT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3",101,0)
+        ;"            TMGRESULT(1)=Value
+"RTN","TMGRPC3",102,0)
+        ;"            TMGRESULT(2)=Value
+"RTN","TMGRPC3",103,0)
+        ;"            etc ...
+"RTN","TMGRPC3",104,0)
+        ;"          "GET SUB RECS LIST"
+"RTN","TMGRPC3",105,0)
+        ;"            TMGRESULT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3",106,0)
+        ;"            TMGRESULT(1)=IEN^Value
+"RTN","TMGRPC3",107,0)
+        ;"            TMGRESULT(2)=IEN^Value
+"RTN","TMGRPC3",108,0)
+        ;"            ...
+"RTN","TMGRPC3",109,0)
+        ;"          "POST DATA"
+"RTN","TMGRPC3",110,0)
+        ;"            TMGRESULT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3",111,0)
+        ;"            TMGRESULT(1)=Fileman message (long) (if generated)
+"RTN","TMGRPC3",112,0)
+        ;"            -or (if +1 etc values used)-
+"RTN","TMGRPC3",113,0)
+        ;"            TMGRESULT(1)=+5^1234  <--  results of IEN array returned (+5 converted to record 1234)
+"RTN","TMGRPC3",114,0)
+        ;"            TMGRESULT(2)=+3^2341  <--  results of IEN array returned (+3 converted to record 2341)
+"RTN","TMGRPC3",115,0)
+        ;"            ...
+"RTN","TMGRPC3",116,0)
+        ;"          "GET EMPTY ENTRY"
+"RTN","TMGRPC3",117,0)
+        ;"            TMGRESULT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3",118,0)
+        ;"            TMGRESULT(1)=File^^FieldNum^^DDInfo...
+"RTN","TMGRPC3",119,0)
+        ;"            TMGRESULT(2)=File^^FieldNum^^DDInfo...
+"RTN","TMGRPC3",120,0)
+        ;"            etc ...
+"RTN","TMGRPC3",121,0)
+        ;"          "GET CURRENT USER NAME" -- return name of DUZ (current) user
+"RTN","TMGRPC3",122,0)
+        ;"            TMGRESULT(0)="1^Success^UserName" or "-1^Message"
+"RTN","TMGRPC3",123,0)
+        ;"          "CLONE USER"
+"RTN","TMGRPC3",124,0)
+        ;"            TMGRESULT(0)="1^Success^NewIENS" or "-1^Message"
+"RTN","TMGRPC3",125,0)
+        ;"            TMGRESULT(1)=Long Fileman message (if -1 error)
+"RTN","TMGRPC3",126,0)
+        ;"          "CLONE RECORD"
+"RTN","TMGRPC3",127,0)
+        ;"            TMGRESULT(0)="1^Success^NewIENS" or "-1^Message"
+"RTN","TMGRPC3",128,0)
+        ;"            TMGRESULT(1)=Fileman message (long) (if generated)
+"RTN","TMGRPC3",129,0)
+        ;"          "GET HELP MSG"
+"RTN","TMGRPC3",130,0)
+        ;"            TMGRESULT(0)="1^Success^NewIENS" or "-1^Message"
+"RTN","TMGRPC3",131,0)
+        ;"            TMGRESULT(1)=Fileman message (long) (if generated)
+"RTN","TMGRPC3",132,0)
+        ;"          "IS WP FIELD"
+"RTN","TMGRPC3",133,0)
+        ;"            TMGRESULT(0)="1^Success^YES/NO" or "-1^Message"
+"RTN","TMGRPC3",134,0)
+        ;"            "YES" if is a WP subfile, otherwise "NO"
+"RTN","TMGRPC3",135,0)
+        ;"            TMGRESULT(1)=Fileman message (long) (if generated)
+"RTN","TMGRPC3",136,0)
+        ;"          "REGISTER PATIENT"
+"RTN","TMGRPC3",137,0)
+        ;"            TMGRESULT(0)="1^Success^NewIEN" or
+"RTN","TMGRPC3",138,0)
+        ;"                         "-1^Message"    Frank failure...  or
+"RTN","TMGRPC3",139,0)
+        ;"                         "0^BoolAndMessage^NewIEN".  Format:
+"RTN","TMGRPC3",140,0)
+        ;"                       [Bool1;Bool2;Bool3;Bool4;Bool5*MessageText]  (e.g. '1;0;1;0;0*ErrorMsg')
+"RTN","TMGRPC3",141,0)
+        ;"                         (for Bool fields, 0=no or 1=yes)
+"RTN","TMGRPC3",142,0)
+        ;"                         Bool1 -- patient had previously been registered
+"RTN","TMGRPC3",143,0)
+        ;"                         Bool2 -- patient registered during this Fn
+"RTN","TMGRPC3",144,0)
+        ;"                         Bool3 -- problem filing data into non-identifier fields
+"RTN","TMGRPC3",145,0)
+        ;"                         Bool4 -- problem filing data into sub-file fields
+"RTN","TMGRPC3",146,0)
+        ;"                         Bool5 -- problem with filing HRN
+"RTN","TMGRPC3",147,0)
+        ;"            TMGRESULT(1)=Long Fileman message (if -1 error, or perhaps 0 code)
+"RTN","TMGRPC3",148,0)
+ 
+"RTN","TMGRPC3",149,0)
+ ;
+"RTN","TMGRPC3",150,0)
+        ;"Result: none
+"RTN","TMGRPC3",151,0)
+ ;
+"RTN","TMGRPC3",152,0)
+        NEW TMGCOMMAND,TMGCOMMAND
+"RTN","TMGRPC3",153,0)
+        SET TMGCOMMAND=$$TRIM^XLFSTR($$UP^XLFSTR($PIECE($GET(INPUT("REQUEST")),"^",1)))
+"RTN","TMGRPC3",154,0)
+        SET TMGPARAMS=$$UP^XLFSTR($PIECE($GET(INPUT("REQUEST")),"^",2,199))
+"RTN","TMGRPC3",155,0)
+        SET TMGRESULT(0)="-1^No command requested."  ;"default to error state.
+"RTN","TMGRPC3",156,0)
+        IF TMGCOMMAND="GET USER LIST" DO
+"RTN","TMGRPC3",157,0)
+        . DO GETUSRLT^TMGRPC3B(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",158,0)
+        IF TMGCOMMAND="GET RECORDS LIST" DO
+"RTN","TMGRPC3",159,0)
+        . DO GETRECLT^TMGRPC3B(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",160,0)
+        ELSE  IF TMGCOMMAND="GET ONE USER" DO
+"RTN","TMGRPC3",161,0)
+        . DO GET1USER^TMGRPC3B(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",162,0)
+        ELSE  IF TMGCOMMAND="GET ONE RECORD" DO
+"RTN","TMGRPC3",163,0)
+        . DO GET1REC^TMGRPC3B(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",164,0)
+        ELSE  IF TMGCOMMAND="FILE ENTRY SUBSET" DO
+"RTN","TMGRPC3",165,0)
+        . DO GFLSUBST^TMGRPC3B(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",166,0)
+        ELSE  IF TMGCOMMAND="GET SUB RECS LIST" DO
+"RTN","TMGRPC3",167,0)
+        . DO GETSRLST^TMGRPC3D(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",168,0)
+        ELSE  IF TMGCOMMAND="POST DATA" DO
+"RTN","TMGRPC3",169,0)
+        . KILL INPUT("REQUEST")
+"RTN","TMGRPC3",170,0)
+        . DO POSTDATA^TMGRPC3C(.TMGRESULT,.INPUT)
+"RTN","TMGRPC3",171,0)
+        ELSE  IF TMGCOMMAND="GET EMPTY ENTRY" DO
+"RTN","TMGRPC3",172,0)
+        . DO GETEMPTY^TMGRPC3E(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",173,0)
+        ELSE  IF TMGCOMMAND="GET CURRENT USER NAME" DO
+"RTN","TMGRPC3",174,0)
+        . SET TMGRESULT(0)="1^Success^"_$PIECE($GET(^VA(200,DUZ,0)),"^",1)
+"RTN","TMGRPC3",175,0)
+        ELSE  IF TMGCOMMAND="CLONE RECORD" DO
+"RTN","TMGRPC3",176,0)
+        . DO CLONEREC^TMGRPC3D(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",177,0)
+        ELSE  IF TMGCOMMAND="CLONE USER" DO
+"RTN","TMGRPC3",178,0)
+        . DO CLONEUSR^TMGRPC3D(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",179,0)
+        ELSE  IF TMGCOMMAND="GET HELP MSG" DO
+"RTN","TMGRPC3",180,0)
+        . DO GETHELPM^TMGRPC3E(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",181,0)
+        ELSE  IF TMGCOMMAND="IS WP FIELD" DO
+"RTN","TMGRPC3",182,0)
+        . DO GETIFWP^TMGRPC3E(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",183,0)
+        ELSE  IF TMGCOMMAND="GET ONE WP FIELD" DO
+"RTN","TMGRPC3",184,0)
+        . DO GETWPFLD^TMGRPC3E(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",185,0)
+        ELSE  IF TMGCOMMAND="POST WP FIELD" DO
+"RTN","TMGRPC3",186,0)
+        . KILL INPUT("REQUEST")
+"RTN","TMGRPC3",187,0)
+        . DO PSTWPFLD^TMGRPC3E(.TMGRESULT,TMGPARAMS,.INPUT)
+"RTN","TMGRPC3",188,0)
+        ELSE  IF TMGCOMMAND="REGISTER PATIENT" DO
+"RTN","TMGRPC3",189,0)
+        . DO REGPAT^TMGRPC3F(.TMGRESULT,TMGPARAMS)
+"RTN","TMGRPC3",190,0)
+ ;
+"RTN","TMGRPC3",191,0)
+ ;
+"RTN","TMGRPC3",192,0)
+        QUIT
+"RTN","TMGRPC3",193,0)
+ ;
+"RTN","TMGRPC3E")
+0^2^B73901626
+"RTN","TMGRPC3E",1,0)
+TMGRPC3E ;TMG/kst/Support Functions for GUI_Config ;08/31/08, 7/7/10
+"RTN","TMGRPC3E",2,0)
+         ;;1.0;TMG-LIB;**1**;08/31/08;Build 1
+"RTN","TMGRPC3E",3,0)
+ ;
+"RTN","TMGRPC3E",4,0)
+ ;"TMG RPC FUNCTIONS for a GUI config program
+"RTN","TMGRPC3E",5,0)
+ ;
+"RTN","TMGRPC3E",6,0)
+ ;"Kevin Toppenberg MD
+"RTN","TMGRPC3E",7,0)
+ ;"GNU Lessor General Public License (LGPL) applies
+"RTN","TMGRPC3E",8,0)
+ ;"7/20/08
+"RTN","TMGRPC3E",9,0)
+ ;
+"RTN","TMGRPC3E",10,0)
+ ;"=======================================================================
+"RTN","TMGRPC3E",11,0)
+ ;" RPC -- Public Functions.
+"RTN","TMGRPC3E",12,0)
+ ;"=======================================================================
+"RTN","TMGRPC3E",13,0)
+ ;" <none>
+"RTN","TMGRPC3E",14,0)
+ ;"=======================================================================
+"RTN","TMGRPC3E",15,0)
+ ;"PRIVATE API FUNCTIONS
+"RTN","TMGRPC3E",16,0)
+ ;"=======================================================================
+"RTN","TMGRPC3E",17,0)
+ ;"GETEMPTY(TMGOUT,TMGPARAMS) -- get stub entries for a file (typically a subfile)
+"RTN","TMGRPC3E",18,0)
+ ;"GETHELPM(TMGOUT,TMGPARAMS)  -- retrieve the help message for a given field.
+"RTN","TMGRPC3E",19,0)
+ ;"STUBNEWR(TMGFILE,NewValue,TMGOUT) -- create a stub entry in the file (200), to be filled in elsewhere
+"RTN","TMGRPC3E",20,0)
+ ;"GETIFWP(TMGOUT,TMGPARAMS) -- return if filenumber is a WP subfile
+"RTN","TMGRPC3E",21,0)
+ ;"GETWPFLD(TMGOUT,TMGPARAMS) -- retrieve on word processing (WP) field entry
+"RTN","TMGRPC3E",22,0)
+ ;"PSTWPFLD(TMGOUT,TMGPARAMS,INPUT) -- store a word processing (WP) field entry
+"RTN","TMGRPC3E",23,0)
+ ;
+"RTN","TMGRPC3E",24,0)
+ ;"=======================================================================
+"RTN","TMGRPC3E",25,0)
+ ;"=======================================================================
+"RTN","TMGRPC3E",26,0)
+ ;"Dependencies:
+"RTN","TMGRPC3E",27,0)
+ ;"  TMGRPC3* only
+"RTN","TMGRPC3E",28,0)
+ ;
+"RTN","TMGRPC3E",29,0)
+ ;"=======================================================================
+"RTN","TMGRPC3E",30,0)
+ ;"=======================================================================
+"RTN","TMGRPC3E",31,0)
+ ;
+"RTN","TMGRPC3E",32,0)
+GETEMPTY(TMGOUT,TMGPARAMS) ;"GET EMPTY ENTRY
+"RTN","TMGRPC3E",33,0)
+        ;"Purpose: to get stub entries for a file (typically a subfile)
+"RTN","TMGRPC3E",34,0)
+        ;"              "GET EMPTY ENTRY"  -- getting stub entries for subfiles typically
+"RTN","TMGRPC3E",35,0)
+        ;"                   TMGPARAMS: file entry (file or subfile number)
+"RTN","TMGRPC3E",36,0)
+        ;"Input: TMGOUT --an OUT ARRAY, filled as follows:
+"RTN","TMGRPC3E",37,0)
+        ;"          TMGOUT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3E",38,0)
+        ;"          TMGOUT(1)=File^^FieldNum^^DDInfo...
+"RTN","TMGRPC3E",39,0)
+        ;"          TMGOUT(2)=File^^FieldNum^^DDInfo...
+"RTN","TMGRPC3E",40,0)
+        ;"          Etc ...
+"RTN","TMGRPC3E",41,0)
+        ;"       Params: filenumber (typically a subfilenumber)
+"RTN","TMGRPC3E",42,0)
+        ;"Result: None
+"RTN","TMGRPC3E",43,0)
+ ;
+"RTN","TMGRPC3E",44,0)
+        SET TMGOUT(0)="1^Success"
+"RTN","TMGRPC3E",45,0)
+        NEW TMGCOUNT SET TMGCOUNT=1
+"RTN","TMGRPC3E",46,0)
+        NEW TMGFNUM SET TMGFNUM=+$GET(TMGPARAMS)
+"RTN","TMGRPC3E",47,0)
+        NEW TMGFLDNUM SET TMGFLDNUM=0
+"RTN","TMGRPC3E",48,0)
+        FOR  SET TMGFLDNUM=$ORDER(^DD(TMGFNUM,TMGFLDNUM)) QUIT:(+TMGFLDNUM'>0)  DO
+"RTN","TMGRPC3E",49,0)
+        . NEW TMGDDINFO SET TMGDDINFO=$PIECE($GET(^DD(TMGFNUM,TMGFLDNUM,0)),"^",1,4)
+"RTN","TMGRPC3E",50,0)
+        . SET TMGOUT(TMGCOUNT)=TMGFNUM_"^^"_TMGFLDNUM_"^^"_TMGDDINFO
+"RTN","TMGRPC3E",51,0)
+        . SET TMGCOUNT=TMGCOUNT+1
+"RTN","TMGRPC3E",52,0)
+ ;
+"RTN","TMGRPC3E",53,0)
+        QUIT
+"RTN","TMGRPC3E",54,0)
+ ;
+"RTN","TMGRPC3E",55,0)
+ ;
+"RTN","TMGRPC3E",56,0)
+GETHELPM(TMGOUT,TMGPARAMS) ;
+"RTN","TMGRPC3E",57,0)
+        ;"Purpose: to retrieve the help message for a given field.
+"RTN","TMGRPC3E",58,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3E",59,0)
+        ;"       TMGPARAMS -- file^field^HelpType^IENS
+"RTN","TMGRPC3E",60,0)
+        ;"Output: TMGOUT is filled as follows:
+"RTN","TMGRPC3E",61,0)
+        ;"          TMGOUT(0)="1^Success" or "-1^Message"
+"RTN","TMGRPC3E",62,0)
+        ;"          TMGOUT(1...?)=Help Message
+"RTN","TMGRPC3E",63,0)
+ ;
+"RTN","TMGRPC3E",64,0)
+        NEW TMGMSG
+"RTN","TMGRPC3E",65,0)
+        NEW TMGINDEX SET TMGINDEX=1
+"RTN","TMGRPC3E",66,0)
+        NEW TMGFILE SET TMGFILE=+$PIECE(TMGPARAMS,"^",1)
+"RTN","TMGRPC3E",67,0)
+        NEW TMGFIELD SET TMGFIELD=+$PIECE(TMGPARAMS,"^",2)
+"RTN","TMGRPC3E",68,0)
+        NEW TMGHELPTYPE SET TMGHELPTYPE=$PIECE(TMGPARAMS,"^",3)
+"RTN","TMGRPC3E",69,0)
+        NEW TMGIENS SET TMGIENS=$PIECE(TMGPARAMS,"^",4)
+"RTN","TMGRPC3E",70,0)
+        IF TMGFILE'>0 DO  GOTO GHMDONE
+"RTN","TMGRPC3E",71,0)
+        . SET TMGOUT(0)="-1^No file number supplied"
+"RTN","TMGRPC3E",72,0)
+        IF TMGFIELD'>0 DO  GOTO GHMDONE
+"RTN","TMGRPC3E",73,0)
+        . SET TMGOUT(0)="-1^No Field Number supplied"
+"RTN","TMGRPC3E",74,0)
+        DO HELP^DIE(TMGFILE,TMGIENS,TMGFIELD,TMGHELPTYPE,"TMGMSG")
+"RTN","TMGRPC3E",75,0)
+        NEW TMGI SET TMGI=""
+"RTN","TMGRPC3E",76,0)
+        FOR  SET TMGI=$ORDER(TMGMSG("DIHELP",TMGI)) QUIT:(TMGI="")  DO
+"RTN","TMGRPC3E",77,0)
+        . SET TMGOUT(TMGINDEX)=TMGMSG("DIHELP",TMGI)
+"RTN","TMGRPC3E",78,0)
+        . SET TMGINDEX=TMGINDEX+1
+"RTN","TMGRPC3E",79,0)
+ ;
+"RTN","TMGRPC3E",80,0)
+        SET TMGOUT(0)="1^Success"
+"RTN","TMGRPC3E",81,0)
+ ;
+"RTN","TMGRPC3E",82,0)
+GHMDONE ;
+"RTN","TMGRPC3E",83,0)
+        QUIT
+"RTN","TMGRPC3E",84,0)
+ ;
+"RTN","TMGRPC3E",85,0)
+ ;
+"RTN","TMGRPC3E",86,0)
+STUBNEWR(TMGFILE,TMGNEWVALUE,TMGOUT) ;"STUB NEW RECORD
+"RTN","TMGRPC3E",87,0)
+        ;"Purpose: to create a stub entry in the file (200), to be filled in elsewhere
+"RTN","TMGRPC3E",88,0)
+        ;"Input: TMGNEWVALUE -- a value for the .01 field
+"RTN","TMGRPC3E",89,0)
+        ;"       TMGOUT -- PASS BY REFERENCE, an OUT PARAMETER.
+"RTN","TMGRPC3E",90,0)
+        ;"Output: A new record will be added to file, if no errors
+"RTN","TMGRPC3E",91,0)
+        ;"       TMGOUT(0): 1^Success^NewIEN   or -1^See Fileman message
+"RTN","TMGRPC3E",92,0)
+        ;"       TMGOUT(1) will contain Fileman error, if any
+"RTN","TMGRPC3E",93,0)
+        ;"Results: none
+"RTN","TMGRPC3E",94,0)
+        ;"NOTICE: This function makes no promise that the creation of the
+"RTN","TMGRPC3E",95,0)
+        ;"      new record will succeed.  For example, if there are required
+"RTN","TMGRPC3E",96,0)
+        ;"      fields, the creation will fail.  So users should check for success
+"RTN","TMGRPC3E",97,0)
+        ;"      result and error feedback.
+"RTN","TMGRPC3E",98,0)
+        ;"Results: none
+"RTN","TMGRPC3E",99,0)
+ ;
+"RTN","TMGRPC3E",100,0)
+        NEW TMGFDA,TMGIEN,TMGMSG,DIC
+"RTN","TMGRPC3E",101,0)
+        SET DIC(0)=""  ;"I get a crash without this, for some reason...
+"RTN","TMGRPC3E",102,0)
+        SET TMGFDA(TMGFILE,"+1,",.01)=TMGNEWVALUE
+"RTN","TMGRPC3E",103,0)
+        DO UPDATE^DIE("S","TMGFDA","TMGIEN","TMGMSG")
+"RTN","TMGRPC3E",104,0)
+ ;
+"RTN","TMGRPC3E",105,0)
+        IF $DATA(TMGMSG("DIERR")) DO  GOTO SNPDONE
+"RTN","TMGRPC3E",106,0)
+        . SET TMGOUT(0)="-1^See Fileman message"
+"RTN","TMGRPC3E",107,0)
+        . SET TMGOUT(1)=$$GETERSTR^TMGRPC3G(.TMGMSG)
+"RTN","TMGRPC3E",108,0)
+ ;
+"RTN","TMGRPC3E",109,0)
+        SET TMGOUT(0)="1^Success^"_$GET(TMGIEN(1))
+"RTN","TMGRPC3E",110,0)
+ ;
+"RTN","TMGRPC3E",111,0)
+SNPDONE ;
+"RTN","TMGRPC3E",112,0)
+        QUIT
+"RTN","TMGRPC3E",113,0)
+ ;
+"RTN","TMGRPC3E",114,0)
+ ;
+"RTN","TMGRPC3E",115,0)
+GETIFWP(TMGOUT,TMGPARAMS) ;"GET IF WP FIELD
+"RTN","TMGRPC3E",116,0)
+        ;"Purpose: to return if filenumber is a WP subfile
+"RTN","TMGRPC3E",117,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3E",118,0)
+        ;"       TMGPARAMS -- file^field
+"RTN","TMGRPC3E",119,0)
+        ;"Output:
+"RTN","TMGRPC3E",120,0)
+        ;"       TMGOUT(0): "1^Success^YES/NO" or "-1^Message"
+"RTN","TMGRPC3E",121,0)
+        ;"            "YES" if is a WP subfile, otherwise "NO"
+"RTN","TMGRPC3E",122,0)
+        ;"       TMGOUT(1) will contain Fileman error, if any
+"RTN","TMGRPC3E",123,0)
+        ;"Results: none
+"RTN","TMGRPC3E",124,0)
+ ;
+"RTN","TMGRPC3E",125,0)
+        NEW TMGRESULT
+"RTN","TMGRPC3E",126,0)
+        NEW TMGFILE SET TMGFILE=+$PIECE(TMGPARAMS,"^",1)
+"RTN","TMGRPC3E",127,0)
+        NEW TMGFIELD SET TMGFIELD=+$PIECE(TMGPARAMS,"^",2)
+"RTN","TMGRPC3E",128,0)
+        IF TMGFILE'>0 DO  GOTO GWPSDONE
+"RTN","TMGRPC3E",129,0)
+        . SET TMGOUT(0)="-1^No file number supplied"
+"RTN","TMGRPC3E",130,0)
+        IF TMGFIELD'>0 DO  GOTO GWPSDONE
+"RTN","TMGRPC3E",131,0)
+        . SET TMGOUT(0)="-1^No Field Number supplied"
+"RTN","TMGRPC3E",132,0)
+ ;
+"RTN","TMGRPC3E",133,0)
+        DO FIELD^DID(TMGFILE,TMGFIELD,"","TYPE","TMGARRAY","TMGMSG")
+"RTN","TMGRPC3E",134,0)
+ ;
+"RTN","TMGRPC3E",135,0)
+        IF $DATA(TMGMSG("DIERR")) DO  GOTO GWPSDONE
+"RTN","TMGRPC3E",136,0)
+        . SET TMGOUT(0)="-1^See Fileman message"
+"RTN","TMGRPC3E",137,0)
+        . SET TMGOUT(1)=$$GETERSTR^TMGRPC3G(.TMGMSG)
+"RTN","TMGRPC3E",138,0)
+ ;
+"RTN","TMGRPC3E",139,0)
+        IF $GET(TMGARRAY("TYPE"))="WORD-PROCESSING" DO
+"RTN","TMGRPC3E",140,0)
+        . SET TMGRESULT="YES"
+"RTN","TMGRPC3E",141,0)
+        ELSE  DO
+"RTN","TMGRPC3E",142,0)
+        . SET TMGRESULT="NO"
+"RTN","TMGRPC3E",143,0)
+ ;
+"RTN","TMGRPC3E",144,0)
+        SET TMGOUT(0)="1^Success^"_TMGRESULT
+"RTN","TMGRPC3E",145,0)
+ ;
+"RTN","TMGRPC3E",146,0)
+GWPSDONE ;
+"RTN","TMGRPC3E",147,0)
+        QUIT
+"RTN","TMGRPC3E",148,0)
+ ;
+"RTN","TMGRPC3E",149,0)
+ ;
+"RTN","TMGRPC3E",150,0)
+GETWPFLD(TMGOUT,TMGPARAMS) ;"GET WP FIELD
+"RTN","TMGRPC3E",151,0)
+        ;"Purpose: To retrieve on word processing (WP) field entry
+"RTN","TMGRPC3E",152,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3E",153,0)
+        ;"       TMGPARAMS -- FileNum^Field^IENS (e.g. 'GET ONE WP FIELD^200^73,')
+"RTN","TMGRPC3E",154,0)
+        ;"Output:
+"RTN","TMGRPC3E",155,0)
+        ;"       TMGOUT(0): "1^Success" or "-1^Message"
+"RTN","TMGRPC3E",156,0)
+        ;"       TMGOUT(1) will contain Fileman error, if any
+"RTN","TMGRPC3E",157,0)
+        ;"       - or to return WP array -
+"RTN","TMGRPC3E",158,0)
+        ;"       TMGOUT(1)=1st line of text
+"RTN","TMGRPC3E",159,0)
+        ;"       TMGOUT(2)=2nd line of text
+"RTN","TMGRPC3E",160,0)
+        ;"       etc..
+"RTN","TMGRPC3E",161,0)
+        ;"Results: None
+"RTN","TMGRPC3E",162,0)
+ ;
+"RTN","TMGRPC3E",163,0)
+        NEW TMGFILE SET TMGFILE=+$PIECE(TMGPARAMS,"^",1)
+"RTN","TMGRPC3E",164,0)
+        NEW TMGFIELD SET TMGFIELD=+$PIECE(TMGPARAMS,"^",2)
+"RTN","TMGRPC3E",165,0)
+        NEW TMGIENS SET TMGIENS=+$PIECE(TMGPARAMS,"^",3)
+"RTN","TMGRPC3E",166,0)
+        IF TMGFILE'>0 DO  GOTO GWPDONE
+"RTN","TMGRPC3E",167,0)
+        . SET TMGOUT(0)="-1^No file number supplied"
+"RTN","TMGRPC3E",168,0)
+        IF TMGFIELD'>0 DO  GOTO GWPDONE
+"RTN","TMGRPC3E",169,0)
+        . SET TMGOUT(0)="-1^No Field Number supplied"
+"RTN","TMGRPC3E",170,0)
+        IF TMGIENS="" DO  GOTO GWPDONE
+"RTN","TMGRPC3E",171,0)
+        . SET TMGOUT(0)="-1^No IENS supplied"
+"RTN","TMGRPC3E",172,0)
+ ;
+"RTN","TMGRPC3E",173,0)
+        NEW TMGTEMP
+"RTN","TMGRPC3E",174,0)
+        SET TMGTEMP=$$GET1^DIQ(TMGFILE,TMGIENS,TMGFIELD,"","TMGARRAY","TMGMSG")
+"RTN","TMGRPC3E",175,0)
+        IF $DATA(TMGMSG("DIERR")) DO  GOTO GWPDONE
+"RTN","TMGRPC3E",176,0)
+        . SET TMGOUT(0)="-1^See Fileman message"
+"RTN","TMGRPC3E",177,0)
+        . SET TMGOUT(1)=$$GETERSTR^TMGRPC3G(.TMGMSG)
+"RTN","TMGRPC3E",178,0)
+ ;
+"RTN","TMGRPC3E",179,0)
+        SET TMGOUT(0)="1^Success"
+"RTN","TMGRPC3E",180,0)
+        NEW TMGINDEX SET TMGINDEX=1
+"RTN","TMGRPC3E",181,0)
+        NEW TMGI SET TMGI=0
+"RTN","TMGRPC3E",182,0)
+        FOR  SET TMGI=$ORDER(TMGARRAY(TMGI)) QUIT:(TMGI="")  DO
+"RTN","TMGRPC3E",183,0)
+        . SET TMGOUT(TMGINDEX)=TMGARRAY(TMGI)
+"RTN","TMGRPC3E",184,0)
+        . SET TMGINDEX=TMGINDEX+1
+"RTN","TMGRPC3E",185,0)
+ ;
+"RTN","TMGRPC3E",186,0)
+GWPDONE ;
+"RTN","TMGRPC3E",187,0)
+        QUIT
+"RTN","TMGRPC3E",188,0)
+ ;
+"RTN","TMGRPC3E",189,0)
+ ;
+"RTN","TMGRPC3E",190,0)
+PSTWPFLD(TMGOUT,TMGPARAMS,INPUT) ;"POST WP FIELD
+"RTN","TMGRPC3E",191,0)
+        ;"Purpose: To store a word processing (WP) field entry
+"RTN","TMGRPC3E",192,0)
+        ;"Input: TMGOUT -- an OUT PARAMETER, PASS BY REFERENCE.
+"RTN","TMGRPC3E",193,0)
+        ;"       TMGPARAMS -- FileNum^FieldNum^IENS (e.g. 'GET ONE WP FIELD^200^73,')
+"RTN","TMGRPC3E",194,0)
+        ;"       INPUT -- holds the WP itself to be stored:
+"RTN","TMGRPC3E",195,0)
+        ;"                   INPUT(0)=0TH line
+"RTN","TMGRPC3E",196,0)
+        ;"                   INPUT(1)=1st line
+"RTN","TMGRPC3E",197,0)
+        ;"                   INPUT(2)=2nd line
+"RTN","TMGRPC3E",198,0)
+        ;"                   ...
+"RTN","TMGRPC3E",199,0)
+        ;"Output:
+"RTN","TMGRPC3E",200,0)
+        ;"       TMGOUT(0): "1^Success" or "-1^Message"
+"RTN","TMGRPC3E",201,0)
+        ;"       TMGOUT(1) will contain Fileman error, if any
+"RTN","TMGRPC3E",202,0)
+        ;"Results: None
+"RTN","TMGRPC3E",203,0)
+ ;
+"RTN","TMGRPC3E",204,0)
+        NEW TMGFILE SET TMGFILE=+$PIECE(TMGPARAMS,"^",1)
+"RTN","TMGRPC3E",205,0)
+        NEW TMGFIELD SET TMGFIELD=+$PIECE(TMGPARAMS,"^",2)
+"RTN","TMGRPC3E",206,0)
+        NEW TMGIENS SET TMGIENS=+$PIECE(TMGPARAMS,"^",3)
+"RTN","TMGRPC3E",207,0)
+        IF TMGFILE'>0 DO  GOTO PWPDONE
+"RTN","TMGRPC3E",208,0)
+        . SET TMGOUT(0)="-1^No file number supplied"
+"RTN","TMGRPC3E",209,0)
+        IF TMGFIELD'>0 DO  GOTO PWPDONE
+"RTN","TMGRPC3E",210,0)
+        . SET TMGOUT(0)="-1^No Field Number supplied"
+"RTN","TMGRPC3E",211,0)
+        IF TMGIENS="" DO  GOTO PWPDONE
+"RTN","TMGRPC3E",212,0)
+        . SET TMGOUT(0)="-1^No IENS supplied"
+"RTN","TMGRPC3E",213,0)
+        IF $LENGTH(TMGIENS,",")=1 SET TMGIENS=TMGIENS_","
+"RTN","TMGRPC3E",214,0)
+ ;
+"RTN","TMGRPC3E",215,0)
+        DO WP^DIE(TMGFILE,TMGIENS,TMGFIELD,"K","INPUT","TMGMSG")
+"RTN","TMGRPC3E",216,0)
+ ;
+"RTN","TMGRPC3E",217,0)
+        IF $DATA(TMGMSG("DIERR")) DO  GOTO GWPDONE
+"RTN","TMGRPC3E",218,0)
+        . SET TMGOUT(0)="-1^See Fileman message"
+"RTN","TMGRPC3E",219,0)
+        . SET TMGOUT(1)=$$GETERSTR^TMGRPC3G(.TMGMSG)
+"RTN","TMGRPC3E",220,0)
+ ;
+"RTN","TMGRPC3E",221,0)
+        SET TMGOUT(0)="1^Success"
+"RTN","TMGRPC3E",222,0)
+ ;
+"RTN","TMGRPC3E",223,0)
+PWPDONE ;
+"RTN","TMGRPC3E",224,0)
+        QUIT
+"RTN","TMGRPC3E",225,0)
+ ;
+"RTN","TMGRPC3E",226,0)
+ ;
+"VER")
+8.0^22.0
+**END**
+**END**

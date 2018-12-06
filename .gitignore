@@ -1,0 +1,10 @@
+*.lnk
+**/*.dcu
+.bzr
+.svn
+Backup
+VinDiagram.old
+XML-Athena*
+DCU_OLD
+__history
+ReaderProblems
